@@ -14,6 +14,7 @@ import {
   markQuestionSeen,
   getCookie
 } from '@/lib/storage';
+import MultiplayerRoom from '@/components/MultiplayerRoom';
 import { 
   Zap, 
   Play, 
@@ -36,7 +37,8 @@ import {
   Layers,
   Gauge,
   RotateCcw,
-  Eye
+  Eye,
+  Users
 } from 'lucide-react';
 
 interface QuizbowlReaderProps {
@@ -59,8 +61,9 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
   // Evita hydration mismatch no SSR
   const [isMounted, setIsMounted] = useState(false);
 
-  // Modo de Jogo: 'daily' (padrão) ou 'unlimited'
-  const [gameMode, setGameMode] = useState<'daily' | 'unlimited'>('daily');
+  // Modo de Jogo: 'daily' (padrão), 'unlimited' ou 'multiplayer'
+  const [gameMode, setGameMode] = useState<'daily' | 'unlimited' | 'multiplayer'>('daily');
+  const [roomCodeFromUrl, setRoomCodeFromUrl] = useState<string | null>(null);
 
   // Estado do Modo Diário (sempre questão fácil)
   const [dailyResult, setDailyResult] = useState<DailyResult | null>(null);
@@ -107,16 +110,18 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
   // Filtros Multi-seleção (Modo Ilimitado)
   const [selectedCategories, setSelectedCategories] = useState<string[]>(['Todas']);
   const [selectedDifficulties, setSelectedDifficulties] = useState<string[]>(['Qualquer']);
+  const [wpm, setWpm] = useState<number>(240); // 240 WPM = ~4 palavras por segundo
 
   // Questões do Modo Ilimitado (Filtradas e Randomizadas)
   const [unlimitedQuestions, setUnlimitedQuestions] = useState<Tossup[]>([]);
   const [unlimitedIndex, setUnlimitedIndex] = useState(0);
 
   // Estado da leitura da pergunta ativa
-  const [status, setStatus] = useState<'idle' | 'reading' | 'buzzed' | 'judged' | 'revealed'>('idle');
+  const [status, setStatus] = useState<'idle' | 'reading' | 'buzzed' | 'ending_countdown' | 'judged' | 'revealed'>('idle');
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isPowerEligible, setIsPowerEligible] = useState(true);
   const [buzzedAtWordIndex, setBuzzedAtWordIndex] = useState<number | null>(null);
+  const [hasBuzzedThisQuestion, setHasBuzzedThisQuestion] = useState(false);
 
   // Marcações de tempo (em milissegundos de precisão)
   const readingStartTimeRef = useRef<number | null>(null);
@@ -127,7 +132,8 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
   const [userAnswer, setUserAnswer] = useState('');
   const [judgment, setJudgment] = useState<JudgmentResult | null>(null);
   const [promptMessage, setPromptMessage] = useState<string | null>(null);
-  const [buzzTimeRemaining, setBuzzTimeRemaining] = useState(7);
+  const [buzzTimeRemaining, setBuzzTimeRemaining] = useState(10); // 10 segundos
+  const [endCountdownRemaining, setEndCountdownRemaining] = useState(10); // 10s finais
 
   // Placar do Modo Ilimitado
   const [stats, setStats] = useState<PlayerStats>({
@@ -139,6 +145,18 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     correctAnswers: 0,
     wrongAnswers: 0,
   });
+
+  // Detecta parâmetro de sala na URL (?sala=BRASA)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const sala = params.get('sala');
+      if (sala) {
+        setRoomCodeFromUrl(sala.toUpperCase());
+        setGameMode('multiplayer');
+      }
+    }
+  }, []);
 
   // Aplica filtros e randomiza para o Modo Ilimitado
   const applyFiltersAndRandomize = useCallback((cats: string[], diffs: string[], resetIndex = true) => {
@@ -281,10 +299,12 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     setCurrentWordIndex(0);
     setIsPowerEligible(true);
     setBuzzedAtWordIndex(null);
+    setHasBuzzedThisQuestion(false);
     setUserAnswer('');
     setJudgment(null);
     setPromptMessage(null);
-    setBuzzTimeRemaining(7);
+    setBuzzTimeRemaining(10);
+    setEndCountdownRemaining(10);
     readingStartTimeRef.current = null;
     setMeasuredCutTimeMs(0);
     setMeasuredCutPercent(0);
@@ -312,7 +332,8 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
   // O "CORTE" (Buzzer)
   const handleBuzz = useCallback(() => {
-    if (status !== 'reading' && status !== 'idle') return;
+    if (status !== 'reading' && status !== 'idle' && status !== 'ending_countdown') return;
+    if (hasBuzzedThisQuestion) return;
 
     if (readerIntervalRef.current) clearInterval(readerIntervalRef.current);
 
@@ -328,14 +349,14 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
     setStatus('buzzed');
     setBuzzedAtWordIndex(currentWordIndex);
-    setBuzzTimeRemaining(7);
+    setBuzzTimeRemaining(10); // 10 segundos para responder
 
     setTimeout(() => {
       answerInputRef.current?.focus();
     }, 50);
-  }, [status, currentWordIndex]);
+  }, [status, currentWordIndex, hasBuzzedThisQuestion]);
 
-  // Timer de 7 segundos para responder após o corte
+  // Timer de 10 segundos para responder após o corte
   useEffect(() => {
     if (status === 'buzzed') {
       timerIntervalRef.current = setInterval(() => {
@@ -355,10 +376,28 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     };
   }, [status]);
 
-  // Intervalo de leitura palavra por palavra
+  // Contagem regressiva de 10s finais após fim da leitura
+  useEffect(() => {
+    if (status === 'ending_countdown') {
+      const timer = setInterval(() => {
+        setEndCountdownRemaining((prev) => {
+          if (prev <= 1) {
+            clearInterval(timer);
+            setStatus('revealed');
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+
+      return () => clearInterval(timer);
+    }
+  }, [status]);
+
+  // Intervalo de leitura palavra por palavra (lastreado no WPM)
   useEffect(() => {
     if (status === 'reading') {
-      const intervalMs = Math.round(60000 / 240); // 240 WPM
+      const intervalMs = Math.round(60000 / wpm);
 
       readerIntervalRef.current = setInterval(() => {
         setCurrentWordIndex((prev) => {
@@ -370,7 +409,9 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
           if (next >= words.current.length) {
             clearInterval(readerIntervalRef.current!);
-            setStatus('idle');
+            // Entra nos 10 segundos finais para corte antes de revelar!
+            setStatus('ending_countdown');
+            setEndCountdownRemaining(10);
             return words.current.length;
           }
 
@@ -382,12 +423,12 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     return () => {
       if (readerIntervalRef.current) clearInterval(readerIntervalRef.current);
     };
-  }, [status]);
+  }, [status, wpm]);
 
   // Teclado: Barra de Espaço para CORTAR
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.code === 'Space' && (status === 'reading' || status === 'idle')) {
+      if (e.code === 'Space' && (status === 'reading' || status === 'idle' || status === 'ending_countdown')) {
         const target = e.target as HTMLElement;
         if (target.tagName !== 'INPUT' && target.tagName !== 'TEXTAREA') {
           e.preventDefault();
@@ -431,38 +472,78 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
       }
 
       setJudgment(res);
-      setStatus('judged');
-
       const isCorrect = res.status === 'correct';
 
-      if (gameMode === 'daily' && dailyQuestionData) {
-        const saved = saveStoredDailyResult({
-          dateStr: dailyQuestionData.dateStr,
-          dayIndex: dailyQuestionData.dayIndex,
-          questionId: currentQuestion.id,
-          answerCanonical: currentQuestion.answer_canonical_pt,
-          isCorrect,
-          isPower: res.points === 15,
-          points: res.points,
-          cutPercentage: measuredCutPercent,
-          cutTimeMs: measuredCutTimeMs,
-        });
-        setDailyResult(saved);
-        setStreakCount(saved.streak);
-      }
+      if (isCorrect) {
+        // ACERTOU: pontua e encerra a pergunta com o gabarito
+        setStatus('judged');
 
-      if (gameMode === 'unlimited') {
-        markQuestionSeen(currentQuestion.id);
-        const isNeg = res.points < 0;
-        setStats((prev) => ({
-          score: prev.score + res.points,
-          powers: prev.powers + (res.points === 15 ? 1 : 0),
-          tens: prev.tens + (res.points === 10 ? 1 : 0),
-          negs: prev.negs + (isNeg ? 1 : 0),
-          totalBuzzes: prev.totalBuzzes + 1,
-          correctAnswers: prev.correctAnswers + (isCorrect ? 1 : 0),
-          wrongAnswers: prev.wrongAnswers + (!isCorrect ? 1 : 0),
-        }));
+        if (gameMode === 'daily' && dailyQuestionData) {
+          const saved = saveStoredDailyResult({
+            dateStr: dailyQuestionData.dateStr,
+            dayIndex: dailyQuestionData.dayIndex,
+            questionId: currentQuestion.id,
+            answerCanonical: currentQuestion.answer_canonical_pt,
+            isCorrect: true,
+            isPower: res.points === 15,
+            points: res.points,
+            cutPercentage: measuredCutPercent,
+            cutTimeMs: measuredCutTimeMs,
+          });
+          setDailyResult(saved);
+          setStreakCount(saved.streak);
+        }
+
+        if (gameMode === 'unlimited') {
+          markQuestionSeen(currentQuestion.id);
+          setStats((prev) => ({
+            ...prev,
+            score: prev.score + res.points,
+            powers: prev.powers + (res.points === 15 ? 1 : 0),
+            tens: prev.tens + (res.points === 10 ? 1 : 0),
+            totalBuzzes: prev.totalBuzzes + 1,
+            correctAnswers: prev.correctAnswers + 1,
+          }));
+        }
+      } else {
+        // ERROU: computa perda (-5 pts), bloqueia para esta pergunta, e retoma a leitura automaticamente!
+        setHasBuzzedThisQuestion(true);
+
+        if (gameMode === 'daily' && dailyQuestionData) {
+          const saved = saveStoredDailyResult({
+            dateStr: dailyQuestionData.dateStr,
+            dayIndex: dailyQuestionData.dayIndex,
+            questionId: currentQuestion.id,
+            answerCanonical: currentQuestion.answer_canonical_pt,
+            isCorrect: false,
+            isPower: false,
+            points: res.points,
+            cutPercentage: measuredCutPercent,
+            cutTimeMs: measuredCutTimeMs,
+          });
+          setDailyResult(saved);
+        }
+
+        if (gameMode === 'unlimited') {
+          const isNeg = res.points < 0;
+          setStats((prev) => ({
+            ...prev,
+            score: prev.score + res.points,
+            negs: prev.negs + (isNeg ? 1 : 0),
+            totalBuzzes: prev.totalBuzzes + 1,
+            wrongAnswers: prev.wrongAnswers + 1,
+          }));
+        }
+
+        // Continua logo depois sem precisar clicar em nada!
+        setTimeout(() => {
+          setJudgment(null);
+          if (currentWordIndex < words.current.length) {
+            setStatus('reading');
+          } else {
+            setStatus('ending_countdown');
+          }
+        }, 1300);
       }
     } catch (err) {
       console.error('Erro ao conectar ao juiz:', err);
@@ -473,7 +554,6 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     if (unlimitedIndex < unlimitedQuestions.length - 1) {
       setUnlimitedIndex((prev) => prev + 1);
     } else {
-      // Re-embaralha ao chegar ao fim do pool
       setUnlimitedQuestions(shuffleArray(unlimitedQuestions));
       setUnlimitedIndex(0);
     }
@@ -501,10 +581,23 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     return { label: 'Difícil', bg: 'bg-[#ffccd5] text-[#9f1239]' };
   };
 
+  // Se o modo selecionado for Multiplayer, renderiza a tela dedicada de Sala
+  if (gameMode === 'multiplayer') {
+    return (
+      <MultiplayerRoom
+        initialCode={roomCodeFromUrl}
+        onExit={() => {
+          setGameMode('daily');
+          setRoomCodeFromUrl(null);
+        }}
+      />
+    );
+  }
+
   return (
     <div className="h-full flex flex-col justify-between p-3 sm:p-5 max-w-[1650px] mx-auto select-none">
       {/* ======================================================== */}
-      {/* 1. HEADER FIXO COMPACTO (SEM ROLAGEM)                    */}
+      {/* 1. HEADER FIXO COMPACTO COM SELETOR DE MODOS (3 OPÇÕES)  */}
       {/* ======================================================== */}
       <header className="flex items-center justify-between border-b-2 border-ink/15 pb-2.5 mb-3 shrink-0">
         <div className="flex items-center gap-3">
@@ -517,7 +610,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
           </span>
         </div>
 
-        {/* Chave Seletora de Modo (Diário vs Ilimitado) e Placar */}
+        {/* Chave Seletora de Modo (Diário vs Ilimitado vs Amigos) e Placar */}
         <div className="flex items-center gap-3">
           {gameMode === 'unlimited' && (
             <div className="hidden md:flex items-center gap-2 bg-card border-2 border-ink rounded-full px-3 py-1 shadow-solid-sm text-xs font-bold text-ink">
@@ -537,7 +630,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 setGameMode('daily');
                 resetQuestionState();
               }}
-              className={`btn-salinha px-3.5 py-1 text-xs font-black transition ${
+              className={`btn-salinha px-3 py-1 text-xs font-black transition ${
                 gameMode === 'daily'
                   ? 'bg-or text-white border-2 border-ink shadow-solid-sm'
                   : 'bg-transparent text-ink border-transparent shadow-none hover:bg-paper'
@@ -551,7 +644,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 setGameMode('unlimited');
                 resetQuestionState();
               }}
-              className={`btn-salinha px-3.5 py-1 text-xs font-black transition ${
+              className={`btn-salinha px-3 py-1 text-xs font-black transition ${
                 gameMode === 'unlimited'
                   ? 'bg-mu text-ink border-2 border-ink shadow-solid-sm'
                   : 'bg-transparent text-ink border-transparent shadow-none hover:bg-paper'
@@ -559,6 +652,16 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
             >
               <InfinityIcon className="w-3.5 h-3.5 mr-1" />
               Ilimitado
+            </button>
+            <button
+              onClick={() => {
+                setGameMode('multiplayer');
+                resetQuestionState();
+              }}
+              className="btn-salinha px-3 py-1 text-xs font-black transition bg-transparent text-ink border-transparent shadow-none hover:bg-paper"
+            >
+              <Users className="w-3.5 h-3.5 mr-1" />
+              Amigos (Sala)
             </button>
           </div>
         </div>
@@ -669,7 +772,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 )}
               </div>
 
-              {/* Base do Card: Barra de Progresso */}
+              {/* Base do Card: Barra de Progresso e 10s Finais */}
               <div className="pt-3 mt-2 border-t-2 border-ink/15 flex items-center justify-between text-xs font-bold text-suave shrink-0">
                 <div className="flex items-center gap-2 sm:gap-3">
                   <span>Leitura:</span>
@@ -684,9 +787,23 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                     />
                   </div>
                 </div>
-                <span>
-                  {currentWordIndex}/{words.current.length} palavras
-                </span>
+
+                {status === 'ending_countdown' ? (
+                  <div className="flex items-center gap-2 text-rd font-black animate-pulse">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>{endCountdownRemaining}s FINAIS PARA CORTAR!</span>
+                    <div className="w-20 h-2 bg-paper border border-ink rounded-full overflow-hidden p-0.5">
+                      <div 
+                        className="h-full bg-rd rounded-full transition-all duration-1000 ease-linear"
+                        style={{ width: `${(endCountdownRemaining / 10) * 100}%` }}
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <span>
+                    {currentWordIndex}/{words.current.length} palavras
+                  </span>
+                )}
               </div>
             </>
           ) : (
@@ -707,9 +824,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
         </div>
 
         {/* ---------------------------------------------------------------------- */}
-        {/* COLUNA DA DIREITA: A ORDEM SOLICITADA PELO USUÁRIO                     */}
-        {/* NO MODO ILIMITADO: 1. FILTROS -> 2. CONTROLES -> 3. GABARITOS          */}
-        {/* NO MODO DIÁRIO:    1. CONTROLES -> 2. GABARITO/RESULTADO               */}
+        {/* COLUNA DA DIREITA: FILTROS → CONTROLES → GABARITOS                     */}
         {/* ---------------------------------------------------------------------- */}
         <div className="lg:col-span-5 h-full flex flex-col justify-between gap-3 card-salinha p-4 sm:p-5 overflow-hidden bg-card">
           
@@ -726,6 +841,32 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 <span className="bg-creme border border-ink px-2 py-0.5 rounded-full text-[11px] shadow-solid-sm">
                   {unlimitedQuestions.length} questões encontradas
                 </span>
+              </div>
+
+              {/* Velocidade de Leitura WPM */}
+              <div className="flex items-center justify-between">
+                <div className="text-[10px] font-black uppercase text-suave flex items-center gap-1">
+                  <Clock className="w-3 h-3 text-or" /> Velocidade:
+                </div>
+                <div className="flex gap-1">
+                  {[
+                    { label: '180 WPM (3/s)', val: 180 },
+                    { label: '240 WPM (4/s)', val: 240 },
+                    { label: '300 WPM (5/s)', val: 300 },
+                  ].map((spd) => (
+                    <button
+                      key={spd.val}
+                      onClick={() => setWpm(spd.val)}
+                      className={`px-2 py-0.5 rounded-full border text-[10px] font-bold transition ${
+                        wpm === spd.val
+                          ? 'bg-or text-white border-ink shadow-solid-sm'
+                          : 'bg-paper text-suave border-ink/30 hover:bg-[#e4ddce]'
+                      }`}
+                    >
+                      {spd.label}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* Filtro Multi-seleção: Dificuldades */}
@@ -796,14 +937,13 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
           )}
 
           {/* =================================================================== */}
-          {/* OS CONTROLES (BUZZER, INICIAR, GABARITO, PRÓXIMA)                   */}
-          {/* NO ILIMITADO FICA NO MEIO (2º); NO DIÁRIO FICA NO TOPO (1º)         */}
+          {/* OS CONTROLES (BUZZER COM 10s, BARRINHA SUAVE, INICIAR, GABARITO)    */}
           {/* =================================================================== */}
           <div className="shrink-0 space-y-2.5 pb-2.5 border-b-2 border-ink/15">
             {status === 'buzzed' ? (
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-rd font-black text-xs uppercase tracking-wider">
+                  <div className="flex items-center gap-1.5 text-rd font-black text-xs uppercase tracking-wider animate-pulse">
                     <Scissors className="w-4 h-4 text-rd" />
                     CORTADO AOS {measuredCutPercent}% ({measuredCutTimeMs} ms)!
                   </div>
@@ -812,10 +952,11 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                   </div>
                 </div>
 
-                <div className="w-full h-2 bg-paper border-2 border-ink rounded-full overflow-hidden p-0.5">
+                {/* BARRINHA DE TEMPO DE 10s DESCENDO SUAVEMENTE */}
+                <div className="w-full h-2.5 bg-paper border-2 border-ink rounded-full overflow-hidden p-0.5">
                   <div
                     className="h-full bg-rd rounded-full transition-all duration-1000 ease-linear"
-                    style={{ width: `${(buzzTimeRemaining / 7) * 100}%` }}
+                    style={{ width: `${(buzzTimeRemaining / 10) * 100}%` }}
                   />
                 </div>
 
@@ -855,15 +996,20 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 {/* Botão de CORTAR Principal */}
                 <button
                   onClick={handleBuzz}
-                  disabled={status === 'judged' || status === 'revealed'}
+                  disabled={status === 'judged' || status === 'revealed' || hasBuzzedThisQuestion}
                   className={`btn-salinha w-full py-3.5 text-xl tracking-wide uppercase transition ${
-                    status === 'judged' || status === 'revealed'
+                    hasBuzzedThisQuestion
                       ? 'bg-paper text-ink/30 border-ink/30 shadow-none cursor-not-allowed'
-                      : 'bg-or hover:bg-or-dark text-white shadow-solid cursor-pointer'
+                      : status === 'judged' || status === 'revealed'
+                        ? 'bg-paper text-ink/30 border-ink/30 shadow-none cursor-not-allowed'
+                        : 'bg-or hover:bg-or-dark text-white shadow-solid cursor-pointer'
                   }`}
                 >
                   <Scissors className="w-5 h-5 mr-1.5" />
-                  CORTAR! <span className="text-[11px] bg-ink text-white px-2 py-0.5 rounded-full ml-2 font-mono">Espaço</span>
+                  {hasBuzzedThisQuestion ? 'VOCÊ JÁ CORTOU NESTA QUESTÃO' : 'CORTAR!'}
+                  {!hasBuzzedThisQuestion && (
+                    <span className="text-[11px] bg-ink text-white px-2 py-0.5 rounded-full ml-2 font-mono">Espaço</span>
+                  )}
                 </button>
 
                 {/* Linha com Iniciar, Gabarito e Próxima */}
@@ -906,44 +1052,44 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
           {/* =================================================================== */}
           {/* SEÇÃO DO GABARITO / RESPOSTA CERTA                                  */}
-          {/* NUNCA MOSTRA A RESPOSTA EM CACHE SE O USUÁRIO NÃO CORTOU/PEDIU!     */}
           {/* =================================================================== */}
           <div className="flex-1 min-h-0 overflow-y-auto pr-1 flex flex-col justify-center">
-            {/* Caso 1: Pergunta foi respondida ou gabarito revelado ativamente */}
+            
+            {/* Flash do Juiz (Acerto ou Erro com Retomada Automática) */}
+            {judgment && (
+              <div
+                className={`p-3 rounded-2xl border-2 border-ink shadow-solid-sm flex items-start gap-2.5 mb-2.5 animate-bounce ${
+                  judgment.status === 'correct'
+                    ? judgment.points === 15
+                      ? 'bg-mu'
+                      : 'bg-[#d8f3dc]'
+                    : 'bg-[#ffccd5]'
+                }`}
+              >
+                {judgment.status === 'correct' ? (
+                  <CheckCircle2 className="w-5 h-5 text-ink shrink-0 mt-0.5" />
+                ) : (
+                  <XCircle className="w-5 h-5 text-rd shrink-0 mt-0.5" />
+                )}
+                <div className="flex-1 text-xs">
+                  <div className="font-black text-sm flex items-center justify-between text-ink">
+                    <span>{judgment.message}</span>
+                    <span className="font-mono text-sm font-black px-2 py-0.5 rounded-full bg-card border border-ink">
+                      {judgment.points > 0 ? `+${judgment.points}` : judgment.points} pts
+                    </span>
+                  </div>
+                  {measuredCutTimeMs > 0 && (
+                    <p className="text-[11px] font-bold text-ink/80 mt-0.5">
+                      ⏱️ Reação: <strong>{measuredCutTimeMs} ms</strong> &bull; Cortou aos <strong>{measuredCutPercent}%</strong>
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Caso 1: Pergunta foi finalizada ou gabarito revelado */}
             {status === 'judged' || status === 'revealed' ? (
               <div className="space-y-2.5">
-                {/* Veredito do Juiz com Pontuação e Reação (se cortado) */}
-                {judgment && (
-                  <div
-                    className={`p-3 rounded-2xl border-2 border-ink shadow-solid-sm flex items-start gap-2.5 ${
-                      judgment.status === 'correct'
-                        ? judgment.points === 15
-                          ? 'bg-mu'
-                          : 'bg-[#d8f3dc]'
-                        : 'bg-[#ffccd5]'
-                    }`}
-                  >
-                    {judgment.status === 'correct' ? (
-                      <CheckCircle2 className="w-5 h-5 text-ink shrink-0 mt-0.5" />
-                    ) : (
-                      <XCircle className="w-5 h-5 text-rd shrink-0 mt-0.5" />
-                    )}
-                    <div className="flex-1 text-xs">
-                      <div className="font-black text-sm flex items-center justify-between text-ink">
-                        <span>{judgment.message}</span>
-                        <span className="font-mono text-sm font-black px-2 py-0.5 rounded-full bg-card border border-ink">
-                          {judgment.points > 0 ? `+${judgment.points}` : judgment.points} pts
-                        </span>
-                      </div>
-                      {measuredCutTimeMs > 0 && (
-                        <p className="text-[11px] font-bold text-ink/80 mt-0.5">
-                          ⏱️ Reação: <strong>{measuredCutTimeMs} ms</strong> &bull; Cortou aos <strong>{measuredCutPercent}%</strong>
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                )}
-
                 {/* Resposta Correta Oficial */}
                 <div className="bg-paper border-2 border-ink rounded-2xl p-3 shadow-solid-sm">
                   <div className="text-[10px] uppercase font-black text-suave">
@@ -1021,7 +1167,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 )}
               </div>
             ) : gameMode === 'daily' && dailyResult ? (
-              /* Caso 2: Modo Diário já jogado hoje, mas usuário não pediu o gabarito nesta sessão (NÃO ESTRAGA O SPOILER!) */
+              /* Caso 2: Modo Diário já jogado hoje, aguardando clique explícito do usuário */
               <div className="bg-creme border-2 border-ink rounded-2xl p-4 shadow-solid-sm space-y-3 text-center">
                 <div className="inline-flex items-center gap-1.5 text-xs font-black text-gr-dark uppercase">
                   <CheckCircle2 className="w-4 h-4 text-gr" /> Você já concluiu o corte de hoje!
@@ -1058,11 +1204,11 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 </div>
               </div>
             ) : (
-              /* Caso 3: Pergunta ainda não respondida - mensagem de incentivo (SEM SPOILER!) */
+              /* Caso 3: Pergunta ainda não respondida */
               <div className="text-center py-4 text-suave text-xs font-medium space-y-1">
                 <Sparkles className="w-5 h-5 text-or mx-auto animate-pulse" />
                 <p className="font-bold text-ink">A resposta aparecerá aqui assim que você cortar!</p>
-                <p className="text-[11px]">Quanto mais cedo você cortar antes do (*), maior a sua pontuação.</p>
+                <p className="text-[11px]">Você tem 10s para digitar. Se errar, a leitura continuará automaticamente.</p>
               </div>
             )}
           </div>
