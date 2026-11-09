@@ -2772,5 +2772,685 @@
     "explanation": "Fotossíntese é o processo pelo qual plantas, algas e algumas bactérias captam parte da energia da luz e a guardam em substâncias orgânicas. Essa energia permite que produzam matéria para crescer e chega aos demais seres vivos pelas cadeias ...",
     "wiki_url": "https://pt.wikipedia.org/wiki/Fotoss%C3%ADntese",
     "wiki_extract": "Fotossíntese é o processo pelo qual plantas, algas e algumas bactérias captam parte da energia da luz e a guardam em substâncias orgânicas. Essa energia permite que produzam matéria para crescer e chega aos demais seres vivos pelas cadeias alimentares.\nNa forma realizada por plantas, algas e cianobactérias, a água e o dióxido de carbono participam da formação de matéria orgânica, e o oxigênio é liberado. Quase todo o oxigênio livre da atmosfera e das águas tem essa origem. Outras bactérias aproveitam a luz sem liberar oxigênio porque retiram elétrons de substâncias diferentes da água, em uma forma chamada fotossíntese anoxigênica.\nDentro das células, pigmentos como a clorofila absorvem luz e iniciam uma sequência de transferências de energia e elétrons. A energia captada alimenta a produção de compostos orgânicos a partir do carbono do CO2. A organização dessas etapas muda entre os grupos e também responde à quantidade e à cor da luz, à temperatura, à água e aos gases disponíveis.\nAo produzir matéria orgânica, a fotossíntese sustenta a maior parte dos ecossistemas e participa dos ciclos do carbono e do oxigênio. O uso da água por ancestrais das cianobactérias começou a enriquecer oceanos e atmosfera com oxigênio, enquanto os cloroplastos das plantas e das algas descendem de cianobactérias que passaram a viver dentro de outras células.\nO caminho entre a luz que alcança uma folha e a formação de nova biomassa reúne fenômenos que duram de frações mínimas de segundo a estações inteiras. Compreendê-lo permite explicar o crescimento das plantas, a produtividade dos oceanos, os limites impostos pelo ambiente e as tentativas de aproveitar a luz na agricultura, na produção de combustíveis e em sistemas artificiais."
+  },
+  {
+    "id": "auto-batalha-de-waterloo",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Guerras Napoleônicas",
+    "difficulty": 2,
+    "question_pt": "Um exército do Primeiro Império Francês, sob o comando do Imperador Napoleão (72 000 homens), foi derrotado pelos exércitos da Sétima Coligação que incluíam uma força britânica liderada pelo Duque de Wellington, e uma força prussiana comandada por Gebhard Leberecht von Blücher (118 000 homens). Este confronto marcou o fim dos Cem Dias e foi a última batalha de Napoleão; a sua derrota terminou com o seu governo como Imperador. Depois do regresso de Napoleão ao poder em 1815, muitos dos Estados que se tinham oposto ao Imperador formaram a Sétima Coligação, dando início à mobilização dos seus exércitos. A esta entidade foi um confronto militar ocorrido a 18 de Junho de 1815 perto de Waterloo, na atual Bélgica (então parte integrante do Reino Unido dos Países Baixos). (*) Identifique esta histórica batalha de 1815 que selou a derrota definitiva de Napoleão Bonaparte.",
+    "formatted_answer_pt": "<b><u>Batalha de Waterloo</u></b>",
+    "answer_canonical_pt": "Batalha de Waterloo",
+    "accept_aliases": [
+      "Batalha de Waterloo"
+    ],
+    "prompt_aliases": [
+      "esta histórica batalha"
+    ],
+    "explanation": "A Batalha de Waterloo foi um confronto militar ocorrido a 18 de Junho de 1815 perto de Waterloo, na atual Bélgica (então parte integrante do Reino Unido dos Países Baixos). Um exército do Primeiro Império Francês, sob o comando do Imperador...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Batalha_de_Waterloo",
+    "wiki_extract": "A Batalha de Waterloo foi um confronto militar ocorrido a 18 de Junho de 1815 perto de Waterloo, na atual Bélgica (então parte integrante do Reino Unido dos Países Baixos). Um exército do Primeiro Império Francês, sob o comando do Imperador Napoleão (72 000 homens), foi derrotado pelos exércitos da Sétima Coligação que incluíam uma força britânica liderada pelo Duque de Wellington, e uma força prussiana comandada por Gebhard Leberecht von Blücher (118 000 homens). Este confronto marcou o fim dos Cem Dias e foi a última batalha de Napoleão; a sua derrota terminou com o seu governo como Imperador.\nDepois do regresso de Napoleão ao poder em 1815, muitos dos Estados que se tinham oposto ao Imperador formaram a Sétima Coligação, dando início à mobilização dos seus exércitos. Duas forças de grande dimensão sob o comando de Wellington e de Blücher concentraram-se perto da fronteira nordeste da França. Napoleão decidiu atacar na esperança de as destruir antes que dessem início a uma invasão coordenada da França, juntamente com outros membros da coligação. O confronto decisivo da campanha de três dias de Waterloo — 16 a 19 de Junho de 1815 —, teve lugar em Waterloo. De acordo com Wellington, a batalha foi \"a mais renhida a que assisti na minha vida\".\nNapoleão atrasou o início da batalha até ao meio-dia esperando que o terreno secasse. O exército de Wellington, posicionado ao longo da estrada para Bruxelas, na escarpa de Mont-Saint-Jean, resistiu a múltiplos ataques franceses até que, no final do dia, os prussianos chegaram em força e penetraram no flanco direito de Napoleão. Naquele momento, o exército de Wellington contra-atacou provocando a desordem das tropas francesas no campo-de-batalha. Posteriormente, as forças da coligação entraram em França repondo Luís XVIII no trono francês. Napoleão abdicou, rendeu-se aos britânicos e foi exilado na ilha de Santa Helena, onde morreu em 1821.\nO campo-de-batalha fica, actualmente em território belga, a cerca de 13 km a sudeste de Bruxelas, e a 1,6 km da cidade de Waterloo. No local da batalha existe hoje um enorme monumento designado por Monte do Leão (em francês Butte du Lion), construído por terra trazida do próprio terreno da batalha."
+  },
+  {
+    "id": "auto-batalha-de-stalingrado",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Segunda Guerra Mundial",
+    "difficulty": 2,
+    "question_pt": "A batalha foi um dos pontos de virada da guerra na Frente Oriental, marcando o limite da expansão alemã no território soviético, a partir de onde o Exército Vermelho empurraria as forças alemãs até Berlim. Marcada por violentos combates em ambientes fechados, privações e desrespeito e desprezo  pela vida de militares e civis, a luta em Stalingrado acabou sendo a maior (mais de 2,2 milhões de soldados envolvidos) e mais sangrenta (1,8 a 2 milhões de mortos, feridos ou capturados) batalha na história das guerras. Após serem derrotados, o Alto Comando alemão teve que retirar e relocar várias tropas estacionadas na Frente Ocidental para o leste, a fim de substituir suas perdas. A esta entidade (português brasileiro) ou Batalha de Estalinegrado (português europeu) foi um grande combate travado entre a Wehrmacht (o exército da Alemanha Nazista) e seus aliados do Eixo contra as tropas da União Soviética pela posse da cidade de Stalingrado (atual Volgogrado), às margens do rio Volga, entre 23 de agosto de 1942 e 2 de fevereiro de 1943, durante a Segunda Guerra Mundial. (*) Identifique esta sangrenta batalha urbana às margens do rio Volga marco de virada contra a Alemanha nazista.",
+    "formatted_answer_pt": "<b><u>Batalha de Stalingrado</u></b>",
+    "answer_canonical_pt": "Batalha de Stalingrado",
+    "accept_aliases": [
+      "Batalha de Stalingrado",
+      "Batalha de Estalingrado",
+      "Batalha de Stalinegrado",
+      "Batalha de Estalinegrado"
+    ],
+    "prompt_aliases": [
+      "esta sangrenta batalha"
+    ],
+    "explanation": "A Batalha de Stalingrado (português brasileiro) ou Batalha de Estalinegrado (português europeu) foi um grande combate travado entre a Wehrmacht (o exército da Alemanha Nazista) e seus aliados do Eixo contra as tropas da União Soviética pela...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Batalha_de_Stalingrado",
+    "wiki_extract": "A Batalha de Stalingrado (português brasileiro) ou Batalha de Estalinegrado (português europeu) foi um grande combate travado entre a Wehrmacht (o exército da Alemanha Nazista) e seus aliados do Eixo contra as tropas da União Soviética pela posse da cidade de Stalingrado (atual Volgogrado), às margens do rio Volga, entre 23 de agosto de 1942 e 2 de fevereiro de 1943, durante a Segunda Guerra Mundial. A batalha foi um dos pontos de virada da guerra na Frente Oriental, marcando o limite da expansão alemã no território soviético, a partir de onde o Exército Vermelho empurraria as forças alemãs até Berlim.\nMarcada por violentos combates em ambientes fechados, privações e desrespeito e desprezo  pela vida de militares e civis, a luta em Stalingrado acabou sendo a maior (mais de 2,2 milhões de soldados envolvidos) e mais sangrenta (1,8 a 2 milhões de mortos, feridos ou capturados) batalha na história das guerras. Após serem derrotados, o Alto Comando alemão teve que retirar e relocar várias tropas estacionadas na Frente Ocidental para o leste, a fim de substituir suas perdas.\nA ofensiva alemã para capturar a cidade de Stalingrado começou em 23 de agosto de 1942 (após um mês de combate nas cercanias), com o 6º Corpo de Exército e elementos do 4º Exército Panzer na linha de frente. O avanço da infantaria alemã foi acompanhado por centenas de aviões da Luftwaffe, que bombardearam as posições soviéticas na cidade e em seus arredores, rapidamente transformando Stalingrado numa grande ruína. A luta então acabou virando um desgastante combate casa por casa; ambos os lados comprometeram enormes reforços para a cidade a fim de se manter na ofensiva e o número de mortos foi subindo exponencialmente. Em meados de novembro de 1942, os alemães já tinham empurrado os defensores soviéticos para uma pequena zona na margem oeste do rio Volga. Porém, enquanto a Wehrmacht se ocupava em avançar pela cidade e esmagar os últimos bolsões de resistência soviética, o Exército Vermelho começava a mobilizar uma grande tropa na margem oposta do rio.\nAo final de novembro de 1942, os soviéticos lançaram uma enorme contra-ofensiva, a Operação Urano. Foi um grande ataque em pinça, movendo-se pelos enfraquecidos flancos das tropas do Eixo, formados principalmente por soldados romenos e húngaros, que eram as tropas mais fracas da coalizão liderada pelos alemães. As forças do Eixo nos flancos acabaram sendo facilmente sobrepujadas e o 6º Exército alemão se viu cercado e isolado na área de Stalingrado. O general Friedrich Paulus pediu autorização para tentar furar o cerco e abandonar suas posições indefensáveis, mas Adolf Hitler desautorizou qualquer retirada e ordenou que o exército cercado fosse reabastecido pelo ar enquanto uma tropa era preparada para resgatar o 6º exército. Combates intensos se seguiram pelos próximos dois meses. No começo de 1943, as forças do Eixo em Stalingrado estavam exaustas e quase sem munição e comida. Friedrich Paulus decidiu então desobedecer as ordens do seu Führer e permitiu que o que sobrava do seu exército se rendesse aos soviéticos.\n\n"
+  },
+  {
+    "id": "auto-guerra-dos-trinta-anos",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "História Moderna",
+    "difficulty": 2,
+    "question_pt": "Foi um dos maiores e mais destrutivos conflitos da história, deixando um saldo de mais de oito milhões de mortos, sendo a maioria da Europa Central. As rivalidades entre católicos e protestantes e assuntos constitucionais germânicos foram gradualmente transformados numa luta europeia. Apesar de os conflitos religiosos serem a causa direta da guerra, ela envolveu um grande esforço político do Império Sueco e da França para procurar diminuir a força da dinastia dos Habsburgos, que governavam a Monarquia de Habsburgo (futuro Império Austríaco). esta entidade (1618-1648) é a denominação genérica de uma série de guerras que diversas nações europeias travaram entre si a partir de 1618, especialmente na Alemanha, por motivos variados: rivalidades religiosas, dinásticas, territoriais e comerciais. (*) Identifique este devastador conflito europeu entre 1618 e 1648 encerrado pela Paz de Vestfália.",
+    "formatted_answer_pt": "<b><u>Guerra dos Trinta Anos</u></b>",
+    "answer_canonical_pt": "Guerra dos Trinta Anos",
+    "accept_aliases": [
+      "Guerra dos Trinta Anos",
+      "Guerra dos trinta anos",
+      "Guerra dos 30 anos",
+      "Guerra dos Trinta anos",
+      "Guerra dos trinta Anos",
+      "Guerra dos 30 Anos"
+    ],
+    "prompt_aliases": [
+      "este devastador conflito"
+    ],
+    "explanation": "Guerra dos Trinta Anos (1618-1648) é a denominação genérica de uma série de guerras que diversas nações europeias travaram entre si a partir de 1618, especialmente na Alemanha, por motivos variados: rivalidades religiosas, dinásticas, terri...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Guerra_dos_Trinta_Anos",
+    "wiki_extract": "Guerra dos Trinta Anos (1618-1648) é a denominação genérica de uma série de guerras que diversas nações europeias travaram entre si a partir de 1618, especialmente na Alemanha, por motivos variados: rivalidades religiosas, dinásticas, territoriais e comerciais. Foi um dos maiores e mais destrutivos conflitos da história, deixando um saldo de mais de oito milhões de mortos, sendo a maioria da Europa Central.\nAs rivalidades entre católicos e protestantes e assuntos constitucionais germânicos foram gradualmente transformados numa luta europeia. Apesar de os conflitos religiosos serem a causa direta da guerra, ela envolveu um grande esforço político do Império Sueco e da França para procurar diminuir a força da dinastia dos Habsburgos, que governavam a Monarquia de Habsburgo (futuro Império Austríaco). As hostilidades causaram sérios problemas econômicos e demográficos na Europa Central e tiveram fim com a assinatura, em 1648, de alguns tratados (Münster e Osnabrück) que, em bloco, são chamados de Paz de Vestfália.\nOs conflitos religiosos ocorridos na Alemanha e solucionados em 25 de setembro de 1555 com a assinatura da Paz de Augsburgo inauguraram um período no qual cada príncipe podia impor sua crença aos habitantes de seus domínios. O equilíbrio manteve-se enquanto os credos predominantes restringiam-se às religiões católica e luterana, mas o advento do calvinismo complicaria o cenário. Considerada uma força renovadora, a nova linha religiosa conquistou diversos soberanos. Os jesuítas e a Contrarreforma, por outro lado, contribuíram para que o catolicismo recuperasse forças. Assim nasceu o projeto expansionista dos Habsburgos, idealizado por Fernando, duque de Estíria, que fora educado pelos jesuítas. O perigo ameaçava tanto as potências protestantes no norte como a vizinha França.\nÀ medida que o conflito se desenrolava, a luta estava sendo influenciada por muitos outros temas colaterais, tais como as rivalidades e ambições dos príncipes alemães e a teimosia de alguns dirigentes europeus, sobretudo dos franceses e suecos, em abater o poderio do católico Sacro Império Romano-Germânico, o instrumento político da família dos Habsburgos.\nEsta conjuntura fora desencadeada na segunda metade do século XVI pelas fraquezas do Tratado de Augsburgo, um acordo concluído em 1555 entre o Sacro Império católico e os Estados luteranos.\nAs tensões religiosas agravaram-se na Alemanha no decurso do reinado do imperador Rodolfo II (1576-1612), período durante o qual foram destruídas muitas igrejas protestantes. As liberdades religiosas dos crentes protestantes foram limitadas, nomeadamente as relativas à liberdade de culto; os oficiais do governo lançaram as bases do Tratado de Augsburgo, que criou condições para o refortalecimento do poder católico.\nCom a fundação da União Protestante em 1608, uma aliança defensiva protestante dos príncipes e das cidades alemãs, e a criação, no ano seguinte, da Liga Católica, uma organização semelhante mas dos católicos romanos, tornava-se inevitável o recurso à guerra para tentar resolver o conflito latente, o qual foi desencadeado pela secção da Boêmia da União Protestante.\nNo Reino da Boêmia (atual República Checa), teve início uma disputa pela sucessão do trono, que envolveu católicos e protestantes. Fernando II de Habsburgo, com a ajuda de tropas e recursos financeiros da Espanha, dos germânicos católicos e do papa, conseguiu derrotar os protestantes da Boêmia.\nOs protestantes, que constituíam a maior parte da população, estavam indignados com a agressividade da hierarquia católica. Os protestantes exigiam de Fernando II, o rei da Boêmia e futuro imperador do Sacro Império Romano-Germânico, uma intercessão em seu favor. Todavia, as reivindicações foram totalmente ignoradas pelo rei, pois este era um fervoroso católico e um potencial herdeiro do poder imperial dos Habsburgos. Fernando II estabeleceu o catolicismo como único credo permitido na Boêmia e na Morávia. Os protestantes boêmios consideraram o ato de Fernando como uma violação da Carta de Majestade. Isso provocou nos boêmios o desejo de independência.\nA 23 de maio de 1618, descontentes com os católicos que destruíram um de seus templos, os protestantes invadiram o palácio real em Praga e defenestraram dois dos seus ministros e um secretário, fato que ficou por isso conhecido como Defenestrações de Praga, tendo despoletado a sublevação protestante. Assim começava a guerra, que abrangeu as revoltas holandesas depois de 1621 e concentrou-se em um confronto franco-Habsburgo após 1635."
+  },
+  {
+    "id": "auto-cruzadas",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Idade Média",
+    "difficulty": 2,
+    "question_pt": "As mais conhecidas dessas expedições militares são aquelas realizadas na Terra Santa entre 1095 e 1291, que tinham o objetivo de reconquistar Jerusalém e seus arredores do domínio muçulmano, depois que a região foi invadida pelo Califado Ortodoxo séculos antes. Começando com a Primeira Cruzada, que resultou na conquista de Jerusalém em 1099, dezenas de campanhas militares foram organizadas, fornecendo um ponto focal da história europeia por séculos. As cruzadas declinaram rapidamente após o século XV. esta entidade foram uma série de guerras religiosas iniciadas, apoiadas e, às vezes, dirigidas pela Igreja Cristã Latina no período medieval. (*) Identifique estas expedições militares cristãs medievais com o objetivo de recuperar a Terra Santa.",
+    "formatted_answer_pt": "<b><u>Cruzadas</u></b>",
+    "answer_canonical_pt": "Cruzadas",
+    "accept_aliases": [
+      "Cruzadas",
+      "Cruzada da Fé",
+      "Cruzados",
+      "As cruzadas",
+      "Invasões francas",
+      "Tomar a cruz",
+      "Cruzada"
+    ],
+    "prompt_aliases": [
+      "estas expedições militares"
+    ],
+    "explanation": "Cruzadas foram uma série de guerras religiosas iniciadas, apoiadas e, às vezes, dirigidas pela Igreja Cristã Latina no período medieval. As mais conhecidas dessas expedições militares são aquelas realizadas na Terra Santa entre 1095 e 1291,...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Cruzadas",
+    "wiki_extract": "Cruzadas foram uma série de guerras religiosas iniciadas, apoiadas e, às vezes, dirigidas pela Igreja Cristã Latina no período medieval. As mais conhecidas dessas expedições militares são aquelas realizadas na Terra Santa entre 1095 e 1291, que tinham o objetivo de reconquistar Jerusalém e seus arredores do domínio muçulmano, depois que a região foi invadida pelo Califado Ortodoxo séculos antes. Começando com a Primeira Cruzada, que resultou na conquista de Jerusalém em 1099, dezenas de campanhas militares foram organizadas, fornecendo um ponto focal da história europeia por séculos. As cruzadas declinaram rapidamente após o século XV.\nEm 1095, após um pedido de ajuda bizantino, o Papa Urbano II proclamou a primeira expedição no Concílio de Clermont. Ele encorajou o apoio militar ao imperador bizantino Aleixo I Comneno e convocou uma peregrinação armada a Jerusalém. Em todos os estratos sociais da Europa Ocidental, houve uma resposta entusiasmada. Os participantes vieram de toda a Europa e tinham motivações variadas. Isso incluía salvação religiosa, satisfação de obrigações feudais, oportunidades de vantagem econômica ou política. Expedições posteriores foram conduzidas por exércitos geralmente mais organizados, às vezes liderados por um rei. Todos receberam indulgências papais. Os sucessos iniciais estabeleceram quatro Estados cruzados: o Condado de Edessa; o Principado de Antioquia; o Reino de Jerusalém e o Condado de Trípoli. A presença europeia permaneceu na região de alguma forma até a queda de Acre em 1291. Depois disso, nenhuma outra grande campanha militar foi organizada.\nOutras campanhas sancionadas pela Igreja incluem cruzadas contra cristãos que não obedeciam às decisões papais e hereges, aquelas contra o Império Otomano e outras por motivos políticos. A luta contra os mouros na Península Ibérica – a Reconquista – terminou em 1492 com a Queda de Granada. A partir de 1147, as Cruzadas do Norte foram travadas contra tribos pagãs no norte da Europa. As cruzadas contra os cristãos começaram com a Cruzada Albigense no século XIII e continuaram durante as Guerras Hussitas no início do século XV. As cruzadas contra os otomanos começaram no final do século XIV e incluem a Cruzada de Varna. Cruzadas populares, incluindo a Cruzada das Crianças de 1212, foram geradas espontaneamente pelas massas e não foram sancionadas pela Igreja.\n\n"
+  },
+  {
+    "id": "auto-guerra-do-peloponeso",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Grécia Antiga",
+    "difficulty": 2,
+    "question_pt": "Sua história foi detalhadamente registrada por Tucídides, na obra História da Guerra do Peloponeso, e por Xenofonte, na obra Helênicas. De acordo com Tucídides, a razão fundamental da guerra foi o crescimento do poder ateniense e o temor que tal despertava entre os espartanos. A cidade de Corinto foi especialmente atuante, pressionando Esparta a fim de que esta declarasse guerra contra Atenas. esta entidade foi um conflito armado entre Atenas (centro político e civilizacional do mundo ocidental no século V a.C.) e Esparta (cidade-Estado de tradição militarista e costumes austeros), de 431 a 404 a.C. (*) Identifique este conflito bélico entre as cidades-estado de Atenas e Esparta narrado por Tucídides.",
+    "formatted_answer_pt": "<b><u>Guerra do Peloponeso</u></b>",
+    "answer_canonical_pt": "Guerra do Peloponeso",
+    "accept_aliases": [
+      "Guerra do Peloponeso",
+      "Guerra de Peloponeso",
+      "Segunda Guerra do Peloponeso",
+      "Guerras do Peloponeso",
+      "Guerra do peloponeso",
+      "Primeira Guerra do Peloponeso"
+    ],
+    "prompt_aliases": [
+      "este conflito bélico"
+    ],
+    "explanation": "Guerra do Peloponeso foi um conflito armado entre Atenas (centro político e civilizacional do mundo ocidental no século V a.C.) e Esparta (cidade-Estado de tradição militarista e costumes austeros), de 431 a 404 a.C. Sua história foi detalh...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Guerra_do_Peloponeso",
+    "wiki_extract": "Guerra do Peloponeso foi um conflito armado entre Atenas (centro político e civilizacional do mundo ocidental no século V a.C.) e Esparta (cidade-Estado de tradição militarista e costumes austeros), de 431 a 404 a.C. Sua história foi detalhadamente registrada por Tucídides, na obra História da Guerra do Peloponeso, e por Xenofonte, na obra Helênicas. De acordo com Tucídides, a razão fundamental da guerra foi o crescimento do poder ateniense e o temor que tal despertava entre os espartanos. A cidade de Corinto foi especialmente atuante, pressionando Esparta a fim de que esta declarasse guerra contra Atenas."
+  },
+  {
+    "id": "auto-batalha-de-midway",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Segunda Guerra Mundial",
+    "difficulty": 2,
+    "question_pt": "Antes de batalha, o Japão pretendia estender o seu perímetro de defesa no pacífico, especialmente depois do ataque Doolittle por aeronaves baseadas em porta-aviões em Tóquio em abril de 1942, e para garantir a segurança dos mares para ataques futuros na Midway, Fiji, Samoa, e Havai. Um ataque relacionado japonês nas ilhas Aleutas começou um dia antes, no dia 3 de junho. A força tarefa japonesa na Midway, conhecida como Kidō Butai, foi comandada por Chuichi Nagumo. A esta entidade foi uma batalha aeronaval travada em junho de 1942 no Oceano Pacífico entre as forças dos Estados Unidos e do Império do Japão durante a Segunda Guerra Mundial, seis meses depois do ataque japonês a Pearl Harbor, que marcou o início da Guerra do Pacífico. (*) Identifique esta batalha aeronaval decisiva no Pacífico em 1942 onde os EUA afundaram quatro porta-aviões japoneses.",
+    "formatted_answer_pt": "<b><u>Batalha de Midway</u></b>",
+    "answer_canonical_pt": "Batalha de Midway",
+    "accept_aliases": [
+      "Batalha de Midway",
+      "MIDWAY"
+    ],
+    "prompt_aliases": [
+      "esta batalha aeronaval"
+    ],
+    "explanation": "A Batalha de Midway foi uma batalha aeronaval travada em junho de 1942 no Oceano Pacífico entre as forças dos Estados Unidos e do Império do Japão durante a Segunda Guerra Mundial, seis meses depois do ataque japonês a Pearl Harbor, que mar...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Batalha_de_Midway",
+    "wiki_extract": "A Batalha de Midway foi uma batalha aeronaval travada em junho de 1942 no Oceano Pacífico entre as forças dos Estados Unidos e do Império do Japão durante a Segunda Guerra Mundial, seis meses depois do ataque japonês a Pearl Harbor, que marcou o início da Guerra do Pacífico.\nAntes de batalha, o Japão pretendia estender o seu perímetro de defesa no pacífico, especialmente depois do ataque Doolittle por aeronaves baseadas em porta-aviões em Tóquio em abril de 1942, e para garantir a segurança dos mares para ataques futuros na Midway, Fiji, Samoa, e Havai.  Um ataque relacionado japonês nas ilhas Aleutas começou um dia antes, no dia 3 de junho. A força tarefa japonesa na Midway, conhecida como Kidō Butai, foi comandada por Chuichi Nagumo. O plano de Yamamoto para a operação, que dependia de uma sincronização precisa, foi prejudicado pela dispersão demasiado ampla das forças, o que deixou o resto da frota incapaz de poder apoiar o Kidō Butai eficazmente. \nO resultado da batalha foi uma decisiva e crucial vitória para os norte-americanos, lembrada como o mais importante confronto naval da Segunda Guerra, marcando o ponto de virada no conflito e causando aos japoneses a perda de quatro porta-aviões e dois cruzadores de sua frota, além de duzentos pilotos navais, na frustrada tentativa de invadir e ocupar o atol de Midway, enfraquecendo permanentemente sua capacidade de combate no mar e no ar e lhes retirando a iniciativa militar pelo resto da guerra."
+  },
+  {
+    "id": "auto-batalha-das-term-pilas",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Guerras Médicas",
+    "difficulty": 2,
+    "question_pt": "A batalha durou três dias e se desenrolou no desfiladeiro das Termópilas ('Portões Quentes') em agosto ou setembro de 480 a.C. Ao mesmo tempo ocorreu a Batalha de Artemísio. A invasão persa foi uma resposta tardia à Primeira Guerra Médica, que havia terminado com a vitória de Atenas na Batalha de Maratona. A esta entidade foi travada no contexto da Segunda Guerra Médica entre uma aliança de pólis gregas liderada pelo rei de Esparta Leônidas I e o Império Aquemênida de Xerxes I. (*) Identifique esta batalha onde o rei espartano Leônidas liderou a resistência contra o imperador persa Xerxes.",
+    "formatted_answer_pt": "<b><u>Batalha das Termópilas</u></b>",
+    "answer_canonical_pt": "Batalha das Termópilas",
+    "accept_aliases": [
+      "Batalha das Termópilas",
+      "Batalha de Termópilas",
+      "300 espartanos"
+    ],
+    "prompt_aliases": [
+      "esta batalha onde"
+    ],
+    "explanation": "A Batalha das Termópilas foi travada no contexto da Segunda Guerra Médica entre uma aliança de pólis gregas liderada pelo rei de Esparta Leônidas I e o Império Aquemênida de Xerxes I. A batalha durou três dias e se desenrolou no desfiladeir...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Batalha_das_Term%C3%B3pilas",
+    "wiki_extract": "A Batalha das Termópilas foi travada no contexto da Segunda Guerra Médica entre uma aliança de pólis gregas liderada pelo rei de Esparta Leônidas I e o Império Aquemênida de Xerxes I. A batalha durou três dias e se desenrolou no desfiladeiro das Termópilas ('Portões Quentes') em agosto ou setembro de 480 a.C. Ao mesmo tempo ocorreu a Batalha de Artemísio.\nA invasão persa foi uma resposta tardia à Primeira Guerra Médica, que havia terminado com a vitória de Atenas na Batalha de Maratona. Xerxes reuniu um vasto exército e uma marinha para conquistar toda a Grécia e, em resposta à iminente invasão, o general ateniense Temístocles propôs que os aliados gregos bloqueassem o avanço do exército persa no desfiladeiro das Termópilas, enquanto bloqueavam o avanço da marinha persa no estreito de Artemísio.\nUm exército aliado formado por aproximadamente 7 000 homens marchou ao norte para bloquear a passagem no verão de 480 a.C.. O exército persa, que, segundo estimativas modernas seria composto por 300 000 homens, chegou à referida passagem no final de agosto ou início de setembro. Em um número bem inferior, os gregos detiveram o avanço persa durante sete dias no total (incluindo três de batalha). Durante dois dias repletos de batalha uma pequena força liderada por Leônidas bloqueou a única maneira que o imenso exército persa poderia usar para entrar na Grécia. Após o segundo dia de batalha, um residente local chamado Efialtes traiu os gregos, mostrando aos invasores um pequeno caminho que podiam utilizar para aceder à parte traseira das linhas gregas. Sabendo que suas linhas seriam ultrapassadas, Leônidas descartou a maior parte do exército grego, permanecendo para proteger a sua retirada, juntamente com 300 hoplitas espartanos, 700 téspios, 400 tebanos e talvez algumas centenas de soldados, sendo que porém a maioria dos quais morreu na batalha.\nApós o confronto, a marinha dos aliados em Artemísio recebeu a notícia da derrota nas Termópilas. Uma vez que sua estratégia requeria manter tanto Termópilas como Artemísio, o exército aliado decidiu retirar-se para Salamina. Os persas cruzaram Beócia e capturaram a cidade de Atenas, que previamente havia sido evacuada. No entanto, buscando uma vitória decisiva sobre a frota persa, o exército aliado atacou e derrotou os invasores na Batalha de Salamina no final do ano. Temendo ser preso na Europa, Xerxes retirou-se com a maior parte de seu exército para a Ásia, deixando o general Mardónio no comando do exército restante para completar a conquista da Grécia. Entretanto, no ano seguinte, os aliados conseguiram uma vitória decisiva na Batalha de Plateias, acabando com a invasão persa.\nEscritores antigos e modernos têm utilizado a Batalha das Termópilas como um exemplo do poder que um exército patriótico pode exercer defendendo seu próprio solo com um pequeno grupo de combatentes. O comportamento dos defensores na batalha também é usado como um exemplo nas vantagens do treinamento, do equipamento e bom uso da terra como multiplicadores de força de um exército, tornando-se um símbolo de coragem contra as adversidades."
+  },
+  {
+    "id": "auto-guerra-das-rosas",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "História da Inglaterra",
+    "difficulty": 2,
+    "question_pt": "As guerras ocorreram entre os apoiadores da Casa de Lencastre e da Casa de Iorque, dois ramos rivais da Casa Real dos Plantagenetas. O conflito resultou no fim da linhagem masculina dos Lencastre em 1471, deixando a família Tudor herdar sua reivindicação ao trono através da linhagem feminina. O conflito foi amplamente encerrado com a união das duas casas por meio de um casamento, criando a dinastia Tudor que governaria a Inglaterra posteriormente. As Guerras das Rosas (em inglês: Wars of the Roses) conhecidas na época e nos séculos seguintes como \"as Guerras Civis\", foram uma série de guerras civis travadas pelo controle do trono inglês de 1455 a 1487. (*) Identifique esta guerra civil dinástica inglesa entre as casas nobres rivais de Lancaster e York.",
+    "formatted_answer_pt": "<b><u>Guerra das Rosas</u></b>",
+    "answer_canonical_pt": "Guerra das Rosas",
+    "accept_aliases": [
+      "Guerra das Rosas",
+      "Guerra das rosas",
+      "Guerra das duas rosas",
+      "Guerra das duas Rosas",
+      "Guerra das Duas Rosas",
+      "Guerras das Rosas"
+    ],
+    "prompt_aliases": [
+      "esta guerra civil"
+    ],
+    "explanation": "As Guerras das Rosas (em inglês: Wars of the Roses) conhecidas na época e nos séculos seguintes como \"as Guerras Civis\", foram uma série de guerras civis travadas pelo controle do trono inglês de 1455 a 1487. As guerras ocorreram entre os a...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Guerra_das_Rosas",
+    "wiki_extract": "As Guerras das Rosas (em inglês: Wars of the Roses) conhecidas na época e nos séculos seguintes como \"as Guerras Civis\", foram uma série de guerras civis travadas pelo controle do trono inglês de 1455 a 1487. As guerras ocorreram entre os apoiadores da Casa de Lencastre e da Casa de Iorque, dois ramos rivais da Casa Real dos Plantagenetas. O conflito resultou no fim da linhagem masculina dos Lencastre em 1471, deixando a família Tudor herdar sua reivindicação ao trono através da linhagem feminina. O conflito foi amplamente encerrado com a união das duas casas por meio de um casamento, criando a dinastia Tudor que governaria a Inglaterra posteriormente.\nAs Guerras das Rosas estavam enraizadas nos problemas socioeconômicos da Inglaterra causados pela Guerra dos Cem Anos (1337–1453) contra a França, bem como pelo feudalismo bastardo quase militar resultante dos poderosos ducados criados pelo rei Eduardo III. A instabilidade mental do rei Henrique VI, da Casa de Lencastre, reacendeu o interesse de seu primo Ricardo, Duque de Iorque, em reivindicar o trono. A guerra começou em 1455, quando Iorque capturou Henrique na Primeira Batalha de St. Albans, após a qual Iorque foi nomeado Lorde Protetor pelo Parlamento. Os combates recomeçaram quatro anos depois, quando os iorquistas, liderados por Ricardo Neville, Conde de Warwick, capturaram Henrique novamente na Batalha de Northampton. Após tentar tomar o trono, Iorque foi morto na Batalha de Wakefield e seu filho Eduardo herdou sua reivindicação com base no controverso Ato de Acordo. Os iorquistas perderam a custódia de Henrique em 1461 após a Segunda Batalha de St. Albans, mas derrotaram os lancastrianos na Batalha de Towton. Eduardo, o iorquista, foi formalmente coroado em junho de 1461. \nEm 1464, Eduardo se casou com Isabel Woodville contra o conselho de Warwick e reverteu a política de Warwick de buscar laços mais estreitos com a França. Warwick se rebelou contra Eduardo em 1469, levando à prisão de Eduardo após os apoiadores de Warwick derrotarem um exército iorquista na Batalha de Edgcote. Eduardo foi autorizado a retomar seu governo depois que Warwick falhou em substituí-lo por seu irmão, Jorge, Duque de Clarence. Em menos de um ano, Warwick lançou uma invasão à Inglaterra ao lado de Margarida de Anjou, esposa de Henrique VI. Eduardo fugiu para Flandres e Henrique VI foi restaurado como rei em 1470. Eduardo montou uma contra-invasão com ajuda da Borgonha alguns meses depois e matou Warwick na Batalha de Barnet. Henrique foi devolvido à prisão, e seu único herdeiro foi posteriormente morto por Eduardo na Batalha de Tewkesbury, seguido pela própria morte de Henrique na Torre de Londres, possivelmente por ordem de Eduardo. Eduardo governou sem oposição pelos doze anos seguintes, durante os quais a Inglaterra desfrutou de um período de relativa paz. Com sua morte em abril de 1483, foi sucedido por Eduardo V, de 12 anos, que reinou por 78 dias até ser deposto por seu tio Ricardo III.\nRicardo assumiu o trono em meio a controvérsias sobre o desaparecimento dos dois filhos de Eduardo IV. Ele enfrentou uma revolta breve, mas significativa, e uma onda de deserções iorquistas. Em meio ao caos, Henrique Tudor, um descendente de Eduardo III por meio de Lady Margarida Beaufort e um veterano lancastriano, retornou do exílio com um exército e derrotou e matou Ricardo na Batalha de Bosworth Field em 1485. Tudor então assumiu o trono inglês como Henrique VII e uniu as casas rivais por meio do casamento com Isabel de Iorque, a filha mais velha e herdeira de Eduardo IV. As guerras foram concluídas em 1487, com a derrota da oposição iorquista restante por Henrique VII na Batalha de Stoke Field. A Casa de Tudor governaria a Inglaterra até 1603, um período que marcou o fortalecimento da monarquia e o fim da era medieval inglesa."
+  },
+  {
+    "id": "auto-sum-ria",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Mesopotâmia Antiga",
+    "difficulty": 2,
+    "question_pt": "\"terra de reis civilizados\" ou \"terra nativa\"; em hebraico: שִׁנְעָר‎;  Šinʿar; em egípcio: Sngr; em hitita: Šanhar[a]) é a mais antiga civilização conhecida da região do sul da Mesopotâmia (atual sul do Iraque), na região do delta dos rios Tigre e Eufrates, durante as idades do Cobre e do Bronze (c. 3 300 a 1 200 a.C), e uma das primeiras civilizações do mundo, junto com o Egito Antigo e o Vale do Indo. Ao longo dos vales dos rios Tigre e Eufrates, os agricultores sumérios cultivaram uma abundância de cereais e outras culturas, cujo excedente permitiu que se instalassem em um só lugar. esta entidade (em sumério: 𒋗𒈨𒊒; romaniz.: ki-en-ĝir15; ou 𒆠𒂗𒄀; romaniz.: k-en-gi[r]; em acádio: Šumeru; lit. (*) Identifique esta primeira grande civilização humana no sul da Mesopotâmia que inventou a escrita cuneiforme.",
+    "formatted_answer_pt": "<b><u>Suméria</u></b>",
+    "answer_canonical_pt": "Suméria",
+    "accept_aliases": [
+      "Suméria",
+      "Sumérios",
+      "Os sumerianos",
+      "Sumerianos",
+      "História da Suméria",
+      "Sumerólogo",
+      "Sumérias",
+      "Civilização suméria"
+    ],
+    "prompt_aliases": [
+      "esta primeira grande"
+    ],
+    "explanation": "Suméria (em sumério: 𒋗𒈨𒊒; romaniz.: ki-en-ĝir15; ou 𒆠𒂗𒄀; romaniz.: k-en-gi[r]; em acádio: Šumeru; lit. \"terra de reis civilizados\" ou \"terra nativa\"; em hebraico: שִׁנְעָר‎;  Šinʿar; em egípcio: Sngr; em hitita: Šanhar[a]) é a mais an...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Sum%C3%A9ria",
+    "wiki_extract": "Suméria (em sumério: 𒋗𒈨𒊒; romaniz.: ki-en-ĝir15; ou 𒆠𒂗𒄀; romaniz.: k-en-gi[r]; em acádio: Šumeru; lit. \"terra de reis civilizados\" ou \"terra nativa\"; em hebraico: שִׁנְעָר‎;  Šinʿar; em egípcio: Sngr; em hitita: Šanhar[a]) é a mais antiga civilização conhecida da região do sul da Mesopotâmia (atual sul do Iraque), na região do delta dos rios Tigre e Eufrates, durante as idades do Cobre e do Bronze (c. 3 300 a 1 200 a.C), e uma das primeiras civilizações do mundo, junto com o Egito Antigo e o Vale do Indo. Ao longo dos vales dos rios Tigre e Eufrates, os agricultores sumérios cultivaram uma abundância de cereais e outras culturas, cujo excedente permitiu que se instalassem em um só lugar. Os primeiros textos pré-históricos do tipo protoescrita remontam a c. 3 300 a.C., das cidades de Uruque e Jemdet Nasr; a primeira escrita cuneiforme também surgiu por volta de 3 000 a.C.\nHistoriadores modernos sugeriram que a Suméria foi estabelecida permanentemente entre c. 5 500 e 4 000 a.C. por um povo da Ásia Ocidental que falava a língua suméria, uma língua isolada e aglutinante. Esses povos pré-históricos são agora chamados \"proto-eufratinos\" ou \"ubaidianos\" e teoriza-se que evoluíram da Cultura de Samarra, no norte da Mesopotâmia. Os ubaidianos, embora nunca mencionados pelos próprios sumérios, são considerados pelos estudiosos modernos como a primeira força civilizadora da Suméria. Eles drenaram os pântanos para a agricultura, desenvolveram o comércio e estabeleceram manufaturas, incluindo a tecelagem, o trabalho em couro, a metalurgia, a alvenaria e a cerâmica.\nAlguns estudiosos contestam a ideia de uma língua proto-eufratina; acham que a língua suméria pode originalmente ter sido a dos povos de caçadores-coletores que viviam nos pântanos e no leste da Arábia e faziam parte da cultura bifacial da região. Registros históricos confiáveis ​​começam muito mais tarde; não há nenhum registro de qualquer tipo na Suméria que tenha sido datado antes de Enmebaragesi (c. século XXVI a.C.). O arqueólogo estadunidense-letão Juris Zarins acredita que os sumérios viveram ao longo da costa da Arábia Oriental, a atual região do Golfo Pérsico, antes da área ser inundada no último período glacial.\nA civilização suméria tomou forma no Período de Uruque (IV milênio a.C.), continuando nos períodos de Jemdet Nasr e Dinástico Arcaico. Durante o III milênio a.C., uma estreita simbiose cultural desenvolveu-se entre os sumérios, que falavam uma língua isolada, e os acádios, o que deu origem ao bilinguismo generalizado. A influência do sumério no acadiano (e vice-versa) é evidente em todas as áreas, desde o empréstimo lexical em escala maciça até a convergência sintática, morfológica e fonológica. Isto levou os estudiosos a se referir ao sumério-acádio do III milênio a.C. como um sprachbund. A Suméria foi conquistada pelos reis de língua semítica do Império Acadiano por volta de 2 270 a.C., mas o sumério continuou sendo usado como uma língua sagrada. Um governo sumério nativo ressurgiu por cerca de um século na Terceira Dinastia de Ur, aproximadamente 2 100–2 000 a.C., mas a língua acadiana também permaneceu em uso. A cidade suméria de Eridu, na costa do Golfo Pérsico, é considerada uma das cidades mais antigas, onde três culturas separadas podem ter se fundido: a dos camponeses ubaidianos, vivendo em cabanas de barro e praticando irrigação; a dos pastores semitas móveis nômades que vivem em tendas e seguem manadas de ovelhas e cabras; e a dos pescadores, que vivem em cabanas de juncos nos pântanos, que podem ter sido os ancestrais dos sumérios."
+  },
+  {
+    "id": "auto-fen-cia",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Antiguidade Oriental",
+    "difficulty": 2,
+    "question_pt": "A civilização fenícia foi uma cultura comercial marítima empreendedora que se espalhou por todo o mar Mediterrâneo durante o período que foi de 1 500 a.C. Os fenícios realizavam comércio através da galé, navio movido a velas e remos, e são creditados como os inventores dos birremes. Não se conhece com exatidão a que ponto os fenícios viam a si próprios como uma única etnia; sua civilização estava organizada em cidades-estado, de forma semelhante à Grécia Antiga; cada uma destas constituía uma unidade política independente, que frequentemente entravam em conflito e podiam dominar umas as outras, embora também colaborassem através de ligas e alianças. Civilização esta entidade (em fenício: 𐤊𐤍𐤏𐤍, KNʿN; em hebraico: כְּנַעַן; romaniz.: Kənáʿan; em grego clássico: Φοινίκη; romaniz.: Pheníkē; em latim: Phoenicia) foi uma civilização da Antiguidade cujo epicentro se localizava no norte da antiga Canaã, ao longo das regiões litorâneas dos atuais Líbano, Síria e norte da Palestina. (*) Identifique esta civilização de navegadores e comerciantes no Mediterrâneo criadora do alfabeto fonético.",
+    "formatted_answer_pt": "<b><u>Fenícia</u></b>",
+    "answer_canonical_pt": "Fenícia",
+    "accept_aliases": [
+      "Fenícia",
+      "Mitologia Fenícia",
+      "Fenícios",
+      "Mitologia fenícia",
+      "Fenícias",
+      "Sidônios"
+    ],
+    "prompt_aliases": [
+      "esta civilização de"
+    ],
+    "explanation": "Civilização Fenícia (em fenício: 𐤊𐤍𐤏𐤍, KNʿN; em hebraico: כְּנַעַן; romaniz.: Kənáʿan; em grego clássico: Φοινίκη; romaniz.: Pheníkē; em latim: Phoenicia) foi uma civilização da Antiguidade cujo epicentro se localizava no norte da antig...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Fen%C3%ADcia",
+    "wiki_extract": "Civilização Fenícia (em fenício: 𐤊𐤍𐤏𐤍, KNʿN; em hebraico: כְּנַעַן; romaniz.: Kənáʿan; em grego clássico: Φοινίκη; romaniz.: Pheníkē; em latim: Phoenicia) foi uma civilização da Antiguidade cujo epicentro se localizava no norte da antiga Canaã, ao longo das regiões litorâneas dos atuais Líbano, Síria e norte da Palestina. A civilização fenícia foi uma cultura comercial marítima empreendedora que se espalhou por todo o mar Mediterrâneo durante o período que foi de 1 500 a.C. a 300 a.C.. Os fenícios realizavam comércio através da galé, navio movido a velas e remos, e são creditados como os inventores dos birremes.\nNão se conhece com exatidão a que ponto os fenícios viam a si próprios como uma única etnia; sua civilização estava organizada em cidades-estado, de forma semelhante à Grécia Antiga; cada uma destas constituía uma unidade política independente, que frequentemente entravam em conflito e podiam dominar umas as outras, embora também colaborassem através de ligas e alianças. Embora as fronteiras destas culturas antigas fossem incertas e inconstantes, a cidade de Tiro parece ter marcado seu ponto mais meridional. Sarepta (atual Sarafant), entre Sídon e Tiro, é a cidade mais extensivamente escavada pelos arqueólogos em território fenício.\nOs fenícios foram a primeira sociedade a fazer uso extenso, em nível estatal, do alfabeto. O alfabeto fonético fenício é tido como o ancestral de todos os alfabetos modernos, embora não representasse as vogais (que foram adicionadas mais tarde pelos gregos). Os fenícios falavam o idioma fenício, que pertence ao grupo canaanita da família linguística semita, sendo considerada língua irmã do hebraico. Através do comércio marítimo, os fenícios espalharam o uso do alfabeto até o Norte da África e Europa, onde foi adotado pelos antigos gregos, que o passaram aos etruscos, que por sua vez o repassaram aos romanos. Além de suas diversas inscrições, os fenícios deixaram diversos outros tipos de fontes escritas, porém poucas sobreviveram até os dias de hoje. A Praeparatio evangelica, de Eusébio de Cesareia, faz citações extensas de Filo de Biblos e Sanconíaton.\n\n"
+  },
+  {
+    "id": "auto-esparta",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Grécia Antiga",
+    "difficulty": 2,
+    "question_pt": "Ela surgiu como uma entidade política em torno do século X a.C., quando os invasores dórios subjugaram a população local. a cidade passou a se tornar o poder terrestre militar dominante na Grécia Antiga. Dada a sua preeminência militarista Esparta era reconhecida como a líder de todas as forças gregas combinadas durante as Guerras Greco-Persas. esta entidade (em grego dórico: Σπάρτα, Spártā; em grego ático: Σπάρτη, Spártē) ou Lacedemônia (português brasileiro) ou Lacedemónia (português europeu) (Λακεδαίμων, Lakedaímōn) foi uma proeminente pólis (cidade-Estado) da Grécia Antiga, situada nas margens do rio Eurotas, na Lacônia, sudeste do Peloponeso. (*) Identifique esta pólis grega militarista do Peloponeso famosa pelo treinamento austero da agogê.",
+    "formatted_answer_pt": "<b><u>Esparta</u></b>",
+    "answer_canonical_pt": "Esparta",
+    "accept_aliases": [
+      "Esparta",
+      "Espartanos",
+      "Governo Espartano",
+      "Governo espartano",
+      "Espartano",
+      "Lacedemônios",
+      "Lacedemônio",
+      "Antiga Esparta",
+      "Lacedemónios"
+    ],
+    "prompt_aliases": [
+      "esta pólis grega"
+    ],
+    "explanation": "Esparta (em grego dórico: Σπάρτα, Spártā; em grego ático: Σπάρτη, Spártē) ou Lacedemônia (português brasileiro) ou Lacedemónia (português europeu) (Λακεδαίμων, Lakedaímōn) foi uma proeminente pólis (cidade-Estado) da Grécia Antiga, situada ...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Esparta",
+    "wiki_extract": "Esparta (em grego dórico: Σπάρτα, Spártā; em grego ático: Σπάρτη, Spártē) ou Lacedemônia (português brasileiro) ou Lacedemónia (português europeu) (Λακεδαίμων, Lakedaímōn) foi uma proeminente pólis (cidade-Estado) da Grécia Antiga, situada nas margens do rio Eurotas, na Lacônia, sudeste do Peloponeso. Ela surgiu como uma entidade política em torno do século X a.C., quando os invasores dórios subjugaram a população local. Por volta de 650 a.C. a cidade passou a se tornar o poder terrestre militar dominante na Grécia Antiga.\nDada a sua preeminência militarista Esparta era reconhecida como a líder de todas as forças gregas combinadas durante as Guerras Greco-Persas. Entre 431 e 404 a.C. a cidade foi o principal inimigo de Atenas durante a Guerra do Peloponeso, conflito do qual Esparta saiu vitoriosa junto com sua Liga do Peloponeso, embora por um grande custo. A derrota de Esparta por Tebas na Batalha de Leuctra em 371 a.C. acabou com o papel proeminente de Esparta na região e iniciou o período da hegemonia tebana. No entanto, ela manteve a sua independência política até a conquista romana da Grécia em 146 a.C.. Em seguida a cidade passou por um longo período de declínio, especialmente durante a Idade Média, quando muitos espartanos mudaram-se para viver em Mistras. A Esparta Moderna é a capital da unidade regional da Lacônia, na Grécia contemporânea, e um centro para produtos como frutas cítricas e azeitonas.\nA cidade era única na Grécia Antiga por conta de seu sistema social e constituição, que eram completamente focados no treinamento militar de excelência. Seus habitantes eram classificados como esparciatas (cidadãos espartanos, que gozavam de plenos direitos), periecos (libertos) e hilotas (servos estatais, população local não espartana escravizada). Os esparciatas realizavam o agōgē, um rigoroso regime de treinamento e educação, sendo que as falanges espartanas eram amplamente consideradas entre as melhores no campo de batalha. As mulheres espartanas tinham consideravelmente mais direitos e igualdade em relação aos homens do que em outras partes do mundo clássico.\nEsparta foi objeto de fascínio em sua própria época, assim como no Ocidente após o Renascimento da cultura clássica. Este amor ou admiração de Esparta é conhecido como laconismo ou laconofilia. No seu auge, por volta de 500 a.C., o tamanho da cidade teria sido de cerca de 20 mil a 35 mil habitantes livres, além dos inúmeros periecos e hilotas. Com entre 40 mil e 50 mil habitantes, seria uma das maiores cidades-Estado gregas. No entanto, de acordo com Tucídides, a população de Atenas em 431 a.C. era de 360 a 610 mil habitantes, o que torna improvável que Atenas fosse menor do que Esparta durante o século V a.C.."
+  },
+  {
+    "id": "auto-cartago",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Antiguidade Clássica",
+    "difficulty": 2,
+    "question_pt": "Era o centro comercial mais importante do Mediterrâneo Antigo e uma das cidades mais ricas do mundo clássico. A cidade desenvolveu-se a partir de uma colónia fenícia para a capital de um império púnico que dominou grande parte do sudoeste do Mediterrâneo durante o primeiro milénio a.C. A lendária rainha Alyssa ou Dido é considerada a fundadora da cidade, embora sua historicidade tenha sido questionada. esta entidade (em árabe: قرطاج‎; romaniz.: Qartaj; em berbere: Kartajen; em grego clássico: Καρχηδών;  Karkhēdōn; em latim: Carthago ou Karthago; em fenício: 𐤒𐤓𐤕  𐤇𐤃𐤔𐤕; romaniz.: Qart-ḥadašt) foi a capital da civilização cartaginesa, situada na margem oriental do lago de Túnis, onde hoje é a capital da Tunísia. (*) Identifique esta potência comercial marítima do norte da África rival de Roma nas Guerras Púnicas.",
+    "formatted_answer_pt": "<b><u>Cartago</u></b>",
+    "answer_canonical_pt": "Cartago",
+    "accept_aliases": [
+      "Cartago",
+      "Carthago",
+      "Cártago",
+      "Sítio Arqueológico de Cartago"
+    ],
+    "prompt_aliases": [
+      "esta potência comercial"
+    ],
+    "explanation": "Cartago (em árabe: قرطاج‎; romaniz.: Qartaj; em berbere: Kartajen; em grego clássico: Καρχηδών;  Karkhēdōn; em latim: Carthago ou Karthago; em fenício: 𐤒𐤓𐤕  𐤇𐤃𐤔𐤕; romaniz.: Qart-ḥadašt) foi a capital da civilização cartaginesa, situa...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Cartago",
+    "wiki_extract": "Cartago (em árabe: قرطاج‎; romaniz.: Qartaj; em berbere: Kartajen; em grego clássico: Καρχηδών;  Karkhēdōn; em latim: Carthago ou Karthago; em fenício: 𐤒𐤓𐤕  𐤇𐤃𐤔𐤕; romaniz.: Qart-ḥadašt) foi a capital da civilização cartaginesa, situada na margem oriental do lago de Túnis, onde hoje é a capital da Tunísia. Era o centro comercial mais importante do Mediterrâneo Antigo e uma das cidades mais ricas do mundo clássico.\nA cidade desenvolveu-se a partir de uma colónia fenícia para a capital de um império púnico que dominou grande parte do sudoeste do Mediterrâneo durante o primeiro milénio a.C. A lendária rainha Alyssa ou Dido é considerada a fundadora da cidade, embora sua historicidade tenha sido questionada. De acordo com os relatos de Timeu de Taormina, ela comprou de uma tribo local a quantidade de terra que poderia ser coberta por uma pele de boi.\nA antiga cidade foi destruída pela República Romana na Terceira Guerra Púnica em 146 a.C. e depois reconstruída como a Cartago romana, que se tornou a principal cidade do Império Romano na província da África Proconsular. A cidade foi saqueada e destruída pelas forças omíadas após a Batalha de Cartago em 698 para evitar que fosse reconquistada pelo Império Bizantino. Permaneceu ocupada durante o período muçulmano e foi usada como forte pelos árabes até o haféssida, quando foi tomada pelos cruzados e seus habitantes foram massacrados durante a Oitava Cruzada. Os haféssida decidiram destruir as defesas da cidade para que ela não pudesse ser usada como base por uma potência hostil novamente. Também continuou a funcionar como sé episcopal.\nO poder regional mudou para Cairuão e a Almedina de Tunes no período medieval, até ao início do século XX, quando se começou a desenvolver o subúrbio costeiro de Túnis, incorporado como município de Cartago em 1919. O sítio arqueológico foi pesquisado pela primeira vez em 1830 pelo cônsul dinamarquês Christian Tuxen Falbe. As escavações foram realizadas na segunda metade do século XIX por Charles Ernest Beulé e por Alfred Louis Delattre. O Museu Nacional de Cartago foi fundado em 1875 pelo cardeal Charles Lavigerie. Escavações realizadas por arqueólogos franceses na década de 1920 atraíram uma quantidade extraordinária de atenção por causa das evidências que apontavam para o sacrifício de crianças. No entanto, esta não tem sido uma matéria consensual entre os estudiosos. O Museu Paleo-Cristão de Cartago ao ar livre tem exposições escavadas sob os auspícios da UNESCO de 1975 a 1984."
+  },
+  {
+    "id": "auto-imp-rio-mongol",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "História Medieval",
+    "difficulty": 2,
+    "question_pt": "Originário da Mongólia no Leste Asiático, o Império Mongol chegou a se estender da Europa Oriental e partes da Europa Central até o Mar do Japão, além de também para o norte, em partes do Ártico; para o leste e para o sul no subcontinente indiano, no sudeste da Ásia continental e no planalto iraniano; e para o oeste até o Levante e as montanhas dos Cárpatos. O Império Mongol surgiu da unificação de várias tribos nômades na pátria mongol sob a liderança de Genghis Khan (c. 1162-1227) a quem um conselho proclamou como o governante de todos os mongóis em 1206. O esta entidade dos séculos XIII e XIV foi o maior império de terras contíguas da história e o segundo maior império em área, perdendo apenas para o Império Britânico. (*) Identifique este maior império de terras contínuas da história fundado por Gêngis Khan.",
+    "formatted_answer_pt": "<b><u>Império Mongol</u></b>",
+    "answer_canonical_pt": "Império Mongol",
+    "accept_aliases": [
+      "Império Mongol",
+      "Império mongol",
+      "Império Tártaro",
+      "Imperador mongol",
+      "Mongólia Imperial"
+    ],
+    "prompt_aliases": [
+      "este maior império"
+    ],
+    "explanation": "O Império Mongol dos séculos XIII e XIV foi o maior império de terras contíguas da história e o segundo maior império em área, perdendo apenas para o Império Britânico. Originário da Mongólia no Leste Asiático, o Império Mongol chegou a se ...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Imp%C3%A9rio_Mongol",
+    "wiki_extract": "O Império Mongol dos séculos XIII e XIV foi o maior império de terras contíguas da história e o segundo maior império em área, perdendo apenas para o Império Britânico. Originário da Mongólia no Leste Asiático, o Império Mongol chegou a se estender da Europa Oriental e partes da Europa Central até o Mar do Japão, além de também para o norte, em partes do Ártico; para o leste e para o sul no subcontinente indiano, no sudeste da Ásia continental e no planalto iraniano; e para o oeste até o Levante e as montanhas dos Cárpatos. O Império Mongol surgiu da unificação de várias tribos nômades na pátria mongol sob a liderança de Genghis Khan (c. 1162-1227) a quem um conselho proclamou como o governante de todos os mongóis em 1206. O império cresceu rapidamente sob seu domínio e de seus descendentes, que enviaram exércitos invasores em todas as direções. O vasto império transcontinental conectou o Oriente com o Ocidente, o Pacífico com o Mediterrâneo, em uma Pax Mongolica forçada, permitindo a disseminação e troca de comércio, tecnologias, mercadorias e ideologias em toda a Eurásia.\nO império começou a se dividir devido a guerras de sucessão, enquanto os netos de Genghis Khan disputavam se a linha real deveria seguir de seu filho e herdeiro inicial Ögedei ou de um de seus outros filhos, como Tolui, Chagatai ou Jochi. Os toluídas prevaleceram após um expurgo sangrento das facções ogedeida e chagataida, mas as disputas continuaram entre os descendentes de Tolui. A principal razão para a divisão foi a disputa sobre se o Império Mongol se tornaria um império cosmopolita e sedentário ou se permaneceria fiel ao estilo de vida nômade mongol baseado nas estepes. Após a morte de Mangu Cã (1259), conselhos rivais curultai elegeram simultaneamente diferentes sucessores, os irmãos Arigue Buga e Kublai Khan, que lutaram entre si na Guerra Civil Toluída (1260-1264) e também enfrentaram desafios dos descendentes de outros filhos de Genghis. Kublai tomou o poder, mas a guerra civil se seguiu e ele não recuperou o controle das famílias chagataída e oguedaida.\nDurante os reinados de Gêngis e Ögedei, os mongóis sofreram derrotas ocasionais quando um general menos habilidoso recebeu o comando. Os mongóis siberianos tumedas derrotaram as forças mongóis sob o comando de Borokhula por volta de 1215-1217; Jalaladim derrotou Xigui-Cutugu na Batalha de Paruã em 1221; e os generais Jin Heda e Pu'a derrotaram Dolqolqu em 1230. Em cada caso, os mongóis retornaram logo depois com um exército muito maior liderado por um de seus melhores generais e foram, invariavelmente, vitoriosos. A Batalha de Ain Jalut na Galileia em 1260 marcou a primeira vez que os mongóis não voltariam para vingar imediatamente uma derrota, devido a uma combinação da morte de Mangu Cã em 1259, a Guerra Civil Toluida entre Ariq Böke e Kublai Khan, e Berke Khan da Horda de Ouro atacando Hulagu Cã na Pérsia. Embora os mongóis tenham lançado muito mais invasões ao Levante, ocupando-o brevemente e invadindo até Gaza após uma vitória decisiva na Batalha de Uádi Alcaznadar em 1299, eles se retiraram devido a vários fatores geopolíticos.\nNa época da morte de Kublai em 1294, o Império Mongol havia se dividido em quatro canatos ou impérios separados, cada um perseguindo seus próprios interesses e objetivos: o Canato da Horda Dourada no noroeste, o Canato de Chagatai na Ásia Central, o Ilcanato no sudoeste e a dinastia Yuan no leste, baseada na atual cidade de Pequim. Em 1304, os três canatos ocidentais aceitaram brevemente a suserania nominal da dinastia Yuan, mas em 1368 a dinastia chinesa Ming assumiu a capital mongol. Os governantes guenguísida de Yuan recuaram para a pátria mongol e continuaram a governar lá como a dinastia Yuan do Norte. O Ilcanato se desintegrou entre 1335 e 1353. A Horda de Ouro havia se transformado em canatos concorrentes no final do século XV e foi derrotada e expulsa da Rússia em 1480 pelo Grão-Principado de Moscou, enquanto o Canato de Chagatai durou, de uma forma ou de outra, até o ano de 1687.\n\n"
+  },
+  {
+    "id": "auto-vikings",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Escandinávia Medieval",
+    "difficulty": 2,
+    "question_pt": "Marinheiros e navegadores experientes em seus navios característicos chamados de dracars, os Vikings estabeleceram assentamentos e governos nórdicos nas Ilhas Britânicas, nas Ilhas Feroe, na Islândia, na Groenlândia, na Normandia e na Costa Báltica, bem como ao longo das rotas comerciais dos rios Dnieper e do Volga através na Rússia moderna, na Bielorrússia e Ucrânia, onde também eram conhecidos como varegues. Os normandos, os nórdicos-gaélicos, o povo rus, os faroeses e os islandeses emergiram dessas colônias nórdicas. A certa altura, um grupo de Rus Vikings foi tão para o sul que, depois de servir brevemente como guarda-costas do imperador bizantino, atacaram a cidade bizantina de Constantinopla. Viking (do nórdico antigo víkingr), víquingue ou viquingue é um termo habitualmente usado para se referir aos exploradores, guerreiros, comerciantes e piratas escandinavos que invadiram, exploraram e colonizaram grandes áreas da Europa e das ilhas do Atlântico Norte a partir do final do século VIII e até ao início do século XI. (*) Identifique estes navegadores guerreiros nórdicos que atacavam costas e chegaram à América nos drakkares.",
+    "formatted_answer_pt": "<b><u>Vikings</u></b>",
+    "answer_canonical_pt": "Vikings",
+    "accept_aliases": [
+      "Vikings",
+      "Viquingue",
+      "Viking",
+      "Víquingues",
+      "Víquingue",
+      "Viquingues"
+    ],
+    "prompt_aliases": [
+      "estes navegadores guerreiros"
+    ],
+    "explanation": "Viking (do nórdico antigo víkingr), víquingue ou viquingue é um termo habitualmente usado para se referir aos exploradores, guerreiros, comerciantes e piratas escandinavos que invadiram, exploraram e colonizaram grandes áreas da Europa e da...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Vikings",
+    "wiki_extract": "Viking (do nórdico antigo víkingr), víquingue ou viquingue é um termo habitualmente usado para se referir aos exploradores, guerreiros, comerciantes e piratas escandinavos que invadiram, exploraram e colonizaram grandes áreas da Europa e das ilhas do Atlântico Norte a partir do final do século VIII e até ao início do século XI.\nMarinheiros e navegadores experientes em seus navios característicos chamados de dracars, os Vikings estabeleceram assentamentos e governos nórdicos nas Ilhas Britânicas, nas Ilhas Feroe, na Islândia, na Groenlândia, na Normandia e na Costa Báltica, bem como ao longo das rotas comerciais dos rios Dnieper e do Volga através na Rússia moderna, na Bielorrússia e Ucrânia, onde também eram conhecidos como varegues. Os normandos, os nórdicos-gaélicos, o povo rus, os faroeses e os islandeses emergiram dessas colônias nórdicas. A certa altura, um grupo de Rus Vikings foi tão para o sul que, depois de servir brevemente como guarda-costas do imperador bizantino, atacaram a cidade bizantina de Constantinopla. Os Vikings também viajaram para o Mar Cáspio (na região do Irã, Daguestão e Azerbaijão) e até a Arábia. Eles também foram os primeiros europeus a chegar à América do Norte, brevemente fundando uma colônia em Terra Nova (Vinlândia). Ao espalharem a cultura nórdica para terras estrangeiras, eles simultaneamente trouxeram escravos, concubinas e influências culturais estrangeiras para a Escandinávia, influenciando o desenvolvimento genético e histórico de ambos. Durante a Era Viking, as terras natais nórdicas foram gradualmente consolidadas de reinos menores em três reinos maiores, nos territórios atuais da Dinamarca, Noruega e Suécia.\nOs vikings falavam nórdico antigo e faziam inscrições em runas. Durante a maior parte do período histórico das suas expedições, eles seguiram a religião nórdica antiga, porém mais tarde se converteram ao cristianismo. Os vikings tinham suas próprias leis, arte e arquitetura. A maioria deles eram agricultores, pescadores, artesãos e comerciantes. As concepções populares dos vikings muitas vezes diferem fortemente da civilização complexa e avançada dos nórdicos que emerge da arqueologia e de fontes históricas. Uma imagem romantizada dos vikings como nobres selvagens começou a surgir no século XVIII; isso se desenvolveu e se tornou amplamente propagado durante o revivificação viking do século XIX. As visões dos vikings como pagãos violentos e piratas ou como aventureiros intrépidos devem muito a variedades conflitantes do mito viking moderno que tomou forma no início do século XX. As atuais representações populares dos Vikings são tipicamente baseadas em clichês e estereótipos culturais, complicando a apreciação moderna do legado Viking. Essas representações raramente são precisas - por exemplo, não há evidências de que eles usassem capacetes com chifres, um elemento do traje que apareceu pela primeira vez no século XIX.\n\n"
+  },
+  {
+    "id": "auto-napole-o-bonaparte",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "História da França",
+    "difficulty": 2,
+    "question_pt": "Foi Imperador dos Franceses como Napoleão I de 1804 a 1814 e brevemente em 1815 durante os Cem Dias. Napoleão dominou os assuntos europeus e globais por mais de uma década, enquanto liderava a França contra uma série de coalizões nas guerras napoleônicas. Ele venceu a maioria desses conflitos e a grande maioria de suas batalhas, construindo um grande império que governava grande parte da Europa continental antes de seu colapso final em 1815. esta entidade (Ajaccio, 15 de agosto de 1769 – Longwood, 5 de maio de 1821) foi um estadista e líder militar francês que ganhou destaque durante a Revolução Francesa e liderou várias campanhas militares de sucesso durante as Guerras Revolucionárias Francesas. (*) Identifique este líder militar e imperador francês que conquistou grande parte da Europa.",
+    "formatted_answer_pt": "<b><u>Napoleão Bonaparte</u></b>",
+    "answer_canonical_pt": "Napoleão Bonaparte",
+    "accept_aliases": [
+      "Napoleão Bonaparte",
+      "Napoleão",
+      "Napoleão I",
+      "Napoleão I da França",
+      "Era Napoleónica",
+      "Era napoleónica",
+      "Napoléon Bonaparte",
+      "Napoleao",
+      "Napoleão I de França",
+      "Napoleão I, Imperador dos Franceses",
+      "Napoleone di Buonaparte"
+    ],
+    "prompt_aliases": [
+      "este líder militar"
+    ],
+    "explanation": "Napoleão Bonaparte (Ajaccio, 15 de agosto de 1769 – Longwood, 5 de maio de 1821) foi um estadista e líder militar francês que ganhou destaque durante a Revolução Francesa e liderou várias campanhas militares de sucesso durante as Guerras Re...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Napole%C3%A3o_Bonaparte",
+    "wiki_extract": "Napoleão Bonaparte (Ajaccio, 15 de agosto de 1769 – Longwood, 5 de maio de 1821) foi um estadista e líder militar francês que ganhou destaque durante a Revolução Francesa e liderou várias campanhas militares de sucesso durante as Guerras Revolucionárias Francesas. Foi Imperador dos Franceses como Napoleão I de 1804 a 1814 e brevemente em 1815 durante os Cem Dias. Napoleão dominou os assuntos europeus e globais por mais de uma década, enquanto liderava a França contra uma série de coalizões nas guerras napoleônicas. Ele venceu a maioria desses conflitos e a grande maioria de suas batalhas, construindo um grande império que governava grande parte da Europa continental antes de seu colapso final em 1815. Ele é considerado um dos maiores comandantes da história e suas guerras e campanhas são estudadas em escolas militares em todo o mundo. O legado político e cultural de Napoleão perdurou como um dos líderes mais célebres e controversos da história da humanidade.\nEle nasceu na Córsega de uma família italiana relativamente modesta, da nobreza menor. Ele estava servindo como oficial de artilharia no exército francês quando a Revolução Francesa eclodiu em 1789. Ele rapidamente subiu nas fileiras dos militares, aproveitando as novas oportunidades apresentadas pela Revolução e tornando-se general aos 24 anos. O Diretório Francês acabou por lhe dar o comando do Exército da Itália depois que ele suprimiu a revolta dos 13 Vendémiaire contra o governo dos insurgentes realistas. Aos 26 anos, ele iniciou sua primeira campanha militar contra os austríacos e os monarcas italianos alinhados com os Habsburgos, sendo que venceu praticamente todas as batalhas e conquistou a Península Italiana em um ano, enquanto estabelecia \"repúblicas irmãs\" com apoio local e se tornando um herói de guerra na França. Em 1798, ele liderou uma expedição militar ao Egito que serviu de trampolim para o poder político. Ele orquestrou um golpe em novembro de 1799 e se tornou o primeiro cônsul da República.\nNa primeira década do século XIX, o império francês sob comando de Napoleão se envolveu em uma série de conflitos com todas as grandes potências europeias, as Guerras Napoleônicas. Após uma sequência de vitórias, a França garantiu uma posição dominante na Europa continental, e Napoleão manteve a esfera de influência da França, através da formação de amplas alianças e a nomeação de amigos e familiares para governar os outros países europeus como dependentes da França. As campanhas de Napoleão são até hoje estudadas nas academias militares de quase todo o mundo. A Campanha da Rússia em 1812 marcou uma virada na sorte de Napoleão. Seu Grande Armée foi seriamente danificado na campanha e nunca se recuperou totalmente. Em 1813, a Sexta Coligação derrotou suas forças em Leipzig. No ano seguinte, a coligação invadiu a França, forçou Napoleão a abdicar e o exilou na ilha de Elba. Napoleão escapou de Elba em fevereiro de 1815 e assumiu o controle da França mais uma vez. Os Aliados responderam formando uma Sétima Coalizão que o derrotou na Batalha de Waterloo, em junho. Os britânicos o exilaram para a remota ilha de Santa Helena, no Atlântico Sul, onde morreu seis anos depois, aos 51 anos.\nA influência de Napoleão no mundo moderno trouxe reformas liberais para os vários territórios que ele conquistou e controlou, como os Países Baixos, a Suíça e grandes partes da Itália e da Alemanha modernas. Ele implementou políticas liberais fundamentais na França e em toda a Europa Ocidental. Seu Código Napoleônico influenciou os sistemas legais de mais de 70 nações em todo o mundo. O historiador britânico Andrew Roberts declara: \"As ideias que sustentam nosso mundo moderno — meritocracia, igualdade perante a lei, direitos de propriedade, tolerância religiosa, educação secular moderna, finanças sólidas etc. — foram defendidas, consolidadas, codificadas e estendidas geograficamente por Napoleão. Além disso, ele também acrescentou uma administração local racional e eficiente, o fim do banditismo rural, o incentivo à ciência e às artes, a abolição do feudalismo e a maior codificação de leis desde a queda do Império Romano\"."
+  },
+  {
+    "id": "auto-winston-churchill",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "História Britânica",
+    "difficulty": 2,
+    "question_pt": "Além de dois anos entre 1922 e 1924, foi membro do Parlamento (MP) de 1900 a 1964 e representou um total de cinco círculos eleitorais. Ideologicamente liberal econômico e imperialista, foi durante a maior parte de sua carreira um membro do Partido Conservador, que liderou de 1940 a 1955. Também foi membro do Partido Liberal de 1904 a 1924. Sir Winston Leonard Spencer Churchill (Woodstock, Oxfordshire, Inglaterra; 30 de novembro de 1874 – Londres, 24 de janeiro de 1965) foi um militar, estadista e escritor britânico que serviu como primeiro-ministro do Reino Unido de 1940 a 1945, durante a Segunda Guerra Mundial, e novamente de 1951 a 1955. (*) Identifique este primeiro-ministro britânico que liderou o Reino Unido na Segunda Guerra Mundial.",
+    "formatted_answer_pt": "<b><u>Winston Churchill</u></b>",
+    "answer_canonical_pt": "Winston Churchill",
+    "accept_aliases": [
+      "Winston Churchill",
+      "Wiston Churchill",
+      "Churchill",
+      "Winston Leonard Spencer Churchill",
+      "Winston Churchill como escritor",
+      "Winston Spencer Churchill",
+      "Sir Winston Churchill"
+    ],
+    "prompt_aliases": [
+      "este primeiro-ministro britânico"
+    ],
+    "explanation": "Sir Winston Leonard Spencer Churchill (Woodstock, Oxfordshire, Inglaterra; 30 de novembro de 1874 – Londres, 24 de janeiro de 1965) foi um militar, estadista e escritor britânico que serviu como primeiro-ministro do Reino Unido de 1940 a 19...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Winston_Churchill",
+    "wiki_extract": "Sir Winston Leonard Spencer Churchill (Woodstock, Oxfordshire, Inglaterra; 30 de novembro de 1874 – Londres, 24 de janeiro de 1965) foi um militar, estadista e escritor britânico que serviu como primeiro-ministro do Reino Unido de 1940 a 1945, durante a Segunda Guerra Mundial, e novamente de 1951 a 1955. Além de dois anos entre 1922 e 1924, foi membro do Parlamento (MP) de 1900 a 1964 e representou um total de cinco círculos eleitorais. Ideologicamente liberal econômico e imperialista, foi durante a maior parte de sua carreira um membro do Partido Conservador, que liderou de 1940 a 1955. Também foi membro do Partido Liberal de 1904 a 1924.\nDe ascendência inglesa e americana mista, Churchill nasceu em Oxfordshire em uma família rica e aristocrática. Juntou-se ao Exército Britânico em 1895 e viu ação na Índia britânica, a Guerra Madista e a Segunda Guerra dos Bôeres, ganhando fama como correspondente de guerra e escrevendo livros sobre suas campanhas. Eleito deputado conservador em 1900, desertou para os liberais em 1904. No governo liberal de Herbert Henry Asquith, Churchill serviu como presidente da Junta de Comércio e Secretário de Assuntos Internos, defendendo a reforma prisional e a previdência social dos trabalhadores. Como Primeiro Lorde do Almirantado durante a Primeira Guerra Mundial supervisionou a Campanha de Galípoli, mas depois que se provou um desastre, foi rebaixado a Chanceler do Ducado de Lancaster. Renunciou em novembro de 1915 e se juntou aos Fuzileiros Escoceses Reais na Frente Ocidental por seis meses. Em 1917 retornou sob o governo de David Lloyd George e serviu sucessivamente como Ministro de Munições, Secretário de Estado da Guerra, Estado do Ar e Estado das Colônias, supervisionando o Tratado Anglo-Irlandês e política externa britânica no Oriente Médio. Depois de dois anos fora do Parlamento, serviu como Chanceler do Tesouro no governo conservador de Stanley Baldwin, retornando a libra esterlina em 1925 ao padrão-ouro em sua paridade pré-guerra, um movimento amplamente visto como criando pressão deflacionária e deprimindo a economia do Reino Unido.\nFora do governo durante seus chamados \"anos selvagens\" na década de 1930, Churchill assumiu a liderança ao pedir o rearmamento britânico para combater a crescente ameaça do militarismo na Alemanha Nazista. Com a eclosão da Segunda Guerra Mundial, ele foi renomeado Primeiro Lorde do Almirantado. Em maio de 1940, tornou-se primeiro-ministro, substituindo Neville Chamberlain. Churchill formou um governo nacional e supervisionou o envolvimento britânico no esforço de guerra dos Aliados contra as Potências do Eixo, resultando na vitória de 1945. Após a derrota dos conservadores nas eleições gerais de 1945, tornou-se líder da oposição. Em meio ao desenvolvimento da Guerra Fria com a União Soviética, alertou publicamente sobre uma \"Cortina de Ferro\" da influência soviética na Europa e promoveu a unidade europeia. Entre seus mandatos como primeiro-ministro, ele escreveu vários livros contando sua experiência durante a guerra pela qual foi premiado com o Prêmio Nobel de Literatura em 1953. Perdeu a eleição de 1950, mas voltou ao cargo em 1951. No seu segundo mandato preocupou-se com as relações exteriores, especialmente as relações anglo-americanas e a preservação do Império Britânico. Internamente, seu governo enfatizou a construção de casas e completou o desenvolvimento de uma arma nuclear iniciada por seu antecessor. Com a saúde em declínio, Churchill renunciou ao cargo de primeiro-ministro em 1955, embora permanecesse como deputado até 1964. Após sua morte em 1965, recebeu um funeral de estado.\nAmplamente considerado uma das figuras mais significativas do século XX, Churchill continua popular na anglosfera, onde é visto como um líder vitorioso em tempos de guerra que desempenhou um papel importante na defesa da democracia liberal da Europa contra a disseminação do fascismo. Por outro lado, foi criticado por alguns eventos de guerra e também por suas visões imperialistas, comentários racistas e a sua alegada aprovação de violações de direitos humanos, nomeadamente na Índia.\n\n"
+  },
+  {
+    "id": "auto-abraham-lincoln",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "História dos EUA",
+    "difficulty": 2,
+    "question_pt": "Lincoln liderou o país de forma bem-sucedida durante sua maior crise interna, a Guerra Civil Americana, preservando a integridade territorial do país, abolindo a escravidão e fortalecendo o governo nacional. Criado em uma família carente na fronteira oeste, Lincoln foi autodidata, tornou-se advogado, líder do Partido Whig, deputado estadual por Illinois durante a década de 1830 e membro da Câmara dos Representantes por um mandato durante a década de 1840. Após uma série de debates em 1858, que repercutiu em todo o país mostrando a sua oposição à escravidão, Lincoln perdeu uma disputa para o Senado para seu arquirrival, Stephen A. esta entidade (pronúncia em inglês: [ˈeɪbrəhæm ˈlIŋkən] () (Hodgenville, 12 de fevereiro de 1809 — Washington, D.C., 15 de abril de 1865) foi um político norte-americano que serviu como o 16.⁰ presidente dos Estados Unidos, posto que ocupou de 4 de março de 1861 até seu assassinato, em 15 de abril de 1865. (*) Identifique este 16º presidente dos Estados Unidos que preservou a União e aboliu a escravidão.",
+    "formatted_answer_pt": "<b><u>Abraham Lincoln</u></b>",
+    "answer_canonical_pt": "Abraham Lincoln",
+    "accept_aliases": [
+      "Abraham Lincoln",
+      "Presidente Lincoln",
+      "Abe Lincoln",
+      "Abrão Lincoln"
+    ],
+    "prompt_aliases": [
+      "este 16º presidente"
+    ],
+    "explanation": "Abraham Lincoln (pronúncia em inglês: [ˈeɪbrəhæm ˈlIŋkən] () (Hodgenville, 12 de fevereiro de 1809 — Washington, D.C., 15 de abril de 1865) foi um político norte-americano que serviu como o 16.⁰ presidente dos Estados Unidos, posto que ocup...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Abraham_Lincoln",
+    "wiki_extract": "Abraham Lincoln (pronúncia em inglês: [ˈeɪbrəhæm ˈlIŋkən] () (Hodgenville, 12 de fevereiro de 1809 — Washington, D.C., 15 de abril de 1865) foi um político norte-americano que serviu como o 16.⁰ presidente dos Estados Unidos, posto que ocupou de 4 de março de 1861 até seu assassinato, em 15 de abril de 1865. Lincoln liderou o país de forma bem-sucedida durante sua maior crise interna, a Guerra Civil Americana, preservando a integridade territorial do país, abolindo a escravidão e fortalecendo o governo nacional.\nCriado em uma família carente na fronteira oeste, Lincoln foi autodidata, tornou-se advogado, líder do Partido Whig, deputado estadual por Illinois durante a década de 1830 e membro da Câmara dos Representantes por um mandato durante a década de 1840. Após uma série de debates em 1858, que repercutiu em todo o país mostrando a sua oposição à escravidão, Lincoln perdeu uma disputa para o Senado para seu arquirrival, Stephen A. Douglas. Lincoln, um moderado de um swing state (estado decisivo), garantiu a nomeação para a candidatura presidencial de 1860 pelo Partido Republicano. Com quase nenhum apoio do Sul, ele percorreu o Norte e foi eleito presidente. Sua eleição fez com que sete estados escravistas do sul declarassem sua secessão da União e formassem os Estados Confederados da América. A ruptura com os sulistas fez com que o partido de Lincoln obtivesse amplo controle do Congresso, mas nenhuma ação ou reconciliação foi feita. Em seu segundo discurso de posse, ele explicou que \"ambas as partes desprezavam a guerra, mas uma delas faria guerra ao invés de permitir a sobrevivência da nação e a outra aceitaria a guerra ao invés de deixar esta perecer, e veio a guerra\".\nQuando o Norte optou com entusiasmo pela união nacional, após o ataque confederado no Forte Sumter, em 12 de abril de 1861, Lincoln concentrou os esforços militares e políticos na guerra. Seu objetivo neste momento era unir a nação. Como o Sul estava em rebelião, Lincoln exerceu sua autoridade para suspender o habeas corpus, permitindo, assim, a prisão e detenção temporária e sem julgamento de milhares de separatistas suspeitos. Lincoln lidou habilmente com um conflito diplomático no final de 1861, evitando que o Reino Unido reconhecesse os Estados Confederados como nação independente. Seus esforços para a abolição da escravidão incluíram a assinatura da Proclamação de Emancipação, em 1863, encorajando os estados escravocratas de fronteira (border states) a tornarem a escravidão ilegal e dando impulso ao Congresso para a aprovação da Décima Terceira Emenda à Constituição dos Estados Unidos, que finalmente pôs fim à escravidão, em dezembro de 1865. Lincoln supervisionou ostensivamente os esforços de guerra, especialmente na escolha de generais importantes, incluindo o comandante-geral Ulysses S. Grant. Lincoln reuniu os líderes das maiores facções de seu partido em seu governo e pressionou-os a cooperarem. Sob a liderança de Lincoln, a União criou um bloqueio naval que fechou o comércio com o Sul, assumiu o controle dos border states no início da guerra, ganhou o controle das comunicações com canhoneiras nos sistemas fluviais do Sul e tentou repetidamente capturar a capital confederada, Richmond, na Virgínia. A cada general que não obteve sucesso, Lincoln promoveu substituições, até que finalmente Grant obteve êxito, em 1865.\nUm político excepcionalmente astuto e profundamente envolvido com as questões de poder em cada estado, Lincoln apoiou os War Democrats e conseguiu sua reeleição, em 1864. Como líder de uma facção moderada do Partido Republicano, Lincoln notou que suas políticas e personalidade haviam \"explodido para todos os lados\": os \"Republicanos Radicais\" exigiam um severo tratamento do Sul, os War Democrats desejavam um maior comprometimento (os Copperheads, democratas pacifistas, desprezavam os membros do seu partido que defendiam o conflito) e os secessionistas irreconciliáveis tramaram o seu assassinato. Politicamente, Lincoln reagiu colocando seus oponentes uns contra os outros e apelando para o povo americano com seu poder de oratória. O seu Discurso de Gettysburg, de 1863, tornou-se um dos discursos mais citados na história dos EUA e um ícone da demonstração dos princípios de nacionalismo, republicanismo, igualdade, liberdade e democracia. Ao fim da guerra, em face da persistente e amarga divisão do país, Lincoln mostrou-se moderado quanto à sua reconstrução, buscando reunir a nação rapidamente através de uma política de reconciliação generosa. Seis dias depois de o general Robert E. Lee, comandante das forças Confederadas, render-se, Lincoln foi assassinado pelo ator e simpatizante confederado John Wilkes Booth. Como foi o primeiro presidente dos Estados Unidos a ter sido assassinado, sua morte levou o país a entrar em luto. Lincoln tem sido consistentemente considerado por estudiosos e pelo povo como um dos três maiores presidentes dos Estados Unidos."
+  },
+  {
+    "id": "auto-alexandre--o-grande",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Macedônia Antiga",
+    "difficulty": 2,
+    "question_pt": "– 10 de junho de 323 a.C.), comumente conhecido como Alexandre, o Grande ou Alexandre Magno (em grego clássico: Ἀλέξανδρος ὁ Μέγας; romaniz.: Aléxandros ho Mégas), foi rei (basileu) do reino grego antigo da Macedônia e um membro da dinastia argéada. Nascido em Pela em 356 a.C., o jovem príncipe sucedeu a seu pai, o rei Filipe II, no trono com vinte anos de idade. Ele passou a maior parte de seus anos no poder em uma série de campanhas militares sem precedentes através da Ásia e nordeste da África. Alexandre III da Macedônia (português brasileiro) ou Macedónia (português europeu) (20/21 de julho de 356 a.C. (*) Identifique este jovem rei da Macedônia que conquistou o Império Persa e criou o helenismo.",
+    "formatted_answer_pt": "<b><u>Alexandre, o Grande</u></b>",
+    "answer_canonical_pt": "Alexandre, o Grande",
+    "accept_aliases": [
+      "Alexandre, o Grande",
+      "Alexandre Magno",
+      "Alexandre o Magno",
+      "Alexandre III da Macedónia",
+      "Alexandre, O Grande",
+      "Alexandre o Grande",
+      "Alexandre da Macedónia",
+      "Alexandre da Macedônia",
+      "Alexandre o grande",
+      "Alexandrino",
+      "Alexandro Magno"
+    ],
+    "prompt_aliases": [
+      "este jovem rei"
+    ],
+    "explanation": "Alexandre III da Macedônia (português brasileiro) ou Macedónia (português europeu) (20/21 de julho de 356 a.C. – 10 de junho de 323 a.C.), comumente conhecido como Alexandre, o Grande ou Alexandre Magno (em grego clássico: Ἀλέξανδρος ὁ Μέγα...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Alexandre,_o_Grande",
+    "wiki_extract": "Alexandre III da Macedônia (português brasileiro) ou Macedónia (português europeu) (20/21 de julho de 356 a.C. – 10 de junho de 323 a.C.), comumente conhecido como Alexandre, o Grande ou Alexandre Magno (em grego clássico: Ἀλέξανδρος ὁ Μέγας; romaniz.: Aléxandros ho Mégas), foi rei (basileu) do reino grego antigo da Macedônia e um membro da dinastia argéada. Nascido em Pela em 356 a.C., o jovem príncipe sucedeu a seu pai, o rei Filipe II, no trono com vinte anos de idade. Ele passou a maior parte de seus anos no poder em uma série de campanhas militares sem precedentes através da Ásia e nordeste da África. Até os trinta anos havia criado um dos maiores impérios do mundo antigo, que se estendia da Grécia para o Egito e ao noroeste da Índia. Morreu invicto em batalhas e é considerado um dos comandantes militares mais bem-sucedidos da história.\nDurante sua juventude, Alexandre foi orientado pelo filósofo Aristóteles até os 16 anos. Depois que Filipe foi assassinado em 336 a.C., Alexandre sucedeu a seu pai no trono e herdou um reino forte e um exército experiente. Havia sido premiado com o generalato da Grécia e usou essa autoridade para lançar o projeto pan-helênico de seu pai liderando os gregos na conquista da Pérsia. Em 334 a.C., invadiu o Império Aquemênida, governando a Ásia Menor, e começou uma série de campanhas que durou dez anos. Quebrou o poder da Pérsia em uma série de batalhas decisivas, mais notavelmente as batalhas de Isso e Gaugamela. Em seguida, derrubou o rei persa Dario III e conquistou a Pérsia em sua totalidade. Nesse ponto, seu império se estendia do mar Adriático ao rio Indo.\nBuscando alcançar os \"confins do mundo e do Grande Mar Exterior\", invadiu a Índia em 326 a.C., mas foi forçado a voltar pela demanda de suas tropas. Alexandre morreu na Babilônia em 323 a.C., a cidade que planejava estabelecer como sua capital, sem executar uma série de campanhas planejadas que teria começado com uma invasão da Arábia. Nos anos seguintes à sua morte, uma série de guerras civis rasgou seu império em pedaços, resultando em vários estados governados pelos diádocos, sobreviventes e herdeiros generais de Alexandre.\nSeu legado inclui a difusão cultural que suas conquistas geraram, como o greco-budismo. Fundou cerca de vinte cidades que levavam o seu nome, principalmente Alexandria, no Egito. Seus assentamentos de colonos gregos e a propagação resultante da cultura grega no leste resultou em uma nova civilização helenística, aspectos que ainda eram evidentes nas tradições do Império Bizantino em meados do século XV e a presença de oradores gregos na região central e noroeste da Anatólia até à década de 1920. Alexandre tornou-se lendário como um herói clássico no molde de Aquiles, aparecendo com destaque na história e mito grego e culturas não gregas. Tornou-se a medida contra a qual os líderes militares se compararam, e academias militares em todo o mundo ainda ensinam suas táticas. É muitas vezes classificado entre as pessoas mais influentes do mundo em todos os tempos, junto com seu professor Aristóteles."
+  },
+  {
+    "id": "auto-cle-patra",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Egito Ptolomaico",
+    "difficulty": 2,
+    "question_pt": "– Alexandria, 10 ou 12 de agosto de 30 a.C.) foi a última governante ativa do Reino Ptolemaico do Egito. Como membro da dinastia ptolemaica, foi descendente de Ptolemeu I Sóter, um general greco-macedônio e companheiro de Alexandre, o Grande. Sua língua materna era o grego koiné, e ela é a única governante de sua dinastia conhecida por ter aprendido a língua egípcia. esta entidade VII Filopátor (em grego clássico: Κλεοπᾰ́τρᾱ Φιλοπάτωρ; romaniz.: Kleopátrā Philopátōr; Alexandria, 69 a.C. (*) Identifique esta última rainha do Egito ptolomaico amante de Júlio César e Marco Antônio.",
+    "formatted_answer_pt": "<b><u>Cleópatra</u></b>",
+    "answer_canonical_pt": "Cleópatra",
+    "accept_aliases": [
+      "Cleópatra",
+      "Cleópatra VII do Egito",
+      "Cleópatra VII do Egipto",
+      "Cleopatra",
+      "Cleopatra VII",
+      "Cleópatra VII",
+      "Cleópatra VII Filopátor"
+    ],
+    "prompt_aliases": [
+      "esta última rainha"
+    ],
+    "explanation": "Cleópatra VII Filopátor (em grego clássico: Κλεοπᾰ́τρᾱ Φιλοπάτωρ; romaniz.: Kleopátrā Philopátōr; Alexandria, 69 a.C. – Alexandria, 10 ou 12 de agosto de 30 a.C.) foi a última governante ativa do Reino Ptolemaico do Egito. Como membro da di...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Cle%C3%B3patra",
+    "wiki_extract": "Cleópatra VII Filopátor (em grego clássico: Κλεοπᾰ́τρᾱ Φιλοπάτωρ; romaniz.: Kleopátrā Philopátōr; Alexandria, 69 a.C. – Alexandria, 10 ou 12 de agosto de 30 a.C.) foi a última governante ativa do Reino Ptolemaico do Egito. Como membro da dinastia ptolemaica, foi descendente de Ptolemeu I Sóter, um general greco-macedônio e companheiro de Alexandre, o Grande. Sua língua materna era o grego koiné, e ela é a única governante de sua dinastia conhecida por ter aprendido a língua egípcia. Após sua morte, o Egito passou a ser uma província do Império Romano, marcando o fim do Período helenístico, que começou com o reinado de Alexandre (r. 336–323 a.C.).\nÉ possível que tenha acompanhado seu pai Ptolemeu XII em 58 a.C. durante seu exílio em Roma, depois que uma revolta no Egito permitiu que a filha mais velha de Ptolemeu XII, Berenice IV, reivindicasse o trono. Esta última foi morta em 55 a.C., quando o faraó retornou ao país com assistência militar romana. Quando morreu em 51 a.C., Ptolemeu XII foi sucedido por Cleópatra e seu irmão mais novo, Ptolemeu XIII, como governantes conjuntos, mas um desentendimento entre ambos levou ao início de uma guerra civil. Depois de perder a Batalha de Farsalos na Grécia contra seu rival Júlio César durante a Segunda Guerra Civil, o estadista romano Pompeu fugiu para o Egito, um estado cliente. Ptolemeu XIII ordenou a emboscada e morte de Pompeu enquanto César ocupava Alexandria em busca dele. César, um cônsul da República Romana, tentou reconciliar Ptolemeu XIII com sua irmã. Potino, o conselheiro-chefe do faraó, considerou os termos do cônsul favoráveis à rainha, e assim suas forças, que eventualmente caíram sob o controle de sua irmã mais nova, Arsínoe IV, cercaram César e Cleópatra. O cerco foi levantado por reforços no início de 47 a.C. e Ptolemeu XIII morreu pouco depois na Batalha do Nilo. Arsínoe IV foi exilada em Éfeso, e César, agora ditador eleito, declarou Cleópatra e seu irmão mais novo Ptolemeu XIV como governantes conjuntos. O ditador manteve um caso com a rainha, que gerou um filho, Cesarião. Ela viajou para Roma como rainha cliente em 46 e 44 a.C., ficando numa vila local. Após os assassinatos de César e Ptolemeu XIV (este por ordem da própria Cleópatra) em 44 a.C., esta tentou fazer de Cesarião o herdeiro do ditador.\nNa Terceira Guerra Civil entre 43 e 42 a.C., ficou ao lado do Segundo Triunvirato, formado por Otaviano, Marco Antônio e Lépido. Após um encontro em Tarso, em 41 a.C., a rainha teve um caso com Antônio. Ele realizou a execução de Arsínoe a pedido dela e tornou-se cada vez mais dependente de Cleópatra para financiamento e ajuda militar durante suas invasões ao Império Parta e ao Reino da Armênia. As Doações de Alexandria declararam seus filhos Alexandre Hélio, Cleópatra Selene II e Ptolemeu Filadelfo, governantes de vários territórios antigos, sob sua autoridade triunviral. Esse evento, seu casamento e o divórcio de Marco Antônio da irmã de Otaviano, Otávia, a Jovem, levaram à Última Guerra Civil da República Romana. Otaviano se engajou numa guerra de propaganda, forçou os aliados de Antônio no Senado a fugirem de Roma em 32 a.C. e declarou guerra contra Cleópatra. Depois de derrotar a frota naval da ambos na Batalha de Áccio em 31 a.C., as forças de Otaviano invadiram o Egito em 30 a.C. e derrotaram Antônio, o levando ao suicídio. Quando soube que o invasor romano planejava levá-la à sua procissão triunfal, cometeu suicídio por envenenamento, ao contrário da crença popular de que foi mordida por uma víbora.\nSeu legado sobrevive em numerosas obras de arte, tanto antigas quanto modernas. A historiografia romana e a poesia latina produziram uma visão predominantemente polêmica e negativa da rainha que permeou as posteriores literaturas medieval e renascentista. Nas artes visuais, representações antigas de Cleópatra incluem a moeda romana e ptolemaica, estátuas, bustos, relevos, vidros e esculturas de camafeus e pinturas. Foi tema de muitas obras na arte renascentista e barroca, incluindo esculturas, pinturas, poesia, dramas teatrais, como Antônio e Cleópatra, de William Shakespeare, e óperas como Giulio Cesare in Egitto, de Georg Friedrich Händel. Nos tempos modernos, tem aparecido nas artes aplicadas e belas artes, na sátira burlesca, em produções cinematográficas e em imagens de marcas para produtos comerciais, tornando-se um ícone popular da egitomania desde o século XIX.\n\n"
+  },
+  {
+    "id": "auto-otto-von-bismarck",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "Alemanha",
+    "difficulty": 2,
+    "question_pt": "A Realpolitik e o governo poderoso de Bismarck levaram-no a ser chamado de Chanceler de Ferro. De origem de proprietário de terras Junker, Bismarck ascendeu rapidamente na política prussiana sob o rei Guilherme I da Prússia. Ele serviu como embaixador da Prússia na Rússia e na França e em ambas as casas do parlamento prussiano. Otto Eduard Leopold von Bismarck-Schönhausen, Príncipe de Bismarck, Conde de Bismarck-Schönhausen, Duque de Lauemburgo (em alemão:  Fürst von Bismarck, Graf von Bismarck-Schönhausen, Herzog zu Lauenburg, Schönhausen, 1 de abril de 1815 — Aumühle, 30 de julho de 1898) foi um estadista e diplomata prussiano e mais tarde alemão. (*) Identifique este estadista conhecido como o Chanceler de Ferro que unificou a Alemanha em 1871.",
+    "formatted_answer_pt": "<b><u>Otto von Bismarck</u></b>",
+    "answer_canonical_pt": "Otto von Bismarck",
+    "accept_aliases": [
+      "Otto von Bismarck",
+      "Otto Von Bismarck",
+      "Bismarquiana",
+      "Bismarck",
+      "Otto Eduard Leopold von Bismarck-Schönhausen",
+      "Via prussiana",
+      "Otão de Bismarck",
+      "Chanceler de Ferro",
+      "Otto Bismarck",
+      "Von Bismarck"
+    ],
+    "prompt_aliases": [
+      "este estadista conhecido"
+    ],
+    "explanation": "Otto Eduard Leopold von Bismarck-Schönhausen, Príncipe de Bismarck, Conde de Bismarck-Schönhausen, Duque de Lauemburgo (em alemão:  Fürst von Bismarck, Graf von Bismarck-Schönhausen, Herzog zu Lauenburg, Schönhausen, 1 de abril de 1815 — Au...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Otto_von_Bismarck",
+    "wiki_extract": "Otto Eduard Leopold von Bismarck-Schönhausen, Príncipe de Bismarck, Conde de Bismarck-Schönhausen, Duque de Lauemburgo (em alemão:  Fürst von Bismarck, Graf von Bismarck-Schönhausen, Herzog zu Lauenburg, Schönhausen, 1 de abril de 1815 — Aumühle, 30 de julho de 1898) foi um estadista e diplomata prussiano e mais tarde alemão. A Realpolitik e o governo poderoso de Bismarck levaram-no a ser chamado de Chanceler de Ferro.\nDe origem de proprietário de terras Junker, Bismarck ascendeu rapidamente na política prussiana sob o rei Guilherme I da Prússia. Ele serviu como embaixador da Prússia na Rússia e na França e em ambas as casas do parlamento prussiano. De 1862 a 1890, foi ministro-presidente e ministro das Relações Exteriores da Prússia. Ele dominou os assuntos europeus depois de planejar a unificação da Alemanha em 1871 e serviu como primeiro chanceler do Império Alemão até 1890. Bismarck provocou três guerras curtas e decisivas contra a Dinamarca, a Áustria e a França. Após a derrota da Áustria, ele substituiu a Confederação Germânica pela Confederação da Alemanha do Norte e serviu como seu chanceler. Isto alinhou os estados menores do norte da Alemanha com a Prússia, mas excluiu a Áustria. Após a derrota da França com o apoio dos estados independentes da Alemanha do Sul, ele formou o Império Alemão e uniu a Alemanha. Com o domínio prussiano alcançado em 1871, Bismarck usou a diplomacia do equilíbrio de poder para manter a posição da Alemanha numa Europa pacífica. No entanto, a anexação da Alsácia-Lorena causou o revanchismo francês e a germanofobia. Fazendo malabarismos com uma série interligada de conferências, negociações e alianças, ele usou as suas habilidades diplomáticas para manter a posição da Alemanha. Bismarck era avesso ao colonialismo marítimo, pois considerava-o um desperdício de recursos alemães, mas aquiesceu à opinião da elite e das massas e construiu um império ultramarino.\nNas suas manobras políticas internas, Bismarck criou o primeiro estado de bem-estar social moderno, com o objetivo de minar os seus oponentes socialistas. Na década de 1870, ele se aliou aos liberais antitarifários e anticatólicos e lutou contra a Igreja Católica na Kulturkampf (“luta cultural”). Isto falhou, pois os católicos responderam formando o poderoso Partido do Centro Alemão e usando o sufrágio universal masculino para ganhar um bloco de assentos. Bismarck respondeu acabando com o Kulturkampf, rompendo com os liberais, decretando as deportações prussianas e formando uma aliança com o Partido do Centro para combater os socialistas. Bismarck era leal ao imperador alemão Guilherme I, que discutiu com Bismarck, mas o apoiou contra o conselho da esposa e do filho de Guilherme. Embora o Reichstag Imperial tenha sido eleito por sufrágio universal masculino, não controlava a política governamental. Bismarck desconfiava da democracia e governava através de uma burocracia forte e bem treinada, com o poder nas mãos da tradicional elite Junker. Guilherme II demitiu Bismarck do cargo em 1890 e ele se aposentou para escrever suas memórias.\nBismarck é mais lembrado por seu papel na unificação alemã. Como chefe da Prússia e mais tarde da Alemanha, Bismarck possuía não apenas uma visão nacional e internacional de longo prazo, mas também a capacidade de curto prazo para fazer malabarismos com desenvolvimentos complexos. Ele se tornou um herói para os nacionalistas alemães, que construíram monumentos em sua homenagem. É elogiado como um visionário que manteve a paz na Europa através de uma diplomacia hábil, mas é criticado pela perseguição aos polacos e aos católicos e pela centralização do poder executivo, que alguns descrevem como cesarista. Ele é criticado pelos oponentes do nacionalismo alemão, à medida que o nacionalismo se tornou enraizado na cultura alemã, galvanizando o país a prosseguir agressivamente políticas nacionalistas em ambas as Guerras Mundiais.\n\n"
+  },
+  {
+    "id": "auto-mahatma-gandhi",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "História da Índia",
+    "difficulty": 2,
+    "question_pt": "Considerado também um líder religioso, além de nacionalista, anticolonialista e especialista em ética política indiana. Ficou conhecido por ter empregado a resistência não violenta para liderar a campanha bem-sucedida pela independência da Índia do Reino Unido e, por sua vez, por inspirar movimentos pelos direitos civis e pela liberdade em todo o mundo. O título honorífico Mahātmā (do sânscrito: \"de grande alma\", \"venerável\"), aplicado-lhe pela primeira vez em 1914 na África do Sul, é agora usado em todo o mundo. Mohandas Karamchand Gandhi (em gujarati: મોહનદાસ કરમચંદ ગાંધી) (Porbandar, 2 de outubro de 1869 — Nova Deli, 30 de janeiro de 1948), mais conhecido como esta entidade (\"Venerável Gandhi\", sendo Mahatma um título), foi um advogado, estadista, líder espiritual e ativista indiano. (*) Identifique este líder nacionalista indiano pioneiro da resistência não violenta contra o Império Britânico.",
+    "formatted_answer_pt": "<b><u>Mahatma Gandhi</u></b>",
+    "answer_canonical_pt": "Mahatma Gandhi",
+    "accept_aliases": [
+      "Mahatma Gandhi",
+      "Mohandas Gandhi",
+      "Mahatima Ghandi",
+      "Mohandas Karamchand Gandhi",
+      "Mohandas K. Gandhi",
+      "Gandhi",
+      "M.K. Gandhi"
+    ],
+    "prompt_aliases": [
+      "este líder nacionalista"
+    ],
+    "explanation": "Mohandas Karamchand Gandhi (em gujarati: મોહનદાસ કરમચંદ ગાંધી) (Porbandar, 2 de outubro de 1869 — Nova Deli, 30 de janeiro de 1948), mais conhecido como Mahatma Gandhi (\"Venerável Gandhi\", sendo Mahatma um título), foi um advogado, estadist...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Mahatma_Gandhi",
+    "wiki_extract": "Mohandas Karamchand Gandhi (em gujarati: મોહનદાસ કરમચંદ ગાંધી) (Porbandar, 2 de outubro de 1869 — Nova Deli, 30 de janeiro de 1948), mais conhecido como Mahatma Gandhi (\"Venerável Gandhi\", sendo Mahatma um título), foi um advogado, estadista, líder espiritual e ativista indiano. Considerado também um líder religioso, além de nacionalista, anticolonialista e especialista em ética política indiana. Ficou conhecido por ter empregado a resistência não violenta para liderar a campanha bem-sucedida pela independência da Índia do Reino Unido e, por sua vez, por inspirar movimentos pelos direitos civis e pela liberdade em todo o mundo. O título honorífico Mahātmā (do sânscrito: \"de grande alma\", \"venerável\"), aplicado-lhe pela primeira vez em 1914 na África do Sul, é agora usado em todo o mundo. O aniversário de Gandhi, 2 de outubro, é comemorado na Índia como Gandhi Jayanti, um feriado nacional e em todo o mundo como o Dia Internacional da Não Violência. Gandhi nasceu e foi criado em uma família hindu no litoral de Guzerate, oeste da Índia, e se formou em Direito no Inner Temple, Londres, Inglaterra. É comumente — embora não formalmente — considerado o Pai da Pátria indiana, também chamado de Bapu (Guzerate: carinho por pai, papa).\nSeguia o princípio da não violência incorporado à desobediência civil, e empregou pela primeira vez a desobediência civil não violenta como advogado expatriado na África do Sul, na luta da comunidade indiana pelos direitos civis. Após seu retorno à Índia em 1915, começou a organizar camponeses, agricultores e trabalhadores urbanos para protestar contra o imposto sobre a terra e a discriminação excessiva. Assumindo a liderança do Congresso Nacional Indiano em 1921, Gandhi liderou campanhas nacionais para várias causas sociais e para alcançar o Swaraj ou o autogoverno.\nGandhi levou os indianos a desafiar o imposto salino cobrado pelos ingleses com a Marcha do Sal, de 400 km, em 1930, e mais tarde pedindo aos britânicos que abandonassem a Índia em 1942. Foi preso por muitos anos, em várias ocasiões, na África do Sul e na Índia. Vivia modestamente em uma comunidade residencial autossuficiente e usava o dhoti e o xale indiano tradicional, entrelaçados com fios feitos à mão em um charkha. Comia comida vegetariana simples e também realizou longos jejuns como um meio de autopurificação e protesto político.\nA visão de Gandhi de uma Índia independente baseada no pluralismo religioso foi desafiada no início da década de 1940 por um novo nacionalismo muçulmano que exigia uma pátria muçulmana separada da Índia. Em agosto de 1947, o Reino Unido concedeu a independência, mas o Império Britânico da Índia foi dividido em dois domínios, a Índia de maioria hindu e o Paquistão de maioria muçulmana. Como muitos indianos, muçulmanos e sikhs deslocados chegaram às suas novas terras, a violência religiosa irrompeu, especialmente em Panjabe e em Bengala. Evitando a celebração oficial da independência em Delhi, Gandhi visitou as áreas afetadas, tentando proporcionar consolo. Nos meses seguintes, ele realizou várias greves de fome para deter a violência religiosa. O último deles, realizado em 12 de janeiro de 1948, quando tinha 78 anos, também teve o objetivo indireto de pressionar a Índia a pagar alguns ativos em dinheiro devidos ao Paquistão. Alguns indianos pensavam que Gandhi era muito complacente com os muçulmanos. Entre eles estava Nathuram Godse, um nacionalista hindu, que assassinou Gandhi em 30 de janeiro de 1948, disparando três vezes contra seu peito.\n\n"
+  },
+  {
+    "id": "auto-nikola-tesla",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Eletromagnetismo",
+    "difficulty": 2,
+    "question_pt": "Nascido e criado no Império Austríaco, Tesla estudou engenharia e física na década de 1870 sem se formar, e ganhou experiência prática no início da década de 1880 trabalhando em telefonia e na Continental Edison, na nova indústria de energia elétrica. Em 1884, emigrou para os Estados Unidos e naturalizou-se cidadão americano. Ele trabalhou por um curto período na Edison Machine Works, em Nova Iorque, antes de começar por conta própria. esta entidade (em sérvio: Никола Тесла; pronunciação sérvia: [nǐkola têsla]; Smiljan, 10 de julho de 1856 — Nova Iorque, 7 de janeiro de 1943) foi um inventor, físico experimental, engenheiro eletricista e engenheiro mecânico sérvio, mais conhecido por suas contribuições ao projeto do moderno sistema de fornecimento de eletricidade em corrente alternada (CA). (*) Identifique este gênio inventor sérvio-americano pioneiro do sistema elétrico de corrente alternada.",
+    "formatted_answer_pt": "<b><u>Nikola Tesla</u></b>",
+    "answer_canonical_pt": "Nikola Tesla",
+    "accept_aliases": [
+      "Nikola Tesla",
+      "Nicolas Tesla",
+      "Nicola Tesla"
+    ],
+    "prompt_aliases": [
+      "este gênio inventor"
+    ],
+    "explanation": "Nikola Tesla (em sérvio: Никола Тесла; pronunciação sérvia: [nǐkola têsla]; Smiljan, 10 de julho de 1856 — Nova Iorque, 7 de janeiro de 1943) foi um inventor, físico experimental, engenheiro eletricista e engenheiro mecânico sérvio, mais co...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Nikola_Tesla",
+    "wiki_extract": "Nikola Tesla (em sérvio: Никола Тесла; pronunciação sérvia: [nǐkola têsla]; Smiljan, 10 de julho de 1856 — Nova Iorque, 7 de janeiro de 1943) foi um inventor, físico experimental, engenheiro eletricista e engenheiro mecânico sérvio, mais conhecido por suas contribuições ao projeto do moderno sistema de fornecimento de eletricidade em corrente alternada (CA).\nNascido e criado no Império Austríaco, Tesla estudou engenharia e física na década de 1870 sem se formar, e ganhou experiência prática no início da década de 1880 trabalhando em telefonia e na Continental Edison, na nova indústria de energia elétrica. Em 1884, emigrou para os Estados Unidos e naturalizou-se cidadão americano. Ele trabalhou por um curto período na Edison Machine Works, em Nova Iorque, antes de começar por conta própria. Com a ajuda de parceiros para financiar e comercializar suas ideias, Tesla montou laboratórios e empresas em Nova Iorque para desenvolver uma variedade de dispositivos elétricos e mecânicos. Seu motor de indução de corrente alternada e patentes relacionadas ao sistema polifásico, licenciadas pela Westinghouse Electric em 1888, lhe renderam uma quantia considerável de dinheiro e se tornaram a pedra angular do sistema polifásico que a empresa acabou comercializando.\nTentando desenvolver invenções que pudesse patentear e comercializar, Tesla conduziu uma série de experimentos com osciladores/geradores mecânicos, tubos de descarga elétrica e radiografia. Ele também construiu um barco de controle remoto, um dos primeiros já exibidos. Tesla tornou-se conhecido como inventor e demonstrou suas realizações para celebridades e patronos ricos em seu laboratório, e destacou-se por seu talento em palestras públicas. Durante a década de 1890, Tesla seguiu suas ideias para iluminação sem fio e distribuição mundial de energia elétrica sem fio em seus experimentos de alta tensão e alta frequência em Nova Iorque e Colorado Springs. Em 1893, ele fez pronunciamentos sobre a possibilidade de comunicação sem fio com seus dispositivos. Tesla tentou colocar essas ideias em uso prático em seu projeto inacabado da Wardenclyffe Tower, uma transmissora sem fio intercontinental de comunicações e energia, mas ficou sem dinheiro antes que pudesse concluí-lo.\nDepois de Wardenclyffe, Tesla experimentou uma série de invenções nas décadas de 1910 e 1920 com graus variados de sucesso. Tendo gasto a maior parte de seu dinheiro, Tesla morava em uma série de hotéis de Nova Iorque, deixando para trás contas não pagas. Ele morreu na cidade de Nova Iorque em janeiro de 1943. O trabalho de Tesla caiu em relativa obscuridade após sua morte, até 1960, quando a Conferência Geral de Pesos e Medidas nomeou a unidade SI de densidade de fluxo magnético como tesla em sua homenagem. Houve um ressurgimento do interesse popular em Tesla desde os anos 1990.\n\n"
+  },
+  {
+    "id": "auto-alan-turing",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Computação",
+    "difficulty": 2,
+    "question_pt": "Turing foi altamente influente no desenvolvimento da moderna ciência da computação teórica, proporcionando uma formalização dos conceitos de algoritmo e computação com a máquina de Turing, que pode ser considerada um modelo de um computador de uso geral. Ele é amplamente considerado o pai da ciência da computação teórica e da inteligência artificial. Apesar dessas realizações ele nunca foi totalmente reconhecido em seu país de origem durante sua vida por ser homossexual e porque grande parte de seu trabalho foi coberto pela Lei de Segredos Oficiais. Alan Mathison Turing (Londres, 23 de junho de 1912 – Wilmslow, Cheshire, 7 de junho de 1954) foi um matemático, cientista da computação, lógico, criptoanalista, filósofo e biólogo teórico britânico. (*) Identifique este matemático britânico considerado o pai da ciência da computação que quebrou a máquina Enigma.",
+    "formatted_answer_pt": "<b><u>Alan Turing</u></b>",
+    "answer_canonical_pt": "Alan Turing",
+    "accept_aliases": [
+      "Alan Turing",
+      "Alan Mathison Turing",
+      "Alan M. Turing",
+      "A. Turing",
+      "Alan turing"
+    ],
+    "prompt_aliases": [
+      "este matemático britânico"
+    ],
+    "explanation": "Alan Mathison Turing (Londres, 23 de junho de 1912 – Wilmslow, Cheshire, 7 de junho de 1954) foi um matemático, cientista da computação, lógico, criptoanalista, filósofo e biólogo teórico britânico. Turing foi altamente influente no desenvo...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Alan_Turing",
+    "wiki_extract": "Alan Mathison Turing (Londres, 23 de junho de 1912 – Wilmslow, Cheshire, 7 de junho de 1954) foi um matemático, cientista da computação, lógico, criptoanalista, filósofo e biólogo teórico britânico. Turing foi altamente influente no desenvolvimento da moderna ciência da computação teórica, proporcionando uma formalização dos conceitos de algoritmo e computação com a máquina de Turing, que pode ser considerada um modelo de um computador de uso geral. Ele é amplamente considerado o pai da ciência da computação teórica e da inteligência artificial. Apesar dessas realizações ele nunca foi totalmente reconhecido em seu país de origem durante sua vida por ser homossexual e porque grande parte de seu trabalho foi coberto pela Lei de Segredos Oficiais.\nDurante a Segunda Guerra Mundial, Turing trabalhou para a Escola de Código e Cifras do Governo (GC&CS) em Bletchley Park, o centro britânico de criptoanálise que produzia ultra inteligência. Por um tempo ele liderou a Hut 8, a seção responsável pela análise criptográfica naval alemã. Lá ele desenvolveu várias técnicas para acelerar a quebra das cifras alemãs, incluindo melhorias no método de bombardeio polonês antes da guerra, bem como uma máquina eletromecânica que poderia encontrar configurações para a máquina Enigma. Turing desempenhou um papel crucial na quebra de mensagens codificadas interceptadas que permitiram aos Aliados derrotar os nazistas em muitos compromissos cruciais, incluindo a Batalha do Atlântico, e ao fazê-lo os ajudou a vencer a guerra. Devido aos problemas da história contrafactual, é difícil estimar o efeito preciso que a inteligência ultra teve na guerra mas foi estimado que este trabalho encurtou a guerra na Europa em mais de dois anos e salvou mais de 14 milhões de vidas.\nApós a guerra Turing trabalhou no Laboratório Nacional de Física, onde projetou o Mecanismo de Computação Automática, um dos primeiros projetos para um computador de programa armazenado. Em 1948 Turing ingressou no Laboratório de Máquinas de Computação de Max Newman, na Victoria University de Manchester, onde ajudou a desenvolver os computadores de Manchester e se interessou por biologia matemática. Ele escreveu um artigo sobre as bases químicas da morfogênese e previu reações químicas oscilantes, como a reação de Belousov – Zhabotinsky, observada pela primeira vez na década de 1960.\nTuring foi processado judicialmente em 1952 por atos homossexuais: a Emenda Labouchere de 1885 determinara que \"atentado ao pudor\" era uma ofensa criminal no Reino Unido. Ele aceitou o tratamento de castração química, com dietilestilbestrol, como alternativa à prisão. Turing morreu em 1954, 16 dias antes de seu 42º aniversário, por envenenamento por cianeto. Um inquérito determinou sua morte como suicídio, mas se observou que a evidência conhecida também é consistente com envenenamento acidental. Em 2009, após uma campanha na Internet, o primeiro-ministro britânico Gordon Brown fez um pedido de desculpas público e oficial a Turing em nome do governo britânico pela \"maneira terrível como foi tratado\". A rainha Elizabeth II concedeu a Turing um perdão póstumo em 2013. A \"lei Alan Turing\" é agora um termo informal para uma lei britânica de 2017 que retroativamente perdoou homens advertidos ou condenados sob a legislação histórica que proibia atos homossexuais."
+  },
+  {
+    "id": "auto-arquimedes",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Grécia Antiga",
+    "difficulty": 2,
+    "question_pt": "287–212 a.C.) foi um matemático, físico, engenheiro, astrônomo e inventor grego de Siracusa, na Sicília. Pouco se sabe sobre sua vida. Seus escritos o situam entre os cientistas da Antiguidade Clássica e os matemáticos de maior destaque da história. esta entidade de Siracusa (c. (*) Identifique este matemático e físico de Siracusa célebre pelo princípio do empuxo e pela exclamação Eureka.",
+    "formatted_answer_pt": "<b><u>Arquimedes</u></b>",
+    "answer_canonical_pt": "Arquimedes",
+    "accept_aliases": [
+      "Arquimedes",
+      "Archimedes",
+      "Arquímedes",
+      "Arquimedes de Siracusa"
+    ],
+    "prompt_aliases": [
+      "este matemático e"
+    ],
+    "explanation": "Arquimedes de Siracusa (c. 287–212 a.C.) foi um matemático, físico, engenheiro, astrônomo e inventor grego de Siracusa, na Sicília. Pouco se sabe sobre sua vida. Seus escritos o situam entre os cientistas da Antiguidade Clássica e os matemá...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Arquimedes",
+    "wiki_extract": "Arquimedes de Siracusa (c. 287–212 a.C.) foi um matemático, físico, engenheiro, astrônomo e inventor grego de Siracusa, na Sicília. Pouco se sabe sobre sua vida. Seus escritos o situam entre os cientistas da Antiguidade Clássica e os matemáticos de maior destaque da história. Ao empregar grandezas infinitesimais e o método da exaustão, antecipou procedimentos do cálculo infinitesimal e da análise matemática para obter e demonstrar teoremas sobre a área de um círculo, a área e o volume da esfera, a área da elipse, a área delimitada por uma parábola, volumes de segmentos de paraboloides e hiperboloides de revolução e a área de uma espiral.\nTambém calculou uma aproximação de π, estudou a espiral de Arquimedes e criou um sistema para escrever números muito grandes com potências. Aplicou a matemática a problemas de estática e hidrostática, demonstrou a lei da alavanca, empregou o conceito de centro de gravidade e formulou o princípio do empuxo que leva seu nome. Estimou por limites o diâmetro aparente do Sol e investigou as dimensões do Universo. Cícero lhe atribui um globo celeste e um mecanismo que reproduzia os movimentos dos astros; outras fontes antigas associam a seu nome a bomba conhecida como parafuso de Arquimedes, sistemas de polias compostas e máquinas para a defesa de Siracusa.\nArquimedes morreu durante o cerco de Siracusa, morto por um soldado romano apesar das ordens para que fosse poupado. Cícero relatou uma visita a seu túmulo, que trazia uma esfera e um cilindro, figuras ligadas à demonstração matemática de que Arquimedes mais gostava.\nSeus escritos matemáticos circularam pouco na Antiguidade, embora fossem lidos e citados em Alexandria. Uma compilação mais abrangente surgiu por volta de 530, associada a Isidoro de Mileto, em Constantinopla, e os comentários de Eutócio de Ascalão ampliaram sua circulação. Suas obras chegaram ao árabe no século IX e ao latim a partir do século XII, e foram estudadas no Renascimento e na Revolução Científica. O estudo do Palimpsesto de Arquimedes, redescoberto em 1906, trouxe à luz parte de seus métodos de investigação."
+  },
+  {
+    "id": "auto-stephen-hawking",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Cosmologia",
+    "difficulty": 2,
+    "question_pt": "Doutor em cosmologia, foi professor lucasiano emérito na Universidade de Cambridge, um posto que foi ocupado por Isaac Newton, Paul Dirac e Charles Babbage. Foi, pouco antes de morrer, diretor de pesquisa do Departamento de Matemática Aplicada e Física Teórica (DAMTP) e fundador do Centro de Cosmologia Teórica (CTC) da Universidade de Cambridge. Seus trabalhos científicos incluem um teorema sobre a singularidade gravitacional no âmbito da relatividade geral (em colaboração com Roger Penrose) e a previsão teórica de que os buracos negros emitem radiação, frequentemente chamada de Radiação Hawking. Stephen William Hawking  (Oxford, 8 de janeiro de 1942 – Cambridge, 14 de março de 2018) foi um físico teórico, cosmólogo e autor britânico, reconhecido por sua contribuição à ciência, sendo um dos mais renomados cientistas do século XX. (*) Identifique este físico britânico autor de Uma Breve História do Tempo que estudou a radiação dos buracos negros.",
+    "formatted_answer_pt": "<b><u>Stephen Hawking</u></b>",
+    "answer_canonical_pt": "Stephen Hawking",
+    "accept_aliases": [
+      "Stephen Hawking",
+      "Stephen W. Hawking",
+      "Stephen William Hawking",
+      "Hawking",
+      "O Grande Projeto"
+    ],
+    "prompt_aliases": [
+      "este físico britânico"
+    ],
+    "explanation": "Stephen William Hawking  (Oxford, 8 de janeiro de 1942 – Cambridge, 14 de março de 2018) foi um físico teórico, cosmólogo e autor britânico, reconhecido por sua contribuição à ciência, sendo um dos mais renomados cientistas do século XX. Do...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Stephen_Hawking",
+    "wiki_extract": "Stephen William Hawking  (Oxford, 8 de janeiro de 1942 – Cambridge, 14 de março de 2018) foi um físico teórico, cosmólogo e autor britânico, reconhecido por sua contribuição à ciência, sendo um dos mais renomados cientistas do século XX. Doutor em cosmologia, foi professor lucasiano emérito na Universidade de Cambridge, um posto que foi ocupado por Isaac Newton, Paul Dirac e Charles Babbage. Foi, pouco antes de morrer, diretor de pesquisa do Departamento de Matemática Aplicada e Física Teórica (DAMTP) e fundador do Centro de Cosmologia Teórica (CTC) da Universidade de Cambridge.\nSeus trabalhos científicos incluem um teorema sobre a singularidade gravitacional no âmbito da relatividade geral (em colaboração com Roger Penrose) e a previsão teórica de que os buracos negros emitem radiação, frequentemente chamada de Radiação Hawking. Hawking foi o primeiro cientista a estabelecer uma teoria da cosmologia explicada pela união da teoria geral da relatividade e da mecânica quântica. Ele foi um defensor fervoroso da interpretação de muitos mundos na mecânica quântica.\nHawking alcançou sucesso comercial com vários trabalhos nos quais ele discute suas próprias teorias e cosmologia em geral. Seu livro Uma Breve História do Tempo permaneceu na lista de mais vendidos do The Sunday Times durante 237 semanas. Em 2002, Hawking ficou em 25º lugar na pesquisa da BBC sobre os 100 Maiores Britânicos de todos os tempos. Em 1963, Hawking foi diagnosticado com uma forma de início precoce da doença neuronal motora (MND; também conhecida como esclerose lateral amiotrófica (ELA) \"ALS\" ou doença de Lou Gehrig) que o paralisou gradualmente ao longo das décadas. Mesmo após a perda de sua capacidade de falar, ele ainda era capaz de se comunicar por meio de um dispositivo gerador de fala, inicialmente através do uso de um interruptor de mão e, mais tarde, usando um único músculo da bochecha. Ele morreu no dia 14 de março de 2018, aos 76 anos de idade, depois de lutar contra essa doença durante mais de 50 anos."
+  },
+  {
+    "id": "auto-johannes-kepler",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Astronomia",
+    "difficulty": 2,
+    "question_pt": "Considerado figura-chave da revolução científica do século XVII, é todavia célebre por ter formulado as três leis fundamentais da mecânica celeste, denominadas Leis de Kepler, tendo estas sido codificadas por astrônomos posteriores com base nas suas obras Astronomia Nova, Harmonices Mundi e Epítome da Astronomia de Copérnico. Essas obras também forneceram uma das bases para a teoria da gravitação universal de Isaac Newton. Durante sua carreira, Kepler foi professor de matemática em uma escola seminarista em Graz, Áustria, um assistente do astrônomo Tycho Brahe, o matemático imperial do imperador Rodolfo II e de seus dois sucessores, Matias I e Fernando II. esta entidade (Weil der Stadt, 27 de dezembro de 1571 — Ratisbona, 15 de novembro de 1630) foi um astrônomo, astrólogo e matemático alemão. (*) Identifique este astrônomo alemão que formulou as três leis do movimento planetário em órbitas elípticas.",
+    "formatted_answer_pt": "<b><u>Johannes Kepler</u></b>",
+    "answer_canonical_pt": "Johannes Kepler",
+    "accept_aliases": [
+      "Johannes Kepler",
+      "Kepler"
+    ],
+    "prompt_aliases": [
+      "este astrônomo alemão"
+    ],
+    "explanation": "Johannes Kepler (Weil der Stadt, 27 de dezembro de 1571 — Ratisbona, 15 de novembro de 1630) foi um astrônomo, astrólogo e matemático alemão. Considerado figura-chave da revolução científica do século XVII, é todavia célebre por ter formula...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Johannes_Kepler",
+    "wiki_extract": "Johannes Kepler (Weil der Stadt, 27 de dezembro de 1571 — Ratisbona, 15 de novembro de 1630) foi um astrônomo, astrólogo e matemático alemão. Considerado figura-chave da revolução científica do século XVII, é todavia célebre por ter formulado as três leis fundamentais da mecânica celeste, denominadas Leis de Kepler, tendo estas sido codificadas por astrônomos posteriores com base nas suas obras Astronomia Nova, Harmonices Mundi e Epítome da Astronomia de Copérnico. Essas obras também forneceram uma das bases para a teoria da gravitação universal de Isaac Newton.\nDurante sua carreira, Kepler foi professor de matemática em uma escola seminarista em Graz, Áustria, um assistente do astrônomo Tycho Brahe, o matemático imperial do imperador Rodolfo II e de seus dois sucessores, Matias I e Fernando II. Também foi professor de matemática em Linz, Áustria, e conselheiro do general Wallenstein. Adicionalmente, fez um trabalho fundamental no campo da ótica, inventou uma versão melhorada do telescópio refrator e ajudou a legitimar as descobertas telescópicas de seu contemporâneo Galileu Galilei.\nKepler viveu numa época em que não havia nenhuma distinção clara entre astronomia e astrologia, mas havia uma forte divisão entre a astronomia (um ramo da matemática dentro das artes liberais) e a física (um ramo da filosofia natural). Kepler também incorporou raciocínios e argumentos religiosos em seu trabalho, motivado pela convicção religiosa de que Deus havia criado o mundo de acordo com um plano inteligível, acessível através da luz natural da razão. Kepler descreveu sua nova astronomia como \"física celeste\", como \"uma excursão à Metafísica de Aristóteles\" e como \"um suplemento de Sobre o Céu de Aristóteles\", transformando a antiga tradição da cosmologia física ao tratar a astronomia como parte de uma física matemática universal."
+  },
+  {
+    "id": "auto-niels-bohr",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Física Atômica",
+    "difficulty": 2,
+    "question_pt": "Bohr desenvolveu um modelo atômico (átomo de Bohr), no qual propôs que os níveis de energia dos elétrons são quantizadas e que os elétrons se movem em órbitas estáveis ao redor do núcleo atômico, mas podem saltar de um nível de energia (ou órbita) para outro. Embora o modelo tenha sido, mais tarde, substituído por outros, seus princípios fundamentais permanecem válidos. Ele também concebeu o princípio da complementaridade, que defende que objetos têm certos pares de propriedades complementares que não podem ser todos observados ou medidos simultaneamente, como a dualidade onda-partícula. Niels Henrik David Bohr (dinamarquês: [ˈne̝ls ˈpoɐ̯ˀ] ( ouça); Copenhague, 7 de outubro de 1885 – Copenhague, 18 de novembro de 1962) foi um físico e filósofo dinamarquês que fez contribuições fundamentais para a compreensão da estrutura atômica e da mecânica quântica, pela qual recebeu o Prêmio Nobel de Física em 1922. (*) Identifique este físico dinamarquês que propôs o modelo atômico com níveis quantizados de energia.",
+    "formatted_answer_pt": "<b><u>Niels Bohr</u></b>",
+    "answer_canonical_pt": "Niels Bohr",
+    "accept_aliases": [
+      "Niels Bohr",
+      "Niels Henrik David Bohr",
+      "Bohr",
+      "Niels Henrick David Bohr",
+      "Niels H. D. Bohr"
+    ],
+    "prompt_aliases": [
+      "este físico dinamarquês"
+    ],
+    "explanation": "Niels Henrik David Bohr (dinamarquês: [ˈne̝ls ˈpoɐ̯ˀ] ( ouça); Copenhague, 7 de outubro de 1885 – Copenhague, 18 de novembro de 1962) foi um físico e filósofo dinamarquês que fez contribuições fundamentais para a compreensão da estrutura at...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Niels_Bohr",
+    "wiki_extract": "Niels Henrik David Bohr (dinamarquês: [ˈne̝ls ˈpoɐ̯ˀ] ( ouça); Copenhague, 7 de outubro de 1885 – Copenhague, 18 de novembro de 1962) foi um físico e filósofo dinamarquês que fez contribuições fundamentais para a compreensão da estrutura atômica e da mecânica quântica, pela qual recebeu o Prêmio Nobel de Física em 1922.\nBohr desenvolveu um modelo atômico (átomo de Bohr), no qual propôs que os níveis de energia dos elétrons são quantizadas e que os elétrons se movem em órbitas estáveis ao redor do núcleo atômico, mas podem saltar de um nível de energia (ou órbita) para outro. Embora o modelo tenha sido, mais tarde, substituído por outros, seus princípios fundamentais permanecem válidos. Ele também concebeu o princípio da complementaridade, que defende que objetos têm certos pares de propriedades complementares que não podem ser todos observados ou medidos simultaneamente, como a dualidade onda-partícula. Essa noção de complementariedade dominava o pensamento de Bohr tanto na ciência quanto na filosofia.\nBohr fundou o Instituto de Física Teórica na Universidade de Copenhague, hoje conhecido como Instituto Niels Bohr, que foi inaugurado em 1920. Bohr orientou e colaborou com físicos incluindo Hans Kramers, Oskar Klein, George de Hevesy, e Werner Heisenberg. Ele também previu a existência de um novo elemento semelhante ao zircônio, que recebeu o nome de háfnio (em homenagem à cidade de Hafnia, Copenhague em latim). Posteriormente, o elemento bóhrio foi nomeado em sua homenagem.\nDurante a década de 1930, Bohr ajudou os refugiados da Segunda Guerra Mundial. Depois que a Dinamarca foi ocupada pelos alemães, Bohr encontrou-se com Heisenberg, que havia se tornado o responsável pelo projeto de energia nuclear alemão. Em setembro de 1943 chegou a Bohr a notícia de que estava prestes a ser preso pelos alemães, fugindo assim para a Suécia. De lá, ele foi levado para a Grã-Bretanha, onde se juntou ao projeto britânico de armas nucleares Tube Alloys, e fez parte da missão britânica no Projeto Manhattan. Após a guerra, Bohr apelou para a cooperação internacional sobre energia nuclear, envolvendo-se na criação da CERN e tornando-se o primeiro presidente do Instituto Nórdico de Física Teórica em 1957.\n\n"
+  },
+  {
+    "id": "auto-louis-pasteur",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Microbiologia",
+    "difficulty": 2,
+    "question_pt": "Para o processo de conservação de alimentos que leva seu nome, veja pasteurização. Louis Pasteur (Dole, 27 de dezembro de 1822 – Marnes-la-Coquette, 28 de setembro de 1895) foi um químico e microbiologista francês. Seus estudos ajudaram a estabelecer o papel dos microrganismos na fermentação e em doenças infecciosas. Este artigo é sobre o cientista esta entidade. (*) Identifique este cientista francês pioneiro da vacina contra a raiva e criador da técnica de pasteurização.",
+    "formatted_answer_pt": "<b><u>Louis Pasteur</u></b>",
+    "answer_canonical_pt": "Louis Pasteur",
+    "accept_aliases": [
+      "Louis Pasteur",
+      "Pasteur"
+    ],
+    "prompt_aliases": [
+      "este cientista francês"
+    ],
+    "explanation": "Este artigo é sobre o cientista Louis Pasteur. Para o processo de conservação de alimentos que leva seu nome, veja pasteurização.\n\nLouis Pasteur (Dole, 27 de dezembro de 1822 – Marnes-la-Coquette, 28 de setembro de 1895) foi um químico e mi...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Louis_Pasteur",
+    "wiki_extract": "Este artigo é sobre o cientista Louis Pasteur. Para o processo de conservação de alimentos que leva seu nome, veja pasteurização.\n\nLouis Pasteur (Dole, 27 de dezembro de 1822 – Marnes-la-Coquette, 28 de setembro de 1895) foi um químico e microbiologista francês. Seus estudos ajudaram a estabelecer o papel dos microrganismos na fermentação e em doenças infecciosas. Deles também resultaram métodos de conservação de alimentos e experiências decisivas para o desenvolvimento de vacinas.\nEm 1848, ainda no início da carreira, Pasteur separou cristais de duas formas de um mesmo composto químico e mostrou que elas desviavam a luz em sentidos opostos. Suas observações sobre essa assimetria, hoje estudada como quiralidade molecular, contribuíram para o desenvolvimento da estereoquímica.\nAo investigar problemas enfrentados por produtores de vinho e cerveja, demonstrou que diferentes microrganismos participavam de diferentes fermentações e da deterioração das bebidas. Propôs o aquecimento controlado do vinho para reduzir essa deterioração. O processo passou a ser chamado pasteurização e mais tarde foi aplicado a outros produtos, entre eles o leite.\nPasteur também examinou a alegação de que seres microscópicos surgiam por geração espontânea. Seus experimentos com frascos de gargalo curvo mostraram que caldos nutritivos podiam permanecer sem microrganismos quando protegidos das partículas presentes no ar. Estudou ainda doenças dos bichos-da-seda e defendeu medidas de higiene baseadas no conhecimento dos micróbios; esse conjunto de pesquisas influenciou a prevenção de infecções.\nCom seus colaboradores, desenvolveu vacinas experimentais contra a cólera aviária e o antraz. Em 1885, sua equipe aplicou um tratamento preventivo contra a raiva em Joseph Meister, menino mordido por um cão considerado raivoso. A procura por esse tratamento ajudou a impulsionar a criação do Instituto Pasteur, inaugurado em Paris em 1888.\n\n"
+  },
+  {
+    "id": "auto-alexander-fleming",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Medicina",
+    "difficulty": 2,
+    "question_pt": "Ele dividiu o Prêmio Nobel de Fisiologia ou Medicina de 1945 com Howard Florey e Ernst Chain \"pela descoberta da penicilina e seu efeito curativo em várias doenças infecciosas\". Esta foi a primeira substância antibiotica descoberta. Sua descoberta em 1928 do que mais tarde foi chamado de benzilpenicilina (ou penicilina G) a partir do fungo Penicillium rubens foi descrita como a \"maior vitória única já alcançada sobre as doenças\". Sir esta entidade (6 de agosto de 1881 – 11 de março de 1955) foi um biólogo, médico, microbiólogo e farmacologista britânico.. (*) Identifique este médico escocês que descobriu o primeiro antibiótico natural a partir do fungo Penicillium.",
+    "formatted_answer_pt": "<b><u>Alexander Fleming</u></b>",
+    "answer_canonical_pt": "Alexander Fleming",
+    "accept_aliases": [
+      "Alexander Fleming",
+      "Sir Alexander Fleming"
+    ],
+    "prompt_aliases": [
+      "este médico escocês"
+    ],
+    "explanation": "Sir Alexander Fleming (6 de agosto de 1881 – 11 de março de 1955) foi um biólogo, médico, microbiólogo e farmacologista britânico.. Ele dividiu o Prêmio Nobel de Fisiologia ou Medicina de 1945 com Howard Florey e Ernst Chain \"pela descobert...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Alexander_Fleming",
+    "wiki_extract": "Sir Alexander Fleming (6 de agosto de 1881 – 11 de março de 1955) foi um biólogo, médico, microbiólogo e farmacologista britânico.. Ele dividiu o Prêmio Nobel de Fisiologia ou Medicina de 1945 com Howard Florey e Ernst Chain \"pela descoberta da penicilina e seu efeito curativo em várias doenças infecciosas\". Esta foi a primeira substância antibiotica descoberta. Sua descoberta em 1928 do que mais tarde foi chamado de benzilpenicilina (ou penicilina G) a partir do fungo Penicillium rubens foi descrita como a \"maior vitória única já alcançada sobre as doenças\".\nEle também descobriu a enzima lisozima a partir de sua secreção nasal em 1922, e junto com ela uma bactéria que ele nomeou Micrococcus lysodeikticus, posteriormente renomeada como Micrococcus luteus.\nFleming foi cavaleiro por suas realizações científicas em 1944. Em 1999, ele foi nomeado na lista da revista Time das 100 Pessoas Mais Importantes do Século XX. Em 2002, ele foi incluído na pesquisa televisiva da BBC dos 100 Maiores Britânicos e, em 2009, ele também foi votado como o terceiro \"maior escocês\" em uma pesquisa de opinião conduzida pela STV, atrás apenas de Robert Burns e William Wallace."
   }
 ]

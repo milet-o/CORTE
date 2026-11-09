@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "CORTE — O primeiro Quizbowl totalmente em português",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0 -p 3000",
     "build": "next build",
-    "start": "next start -p ${PORT:-3000}",
+    "start": "next start -H 0.0.0.0",
     "pipeline:seed": "tsx scripts/seed-database.ts",
     "pipeline:crawler": "tsx scripts/infinite-crawler.ts",
     "pipeline:wiki": "tsx scripts/wikipedia-brasil.ts",

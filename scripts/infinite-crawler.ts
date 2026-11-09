@@ -80,6 +80,45 @@ export const TARGET_CRAWLER_TOPICS: { title: string; category: string; subcatego
   { title: 'Neurônio', category: 'Ciência', subcategory: 'Neurociência', entityType: 'esta célula altamente especializada do sistema nervoso com dendritos e axônio' },
   { title: 'Hemoglobina', category: 'Ciência', subcategory: 'Fisiologia e Bioquímica', entityType: 'esta proteína transportadora de oxigênio rica em ferro presente nos glóbulos vermelhos' },
   { title: 'Fotossíntese', category: 'Ciência', subcategory: 'Botânica e Bioquímica', entityType: 'este processo biológico que converte luz solar, água e CO2 em glicose e oxigênio' },
+
+  // --- GRANDES GUERRAS & BATALHAS DECISIVAS ---
+  { title: 'Batalha de Waterloo', category: 'História', subcategory: 'Guerras Napoleônicas', entityType: 'esta histórica batalha de 1815 que selou a derrota definitiva de Napoleão Bonaparte' },
+  { title: 'Batalha de Stalingrado', category: 'História', subcategory: 'Segunda Guerra Mundial', entityType: 'esta sangrenta batalha urbana às margens do rio Volga marco de virada contra a Alemanha nazista' },
+  { title: 'Guerra dos Trinta Anos', category: 'História', subcategory: 'História Moderna', entityType: 'este devastador conflito europeu entre 1618 e 1648 encerrado pela Paz de Vestfália' },
+  { title: 'Cruzadas', category: 'História', subcategory: 'Idade Média', entityType: 'estas expedições militares cristãs medievais com o objetivo de recuperar a Terra Santa' },
+  { title: 'Guerra do Peloponeso', category: 'História', subcategory: 'Grécia Antiga', entityType: 'este conflito bélico entre as cidades-estado de Atenas e Esparta narrado por Tucídides' },
+  { title: 'Batalha de Midway', category: 'História', subcategory: 'Segunda Guerra Mundial', entityType: 'esta batalha aeronaval decisiva no Pacífico em 1942 onde os EUA afundaram quatro porta-aviões japoneses' },
+  { title: 'Batalha das Termópilas', category: 'História', subcategory: 'Guerras Médicas', entityType: 'esta batalha onde o rei espartano Leônidas liderou a resistência contra o imperador persa Xerxes' },
+  { title: 'Guerra das Rosas', category: 'História', subcategory: 'História da Inglaterra', entityType: 'esta guerra civil dinástica inglesa entre as casas nobres rivais de Lancaster e York' },
+
+  // --- POVOS & CIVILIZAÇÕES ANTIGAS ---
+  { title: 'Suméria', category: 'História', subcategory: 'Mesopotâmia Antiga', entityType: 'esta primeira grande civilização humana no sul da Mesopotâmia que inventou a escrita cuneiforme' },
+  { title: 'Império Babilônico', category: 'História', subcategory: 'Mesopotâmia', entityType: 'este império mesopotâmico governado por Hamurabi e célebre pelos Jardins Suspensos' },
+  { title: 'Fenícia', category: 'História', subcategory: 'Antiguidade Oriental', entityType: 'esta civilização de navegadores e comerciantes no Mediterrâneo criadora do alfabeto fonético' },
+  { title: 'Esparta', category: 'História', subcategory: 'Grécia Antiga', entityType: 'esta pólis grega militarista do Peloponeso famosa pelo treinamento austero da agogê' },
+  { title: 'Cartago', category: 'História', subcategory: 'Antiguidade Clássica', entityType: 'esta potência comercial marítima do norte da África rival de Roma nas Guerras Púnicas' },
+  { title: 'Império Mongol', category: 'História', subcategory: 'História Medieval', entityType: 'este maior império de terras contínuas da história fundado por Gêngis Khan' },
+  { title: 'Vikings', category: 'História', subcategory: 'Escandinávia Medieval', entityType: 'estes navegadores guerreiros nórdicos que atacavam costas e chegaram à América nos drakkares' },
+
+  // --- POLÍTICOS & LÍDERES MUNDIAIS ---
+  { title: 'Napoleão Bonaparte', category: 'História', subcategory: 'História da França', entityType: 'este líder militar e imperador francês que conquistou grande parte da Europa' },
+  { title: 'Winston Churchill', category: 'História', subcategory: 'História Britânica', entityType: 'este primeiro-ministro britânico que liderou o Reino Unido na Segunda Guerra Mundial' },
+  { title: 'Abraham Lincoln', category: 'História', subcategory: 'História dos EUA', entityType: 'este 16º presidente dos Estados Unidos que preservou a União e aboliu a escravidão' },
+  { title: 'Alexandre, o Grande', category: 'História', subcategory: 'Macedônia Antiga', entityType: 'este jovem rei da Macedônia que conquistou o Império Persa e criou o helenismo' },
+  { title: 'Cleópatra', category: 'História', subcategory: 'Egito Ptolomaico', entityType: 'esta última rainha do Egito ptolomaico amante de Júlio César e Marco Antônio' },
+  { title: 'Gêngis Khan', category: 'História', subcategory: 'Império Mongol', entityType: 'este conquistador que unificou as tribos nômades da estepe e fundou o Império Mongol' },
+  { title: 'Otto von Bismarck', category: 'História', subcategory: 'Alemanha', entityType: 'este estadista conhecido como o Chanceler de Ferro que unificou a Alemanha em 1871' },
+  { title: 'Mahatma Gandhi', category: 'História', subcategory: 'História da Índia', entityType: 'este líder nacionalista indiano pioneiro da resistência não violenta contra o Império Britânico' },
+
+  // --- CIENTISTAS & INVENTORES MONUMENTAIS ---
+  { title: 'Nikola Tesla', category: 'Ciência', subcategory: 'Eletromagnetismo', entityType: 'este gênio inventor sérvio-americano pioneiro do sistema elétrico de corrente alternada' },
+  { title: 'Alan Turing', category: 'Ciência', subcategory: 'Computação', entityType: 'este matemático britânico considerado o pai da ciência da computação que quebrou a máquina Enigma' },
+  { title: 'Arquimedes', category: 'Ciência', subcategory: 'Grécia Antiga', entityType: 'este matemático e físico de Siracusa célebre pelo princípio do empuxo e pela exclamação Eureka' },
+  { title: 'Stephen Hawking', category: 'Ciência', subcategory: 'Cosmologia', entityType: 'este físico britânico autor de Uma Breve História do Tempo que estudou a radiação dos buracos negros' },
+  { title: 'Johannes Kepler', category: 'Ciência', subcategory: 'Astronomia', entityType: 'este astrônomo alemão que formulou as três leis do movimento planetário em órbitas elípticas' },
+  { title: 'Niels Bohr', category: 'Ciência', subcategory: 'Física Atômica', entityType: 'este físico dinamarquês que propôs o modelo atômico com níveis quantizados de energia' },
+  { title: 'Louis Pasteur', category: 'Ciência', subcategory: 'Microbiologia', entityType: 'este cientista francês pioneiro da vacina contra a raiva e criador da técnica de pasteurização' },
+  { title: 'Alexander Fleming', category: 'Ciência', subcategory: 'Medicina', entityType: 'este médico escocês que descobriu o primeiro antibiótico natural a partir do fungo Penicillium' }
 ];
 
 /**
