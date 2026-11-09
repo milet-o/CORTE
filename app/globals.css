@@ -1,38 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #090d16;
-  --foreground: #f8fafc;
+  --ink: #1d1714;
+  --paper: #f0ece5;
+  --card: #fffdf8;
+  --cream: #f6ece2;
+  --creme: #fff4dc;
+  --or: #e8673a;
+  --mu: #f2b84b;
+  --gr: #3e9b6f;
+  --bl: #4f7fd0;
+  --rd: #e0463a;
+  --suave: #4d433d;
 }
 
 body {
-  color: var(--foreground);
-  background: radial-gradient(circle at 50% 0%, #172554 0%, #090d16 65%);
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image: 
+    radial-gradient(ellipse at 50% 50%, transparent 52%, #bfb6a63d 100%),
+    radial-gradient(circle at 12% 18%, #dcd5ca40, transparent 24%),
+    radial-gradient(circle at 78% 10%, #faf7f257, transparent 28%),
+    radial-gradient(circle at 88% 62%, #d3ccc033, transparent 30%),
+    radial-gradient(circle at 30% 70%, #faf7f24d, transparent 26%);
+  background-attachment: fixed;
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
   min-height: 100vh;
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
 }
 
-@keyframes pulse-gold {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(234, 179, 8, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(234, 179, 8, 0.85);
-  }
+/* Efeito de botão com clique tátil e sombra sólida do Salinha */
+.btn-salinha {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  border-radius: 9999px;
+  font-weight: 800;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  user-select: none;
 }
 
-.power-glow {
-  animation: pulse-gold 1.8s infinite;
+.btn-salinha:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--ink);
 }
 
-@keyframes buzz-hit {
-  0% { transform: scale(1); }
-  50% { transform: scale(0.96); }
-  100% { transform: scale(1); }
+.btn-salinha:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
-.buzz-active {
-  animation: buzz-hit 0.15s ease-in-out;
+/* Card estilo folha / sticker do Salinha */
+.card-salinha {
+  background-color: var(--card);
+  border: 3.5px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  border-radius: 24px;
+}
+
+/* Tag adesivo */
+.tag-salinha {
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: all 0.12s ease;
+}
+
+.tag-salinha:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+/* Marcação amarela mostarda de grifa-texto */
+mark.destaque {
+  background-color: var(--mu);
+  color: var(--ink);
+  padding: 2px 6px;
+  border-radius: 6px;
+  box-decoration-break: clone;
+}
+
+/* Cursor de leitura estilo caneta/carimbo */
+@keyframes pisca-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-leitura {
+  animation: pisca-cursor 0.7s infinite;
 }

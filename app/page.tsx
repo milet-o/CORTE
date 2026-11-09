@@ -17,7 +17,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-[#090d16] text-slate-100">
+    <main className="min-h-screen text-ink pb-16">
       <QuizbowlReader initialQuestions={initialQuestions} />
     </main>
   );

@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { generateBrazilianQuestions } from './wikipedia-brasil';
-import { getCuratedUniversalQuestions } from './fetch-qbreader';
+import { generateMassDatabase } from './mass-generator';
 import { Tossup } from '../types/quizbowl';
 
 function escapeCsvField(val: string | number | undefined | null): string {
@@ -46,7 +45,7 @@ function exportToCsv(tossups: Tossup[], filePath: string) {
 
 async function main() {
   console.log('==============================================');
-  console.log('🚀 INICIANDO PIPELINE OFFLINE DO BANCO DO CORTE');
+  console.log('🚀 EXECUTANDO PIPELINE DE EXPANSÃO MASSIVA');
   console.log('==============================================\n');
 
   const dataDir = path.resolve(__dirname, '../data');
@@ -54,30 +53,18 @@ async function main() {
     fs.mkdirSync(dataDir, { recursive: true });
   }
 
-  // 1. Gerar questões piramidais brasileiras via Wikipedia PT-BR
-  console.log('[1/3] Gerando acervo nacional da Wikipedia PT-BR...');
-  const brazilianTossups = await generateBrazilianQuestions();
-
-  // 2. Obter acervo universal do QBReader adaptado e organizado
-  console.log('\n[2/3] Integrando acervo internacional adaptado do QBReader...');
-  const universalTossups = getCuratedUniversalQuestions();
-
-  // 3. Consolidar banco de dados
-  const allTossups: Tossup[] = [...brazilianTossups, ...universalTossups];
-  console.log(`\n[3/3] Consolidando total de ${allTossups.length} questões no banco...`);
+  const allTossups = await generateMassDatabase();
 
   const jsonPath = path.join(dataDir, 'questions.json');
   fs.writeFileSync(jsonPath, JSON.stringify(allTossups, null, 2), 'utf-8');
-  console.log(`[JSON] Banco offline salvo em: ${jsonPath}`);
+  console.log(`[JSON] Banco consolidado salvo em: ${jsonPath}`);
 
   const csvPath = path.join(dataDir, 'questions.csv');
   exportToCsv(allTossups, csvPath);
 
   console.log('\n==============================================');
-  console.log('🎉 PIPELINE CONCLUÍDO COM SUCESSO!');
+  console.log('🎉 BANCO COMPILADO E EXPANDIDO COM SUCESSO!');
   console.log(`📊 Total de Questões: ${allTossups.length}`);
-  console.log(`🇧🇷 Brasileiras: ${brazilianTossups.length}`);
-  console.log(`🌐 Internacionais (QBReader): ${universalTossups.length}`);
   console.log('==============================================');
 }
 

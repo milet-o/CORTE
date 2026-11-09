@@ -9,26 +9,42 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: '#f0fdf4',
-          100: '#dcfce7',
-          500: '#22c55e',
-          600: '#16a34a',
-          700: '#15803d',
-          900: '#14532d',
+        ink: '#1d1714',
+        paper: '#f0ece5',
+        card: '#fffdf8',
+        cream: '#f6ece2',
+        creme: '#fff4dc',
+        or: {
+          DEFAULT: '#e8673a',
+          dark: '#d4562a',
         },
-        gold: {
-          400: '#facc15',
-          500: '#eab308',
-          600: '#ca8a04',
+        mu: {
+          DEFAULT: '#f2b84b',
+          dark: '#d99e2e',
         },
-        buzz: {
-          500: '#ef4444',
-          600: '#dc2626',
-        }
+        gr: {
+          DEFAULT: '#3e9b6f',
+          dark: '#2b7552',
+        },
+        bl: {
+          DEFAULT: '#4f7fd0',
+          dark: '#3d6ab8',
+        },
+        rd: {
+          DEFAULT: '#e0463a',
+          dark: '#c73328',
+        },
+        suave: '#4d433d',
+      },
+      boxShadow: {
+        'solid-sm': '2px 2px 0 #1d1714',
+        'solid': '4px 4px 0 #1d1714',
+        'solid-lg': '6px 6px 0 #1d1714',
+        'solid-xl': '8px 8px 0 #1d1714',
       },
       fontFamily: {
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        serif: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['Outfit', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
       }
     },
   },
