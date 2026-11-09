@@ -53,11 +53,24 @@ async function main() {
     fs.mkdirSync(dataDir, { recursive: true });
   }
 
-  const allTossups = await generateMassDatabase();
-
   const jsonPath = path.join(dataDir, 'questions.json');
+  let currentQuestions: Tossup[] = [];
+  if (fs.existsSync(jsonPath)) {
+    try {
+      currentQuestions = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
+    } catch (e) {
+      currentQuestions = [];
+    }
+  }
+
+  const massTossups = await generateMassDatabase();
+
+  // Merge preservando questões já coletadas pelo crawler/batches
+  const { deduplicateAndMerge } = await import('./dedup-validator');
+  const { merged: allTossups, added, skipped } = deduplicateAndMerge(massTossups, currentQuestions);
+
   fs.writeFileSync(jsonPath, JSON.stringify(allTossups, null, 2), 'utf-8');
-  console.log(`[JSON] Banco consolidado salvo em: ${jsonPath}`);
+  console.log(`[JSON] Banco consolidado salvo em: ${jsonPath} (Adicionados: ${added}, Existentes/Pulados: ${skipped})`);
 
   const csvPath = path.join(dataDir, 'questions.csv');
   exportToCsv(allTossups, csvPath);

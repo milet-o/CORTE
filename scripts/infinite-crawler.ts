@@ -194,20 +194,34 @@ function buildPyramidalQuestion(
   // Frase final (gatilho): "Identifique [entityType]..."
   const giveaway = `Identifique ${entityType}.`;
 
-  // Pista de Power e pistas secundárias
-  const firstSentence = rawSentences[0];
-  const middleSentences = rawSentences.slice(1, 4);
+  // Sanitiza menções em todas as frases para não haver spoiler antes do giveaway
+  const allAliases = Array.from(new Set([cleanTitle, title, ...extraAliases]));
+  const sanitizedSentences = rawSentences.slice(0, 4).map(sentence => {
+    let s = sentence;
+    for (const term of allAliases) {
+      if (!term || term.length < 3) continue;
+      const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`(?<![\\p{L}\\p{N}])${escaped}(?![\\p{L}\\p{N}])`, 'giu');
+      s = s.replace(regex, 'esta entidade');
+    }
+    return s
+      .replace(/\b(O|A|Os|As|Um|Uma)\s+esta entidade\b/gi, 'Esta entidade')
+      .replace(/\b(o|a|os|as|um|uma)\s+esta entidade\b/gi, 'esta entidade')
+      .replace(/\bdo\s+esta entidade\b/gi, 'desta entidade')
+      .replace(/\bda\s+esta entidade\b/gi, 'desta entidade')
+      .replace(/\s+/g, ' ')
+      .trim();
+  });
 
-  // Mascara menções ao título na primeira frase para criar a pista de Power
-  const escapedNameRegex = new RegExp(`\\b${cleanTitle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
-  const maskedFirst = firstSentence.replace(escapedNameRegex, 'esta entidade');
-
-  const powerSentence = maskedFirst.includes('(*)') 
-    ? maskedFirst 
-    : `${maskedFirst} (*)`;
-
-  const standardText = middleSentences.join(' ');
-  const fullQuestion = `${standardText} ${powerSentence} ${giveaway}`.trim();
+  // Pista de Power e pistas secundárias: posiciona a marca (*) na transição (cerca de 40% da pergunta)
+  let fullQuestion = '';
+  if (sanitizedSentences.length >= 3) {
+    fullQuestion = `${sanitizedSentences[1]} ${sanitizedSentences[0]} (*) ${sanitizedSentences.slice(2).join(' ')} ${giveaway}`.trim();
+  } else if (sanitizedSentences.length === 2) {
+    fullQuestion = `${sanitizedSentences[1]} (*) ${sanitizedSentences[0]} ${giveaway}`.trim();
+  } else {
+    fullQuestion = `${sanitizedSentences[0]} (*) ${giveaway}`.trim();
+  }
 
   const formattedAnswer = `<b><u>${cleanTitle}</u></b>`;
   const acceptAliases = Array.from(new Set([
@@ -215,6 +229,8 @@ function buildPyramidalQuestion(
     title,
     ...extraAliases.map(a => a.replace(/\s*\(.*?\)\s*/g, '').trim())
   ])).filter(Boolean);
+
+  const cleanEntityWords = entityType.split(' ').filter(w => w.length > 3).slice(0, 2);
 
   return {
     id: `auto-${cleanTitle.toLowerCase().replace(/[^a-z0-9]/g, '-')}`,
@@ -226,7 +242,7 @@ function buildPyramidalQuestion(
     formatted_answer_pt: formattedAnswer,
     answer_canonical_pt: cleanTitle,
     accept_aliases: acceptAliases,
-    prompt_aliases: [entityType.split(' ').slice(0, 3).join(' ')],
+    prompt_aliases: cleanEntityWords,
     explanation: extract.slice(0, 240) + '...',
     wiki_url: wikiUrl,
     wiki_extract: extract

@@ -549,12 +549,16 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 {[
                   'Todas',
                   'Ciência',
+                  'História',
+                  'Geografia',
+                  'Literatura',
+                  'Linguística',
+                  'Mitologia',
+                  'Artes',
                   'Cidades do Brasil',
                   'Personalidades do Brasil',
                   'Políticos do Brasil',
                   'Curiosidades do Mundo',
-                  'História',
-                  'Literatura',
                 ].map((cat) => (
                   <button
                     key={cat}

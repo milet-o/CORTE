@@ -36,8 +36,8 @@ export const MASS_EXPANSION_TOPICS: MassTopic[] = [
     powerClue: 'Seu composto óxido com oxigênio, conhecido popularmente como água pesada, é empregado como moderador de nêutrons em reatores nucleares CANDU (*)',
     giveaway: 'Identifique este isótopo estável do hidrogênio cujo núcleo atômico é formado por exatamente um próton e um nêutron, representado pela letra D ou Hidrogênio-2.',
     canonicalAnswer: 'Deutério',
-    acceptAliases: ['Deuterio', 'Hidrogênio-2', 'Hidrogenio-2', 'Água Pesada', 'Agua Pesada', '2H'],
-    promptAliases: ['isótopo do hidrogênio', 'hidrogênio pesado'],
+    acceptAliases: ['Deuterio', 'Hidrogênio-2', 'Hidrogenio-2', '2H'],
+    promptAliases: ['isótopo do hidrogênio', 'hidrogênio pesado', 'água pesada'],
     explanation: 'O deutério (²H ou D) é um dos isótopos estáveis do hidrogênio. Seu núcleo possui um próton e um nêutron, e seu óxido forma a água pesada utilizada em reatores nucleares.'
   },
   {

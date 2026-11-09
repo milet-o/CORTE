@@ -1,0 +1,67 @@
+import { TargetTopic } from './mass-topics-catalog';
+
+export const EXPANDED_TOPICS_PART3: TargetTopic[] = [
+  // ================================================================
+  // 1. CIDADES DO BRASIL (TODAS AS CAPITAIS & CIDADES HISTÓRICAS)
+  // ================================================================
+  { title: 'São Paulo', category: 'Cidades do Brasil', subcategory: 'São Paulo', entityType: 'esta maior metrópole da América do Sul fundada pelos jesuítas no Pátio do Colégio' },
+  { title: 'Rio de Janeiro', category: 'Cidades do Brasil', subcategory: 'Rio de Janeiro', entityType: 'esta histórica Cidade Maravilhosa antiga capital federal famosa pelo Pão de Açúcar e Cristo Redentor' },
+  { title: 'Santos', category: 'Cidades do Brasil', subcategory: 'São Paulo', entityType: 'este município litorâneo paulista que abriga o maior complexo portuário da América Latina' },
+  { title: 'Campinas', category: 'Cidades do Brasil', subcategory: 'São Paulo', entityType: 'este polo tecnológico e universitário do interior paulista sede da Unicamp' },
+  { title: 'Ribeirão Preto', category: 'Cidades do Brasil', subcategory: 'São Paulo', entityType: 'este polo do agronegócio do interior paulista conhecido como a capital do chope e do café' },
+  { title: 'Juiz de Fora', category: 'Cidades do Brasil', subcategory: 'Minas Gerais', entityType: 'este importante município da Zona da Mata mineira pioneiro na industrialização têxtil e hidrelétrica' },
+  { title: 'Mariana', category: 'Cidades do Brasil', subcategory: 'Minas Gerais', entityType: 'esta primeira vila, primeira capital e primeira sé episcopal do estado de Minas Gerais' },
+  { title: 'Diamantina', category: 'Cidades do Brasil', subcategory: 'Minas Gerais', entityType: 'esta histórica cidade barroca do Vale do Jequitinhonha terra natal de Juscelino Kubitschek e Chica da Silva' },
+  { title: 'São João del-Rei', category: 'Cidades do Brasil', subcategory: 'Minas Gerais', entityType: 'este histórico município mineiro famoso pelos sinos de suas igrejas barrocas e pela maria-fumaça' },
+  { title: 'Congonhas', category: 'Cidades do Brasil', subcategory: 'Minas Gerais', entityType: 'esta cidade histórica mineira que abriga o santuário com os doze profetas esculpidos em pedra-sabão por Aleijadinho' },
+  { title: 'Petrópolis', category: 'Cidades do Brasil', subcategory: 'Rio de Janeiro', entityType: 'esta Cidade Imperial serrana fluminense refúgio de verão de Dom Pedro II' },
+  { title: 'Niterói', category: 'Cidades do Brasil', subcategory: 'Rio de Janeiro', entityType: 'este município fluminense do outro lado da Baía de Guanabara famoso pelo Museu de Arte Contemporânea de Niemeyer' },
+  { title: 'Vitória (Espírito Santo)', category: 'Cidades do Brasil', subcategory: 'Espírito Santo', entityType: 'esta capital insular capixaba famosa pelo Convento da Penha e pela moqueca' },
+  { title: 'Vila Velha', category: 'Cidades do Brasil', subcategory: 'Espírito Santo', entityType: 'este município capixaba mais antigo do estado fundado pelo donatário Vasco Fernandes Coutinho' },
+  { title: 'Goiânia', category: 'Cidades do Brasil', subcategory: 'Goiás', entityType: 'esta capital goiana planejada na década de 1930 com o maior acervo arquitetônico art déco do Brasil' },
+  { title: 'Cuiabá', category: 'Cidades do Brasil', subcategory: 'Mato Grosso', entityType: 'esta capital mato-grossense surgida na corrida do ouro às margens do rio homônimo portal do Pantanal' },
+  { title: 'Campo Grande', category: 'Cidades do Brasil', subcategory: 'Mato Grosso do Sul', entityType: 'esta capital sul-mato-grossense conhecida como a Cidade Morena pela terra avermelhada' },
+  { title: 'Natal (Rio Grande do Norte)', category: 'Cidades do Brasil', subcategory: 'Rio Grande do Norte', entityType: 'esta capital potiguar conhecida como a Cidade do Sol e ponto de apoio aéreo dos Aliados na Segunda Guerra' },
+  { title: 'João Pessoa', category: 'Cidades do Brasil', subcategory: 'Paraíba', entityType: 'esta capital paraibana onde se localiza a Ponta do Seixas o ponto mais oriental das Américas' },
+  { title: 'Maceió', category: 'Cidades do Brasil', subcategory: 'Alagoas', entityType: 'esta capital alagoana famosa pelas praias de Pajuçara e Ponta Verde e pelas lagoas Mundaú e Manguaba' },
+  { title: 'Aracaju', category: 'Cidades do Brasil', subcategory: 'Sergipe', entityType: 'esta capital sergipana primeira cidade planejada do Brasil banhada pelo rio Sergipe' },
+  { title: 'Teresina', category: 'Cidades do Brasil', subcategory: 'Piauí', entityType: 'esta única capital da Região Nordeste não localizada no litoral erguida entre os rios Parnaíba e Poti' },
+  { title: 'Palmas', category: 'Cidades do Brasil', subcategory: 'Tocantins', entityType: 'esta mais jovem capital estadual do Brasil criada em 1989 no coração do cerrado' },
+  { title: 'Porto Velho', category: 'Cidades do Brasil', subcategory: 'Rondônia', entityType: 'esta capital rondoniense às margens do rio Madeira surgida com a lendária Ferrovia Madeira-Mamoré' },
+  { title: 'Rio Branco', category: 'Cidades do Brasil', subcategory: 'Acre', entityType: 'esta capital acreana cortada pelo rio Acre palco histórico da Revolução Acreana e dos seringais' },
+  { title: 'Boa Vista (Roraima)', category: 'Cidades do Brasil', subcategory: 'Roraima', entityType: 'esta única capital brasileira inteiramente situada ao norte da linha do Equador planejada em formato radial de leque' },
+  { title: 'Macapá', category: 'Cidades do Brasil', subcategory: 'Amapá', entityType: 'esta capital amapaense banhada pelo rio Amazonas cortada exatamente pela linha do Equador no estádio Zerão' },
+  { title: 'Joinville', category: 'Cidades do Brasil', subcategory: 'Santa Catarina', entityType: 'este maior município catarinense polo industrial metalmecânico conhecido como a Cidade da Dança' },
+  { title: 'Blumenau', category: 'Cidades do Brasil', subcategory: 'Santa Catarina', entityType: 'este município do Vale do Itajaí de colonização alemã célebre pela sua arquitetura enxaimel e pela Oktoberfest' },
+  { title: 'Caxias do Sul', category: 'Cidades do Brasil', subcategory: 'Rio Grande do Sul', entityType: 'este polo industrial da Serra Gaúcha centro da imigração italiana e sede da Festa da Uva' },
+  { title: 'Pelotas', category: 'Cidades do Brasil', subcategory: 'Rio Grande do Sul', entityType: 'esta histórica cidade gaúcha famosa pelas antigas charqueadas e pela tradicional doçaria fina' },
+  { title: 'Ilhéus', category: 'Cidades do Brasil', subcategory: 'Bahia', entityType: 'esta cidade do sul da Bahia imortalizada nos romances de Jorge Amado como o coração do ciclo do cacau' },
+
+  // ================================================================
+  // 2. PAÍSES E CAPITAIS HISTÓRICAS DO MUNDO
+  // ================================================================
+  { title: 'Roma', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta Cidade Eterna capital da Itália às margens do rio Tibre que abriga o Vaticano e o Coliseu' },
+  { title: 'Atenas', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta capital histórica da Grécia dominada pela monumental colina rochosa da Acrópole e pelo Partenon' },
+  { title: 'Paris', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta capital da França cortada pelo rio Sena conhecida como a Cidade Luz famosa pelo Museu do Louvre e Torre Eiffel' },
+  { title: 'Londres', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta histórica capital britânica às margens do rio Tâmisa sede do Big Ben, Palácio de Westminster e Torre de Londres' },
+  { title: 'Berlim', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta capital alemã famosa pelo Portão de Brandemburgo e pelo histórico muro que a dividiu durante a Guerra Fria' },
+  { title: 'Moscou', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta capital da Rússia sede da fortaleza do Kremlin e das cúpulas coloridas da Catedral de São Basílio na Praça Vermelha' },
+  { title: 'Pequim', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta milenar capital da China sede da monumental Cidade Proibida e da Praça da Paz Celestial' },
+  { title: 'Tóquio', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta hiperpopulosa metrópole capital do Japão antigamente chamada de Edo na baía homônima' },
+  { title: 'Cairo', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta colossal capital do Egito às margens do Nilo vizinha da necrópole de Gizé e de suas pirâmides' },
+  { title: 'Jerusalém', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta milenar cidade sagrada para o judaísmo, cristianismo e islamismo sede do Muro das Lamentações e da Cúpula da Rocha' },
+  { title: 'Bagdá', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta histórica capital do Iraque às margens do Tigre grande centro científico da Idade de Ouro Islâmica sob o califado Abássida' },
+  { title: 'Damasco', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta antiquíssima capital da Síria habitada continuamente há milênios antiga sede do califado Omíada' },
+  { title: 'Buenos Aires', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta capital da Argentina às margens do Rio da Prata berço do tango e famosa pela Casa Rosada e pelo Obelisco' },
+  { title: 'Lima', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta capital do Peru fundada por Francisco Pizarro em 1535 como a Cidade dos Reis sede do vice-reinado espanhol' },
+  { title: 'Bogotá', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta capital da Colômbia situada em um planalto andino a mais de 2.600 metros de altitude sede do Museu do Ouro' },
+  { title: 'Santiago (Chile)', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta capital do Chile encravada em um vale cercada pela majestosa Cordilheira dos Andes' },
+  { title: 'Camberra', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta capital federal planejada da Austrália construída no interior para dirimir a rivalidade entre Sydney e Melbourne' },
+  { title: 'Ottawa', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta capital do Canadá situada na província de Ontário na fronteira linguística com o Quebec' },
+  { title: 'Washington, D.C.', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta capital federal dos Estados Unidos às margens do rio Potomac que abriga o Capitólio e a Casa Branca' },
+  { title: 'Cidade do Vaticano', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'este menor estado soberano do mundo encravado em Roma sede da Igreja Católica governado pelo Papa' },
+  { title: 'Mônaco', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'este pequeno principado na Riviera Francesa governado pela dinastia Grimaldi famoso pelo cassino de Monte Carlo e circuito de F1' },
+  { title: 'San Marino', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'esta antiquíssima república encravada nos montes Apeninos da Itália considerada o estado soberano republicano mais antigo do mundo' },
+  { title: 'Liechtenstein', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'este microestado alpino sem litoral encravado entre a Suíça e a Áustria um dos dois únicos países duplamente encravados do mundo' },
+  { title: 'Andorra', category: 'Geografia', subcategory: 'Cidades do Mundo', entityType: 'este coprincipado parlamentar pirenaico situado nas montanhas entre a França e a Espanha' }
+];
