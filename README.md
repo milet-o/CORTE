@@ -38,6 +38,28 @@ npx tsx test/judge.test.ts
 
 ---
 
+## 🌐 Como Hospedar no Render (Gratuito e Sem Banco Externo)
+
+Como o banco de dados do CORTE é autossuficiente (`data/questions.json`), **você não precisa de Supabase, Firebase ou qualquer banco externo**. Tudo fica embutido no seu próprio repositório Git!
+
+### Passo a Passo no Render:
+1. Abra sua conta no [Render.com](https://dashboard.render.com).
+2. Clique em **"New +"** $\rightarrow$ **"Web Service"**.
+3. Conecte seu repositório do **GitHub**.
+4. O Render detectará automaticamente o arquivo `render.yaml`, ou você pode preencher manualmente:
+   - **Name**: `corte-quizbowl` (ou o nome que preferir)
+   - **Language**: `Node`
+   - **Branch**: `main` (ou a sua branch ativa)
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm run start`
+   - **Plan**: `Free`
+5. Em **Environment Variables** (se não usar o blueprint automático), adicione:
+   - `NODE_VERSION` = `20.18.0`
+6. Clique em **"Deploy Web Service"**!
+   - Em cerca de 2 minutos, o Render vai compilar o Next.js e gerar a sua URL pública (ex: `https://corte-quizbowl.onrender.com`).
+
+---
+
 ## 🧠 Arquitetura do Juiz Nativo CORTE
 
 O Juiz Nativo avalia a resposta em camadas de tolerância:

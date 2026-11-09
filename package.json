@@ -5,10 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p ${PORT:-3000}",
     "pipeline:seed": "tsx scripts/seed-database.ts",
     "pipeline:wiki": "tsx scripts/wikipedia-brasil.ts",
     "pipeline:qbreader": "tsx scripts/fetch-qbreader.ts"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   },
   "dependencies": {
     "clsx": "^2.1.1",
