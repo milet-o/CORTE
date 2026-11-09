@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #090d16;
+  --foreground: #f8fafc;
+}
+
+body {
+  color: var(--foreground);
+  background: radial-gradient(circle at 50% 0%, #172554 0%, #090d16 65%);
+  min-height: 100vh;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(234, 179, 8, 0.85);
+  }
+}
+
+.power-glow {
+  animation: pulse-gold 1.8s infinite;
+}
+
+@keyframes buzz-hit {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+.buzz-active {
+  animation: buzz-hit 0.15s ease-in-out;
+}

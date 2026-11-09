@@ -1,0 +1,30 @@
+{
+  "name": "corte",
+  "version": "1.0.0",
+  "description": "CORTE — O primeiro Quizbowl totalmente em português",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "pipeline:seed": "tsx scripts/seed-database.ts",
+    "pipeline:wiki": "tsx scripts/wikipedia-brasil.ts",
+    "pipeline:qbreader": "tsx scripts/fetch-qbreader.ts"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.16.0",
+    "next": "^16.0.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

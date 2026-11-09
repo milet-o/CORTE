@@ -1,0 +1,1014 @@
+[
+  {
+    "id": "br-revolta-da-vacina",
+    "origin": "wikipedia_br",
+    "category": "História",
+    "subcategory": "História do Brasil",
+    "difficulty": 3,
+    "question_pt": "Durante esta rebelião, o coronel Ataliba Gomes tentou aproveitar o descontentamento popular para tramar um golpe militar junto à Escola Militar da Praia Vermelha. O jornal oposicionista Correio da Manhã acusava o governo de violar o recato familiar com a proposta apelidada de \"lei do massacre civil\". A revolta teve seu estopim no bairro da Saúde após a publicação de um projeto de regulamentação elaborado pelo sanitarista Oswaldo Cruz (*) O presidente Rodrigues Alves chegou a decretar estado de sítio na capital federal em novembro de 1904. Centenas de revoltosos foram capturados pelas forças armadas e deportados em navios para o território do Acre. Identifique este motim popular ocorrido no Rio de Janeiro que se insurgiu contra a imunização compulsória contra a varíola.",
+    "formatted_answer_pt": "<b><u>Revolta da Vacina</u></b> [aceite também <i>A Revolta da Vacina, Revolta da Vacina de 1904</i>]",
+    "answer_canonical_pt": "Revolta da Vacina",
+    "accept_aliases": [
+      "A Revolta da Vacina",
+      "Revolta da Vacina de 1904"
+    ],
+    "prompt_aliases": [
+      "revolta no Rio",
+      "revolta sanitária",
+      "motim da vacina"
+    ],
+    "reject_aliases": [
+      "Revolta da Chibata",
+      "Revolta da Armada"
+    ],
+    "lead_in": "Durante esta rebelião, o coronel Ataliba Gomes tentou aproveitar o descontentamento popular para tramar um golpe militar junto à Escola Militar da Praia Vermelha.",
+    "giveaway": "Identifique este motim popular ocorrido no Rio de Janeiro que se insurgiu contra a imunização compulsória contra a varíola.",
+    "explanation": "A Revolta da Vacina ocorreu em novembro de 1904 no Rio de Janeiro, motivada pela campanha de vacinação obrigatória contra a varíola liderada por Oswaldo Cruz e pelo plano de reurbanização higienista do prefeito Pereira Passos.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Revolta_da_Vacina",
+    "wiki_extract": "A Revolta da Vacina foi um motim popular ocorrido entre 10 e 16 de novembro de 1904 na cidade do Rio de Janeiro, então capital do Brasil. Seu pretexto imediato foi uma lei que determinava a obrigatoriedade da vacinação contra a varíola, mas também é associada a causas mais profundas, como as reformas urbanas que estavam sendo realizadas pelo prefeito Pereira Passos e as campanhas de saneamento lideradas pelo médico Oswaldo Cruz."
+  },
+  {
+    "id": "br-inconfid-ncia-mineira",
+    "origin": "wikipedia_br",
+    "category": "História",
+    "subcategory": "História do Brasil",
+    "difficulty": 2,
+    "question_pt": "Um dos membros desta conspiração, o poeta Cláudio Manuel da Costa, foi encontrado enforcado sob circunstâncias suspeitas em sua cela na Casa dos Contos. Os conjurados planejavam fundar uma universidade em Vila Rica e adotar uma bandeira inspirada na Revolução Americana com o lema latino \"Libertas Quae Sera Tamen\". A conspiração foi delatada ao governador Visconde de Barbacena pelo coronel Joaquim Silvério dos Reis para ter suas dívidas perdoadas (*) O movimento foi impulsionado pelo medo da \"derrama\", a cobrança forçada de cem arrobas de ouro atrasadas pelo fisco da Coroa Portuguesa em 1789. A maioria dos participantes intelectuais e padres foi condenada ao degredo na África pelo tribunal do Tribunal da Alçada. Nomeie esta conspiração republicana colonial cujo único réu executado na forca foi Joaquim José da Silva Xavier, o Tiradentes.",
+    "formatted_answer_pt": "<b><u>Inconfidência Mineira</u></b> [aceite também <i>Conjuração Mineira, Revolta de Tiradentes</i>]",
+    "answer_canonical_pt": "Inconfidência Mineira",
+    "accept_aliases": [
+      "Conjuração Mineira",
+      "Revolta de Tiradentes"
+    ],
+    "prompt_aliases": [
+      "inconfidência",
+      "conjuração",
+      "revolta mineira"
+    ],
+    "reject_aliases": [
+      "Conjuração Baiana",
+      "Revolução Pernambucana"
+    ],
+    "lead_in": "Um dos membros desta conspiração, o poeta Cláudio Manuel da Costa, foi encontrado enforcado sob circunstâncias suspeitas em sua cela na Casa dos Contos.",
+    "giveaway": "Nomeie esta conspiração republicana colonial cujo único réu executado na forca foi Joaquim José da Silva Xavier, o Tiradentes.",
+    "explanation": "A Inconfidência Mineira (1789) ocorreu na capitania de Minas Gerais contra o domínio português e os pesados impostos sobre o ouro. Tiradentes foi o único executado em 21 de abril de 1792.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Inconfid%C3%AAncia_Mineira",
+    "wiki_extract": "Inconfidência Mineira, também denominada Conjuração Mineira, foi um movimento conspiratório de caráter independentista ocorrido na Capitania de Minas Gerais entre 1788 e 1789, no contexto da crise da mineração aurífera e do aprofundamento das políticas fiscais impostas pela Coroa portuguesa ao Estado do Brasil. Articulado majoritariamente por membros das elites locais — proprietários de terras, militares, clérigos e letrados —, o movimento visava à ruptura com o domínio metropolitano e à instauração de um regime republicano em Minas Gerais."
+  },
+  {
+    "id": "br-guerra-de-canudos",
+    "origin": "wikipedia_br",
+    "category": "História",
+    "subcategory": "História do Brasil",
+    "difficulty": 3,
+    "question_pt": "A terceira expedição militar enviada contra este povoado foi dizimada e viu a morte do lendário comandante coronel Antônio Moreira César. O arraial foi erguido às margens do rio Vaza-Barris na fazenda abandonada de Belo Monte, atraindo sertanejos, ex-escravizados e retirantes da seca. O líder desta comunidade peregrinava pelo sertão restaurando igrejas e pregava contra o casamento civil e a República, sendo chamado de \"Bom Jesus\" (*) A cobertura jornalística deste conflito foi realizada para O Estado de S. Paulo pelo engenheiro e escritor Euclides da Cunha. A campanha militar mobilizou quatro expedições do Exército Brasileiro até a destruição total da comunidade em 1897, descrita na obra Os Sertões. Qual o nome deste conflito armado no sertão da Bahia liderado pelo beato messiânico Antônio Conselheiro?",
+    "formatted_answer_pt": "<b><u>Guerra de Canudos</u></b> [aceite também <i>Canudos, Campanha de Canudos</i>]",
+    "answer_canonical_pt": "Guerra de Canudos",
+    "accept_aliases": [
+      "Canudos",
+      "Campanha de Canudos"
+    ],
+    "prompt_aliases": [
+      "arraial de Canudos",
+      "Belo Monte"
+    ],
+    "reject_aliases": [
+      "Guerra do Contestado",
+      "Guerra dos Farrapos"
+    ],
+    "lead_in": "A terceira expedição militar enviada contra este povoado foi dizimada e viu a morte do lendário comandante coronel Antônio Moreira César.",
+    "giveaway": "Qual o nome deste conflito armado no sertão da Bahia liderado pelo beato messiânico Antônio Conselheiro?",
+    "explanation": "A Guerra de Canudos (1896-1897) foi um confronto entre o Exército Brasileiro e os seguidores de Antônio Conselheiro no sertão baiano, imortalizado por Euclides da Cunha em \"Os Sertões\".",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Guerra_de_Canudos",
+    "wiki_extract": "Guerra de Canudos ou Campanha de Canudos foi um conflito armado ocorrido no final do século XIX entre, por um lado, as tropas regulares do estado da Bahia primeiro, e da república do Brasil depois, e por outro lado, um grupo de cerca de 30 000 colonos estabelecidos em comunidade autônoma num povoado fundado por eles no nordeste da Bahia, perto da antiga fazenda de Canudos, e rebatizado de Belo Monte."
+  },
+  {
+    "id": "br-semana-de-arte-moderna",
+    "origin": "wikipedia_br",
+    "category": "Artes",
+    "subcategory": "Cultura Brasileira",
+    "difficulty": 2,
+    "question_pt": "Na segunda noite deste evento, o pianista e compositor Guiomar Novaes tocou peças que desafiavam o gosto acadêmico, enquanto vaias ruidosas ecoavam nos camarotes. O artista plástico Di Cavalcanti foi o responsável por desenhar a capa do catálogo e o programa oficial das festividades. Durante a leitura do poema satírico \"Os Sapos\", de Manuel Bandeira, o público presente reagiu com vaias, gritos e latidos ao ouvir a ridicularização dos parnasianos (*) O evento foi patrocinado pela elite cafeeira paulista e reuniu intelectuais como Mário de Andrade e Oswald de Andrade no Theatro Municipal de São Paulo. O movimento catalisou as bases do modernismo no Brasil e culminou posteriormente no Manifesto Antropófago e na pintura Abaporu de Tarsila do Amaral. Nomeie este festival cultural realizado em fevereiro de 1922 que revolucionou a literatura, a música e as artes plásticas brasileiras.",
+    "formatted_answer_pt": "<b><u>Semana de Arte Moderna</u></b> [aceite também <i>Semana de Arte Moderna de 1922, Semana de 22, Semana Moderna de 22</i>]",
+    "answer_canonical_pt": "Semana de Arte Moderna",
+    "accept_aliases": [
+      "Semana de Arte Moderna de 1922",
+      "Semana de 22",
+      "Semana Moderna de 22"
+    ],
+    "prompt_aliases": [
+      "movimento modernista",
+      "Semana de Arte"
+    ],
+    "reject_aliases": [
+      "Modernismo"
+    ],
+    "lead_in": "Na segunda noite deste evento, o pianista e compositor Guiomar Novaes tocou peças que desafiavam o gosto acadêmico, enquanto vaias ruidosas ecoavam nos camarotes.",
+    "giveaway": "Nomeie este festival cultural realizado em fevereiro de 1922 que revolucionou a literatura, a música e as artes plásticas brasileiras.",
+    "explanation": "A Semana de Arte Moderna ocorreu entre 13 e 17 de fevereiro de 1922 no Theatro Municipal de São Paulo, marcando o início oficial do Modernismo no Brasil.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Semana_de_Arte_Moderna",
+    "wiki_extract": "Semana de Arte Moderna, também chamada de Semana de 22, foi um evento cultural que ocorreu no Theatro Municipal de São Paulo de 13 a 17 de fevereiro de 1922. Contou com exposição de pinturas, esculturas e maquetes arquitetônicas, além de conferências e concertos nas noites dos dias 13, 15 e 17. Foi financiada principalmente por membros da elite paulista que haviam enriquecido com a produção cafeeira."
+  },
+  {
+    "id": "br-revolta-da-chibata",
+    "origin": "wikipedia_br",
+    "category": "História",
+    "subcategory": "História do Brasil",
+    "difficulty": 3,
+    "question_pt": "O marinheiro Marcelino Rodrigues Menezes recebeu duzentas e cinquenta chibatadas diante da tripulação reunida a bordo do encouraçado Minas Geraes, servindo de estopim para a revolta. Mesmo após o presidente Hermes da Fonseca prometer anistia aos amotinados, muitos líderes foram encarcerados e mortos por asfixia nas masmorras da Ilha das Cobras. Os marinheiros revoltosos apontaram os canhões dos modernos encouraçados dreadnought contra a Baía de Guanabara sob a liderança do timoneiro João Cândido (*) O líder da rebelião ficou célebre na cultura popular como o \"Almirante Negro\", cantado por Aldir Blanc e João Bosco na canção \"O Mestre-Sala dos Mares\". O motim exigia o fim dos castigos corporais na Marinha do Brasil e melhores condições de alimentação e soldo em 1910. Identifique esta revolta naval brasileira liderada por marinheiros negros que pôs fim ao uso de chibatadas como punição nas forças marítimas.",
+    "formatted_answer_pt": "<b><u>Revolta da Chibata</u></b> [aceite também <i>A Revolta da Chibata, Motim da Chibata</i>]",
+    "answer_canonical_pt": "Revolta da Chibata",
+    "accept_aliases": [
+      "A Revolta da Chibata",
+      "Motim da Chibata"
+    ],
+    "prompt_aliases": [
+      "revolta dos marinheiros",
+      "motim da marinha"
+    ],
+    "reject_aliases": [
+      "Revolta da Armada",
+      "Revolta da Vacina"
+    ],
+    "lead_in": "O marinheiro Marcelino Rodrigues Menezes recebeu duzentas e cinquenta chibatadas diante da tripulação reunida a bordo do encouraçado Minas Geraes, servindo de estopim para a revolta.",
+    "giveaway": "Identifique esta revolta naval brasileira liderada por marinheiros negros que pôs fim ao uso de chibatadas como punição nas forças marítimas.",
+    "explanation": "A Revolta da Chibata (1910), liderada por João Cândido (\"O Almirante Negro\"), mobilizou os marinheiros contra os castigos físicos medievais ainda vigentes na Marinha do Brasil.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Revolta_da_Chibata",
+    "wiki_extract": "A Revolta da Chibata, inicialmente chamada de Revolta dos Dreadnoughts, foi uma rebelião militar ocorrida no Rio de Janeiro, Brasil, acontecida no final de novembro de 1910. Foi liderada por marinheiros e suboficiais da Marinha do Brasil que se rebelaram contra as condições de vida e de trabalho nas forças armadas, sendo resultado direto do uso de chibatadas por oficiais navais brancos ao punir marinheiros afro-brasileiros, um castigo corporal que era amplamente utilizado na época. A Revolta da Chibata foi um dos primeiros grandes movimentos de protesto contra o governo republicano no Brasil e ajudou a impulsionar a Reforma Militar de 1911, que melhorou as condições de vida e de trabalho nas forças armadas."
+  },
+  {
+    "id": "br-quilombo-dos-palmares",
+    "origin": "wikipedia_br",
+    "category": "História",
+    "subcategory": "História do Brasil",
+    "difficulty": 2,
+    "question_pt": "O líder Ganga Zumba firmou um controverso acordo de paz em 1678 com o governador da capitania de Pernambuco, o que provocou uma cisão interna e sua posterior deposição por envenenamento. Sua capital fortificada localizava-se na Serra da Barriga, na capitania de Pernambuco, atual estado de Alagoas, congregando dezenas de mocambos como o de Macaco. A destruição final deste assentamento autônomo foi chefiada em 1694 pelas forças mercenárias do bandeirante paulista Domingos Jorge Velho (*) Este refúgio durou quase um século e chegou a abrigar mais de vinte mil habitantes que resistiram às incursões de tropas holandesas e portuguesas. O líder que recusou a rendição e chefiou a resistência final foi traído e decapitado em 20 de novembro de 1695, data hoje comemorada como o Dia da Consciência Negra. Qual foi este maior refúgio autônomo de resistência negra na história colonial brasileira, governado por Ganga Zumba e Zumbi?",
+    "formatted_answer_pt": "<b><u>Quilombo dos Palmares</u></b> [aceite também <i>Palmares, Quilombo de Palmares</i>]",
+    "answer_canonical_pt": "Quilombo dos Palmares",
+    "accept_aliases": [
+      "Palmares",
+      "Quilombo de Palmares"
+    ],
+    "prompt_aliases": [
+      "mocambo de Palmares",
+      "quilombo"
+    ],
+    "reject_aliases": [
+      "Quilombo do Campo Grande"
+    ],
+    "lead_in": "O líder Ganga Zumba firmou um controverso acordo de paz em 1678 com o governador da capitania de Pernambuco, o que provocou uma cisão interna e sua posterior deposição por envenenamento.",
+    "giveaway": "Qual foi este maior refúgio autônomo de resistência negra na história colonial brasileira, governado por Ganga Zumba e Zumbi?",
+    "explanation": "O Quilombo dos Palmares foi o maior símbolo de resistência contra a escravidão no Brasil, liderado por Ganga Zumba e posteriormente por Zumbi dos Palmares na Serra da Barriga.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Quilombo_dos_Palmares",
+    "wiki_extract": "Quilombo dos Palmares, também conhecido como Palmares, Mocambo dos Palmares e/ou Angola Janga, foi uma comunidade de pessoas fugitivas da escravidão durante o período do Brasil Colônia. Fundado no final da década de 1590 e localizado na Serra da Barriga, na então capitania de Pernambuco, atingiu seu auge na década de 1690, quando sua população variou entre 11 mil e 20 mil habitantes, o maior quilombo da história do Brasil."
+  },
+  {
+    "id": "br-machado-de-assis",
+    "origin": "wikipedia_br",
+    "category": "Literatura",
+    "subcategory": "Literatura Brasileira",
+    "difficulty": 1,
+    "question_pt": "Este autor foi presidente fundador da Academia Brasileira de Letras em 1897, ocupando a Cadeira número 23 cujo patrono era seu amigo José de Alencar. Na novela \"O Alienista\", seu personagem Simão Bacamarte funda a Casa Verde na vila de Itaguaí para internar cidadãos supostamente desequilibrados. A virada de sua carreira para a fase realista é marcada por um romance narrado por um \"defunto autor\" dedicado ao verme que primeiro roeu as frias carnes de seu cadáver (*) Em outro romance célebre, o narrador Bentinho é atormentado pelo ciúme e pelas suspeitas de infidelidade de sua esposa Capitu com seu melhor amigo Escobar. Criador da teoria do \"Humanitismo\" professada pelo filósofo Quincas Borba, este gênio carioca escreveu Dom Casmurro e Memórias Póstumas de Brás Cubas. Nomeie este mestre da literatura brasileira, autor de Dom Casmurro e imortalizado pelo epíteto de \"Bruxo do Cosme Velho\".",
+    "formatted_answer_pt": "<b><u>Machado de Assis</u></b> [aceite também <i>Joaquim Maria Machado de Assis, Machado</i>]",
+    "answer_canonical_pt": "Machado de Assis",
+    "accept_aliases": [
+      "Joaquim Maria Machado de Assis",
+      "Machado"
+    ],
+    "prompt_aliases": [
+      "Bruxo do Cosme Velho"
+    ],
+    "reject_aliases": [
+      "José de Alencar",
+      "Lima Barreto",
+      "Aluísio Azevedo"
+    ],
+    "lead_in": "Este autor foi presidente fundador da Academia Brasileira de Letras em 1897, ocupando a Cadeira número 23 cujo patrono era seu amigo José de Alencar.",
+    "giveaway": "Nomeie este mestre da literatura brasileira, autor de Dom Casmurro e imortalizado pelo epíteto de \"Bruxo do Cosme Velho\".",
+    "explanation": "Machado de Assis (1839-1908) foi o fundador da Academia Brasileira de Letras e pioneiro do Realismo com Memórias Póstumas de Brás Cubas e Dom Casmurro.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Machado_de_Assis",
+    "wiki_extract": "Joaquim Maria Machado de Assis foi um escritor brasileiro, amplamente reconhecido por críticos, estudiosos, escritores e leitores como o maior expoente da literatura brasileira. Sua produção literária abrangeu praticamente todos os gêneros, incluindo poesia, romance, crônica, dramaturgia, conto, folhetim, jornalismo e crítica literária. Machado de Assis testemunhou a Abolição da Escravatura e a transição política do Brasil, com o golpe da proclamação da República em substituição ao Império, além de diversos eventos significativos no final do século XIX e início do século XX, sendo um notável comentador e relator dos acontecimentos político-sociais de sua época."
+  },
+  {
+    "id": "br-guerra-do-paraguai",
+    "origin": "wikipedia_br",
+    "category": "História",
+    "subcategory": "História do Brasil",
+    "difficulty": 2,
+    "question_pt": "O estopim militar deste confronto foi o apresamento do vapor brasileiro Marquês de Olinda no rio Paraguai e a posterior invasão da província de Mato Grosso. O marquês e depois duque de Caxias coordenou a célebre \"Dezembrada\", série de vitórias fulminantes que incluiu as batalhas de Itororó, Avaí e Lomas Valentinas. Em junho de 1865, a esquadra imperial sob o comando do almirante Barroso obteve uma vitória estratégica decisiva na Batalha Naval do Riachuelo (*) O conflito envolveu a Tríplice Aliança, formada pelo Império do Brasil, a Argentina e o Uruguai, contra as forças do presidente Francisco Solano López. O confronto só se encerrou em março de 1870 com a morte de Solano López no combate de Cerro Corá, após dizimar grande parte da população masculina paraguaia. Qual foi este maior confronto bélico internacional da história da América do Sul, travado entre 1864 e 1870?",
+    "formatted_answer_pt": "<b><u>Guerra do Paraguai</u></b> [aceite também <i>A Guerra do Paraguai, Guerra da Tríplice Aliança</i>]",
+    "answer_canonical_pt": "Guerra do Paraguai",
+    "accept_aliases": [
+      "A Guerra do Paraguai",
+      "Guerra da Tríplice Aliança"
+    ],
+    "prompt_aliases": [
+      "guerra contra Solano López",
+      "conflito da bacia do prata"
+    ],
+    "reject_aliases": [
+      "Guerra Cisplatina",
+      "Guerra do Chaco"
+    ],
+    "lead_in": "O estopim militar deste confronto foi o apresamento do vapor brasileiro Marquês de Olinda no rio Paraguai e a posterior invasão da província de Mato Grosso.",
+    "giveaway": "Qual foi este maior confronto bélico internacional da história da América do Sul, travado entre 1864 e 1870?",
+    "explanation": "A Guerra do Paraguai (1864-1870) foi travada pela Tríplice Aliança contra o Paraguai de Solano López, resultando em vitória aliada e devastação demográfica no Paraguai.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Guerra_do_Paraguai",
+    "wiki_extract": "Guerra do Paraguai foi o maior conflito armado internacional ocorrido na América Latina, travada entre o Paraguai e a Tríplice Aliança, composta pelo Império do Brasil, Argentina e Uruguai. Ela se estendeu de dezembro de 1864 a março de 1870. É também chamada Guerra da Tríplice Aliança, na Argentina e no Uruguai, e de Guerra Grande, Guerra Contra a Tríplice Aliança e Guerra-Guaçu no Paraguai."
+  },
+  {
+    "id": "br-juscelino-kubitschek",
+    "origin": "wikipedia_br",
+    "category": "História",
+    "subcategory": "História do Brasil",
+    "difficulty": 2,
+    "question_pt": "Logo no início de seu mandato presidencial, teve de sufocar duas revoltas de oficiais da Força Aérea Brasileira conhecidas como a Revolta de Jacareacanga e a Revolta de Aragarças. Sua eleição foi garantida após o Movimento de 11 de Novembro liderado pelo general marechal Henrique Lott para assegurar a posse constitucional. Este político mineiro governou com o Plano de Metas e adotou o célebre lema desenvolvimentista de \"Cinquenta anos de progresso em cinco de governo\" (*) Durante seu mandato, a indústria automobilística nacional se expandiu com a chegada da Volkswagen e a criação da Sudene. Contratou Lúcio Costa para o plano piloto urbanístico e Oscar Niemeyer para os projetos arquitetônicos que ergueram a nova capital no Planalto Central. Identifique este presidente da República conhecido pela sigla JK, que transferiu a capital federal e inaugurou Brasília em 1960.",
+    "formatted_answer_pt": "<b><u>Juscelino Kubitschek</u></b> [aceite também <i>JK, Juscelino Kubitschek de Oliveira, Juscelino</i>]",
+    "answer_canonical_pt": "Juscelino Kubitschek",
+    "accept_aliases": [
+      "JK",
+      "Juscelino Kubitschek de Oliveira",
+      "Juscelino"
+    ],
+    "prompt_aliases": [
+      "presidente JK"
+    ],
+    "reject_aliases": [
+      "Jânio Quadros",
+      "João Goulart",
+      "Getúlio Vargas"
+    ],
+    "lead_in": "Logo no início de seu mandato presidencial, teve de sufocar duas revoltas de oficiais da Força Aérea Brasileira conhecidas como a Revolta de Jacareacanga e a Revolta de Aragarças.",
+    "giveaway": "Identifique este presidente da República conhecido pela sigla JK, que transferiu a capital federal e inaugurou Brasília em 1960.",
+    "explanation": "Juscelino Kubitschek (1902-1976), o \"Presidente Bossa Nova\", liderou o Plano de Metas e transferiu a capital federal do Rio de Janeiro para Brasília em 21 de abril de 1960.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Juscelino_Kubitschek",
+    "wiki_extract": "Juscelino Kubitschek de Oliveira, também conhecido pelas suas iniciais JK, foi um médico, oficial da Polícia Militar mineira e político brasileiro. Foi o 21.º Presidente do Brasil, entre 1956 e 1961. Concluiu o curso de humanidades do Seminário de Diamantina e em 1920 mudou-se para Belo Horizonte. Em 1927, formou-se em medicina pela Universidade Federal de Minas Gerais (UFMG), e em 1930 especializou-se em urologia em Paris. Em dezembro de 1931, casou-se com Sarah Lemos, com quem teve a filha Márcia, em 1943. O casal também adotou Maria Estela em 1947."
+  },
+  {
+    "id": "br-grande-sert-o--veredas",
+    "origin": "wikipedia_br",
+    "category": "Literatura",
+    "subcategory": "Literatura Brasileira",
+    "difficulty": 3,
+    "question_pt": "O narrador faz um pacto fáustico mudo com o diabo nas veredas das Veredas Mortas, embora viva em constante dúvida teológica se o demônio de fato existe. A trama culmina na sangrenta batalha contra o bando traidor dos \"Judas\" chefiado por Hermógenes no Paredão dos Umbus. A obra é narrada em um monólogo contínuo de mais de seiscentas páginas sem divisão em capítulos pelo ex-jagunço Riobaldo Tatarana (*) O protagonista mantém um amor intenso e misterioso pelo companheiro de armas Diadorim, cuja identidade feminina de Maria Deodorina da Silva só é revelada após sua morte em combate. O livro encerra com a célebre reflexão \"O sertão é do tamanho do mundo. O sertão está em toda parte. (...) Amável senhor meu, (...) Nonada. O diabo não há. (...) Homem humano. Travessia.\" Qual o título desta obra-prima modernista de 1956 escrita pelo mineiro Guimarães Rosa sobre as veredas do sertão e a travessia de Riobaldo?",
+    "formatted_answer_pt": "<b><u>Grande Sertão: Veredas</u></b> [aceite também <i>Grande Sertao Veredas, Grande Sertão, Grande Sertao</i>]",
+    "answer_canonical_pt": "Grande Sertão: Veredas",
+    "accept_aliases": [
+      "Grande Sertao Veredas",
+      "Grande Sertão",
+      "Grande Sertao"
+    ],
+    "prompt_aliases": [
+      "obra de Guimarães Rosa",
+      "romance de Riobaldo"
+    ],
+    "reject_aliases": [
+      "Sagarana",
+      "Corpo de Baile"
+    ],
+    "lead_in": "O narrador faz um pacto fáustico mudo com o diabo nas veredas das Veredas Mortas, embora viva em constante dúvida teológica se o demônio de fato existe.",
+    "giveaway": "Qual o título desta obra-prima modernista de 1956 escrita pelo mineiro Guimarães Rosa sobre as veredas do sertão e a travessia de Riobaldo?",
+    "explanation": "Grande Sertão: Veredas (1956), obra-prima de Guimarães Rosa, reinventa o léxico sertanejo em um épico filosófico centrado no jagunço Riobaldo e seu companheiro Diadorim.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Grande_Sert%C3%A3o%3A_Veredas",
+    "wiki_extract": "Grande Sertão: Veredas é um romance experimental modernista escrito pelo autor brasileiro João Guimarães Rosa e publicado pela Livraria José Olympio Editora, em 1956. Tanto a arte da capa como as ilustrações da primeira edição de Grande Sertão: Veredas são de autoria de Poty Lazzarotto. Pensado inicialmente como uma das novelas do livro Corpo de Baile, lançado nesse mesmo ano de 1956, cresceu, ganhou autonomia e tornou-se um dos mais importantes livros da literatura brasileira e da literatura lusófona. No mesmo ano, Rosa também lançou as novelas de Corpo de Baile e a quarta edição revista de Sagarana."
+  },
+  {
+    "id": "br-get-lio-vargas",
+    "origin": "wikipedia_br",
+    "category": "História",
+    "subcategory": "História do Brasil",
+    "difficulty": 1,
+    "question_pt": "A criação do Departamento de Imprensa e Propaganda (DIP) durante seu regime exerceu forte censura e distribuiu cartilhas escolares celebrando sua imagem paternal. O atentado da Rua Tonelero contra o jornalista Carlos Lacerda resultou na morte do major Rubens Vaz e desencadeou uma crise militar insustentável em seu gabinete. Ele assumiu a liderança nacional na Revolução de 1930 após o assassinato de seu companheiro de chapa João Pessoa (*) Instituiu a Consolidação das Leis do Trabalho (CLT), criou a Companhia Siderúrgica Nacional e aprovou o monopólio da Petrobras com a campanha \"O Petróleo é Nosso\". Seu mandato encerrou-se tragicamente no Palácio do Catete com um tiro no coração em agosto de 1954, deixando a célebre carta-testamento com a frase \"Saio da vida para entrar na história\". Nomeie este presidente gaúcho que comandou o Estado Novo e foi a figura política mais influente do Brasil no século XX.",
+    "formatted_answer_pt": "<b><u>Getúlio Vargas</u></b> [aceite também <i>Vargas, Getulio Vargas, Getúlio Dornelles Vargas</i>]",
+    "answer_canonical_pt": "Getúlio Vargas",
+    "accept_aliases": [
+      "Vargas",
+      "Getulio Vargas",
+      "Getúlio Dornelles Vargas"
+    ],
+    "prompt_aliases": [
+      "presidente gaúcho",
+      "ditador do Estado Novo"
+    ],
+    "reject_aliases": [
+      "Eurico Gaspar Dutra",
+      "Washington Luís"
+    ],
+    "lead_in": "A criação do Departamento de Imprensa e Propaganda (DIP) durante seu regime exerceu forte censura e distribuiu cartilhas escolares celebrando sua imagem paternal.",
+    "giveaway": "Nomeie este presidente gaúcho que comandou o Estado Novo e foi a figura política mais influente do Brasil no século XX.",
+    "explanation": "Getúlio Vargas (1882-1954) governou o Brasil por quase duas décadas (1930-1945 e 1951-1954), transformando as leis trabalhistas e a industrialização nacional.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Get%C3%BAlio_Vargas",
+    "wiki_extract": "Getúlio Dorneles Vargas foi um militar, advogado e político brasileiro. Foi o presidente do Brasil de 1930 até 1945, durante a Era Vargas, e, posteriormente, de 1951 até o seu suicídio em 1954."
+  },
+  {
+    "id": "br-dom-pedro-ii",
+    "origin": "wikipedia_br",
+    "category": "História",
+    "subcategory": "História do Brasil",
+    "difficulty": 2,
+    "question_pt": "Apaixonado por astronomia e línguas antigas, traduziu sonetos do hebraico e do árabe e financiou pessoalmente pesquisas de Louis Pasteur na Europa. Ele esteve presente na Exposição Universal de Filadélfia de 1876, onde testou o protótipo de telefone de Alexander Graham Bell e exclamou: \"Meu Deus, isto fala!\". Teve sua coroação antecipada aos quatorze anos de idade através do chamado Golpe da Maioridade em 1840 (*) Seu reinado de quase meio século equilibrou a alternância no poder entre os partidos Liberal e Conservador sob o modelo do parlamentarismo às avessas. Foi deposto sem oferecer resistência após a proclamação da República pelo marechal Deodoro da Fonseca em 15 de novembro de 1889, morrendo exilado em Paris. Nomeie este último imperador do Brasil, conhecido como \"O Magnânimo\", filho de Pedro I.",
+    "formatted_answer_pt": "<b><u>Dom Pedro II</u></b> [aceite também <i>Pedro II, D. Pedro II, Dom Pedro Segundo, Pedro de Alcântara</i>]",
+    "answer_canonical_pt": "Dom Pedro II",
+    "accept_aliases": [
+      "Pedro II",
+      "D. Pedro II",
+      "Dom Pedro Segundo",
+      "Pedro de Alcântara"
+    ],
+    "prompt_aliases": [
+      "o imperador",
+      "segundo imperador"
+    ],
+    "reject_aliases": [
+      "Dom Pedro I",
+      "Dom João VI"
+    ],
+    "lead_in": "Apaixonado por astronomia e línguas antigas, traduziu sonetos do hebraico e do árabe e financiou pessoalmente pesquisas de Louis Pasteur na Europa.",
+    "giveaway": "Nomeie este último imperador do Brasil, conhecido como \"O Magnânimo\", filho de Pedro I.",
+    "explanation": "Dom Pedro II (1825-1891) foi o segundo e último monarca do Império do Brasil, reinando por 58 anos com ênfase em erudição, estabilidade e diplomacia.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Pedro_II",
+    "wiki_extract": "Pedro II ou Dom Pedro II pode referir-se a:"
+  },
+  {
+    "id": "br-carlos-drummond-de-andrade",
+    "origin": "wikipedia_br",
+    "category": "Literatura",
+    "subcategory": "Literatura Brasileira",
+    "difficulty": 2,
+    "question_pt": "Publicou na Revista de Antropofagia o poema de dez versos que repete sete vezes uma palavra sobre um obstáculo geológico, gerando um escândalo e centenas de paródias nos jornais da época. Sua cidade natal de Itabira é descrita com amargura e ferro em obras como o livro \"Alguma Poesia\" de 1930. Durante a Segunda Guerra Mundial, escreveu poesias de engajamento social e dor humana reunidas no livro \"Sentimento do Mundo\" e \"A Rosa do Povo\" (*) Em outro poema clássico, pergunta com melancolia existencial: \"E agora, José? A festa acabou, a luz apagou, o povo sumiu, a noite esfriou\". Sua estátua de bronze sentado no calçadão da praia de Copacabana é um dos marcos culturais mais fotografados do Rio de Janeiro. Identifique este poeta mineiro considerado um dos maiores da língua portuguesa, autor de \"No meio do caminho tinha uma pedra\".",
+    "formatted_answer_pt": "<b><u>Carlos Drummond de Andrade</u></b> [aceite também <i>Drummond, Carlos Drummond</i>]",
+    "answer_canonical_pt": "Carlos Drummond de Andrade",
+    "accept_aliases": [
+      "Drummond",
+      "Carlos Drummond"
+    ],
+    "prompt_aliases": [
+      "poeta de Itabira",
+      "poeta mineiro"
+    ],
+    "reject_aliases": [
+      "Manuel Bandeira",
+      "Vinicius de Moraes",
+      "João Cabral de Melo Neto"
+    ],
+    "lead_in": "Publicou na Revista de Antropofagia o poema de dez versos que repete sete vezes uma palavra sobre um obstáculo geológico, gerando um escândalo e centenas de paródias nos jornais da época.",
+    "giveaway": "Identifique este poeta mineiro considerado um dos maiores da língua portuguesa, autor de \"No meio do caminho tinha uma pedra\".",
+    "explanation": "Carlos Drummond de Andrade (1902-1987) foi o expoente máximo da segunda fase modernista no Brasil, com uma poesia que transitou da ironia ao engajamento social e à metafísica.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Carlos_Drummond_de_Andrade",
+    "wiki_extract": "Carlos Drummond de Andrade foi um poeta, contista e cronista brasileiro, considerado por muitos o mais influente poeta brasileiro do século XX."
+  },
+  {
+    "id": "br-clarice-lispector",
+    "origin": "wikipedia_br",
+    "category": "Literatura",
+    "subcategory": "Literatura Brasileira",
+    "difficulty": 2,
+    "question_pt": "Nascida na Ucrânia durante a Guerra Civil Russa com o nome Haia, emigrou bebê com sua família judia que fugia dos pogroms para o Recife. Sua estreia literária aos vinte e três anos com o romance \"Perto do Coração Selvagem\" causou assombro na crítica pelo uso refinado do fluxo de consciência influenciado por Virginia Woolf. No conto \"Amor\", a protagonista Ana tem uma epifania perturbadora ao observar um cego mascando chicletes no bonde (*) Em sua última obra publicada em vida, o narrador fictício Rodrigo S.M. relata a vida miserável e ingênua da datilógrafa alagoana Macabéa no Rio de Janeiro. Autora de \"A Paixão Segundo G.H.\", na qual a protagonista esmaga e ingere uma barata em um armário, esta mestra da prosa intimista escreveu A Hora da Estrela. Nomeie esta célebre escritora brasileira famosa pela profundidade psicológica e filosófica de seus romances.",
+    "formatted_answer_pt": "<b><u>Clarice Lispector</u></b> [aceite também <i>Clarice, Haia Pinkhasivna Lispector</i>]",
+    "answer_canonical_pt": "Clarice Lispector",
+    "accept_aliases": [
+      "Clarice",
+      "Haia Pinkhasivna Lispector"
+    ],
+    "prompt_aliases": [
+      "autora de A Hora da Estrela"
+    ],
+    "reject_aliases": [
+      "Lygia Fagundes Telles",
+      "Rachel de Queiroz"
+    ],
+    "lead_in": "Nascida na Ucrânia durante a Guerra Civil Russa com o nome Haia, emigrou bebê com sua família judia que fugia dos pogroms para o Recife.",
+    "giveaway": "Nomeie esta célebre escritora brasileira famosa pela profundidade psicológica e filosófica de seus romances.",
+    "explanation": "Clarice Lispector (1920-1977) revolucionou a literatura em prosa no Brasil com sua prosa poética existencialista, fluxo de consciência e epifanias cotidianas.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Clarice_Lispector",
+    "wiki_extract": "Clarice Lispector, nascida Chaya Pinkhasivna Lispector, foi uma escritora e jornalista de origem ucraniana-judaica (asquenazita). Radicada no Brasil desde a primeira infância, naturalizou-se brasileira em 1943. Autora de romances, contos e ensaios, é considerada uma das escritoras brasileiras mais importantes do século XX. Sua obra está repleta de cenas cotidianas simples e tramas psicológicas, reputando-se como uma de suas principais características a epifania de personagens comuns em momentos do cotidiano. Quanto às suas identidades nacional e regional, declarava-se brasileira e pernambucana."
+  },
+  {
+    "id": "br-alberto-santos-dumont",
+    "origin": "wikipedia_br",
+    "category": "Ciência",
+    "subcategory": "Tecnologia e Invenções",
+    "difficulty": 2,
+    "question_pt": "Venceu o cobiçado Prêmio Deutsch de la Meurthe em 1901 ao contornar a Torre Eiffel em Paris a bordo do seu dirigível dirigível Número 6. Ele projetou o elegante monoplano \"Demoiselle\", cujas plantas distribuiu gratuitamente na revista Popular Mechanics para incentivar o desenvolvimento da aviação mundial. A pedido de seu amigo joalheiro Louis Cartier, popularizou o relógio de pulso masculino para cronometrar seus voos sem tirar as mãos dos comandos (*) Em 23 de outubro de 1906, voou cerca de sessenta metros a quase três metros de altura diante de uma multidão e dos juízes do Aeroclube da França no Campo de Bagatelle. O feito foi realizado pelo biplano com asas de célula de Hargrave apelidado de \"Oiseau de Proie\", conhecido pelo número de sua patente na fuselagem. Identifique este inventor brasileiro reverenciado como o \"Pai da Aviação\", que realizou o histórico voo do 14-Bis.",
+    "formatted_answer_pt": "<b><u>Santos-Dumont</u></b> [aceite também <i>Alberto Santos-Dumont, Santos Dumont, Alberto Santos Dumont</i>]",
+    "answer_canonical_pt": "Santos-Dumont",
+    "accept_aliases": [
+      "Alberto Santos-Dumont",
+      "Santos Dumont",
+      "Alberto Santos Dumont"
+    ],
+    "prompt_aliases": [
+      "o aviador brasileiro",
+      "criador do 14-bis"
+    ],
+    "reject_aliases": [
+      "Irmãos Wright",
+      "Bartolomeu de Gusmão"
+    ],
+    "lead_in": "Venceu o cobiçado Prêmio Deutsch de la Meurthe em 1901 ao contornar a Torre Eiffel em Paris a bordo do seu dirigível dirigível Número 6.",
+    "giveaway": "Identifique este inventor brasileiro reverenciado como o \"Pai da Aviação\", que realizou o histórico voo do 14-Bis.",
+    "explanation": "Alberto Santos-Dumont (1873-1932) foi um dos pioneiros da aviação, realizando o primeiro voo público homologado de um aparelho mais pesado que o ar com impulsão própria em 1906.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Santos_Dumont",
+    "wiki_extract": "Alberto Santos Dumont foi um aeronauta, esportista, autodidata e inventor brasileiro. Santos Dumont projetou, construiu e voou os primeiros balões dirigíveis com motor a gasolina. Esse mérito lhe é garantido internacionalmente pela conquista do Prêmio Deutsch em 1901, quando em um voo contornou a Torre Eiffel com o seu dirigível Nº 6, transformando-se em uma das pessoas mais famosas do mundo durante o século XX."
+  },
+  {
+    "id": "br-vital-brazil",
+    "origin": "wikipedia_br",
+    "category": "Ciência",
+    "subcategory": "Medicina e Biologia",
+    "difficulty": 3,
+    "question_pt": "Foi discípulo e assistente de Adolfo Lutz na Seção de Bacteriologia do Instituto Bacteriológico de São Paulo durante as campanhas contra o cólera e a febre tifoide. Para viabilizar a extração em larga escala de veneno, estabeleceu um pioneiro sistema de permuta com fazendeiros do interior, trocando serpentes capturadas por tubos de soro esterilizados. Ele refutou a teoria de Albert Calmette e demonstrou a especificidade imunológica dos venenos ofídicos (*) Foi o fundador e primeiro diretor do Instituto Butantan em São Paulo e mais tarde criou o Instituto Vital Brazil em Niterói. Desenvolveu os primeiros soros antiofídicos específicos contra a picada de jararacas, cascavéis e surucucus, salvando milhares de vidas no campo. Nomeie este médico e sanitarista mineiro pioneiro no desenvolvimento de soros contra picadas de cobras venenosas e escorpiões.",
+    "formatted_answer_pt": "<b><u>Vital Brazil</u></b> [aceite também <i>Vital Brazil Mineiro da Campanha, Vital Brasil</i>]",
+    "answer_canonical_pt": "Vital Brazil",
+    "accept_aliases": [
+      "Vital Brazil Mineiro da Campanha",
+      "Vital Brasil"
+    ],
+    "prompt_aliases": [
+      "médico do Butantan",
+      "sanitarista do Butantan"
+    ],
+    "reject_aliases": [
+      "Oswaldo Cruz",
+      "Carlos Chagas"
+    ],
+    "lead_in": "Foi discípulo e assistente de Adolfo Lutz na Seção de Bacteriologia do Instituto Bacteriológico de São Paulo durante as campanhas contra o cólera e a febre tifoide.",
+    "giveaway": "Nomeie este médico e sanitarista mineiro pioneiro no desenvolvimento de soros contra picadas de cobras venenosas e escorpiões.",
+    "explanation": "Vital Brazil (1865-1950) descobriu a especificidade do soro antiofídico e fundou o Instituto Butantan, transformando o Brasil em referência mundial no tratamento de acidentes com animais peçonhentos.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Vital_Brazil",
+    "wiki_extract": "Vital Brazil Mineiro da Campanha foi um médico cientista, filantropo, imunologista e pesquisador biomédico brasileiro de renome internacional."
+  },
+  {
+    "id": "br-bossa-nova",
+    "origin": "wikipedia_br",
+    "category": "Artes",
+    "subcategory": "Música Brasileira",
+    "difficulty": 2,
+    "question_pt": "O acorde dissonante característico deste gênero foi consolidado no violão de batida sincopada durante a gravação do álbum \"Canção do Amor Demais\" interpretado por Elizeth Cardoso. O movimento ganhou consagração nos Estados Unidos após o histórico concerto realizado no Carnegie Hall em Nova York em novembro de 1962. A canção inaugural do movimento, \"Chega de Saudade\", lançada em 1958, uniu letra melancólica e a voz sussurrada sem vibrato de João Gilberto (*) Seus principais letristas e compositores foram o diplomata Vinicius de Moraes e o maestro Antônio Carlos Jobim. Uma de suas composições mais famosas, inspirada na jovem Helô Pinheiro caminhando rumo ao mar de Ipanema, tornou-se a segunda música mais regravada do mundo. Identifique este movimento musical surgido no final dos anos 1950 na zona sul do Rio de Janeiro que reinventou o samba com harmonias do jazz.",
+    "formatted_answer_pt": "<b><u>Bossa Nova</u></b> [aceite também <i>A Bossa Nova, Bossa-Nova</i>]",
+    "answer_canonical_pt": "Bossa Nova",
+    "accept_aliases": [
+      "A Bossa Nova",
+      "Bossa-Nova"
+    ],
+    "prompt_aliases": [
+      "movimento do samba jazz",
+      "estilo de João Gilberto"
+    ],
+    "reject_aliases": [
+      "Tropicália",
+      "Samba-Canção",
+      "Choro"
+    ],
+    "lead_in": "O acorde dissonante característico deste gênero foi consolidado no violão de batida sincopada durante a gravação do álbum \"Canção do Amor Demais\" interpretado por Elizeth Cardoso.",
+    "giveaway": "Identifique este movimento musical surgido no final dos anos 1950 na zona sul do Rio de Janeiro que reinventou o samba com harmonias do jazz.",
+    "explanation": "A Bossa Nova revolucionou a música brasileira e mundial no final da década de 1950 com João Gilberto, Tom Jobim e Vinicius de Moraes, criando clássicos como \"Garota de Ipanema\".",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Bossa_nova",
+    "wiki_extract": "Bossa nova é o gênero musical resultante de um movimento de transformação do samba irradiado a partir da Zona Sul da cidade do Rio de Janeiro no final da década de 1950 e que, por conseguinte, passou a dar nome ao estilo de interpretação e acompanhamento rítmico dele surgido, que ficou conhecido como “batida diferente”. De acordo com o musicólogo Gilberto Mendes, a vertente era uma das “três fases rítmicas do samba”, na qual a \"batida\" da bossa havia sido extraída a partir do \"samba de raiz\". Segundo o jornalista Ruy Castro, a bossa nova era “uma simplificação extrema da batida da escola de samba”, como se dela tivessem sido retirados todos os instrumentos e conservado apenas o tamborim."
+  },
+  {
+    "id": "br-guerra-dos-farrapos",
+    "origin": "wikipedia_br",
+    "category": "História",
+    "subcategory": "História do Brasil",
+    "difficulty": 3,
+    "question_pt": "O revolucionário italiano Giuseppe Garibaldi participou dos combates navais transportando dois lanchões sobre carretas puxadas por juntas de bois através da terra até a lagoa Tramandaí. Um dos episódios mais sombrios da revolta foi o Massacre de Porongos, onde o corpo de lanceiros negros foi desarmado e encurralado na madrugada pelas tropas imperiais. A revolta proclamou a República Rio-Grandense e mais tarde a efêmera República Juliana na província vizinha de Santa Catarina (*) Iniciada em 1835 por estancieiros liderados por Bento Gonçalves, protestava contra os pesados impostos cobrados pela Coroa sobre o charque gaúcho em favor do produto argentino. O conflito militar de dez anos foi pacificado em 1845 pelo Barão de Caxias através da assinatura do Tratado de Ponche Verde. Qual foi esta mais longa revolta separatista e republicana da história do Brasil imperial, travada no Rio Grande do Sul?",
+    "formatted_answer_pt": "<b><u>Guerra dos Farrapos</u></b> [aceite também <i>Revolução Farroupilha, Farroupilha, Guerra Farroupilha</i>]",
+    "answer_canonical_pt": "Guerra dos Farrapos",
+    "accept_aliases": [
+      "Revolução Farroupilha",
+      "Farroupilha",
+      "Guerra Farroupilha"
+    ],
+    "prompt_aliases": [
+      "revolta dos farrapos",
+      "revolta no Rio Grande do Sul"
+    ],
+    "reject_aliases": [
+      "Cabanagem",
+      "Sabinada",
+      "Balaiada"
+    ],
+    "lead_in": "O revolucionário italiano Giuseppe Garibaldi participou dos combates navais transportando dois lanchões sobre carretas puxadas por juntas de bois através da terra até a lagoa Tramandaí.",
+    "giveaway": "Qual foi esta mais longa revolta separatista e republicana da história do Brasil imperial, travada no Rio Grande do Sul?",
+    "explanation": "A Guerra dos Farrapos (1835-1845) foi uma insurreição republicana e regionalista no Rio Grande do Sul motivada pelo descontentamento com os impostos imperiais sobre o charque.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Guerra_dos_Farrapos",
+    "wiki_extract": "Guerra dos Farrapos, também chamada de Revolução Farroupilha ou Revolta Farroupilha, foi como ficou conhecida a revolução, guerra ou revolta regional, de caráter republicano, contra o governo imperial do Brasil, na então província de São Pedro do Rio Grande do Sul, e que resultou na declaração de independência da província como estado republicano, dando origem à República Rio-Grandense. Estendeu-se de 20 de setembro de 1835 a 1 de março de 1845."
+  },
+  {
+    "id": "br-pantanal",
+    "origin": "wikipedia_br",
+    "category": "Geografia",
+    "subcategory": "Geografia do Brasil",
+    "difficulty": 2,
+    "question_pt": "Formado tectonicamente pelo afundamento da crosta terrestre durante a orogenia andina, atua como um imenso reservatório de retenção hídrica na bacia hidrográfica do rio Paraguai. A vegetação apresenta uma formação mosaica singular que mescla espécies do Cerrado, da Amazônia, da Mata Atlântica e do Chaco paraguaio. Seu ciclo ecológico é inteiramente regido pela alternância radical entre o período das cheias e a vazante, cobrindo até oitenta por cento de sua área com água (*) Abriga a maior densidade populacional de onças-pintadas do planeta e é o habitat emblemático de aves aquáticas como o tuiuiú. Localiza-se principalmente nos estados de Mato Grosso e Mato Grosso do Sul, estendendo-se pelas fronteiras da Bolívia e do Paraguai. Identifique este bioma reconhecido pela UNESCO como Reserva da Biosfera, considerado a maior planície de inundação contínua do mundo.",
+    "formatted_answer_pt": "<b><u>Pantanal</u></b> [aceite também <i>Complexo do Pantanal, Pantanal Matogrossense</i>]",
+    "answer_canonical_pt": "Pantanal",
+    "accept_aliases": [
+      "Complexo do Pantanal",
+      "Pantanal Matogrossense"
+    ],
+    "prompt_aliases": [
+      "planície mato-grossense",
+      "região alagada"
+    ],
+    "reject_aliases": [
+      "Cerrado",
+      "Caatinga",
+      "Pampas"
+    ],
+    "lead_in": "Formado tectonicamente pelo afundamento da crosta terrestre durante a orogenia andina, atua como um imenso reservatório de retenção hídrica na bacia hidrográfica do rio Paraguai.",
+    "giveaway": "Identifique este bioma reconhecido pela UNESCO como Reserva da Biosfera, considerado a maior planície de inundação contínua do mundo.",
+    "explanation": "O Pantanal é a maior planície inundável do planeta Terra, cobrindo cerca de 150 mil km² no Centro-Oeste brasileiro com uma biodiversidade exuberante adaptada às cheias sazonais.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Pantanal",
+    "wiki_extract": "Complexo do Pantanal, ou simplesmente Pantanal, é um bioma constituído principalmente por uma savana estépica, alagada em sua maior parte, com 250 000 quilômetros quadrados de extensão e uma altitude média de 100 m. Devido às dificuldades de mensurar o tamanho do Pantanal, é possível encontrar referências de sua área em 210 000 km²."
+  },
+  {
+    "id": "br-ditadura-militar-brasileira",
+    "origin": "wikipedia_br",
+    "category": "História",
+    "subcategory": "História do Brasil",
+    "difficulty": 2,
+    "question_pt": "A Guerrilha do Araguaia, organizada pelo PCdoB na divisa do Pará com Goiás, foi combatida por três expedições secretas do Exército na selva entre 1972 e 1974. O caso Riocentro em 1981 expôs a atuação clandestina da linha dura militar quando uma bomba explodiu acidentalmente no colo de um sargento durante um show do Dia do Trabalhador. A decretação do Ato Institucional Número 5 (AI-5) em dezembro de 1968 pelo general Costa e Silva marcou o início dos chamados \"anos de chumbo\" (*) O regime foi instaurado após o golpe que derrubou o presidente João Goulart em 31 de março de 1964. O ciclo encerrou-se após duas décadas com a promulgação da Lei da Anistia, a campanha popular das \"Diretas Já\" e a eleição de Tancredo Neves pelo Colégio Eleitoral em 1985. Identifique este período autoritário de vinte e um anos comandado por generais das Forças Armadas no Brasil contemporâneo.",
+    "formatted_answer_pt": "<b><u>Ditadura Militar</u></b> [aceite também <i>Ditadura Militar Brasileira, Regime Militar, Ditadura de 64, Ditadura Civil-Militar</i>]",
+    "answer_canonical_pt": "Ditadura Militar",
+    "accept_aliases": [
+      "Ditadura Militar Brasileira",
+      "Regime Militar",
+      "Ditadura de 64",
+      "Ditadura Civil-Militar"
+    ],
+    "prompt_aliases": [
+      "regime dos generais",
+      "governo militar de 1964"
+    ],
+    "reject_aliases": [
+      "Estado Novo",
+      "República Velha"
+    ],
+    "lead_in": "A Guerrilha do Araguaia, organizada pelo PCdoB na divisa do Pará com Goiás, foi combatida por três expedições secretas do Exército na selva entre 1972 e 1974.",
+    "giveaway": "Identifique este período autoritário de vinte e um anos comandado por generais das Forças Armadas no Brasil contemporâneo.",
+    "explanation": "A Ditadura Militar no Brasil durou de 1964 a 1985, caracterizada por fechamento político, censura, perseguição a opositores e pelo chamado \"Milagre Econômico\".",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Ditadura_militar_brasileira",
+    "wiki_extract": "Ditadura militar brasileira foi um regime autoritário e nacionalista instaurado em 1 de abril de 1964, que perdurou até 15 de março de 1985, sendo conduzido por sucessivos governos militares. Teve início com o golpe de Estado de 1964, que depôs o governo João Goulart, eleito democraticamente. A ditadura terminou formalmente em 1985, quando José Sarney assumiu a presidência, marcando o início da chamada Nova República."
+  },
+  {
+    "id": "qb-universal-einstein",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Física",
+    "difficulty": 2,
+    "question_pt": "Uma carta endereçada a Franklin D. Roosevelt por este cientista e Leó Szilárd alertou os Estados Unidos sobre o perigo do urânio na Alemanha nazista. Em 1905, durante seu chamado \"Annus Mirabilis\", ele publicou quatro artigos pioneiros na revista Annalen der Physik, incluindo a formulação teórica do efeito fotoelétrico. (*) Nomeie este físico teórico que formulou a Teoria da Relatividade e a famosa equação E = mc².",
+    "formatted_answer_pt": "<b><u>Albert Einstein</u></b> [ou <b><u>Einstein</u></b>]",
+    "answer_canonical_pt": "Albert Einstein",
+    "accept_aliases": [
+      "Einstein",
+      "Albert Einstein"
+    ],
+    "prompt_aliases": [
+      "físico alemão",
+      "cientista da relatividade"
+    ],
+    "lead_in": "Uma carta endereçada a Roosevelt por este cientista alertou sobre o urânio na Alemanha nazista.",
+    "giveaway": "Nomeie este físico teórico que formulou a Teoria da Relatividade e a famosa equação E = mc².",
+    "explanation": "Albert Einstein (1879-1955) recebeu o Nobel de Física de 1921 pela explicação do efeito fotoelétrico e revolucionou a cosmologia com a Relatividade Geral e Especial.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Albert_Einstein"
+  },
+  {
+    "id": "qb-universal-iliad",
+    "origin": "qbreader",
+    "category": "Literatura",
+    "subcategory": "Literatura Clássica",
+    "difficulty": 2,
+    "question_pt": "No primeiro canto deste épico, o sacerdote Crises suplica ao deus Apolo que envie uma praga de flechas contra o acampamento grego após sua filha Criseida ser sequestrada pelo rei Agamêmnon. A trama tem seu clímax quando o herói Aquiles tem uma crise de fúria pela morte de seu companheiro Pátroclo (*) e mata o príncipe Heitor em combate singular, arrastando seu cadáver em volta das muralhas de Troia. Qual o nome desta monumental epopeia grega atribuída a Homero sobre o cerco de Troia?",
+    "formatted_answer_pt": "<b><u>Ilíada</u></b> [ou <b><u>A Ilíada</u></b>; aceite <i>Iliad</i>]",
+    "answer_canonical_pt": "Ilíada",
+    "accept_aliases": [
+      "A Ilíada",
+      "Iliad",
+      "Iliada"
+    ],
+    "prompt_aliases": [
+      "poema de Homero",
+      "epopeia de Troia"
+    ],
+    "lead_in": "No primeiro canto deste épico, o sacerdote Crises suplica ao deus Apolo que envie uma praga...",
+    "giveaway": "Qual o nome desta monumental epopeia grega atribuída a Homero sobre o cerco de Troia?",
+    "explanation": "A Ilíada narra as semanas finais do cerco à cidade de Troia e a cólera devastadora de Aquiles contra Agamêmnon e Heitor.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Il%C3%ADada"
+  },
+  {
+    "id": "qb-universal-dna",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Biologia",
+    "difficulty": 1,
+    "question_pt": "A chamada \"Fotografia 51\", obtida através de difração de raio-X pela química Rosalind Franklin e Raymond Gosling, foi crucial para deduzir a estrutura geométrica desta molécula. Erwin Chargaff descobriu que a quantidade de adenina é sempre proporcional à de timina, e a de citosina à de guanina nesta macromolécula. (*) James Watson e Francis Crick ganharam notoriedade mundial ao propor o modelo em dupla hélice desta substância em 1953. Identifique este ácido nucleico que carrega as instruções genéticas de quase todos os seres vivos.",
+    "formatted_answer_pt": "<b><u>DNA</u></b> [ou <b><u>Ácido Desoxirribonucleico</u></b>; aceite <i>ADN</i>]",
+    "answer_canonical_pt": "DNA",
+    "accept_aliases": [
+      "Ácido Desoxirribonucleico",
+      "Acido Desoxirribonucleico",
+      "ADN"
+    ],
+    "prompt_aliases": [
+      "ácido nucleico",
+      "código genético"
+    ],
+    "lead_in": "A chamada \"Fotografia 51\", obtida por difração de raio-X por Rosalind Franklin, revelou esta molécula.",
+    "giveaway": "Identifique este ácido nucleico que carrega as instruções genéticas de quase todos os seres vivos.",
+    "explanation": "O DNA armazena toda a informação genética celular em uma dupla hélice de nucleotídeos unidos por pontes de hidrogênio.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/DNA"
+  },
+  {
+    "id": "qb-universal-fr-rev",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "História Mundial",
+    "difficulty": 2,
+    "question_pt": "Durante este processo histórico, membros do Terceiro Estado prestaram o célebre Juramento do Jogo da Péla após serem trancados do lado de fora dos Estados Gerais. Sob a liderança do Comitê de Salvação Pública liderado por Maximilien Robespierre, instituiu-se o período do Terror, no qual milhares foram decapitados pela guilhotina (*). O estopim popular da revolta em Paris foi a tomada da fortaleza-prisão da Bastilha em 14 de julho de 1789. Qual foi este grande marco revolucionário que derrubou o rei Luís XVI e transformou a França?",
+    "formatted_answer_pt": "<b><u>Revolução Francesa</u></b> [aceite <i>A Revolução Francesa</i> ou <i>French Revolution</i>]",
+    "answer_canonical_pt": "Revolução Francesa",
+    "accept_aliases": [
+      "A Revolução Francesa",
+      "French Revolution",
+      "Revolucao Francesa"
+    ],
+    "prompt_aliases": [
+      "queda da monarquia francesa",
+      "revolução de 1789"
+    ],
+    "lead_in": "Durante este evento, membros do Terceiro Estado prestaram o Juramento do Jogo da Péla.",
+    "giveaway": "Qual foi este grande marco revolucionário que derrubou o rei Luís XVI e transformou a França?",
+    "explanation": "A Revolução Francesa (1789-1799) encerrou o Antigo Regime na França com os ideais de Liberdade, Igualdade e Fraternidade.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Revolu%C3%A7%C3%A3o_Francesa"
+  },
+  {
+    "id": "qb-universal-beethoven",
+    "origin": "qbreader",
+    "category": "Artes",
+    "subcategory": "Música",
+    "difficulty": 2,
+    "question_pt": "No manuscrito de sua Terceira Sinfonia, originalmente dedicada a Napoleão Bonaparte, este compositor rasgou a folha de rosto com tanta violência que furou o papel ao descobrir que Bonaparte havia se coroado imperador, renomeando-a para Sinfonia Heroica. Sua Nona Sinfonia é célebre por incorporar coral e solistas na interpretação do poema \"Ode à Alegria\" de Schiller (*). Identifique este monumental compositor alemão clássico e pré-romântico que compôs sua famosa Quinta Sinfonia e continuou criando obras-primas mesmo após ficar totalmente surdo.",
+    "formatted_answer_pt": "<b><u>Ludwig van Beethoven</u></b> [ou <b><u>Beethoven</u></b>]",
+    "answer_canonical_pt": "Ludwig van Beethoven",
+    "accept_aliases": [
+      "Beethoven",
+      "van Beethoven",
+      "Ludwig van Beethoven"
+    ],
+    "prompt_aliases": [
+      "compositor de Bonn",
+      "compositor alemão"
+    ],
+    "lead_in": "No manuscrito de sua Terceira Sinfonia, ele rasgou a folha de rosto furando o papel com a pena...",
+    "giveaway": "Identifique este monumental compositor alemão que compôs sua Quinta Sinfonia e a Ode à Alegria mesmo após perder totalmente a audição.",
+    "explanation": "Ludwig van Beethoven (1770-1827) foi uma das figuras mais revolucionárias da história da música ocidental, criando 9 sinfonias monumentais.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Ludwig_van_Beethoven"
+  },
+  {
+    "id": "qb-universal-newton",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Física",
+    "difficulty": 1,
+    "question_pt": "Em seu tratado Opticks de 1704, demonstrou que a luz branca é composta pelo espectro visível ao decompô-la usando um prisma de vidro. Envolveu-se em uma amarga controvérsia de prioridade intelectual contra Gottfried Wilhelm Leibniz pelo desenvolvimento do cálculo infinitesimal (*). Em sua obra-prima de 1687, os Philosophiae Naturalis Principia Mathematica, formulou as três leis do movimento e a lei da gravitação universal após a clássica anedota da maçã caindo em Woolsthorpe. Nomeie este físico e matemático inglês.",
+    "formatted_answer_pt": "<b><u>Sir Isaac Newton</u></b> [ou <b><u>Newton</u></b>]",
+    "answer_canonical_pt": "Isaac Newton",
+    "accept_aliases": [
+      "Newton",
+      "Sir Isaac Newton"
+    ],
+    "prompt_aliases": [
+      "físico inglês",
+      "matemático inglês"
+    ],
+    "lead_in": "Em seu tratado Opticks de 1704, decompôs a luz solar branca através de um prisma...",
+    "giveaway": "Nomeie este físico e matemático inglês célebre pela formulação das três leis fundamentais da mecânica clássica e da gravitação.",
+    "explanation": "Isaac Newton (1643-1727) estabeleceu os alicerces da física e da astronomia modernas com o cálculo e a lei da gravidade.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Isaac_Newton"
+  },
+  {
+    "id": "qb-universal-curie",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Química",
+    "difficulty": 2,
+    "question_pt": "Durante a Primeira Guerra Mundial, projetou e financiou veículos radiológicos móveis conhecidos nas frentes de batalha como \"Petites Curies\" para radiografar soldados feridos. Junto com seu marido Pierre, isolou amostras do minério de pechblenda e batizou um novo elemento em homenagem ao seu país natal invadido pelo Império Russo (*). Foi a primeira pessoa na história a receber dois Prêmios Nobel, um em Física em 1903 e outro em Química em 1911 pela descoberta do rádio e do polônio. Nomeie esta cientista franco-polonesa pioneira no estudo da radioatividade.",
+    "formatted_answer_pt": "<b><u>Marie Curie</u></b> [ou <b><u>Maria Skłodowska-Curie</u></b>; aceite <i>Curie</i>]",
+    "answer_canonical_pt": "Marie Curie",
+    "accept_aliases": [
+      "Curie",
+      "Maria Sklodowska-Curie",
+      "Madame Curie",
+      "Maria Skłodowska-Curie"
+    ],
+    "prompt_aliases": [
+      "física polonesa",
+      "química polonesa"
+    ],
+    "lead_in": "Durante a Primeira Guerra, projetou ambulâncias radiológicas apelidadas de Petites Curies...",
+    "giveaway": "Nomeie esta cientista franco-polonesa pioneira nos estudos da radioatividade e vencedora de dois prêmios Nobel.",
+    "explanation": "Marie Curie (1867-1934) descobriu os elementos rádio e polônio e cunhou o termo radioatividade, sendo a única pessoa a vencer Nobel em duas ciências diferentes.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Marie_Curie"
+  },
+  {
+    "id": "qb-universal-darwin",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Biologia",
+    "difficulty": 1,
+    "question_pt": "Ele apressou a publicação de sua teoria após receber em 1858 uma carta com um ensaio praticamente idêntico enviado da Malásia pelo jovem naturalista Alfred Russel Wallace. Durante sua viagem de quase cinco anos ao redor do mundo a bordo do navio hidrográfico HMS Beagle (*), estudou os tentilhões e tartarugas gigantes no arquipélago das ilhas Galápagos. Em 1859, publicou a obra \"A Origem das Espécies\". Nomeie este naturalista britânico que propôs a teoria da evolução através da seleção natural.",
+    "formatted_answer_pt": "<b><u>Charles Darwin</u></b> [ou <b><u>Darwin</u></b>]",
+    "answer_canonical_pt": "Charles Darwin",
+    "accept_aliases": [
+      "Darwin",
+      "Charles Robert Darwin"
+    ],
+    "prompt_aliases": [
+      "naturalista inglês",
+      "pai da evolução"
+    ],
+    "lead_in": "Ele apressou a publicação de sua teoria após receber uma carta com um ensaio idêntico de Alfred Russel Wallace...",
+    "giveaway": "Nomeie este naturalista britânico autor de A Origem das Espécies e proponente da seleção natural.",
+    "explanation": "Charles Darwin (1809-1882) transformou as ciências biológicas ao propor que todas as formas de vida descendem de ancestrais comuns por meio da seleção natural.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Charles_Darwin"
+  },
+  {
+    "id": "qb-universal-davinci",
+    "origin": "qbreader",
+    "category": "Artes",
+    "subcategory": "Pintura",
+    "difficulty": 1,
+    "question_pt": "Ele utilizou sua técnica de camadas transparentes chamada sfumato para criar a transição suave de sombras e expressões enigmáticas nos rostos de suas modelos. No refeitório do convento dominicano de Santa Maria delle Grazie em Milão, pintou em têmpera e óleo sobre gesso seco uma representação do momento exato em que Cristo anuncia a traição de um apóstolo (*). Autor do desenho anatômico do Homem Vitruviano e pintor de A Última Ceia, pintou a esposa do mercador Francesco del Giocondo. Nomeie este polímata italiano do Renascimento autor da Mona Lisa.",
+    "formatted_answer_pt": "<b><u>Leonardo da Vinci</u></b> [ou <b><u>da Vinci</u></b>; aceite <i>Leonardo</i>]",
+    "answer_canonical_pt": "Leonardo da Vinci",
+    "accept_aliases": [
+      "da Vinci",
+      "Leonardo",
+      "Leonardo di ser Piero da Vinci"
+    ],
+    "prompt_aliases": [
+      "pintor florentino",
+      "gênio renascentista"
+    ],
+    "lead_in": "Ele aperfeiçoou a técnica do sfumato para fundir contornos e expressões sem linhas rígidas...",
+    "giveaway": "Nomeie este mestre renascentista italiano que pintou A Última Ceia e o retrato da Mona Lisa.",
+    "explanation": "Leonardo da Vinci (1452-1519) personificou o ideal renascentista da união entre arte, anatomia, engenharia e ciência.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Leonardo_da_Vinci"
+  },
+  {
+    "id": "qb-universal-vangogh",
+    "origin": "qbreader",
+    "category": "Artes",
+    "subcategory": "Pintura",
+    "difficulty": 2,
+    "question_pt": "Sua correspondência íntima com o irmão marchant de arte Theo serviu como a principal fonte biográfica para reconstruir seu processo criativo e suas crises de saúde mental. Ele sonhava em criar a \"Oficina do Sul\" na Casa Amarela em Arles ao lado de Paul Gauguin, parceria que ruiu após uma violenta discussão que culminou na mutilação de parte de sua orelha esquerda (*). Durante sua internação voluntária no asilo psiquiátrico de Saint-Rémy-de-Provence, pintou um céu noturno turbulento em espirais amarelas sobre a silhueta de um cipreste escuro. Nomeie este pintor pós-impressionista holandês que pintou A Noite Estrelada e Os Girassóis.",
+    "formatted_answer_pt": "<b><u>Vincent van Gogh</u></b> [ou <b><u>van Gogh</u></b>]",
+    "answer_canonical_pt": "Vincent van Gogh",
+    "accept_aliases": [
+      "van Gogh",
+      "Vincent Willem van Gogh",
+      "Van Gogh"
+    ],
+    "prompt_aliases": [
+      "pintor holandês",
+      "pós-impressionista"
+    ],
+    "lead_in": "Sua correspondência com seu irmão Theo permitiu catalogar suas centenas de telas quase nunca vendidas em vida...",
+    "giveaway": "Nomeie este pintor holandês pós-impressionista célebre por telas como Os Girassóis e A Noite Estrelada.",
+    "explanation": "Vincent van Gogh (1853-1890) criou obras com pinceladas enérgicas e cores emocionais intensas que anteciparam o expressionismo.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Vincent_van_Gogh"
+  },
+  {
+    "id": "qb-universal-shakespeare",
+    "origin": "qbreader",
+    "category": "Literatura",
+    "subcategory": "Teatro",
+    "difficulty": 1,
+    "question_pt": "Membro acionista da companhia teatral Lord Chamberlain's Men, ajudou a construir o anfiteatro circular The Globe às margens do rio Tâmisa em Londres. Dedicou uma famosa coleção de cento e cinquenta e quatro sonetos a um jovem nobre e a uma misteriosa \"Dama Escura\" (*). Criador de tragédias imortais como Macbeth, Rei Lear e Otelo, escreveu a peça sobre o príncipe da Dinamarca que conversa com o crânio do bobo Yorick e pronuncia \"Ser ou não ser, eis a questão\". Nomeie este dramaturgo e poeta inglês apelidado de o \"Bardo de Avon\".",
+    "formatted_answer_pt": "<b><u>William Shakespeare</u></b> [ou <b><u>Shakespeare</u></b>]",
+    "answer_canonical_pt": "William Shakespeare",
+    "accept_aliases": [
+      "Shakespeare",
+      "William Shakespeare",
+      "O Bardo"
+    ],
+    "prompt_aliases": [
+      "dramaturgo elisabetano",
+      "bardo de avon"
+    ],
+    "lead_in": "Ele foi o principal dramaturgo da trupe do teatro The Globe sob o reinado de Elizabeth I...",
+    "giveaway": "Nomeie este dramaturgo inglês autor das tragédias de Hamlet e Romeu e Julieta.",
+    "explanation": "William Shakespeare (1564-1616) é universalmente considerado o maior dramaturgo da língua inglesa e um dos ápices da literatura ocidental.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/William_Shakespeare"
+  },
+  {
+    "id": "qb-universal-quixote",
+    "origin": "qbreader",
+    "category": "Literatura",
+    "subcategory": "Romance",
+    "difficulty": 1,
+    "question_pt": "No prólogo da segunda parte desta narrativa, o autor ridiculariza a versão apócrifa e plagiada publicada sob o pseudônimo de Alonso Fernández de Avellaneda. O protagonista batiza seu pangaré esquálido de Rocinante e jura amor eterno à camponesa Aldonza Lorenzo, a quem chama pelo nome nobre de Dulcineia del Toboso (*). Acompanhado pelo lavrador vizinho Sancho Pança montado em seu burro cinzento, o fidalgo enlouquece após ler romances de cavalaria e investe com sua lança contra moinhos de vento acreditando serem gigantes. Qual o título desta obra-prima espanhola de 1605 escrita por Miguel de Cervantes?",
+    "formatted_answer_pt": "<b><u>Dom Quixote</u></b> [ou <b><u>Don Quijote de la Mancha</u></b>]",
+    "answer_canonical_pt": "Dom Quixote",
+    "accept_aliases": [
+      "Dom Quixote de la Mancha",
+      "Don Quixote",
+      "Don Quijote",
+      "Dom Quixote das Manchas"
+    ],
+    "prompt_aliases": [
+      "livro de Cervantes",
+      "cavaleiro da triste figura"
+    ],
+    "lead_in": "No prólogo da segunda parte, o autor ridicularizou o plágio de Avellaneda antes de concluir as aventuras...",
+    "giveaway": "Qual o título deste romance de Miguel de Cervantes sobre o cavaleiro andante que lutava contra moinhos de vento?",
+    "explanation": "Dom Quixote de la Mancha (1605/1615), de Miguel de Cervantes, é o marco de fundação do romance moderno ocidental.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Dom_Quixote"
+  },
+  {
+    "id": "qb-universal-dante",
+    "origin": "qbreader",
+    "category": "Literatura",
+    "subcategory": "Poesia Épica",
+    "difficulty": 2,
+    "question_pt": "Ele inventou para sua obra-prima a métrica da terza rima, estruturando cento e quarenta e dois tercetos encadeados em hendecassílabos divididos em cem cantos. Exilado de sua cidade natal de Florença devido aos conflitos faccionais entre os Guelfos Brancos e Negros, foi guiado espiritualmente por sua musa inspiradora Beatriz Portinari (*). No início de sua jornada, perdido em uma selva escura, é resgatado pela sombra do poeta romano Virgílio, que o conduz através dos nove círculos concêntricos até Lúcifer no lago de gelo de Cocite. Nomeie este poeta italiano medieval autor da Divina Comédia.",
+    "formatted_answer_pt": "<b><u>Dante Alighieri</u></b> [ou <b><u>Dante</u></b>]",
+    "answer_canonical_pt": "Dante Alighieri",
+    "accept_aliases": [
+      "Dante",
+      "Dante Alighieri"
+    ],
+    "prompt_aliases": [
+      "poeta florentino",
+      "autor da divina comedia"
+    ],
+    "lead_in": "Ele inventou a estrutura da terza rima para narrar sua viagem teológica através do além...",
+    "giveaway": "Nomeie este poeta florentino autor de A Divina Comédia, que descreveu o Inferno, o Purgatório e o Paraíso.",
+    "explanation": "Dante Alighieri (1265-1321) estabeleceu as bases do italiano moderno como língua literária com A Divina Comédia.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Dante_Alighieri"
+  },
+  {
+    "id": "qb-universal-orwell-1984",
+    "origin": "qbreader",
+    "category": "Literatura",
+    "subcategory": "Romance Distópico",
+    "difficulty": 1,
+    "question_pt": "O protagonista trabalha reescrevendo arquivos históricos no Ministério da Verdade e aluga um quarto secreto sem teletelas sobre a loja do senhor Charrington para encontrar sua amante rebelde Júlia. Após ser traído e preso pela Polícia do Pensamento liderada por O'Brien (*), é torturado e submetido aos seus piores pavores no Quarto 101 com uma gaiola de ratos carnívoros. Ambientado no superestado totalitário da Oceânia governado pelo Partido e pelo rosto onipresente do Grande Irmão, qual o título deste clássico romance distópico de George Orwell?",
+    "formatted_answer_pt": "<b><u>1984</u></b> [ou <b><u>Mil Novecentos e Oitenta e Quatro</u></b>]",
+    "answer_canonical_pt": "1984",
+    "accept_aliases": [
+      "1984",
+      "Mil Novecentos e Oitenta e Quatro",
+      "Nineteen Eighty-Four"
+    ],
+    "prompt_aliases": [
+      "livro do Grande Irmão",
+      "obra de Orwell"
+    ],
+    "lead_in": "O protagonista Winston Smith trabalha no Ministério da Verdade falsificando o passado em favor do Partido...",
+    "giveaway": "Qual o título desta clássica distopia antitotalitária de George Orwell centrada na vigilância do Grande Irmão?",
+    "explanation": "1984 (publicado em 1949 por George Orwell) cunhou conceitos influentes como Novilíngua, Teletela, Duplipensar e Big Brother.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/1984_(livro)"
+  },
+  {
+    "id": "qb-universal-rome",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "História Antiga",
+    "difficulty": 1,
+    "question_pt": "A vitória naval na Batalha de Áccio contra as forças combinadas de Marco Antônio e da rainha Cleópatra do Egito encerrou as guerras civis republicanas deste estado. Seu primeiro soberano monárquico autocrático recebeu do Senado o título sagrado de Augusto em 27 antes de Cristo (*), inaugurando o período de prosperidade conhecido como Pax Romana. Durante a dinastia Flaviana, foi erguido o Anfiteatro Flaviano para combates de gladiadores, conhecido como Coliseu. Identifique este monumental império da Antiguidade centrado na península Itálica que governou toda a bacia do mar Mediterrâneo.",
+    "formatted_answer_pt": "<b><u>Império Romano</u></b> [ou <b><u>Roma Antiga</u></b>; aceite <i>Roma</i>]",
+    "answer_canonical_pt": "Império Romano",
+    "accept_aliases": [
+      "Roma Antiga",
+      "Roma",
+      "O Império Romano"
+    ],
+    "prompt_aliases": [
+      "estado romano",
+      "civilização romana"
+    ],
+    "lead_in": "A vitória naval em Áccio consolidou o poder de Otávio e extinguiu a República governada pelo Senado...",
+    "giveaway": "Identifique este grande império da Antiguidade clássica cuja capital às margens do rio Tibre sediou o Coliseu e o Fórum.",
+    "explanation": "O Império Romano foi uma das civilizações mais influentes da história mundial, legando o direito civil, as línguas neolatinas e a arquitetura monumental.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Imp%C3%A9rio_Romano"
+  },
+  {
+    "id": "qb-universal-ww1",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "História Contemporânea",
+    "difficulty": 1,
+    "question_pt": "A Batalha de Galípoli no estreito de Dardanelos foi um fracasso catastrófico para as tropas britânicas do corpo ANZAC sob ordens de Winston Churchill contra os defensores do Império Otomano. No front ocidental, confrontos brutais e atoleiros de lama nas batalhas de Verdun e do Somme consolidaram a guerra estática de trincheiras (*). O estopim diplomático foi o assassinato do herdeiro do trono austro-húngaro, o arquiduque Francisco Ferdinando, pelo nacionalista sérvio Gavrilo Princip em Sarajevo em 1914. Identifique este primeiro grande conflito bélico em escala global encerrado pelo Tratado de Versalhes em 1918.",
+    "formatted_answer_pt": "<b><u>Primeira Guerra Mundial</u></b> [ou <b><u>A Grande Guerra</u></b>; aceite <i>Primeira Guerra</i>]",
+    "answer_canonical_pt": "Primeira Guerra Mundial",
+    "accept_aliases": [
+      "Primeira Guerra",
+      "A Grande Guerra",
+      "Grande Guerra",
+      "I Guerra Mundial",
+      "1ª Guerra Mundial"
+    ],
+    "prompt_aliases": [
+      "guerra de 1914",
+      "guerra das trincheiras"
+    ],
+    "lead_in": "A desastrosa campanha de Galípoli e o front do Somme marcaram a carnificina das novas metralhadoras e gases tóxicos...",
+    "giveaway": "Identifique este primeiro grande conflito global deflagrado em 1914 após o assassinato do arquiduque Francisco Ferdinando.",
+    "explanation": "A Primeira Guerra Mundial (1914-1918) redesenhou o mapa europeu com a queda dos impérios Russo, Alemão, Austro-Húngaro e Otomano.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Primeira_Guerra_Mundial"
+  },
+  {
+    "id": "qb-universal-coldwar",
+    "origin": "qbreader",
+    "category": "História",
+    "subcategory": "História Contemporânea",
+    "difficulty": 1,
+    "question_pt": "Durante este período geopolítico, a doutrina militar MAD (Destruição Mútua Assegurada) garantiu que nenhum dos dois blocos antagônicos utilizasse seu arsenal atômico de forma direta. O mundo esteve à beira de uma aniquilação nuclear durante treze dias em outubro de 1962 na Crise dos Mísseis de Cuba (*). Caracterizado pela corrida espacial e por guerras por procuração na Coreia e no Vietnã, colocou em disputa a OTAN e os signatários do Pacto de Varsóvia. Qual o nome deste confronto ideológico e econômico global travado entre os Estados Unidos e a União Soviética até a queda do Muro de Berlim?",
+    "formatted_answer_pt": "<b><u>Guerra Fria</u></b> [ou <b><u>A Guerra Fria</u></b>; aceite <i>Cold War</i>]",
+    "answer_canonical_pt": "Guerra Fria",
+    "accept_aliases": [
+      "A Guerra Fria",
+      "Cold War"
+    ],
+    "prompt_aliases": [
+      "disputa entre EUA e URSS",
+      "conflito pós-guerra"
+    ],
+    "lead_in": "A doutrina da Destruição Mútua Assegurada balizou a corrida armamentista e a corrida espacial...",
+    "giveaway": "Qual o nome desta disputa ideológica e bipolar entre Estados Unidos e União Soviética que dividiu o mundo no século XX?",
+    "explanation": "A Guerra Fria (1947-1991) definiu a política mundial do pós-Segunda Guerra entre o bloco capitalista americano e o bloco socialista soviético.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Guerra_Fria"
+  },
+  {
+    "id": "qb-universal-periodic-table",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Química",
+    "difficulty": 1,
+    "question_pt": "Henry Moseley reformulou sua organização em 1913 ao demonstrar que ela deveria ser ordenada pela contagem de cargas nucleares positivas e não pelas massas atômicas calculadas. O criador de sua versão mais famosa previu com espantosa precisão a existência e as propriedades térmicas de elementos até então desconhecidos apelidados de eka-boro, eka-alumínio e eka-silício (*). Em 1869, o químico siberiano Dmitri Mendeleev ordenou os elementos químicos conhecidos em períodos horizontais e famílias verticais de propriedades similares. Nomeie esta tabela tabular que organiza todos os elementos químicos conhecidos pelo seu número atômico.",
+    "formatted_answer_pt": "<b><u>Tabela Periódica</u></b> [ou <b><u>Tabela Periódica dos Elementos</u></b>]",
+    "answer_canonical_pt": "Tabela Periódica",
+    "accept_aliases": [
+      "Tabela Periódica dos Elementos",
+      "A Tabela Periódica"
+    ],
+    "prompt_aliases": [
+      "quadro de elementos",
+      "tabela de Mendeleev"
+    ],
+    "lead_in": "Henry Moseley demonstrou que sua seriação dependia da contagem de prótons do núcleo atômico...",
+    "giveaway": "Nomeie esta organização sistemática e visual de todos os elementos químicos conhecidos concebida por Dmitri Mendeleev.",
+    "explanation": "A Tabela Periódica organiza os 118 elementos químicos conhecidos em ordem crescente de número atômico e de acordo com sua configuração eletrônica.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Tabela_peri%C3%B3dica"
+  },
+  {
+    "id": "qb-universal-quantum",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Física",
+    "difficulty": 2,
+    "question_pt": "Para resolver a catástrofe do ultravioleta na radiação de corpo negro em 1900, um físico propôs que a energia só podia ser emitida ou absorvida em pacotes discretos proporcionais a uma constante universal h. Louis de Broglie expandiu este conceito ao formular a dualidade onda-partícula da matéria (*). Mais tarde, Werner Heisenberg estabeleceu o princípio de que é impossível conhecer simultaneamente com precisão absoluta a posição e o momento linear de uma partícula subatômica. Qual é este ramo da física teórica pioneiramente explorado por Max Planck, Niels Bohr e Erwin Schrödinger para descrever a natureza na escala subatômica?",
+    "formatted_answer_pt": "<b><u>Mecânica Quântica</u></b> [ou <b><u>Física Quântica</u></b>; aceite <i>Teoria Quântica</i>]",
+    "answer_canonical_pt": "Mecânica Quântica",
+    "accept_aliases": [
+      "Física Quântica",
+      "Teoria Quântica",
+      "Mecanica Quantica",
+      "Fisica Quantica"
+    ],
+    "prompt_aliases": [
+      "física subatômica",
+      "estudo dos quanta"
+    ],
+    "lead_in": "Max Planck resolveu a catástrofe do ultravioleta ao demonstrar que a energia viaja em pacotes indivisíveis...",
+    "giveaway": "Qual é este revolucionário ramo da física moderna que estuda o comportamento probabilístico de partículas no nível subatômico?",
+    "explanation": "A Mecânica Quântica revolucionou a compreensão da matéria e da energia ao descrever fenômenos probabilísticos e discretos na escala do infinitamente pequeno.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Mec%C3%A2nica_qu%C3%A2ntica"
+  },
+  {
+    "id": "qb-universal-mozart",
+    "origin": "qbreader",
+    "category": "Artes",
+    "subcategory": "Música",
+    "difficulty": 1,
+    "question_pt": "Ele compôs suas três últimas grandes sinfonias em um período vertiginoso de apenas seis semanas durante o verão de 1788, culminando na Sinfonia Número 41 em Dó Maior apelidada de \"Júpiter\". Suas colaborações operísticas com o libretista Lorenzo Da Ponte geraram obras-primas como As Bodas de Fígaro, Cosí fan Tutte e Don Giovanni (*). Nascido em Salzburgo, este prodígio tocou violino e cravo perante as cortes europeias com apenas seis anos de idade e deixou inacabado seu sombrio Requiem ao falecer aos trinta e cinco anos. Nomeie este genial compositor austríaco do período clássico que compôs a ópera A Flauta Mágica.",
+    "formatted_answer_pt": "<b><u>Wolfgang Amadeus Mozart</u></b> [ou <b><u>Mozart</u></b>]",
+    "answer_canonical_pt": "Wolfgang Amadeus Mozart",
+    "accept_aliases": [
+      "Mozart",
+      "Wolfgang Mozart",
+      "Amadeus Mozart"
+    ],
+    "prompt_aliases": [
+      "compositor austríaco",
+      "prodígio de Salzburgo"
+    ],
+    "lead_in": "Ele compôs a Sinfonia Júpiter e colaborou intensamente com o libretista Lorenzo Da Ponte...",
+    "giveaway": "Nomeie este célebre prodígio e compositor austríaco autor de A Flauta Mágica e do Requiem em Ré Menor.",
+    "explanation": "Wolfgang Amadeus Mozart (1756-1791) foi um dos maiores expoentes do Classicismo musical vienense, autor de mais de 600 obras icônicas.",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart"
+  }
+]
