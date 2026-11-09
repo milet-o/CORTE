@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start -p ${PORT:-3000}",
     "pipeline:seed": "tsx scripts/seed-database.ts",
+    "pipeline:crawler": "tsx scripts/infinite-crawler.ts",
     "pipeline:wiki": "tsx scripts/wikipedia-brasil.ts",
     "pipeline:qbreader": "tsx scripts/fetch-qbreader.ts"
   },

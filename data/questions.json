@@ -1487,5 +1487,1290 @@
     "giveaway": "Identifique esta organela celular fundamental popularmente conhecida como a \"usina de energia\" da célula por ser responsável pela produção da molécula de ATP.",
     "explanation": "A mitocôndria é a organela responsável pela respiração celular aeróbica e síntese de ATP na maioria das células eucarióticas.",
     "wiki_url": "https://pt.wikipedia.org/wiki/Mitoc%C3%B4ndria"
+  },
+  {
+    "id": "auto-tr-tio",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Física Nuclear",
+    "difficulty": 2,
+    "question_pt": "Seu núcleo atômico contém 1 próton e 2 nêutrons. É um isótopo radioativo que apresenta uma meia-vida de 12,32 ± 0,02 anos. Informalmente é simbolizado pela letra T. O esta entidade, também conhecido como trício, do latim tritium, é um raro  isótopo do hidrogênio, (representado por 3H), e de abundância vestigial. (*) Identifique este isótopo radioativo do hidrogênio.",
+    "formatted_answer_pt": "<b><u>Trítio</u></b>",
+    "answer_canonical_pt": "Trítio",
+    "accept_aliases": [
+      "Trítio",
+      "Tritio",
+      "Hidrogénio-3",
+      "Tríton"
+    ],
+    "prompt_aliases": [
+      "este isótopo radioativo"
+    ],
+    "explanation": "O trítio, também conhecido como trício, do latim tritium, é um raro  isótopo do hidrogênio, (representado por 3H), e de abundância vestigial.\nSeu núcleo atômico contém 1 próton e 2 nêutrons. É um isótopo radioativo que apresenta uma meia-vi...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Tr%C3%ADtio",
+    "wiki_extract": "O trítio, também conhecido como trício, do latim tritium, é um raro  isótopo do hidrogênio, (representado por 3H), e de abundância vestigial.\nSeu núcleo atômico contém 1 próton e 2 nêutrons. É um isótopo radioativo que apresenta uma meia-vida de 12,32 ± 0,02 anos. Informalmente é simbolizado pela letra T.\nEmite radiação do tipo β (beta). Como o núcleo apresenta três nucleons que participam na interação forte e, somente um próton carregado eletricamente, o trítio pode liberar grande quantidade de energia ao realizar a fusão nuclear, e pode fazê-lo mais facilmente que os outros isótopos mais comuns do hidrogênio. Assim, o trítio poderá ser utilizado (no futuro) para a produção de energia em grande quantidade.\nA energia a ser gerada pela fusão nuclear controlada deverá ser bem mais limpa do que aquela produzida pela fissão nuclear pois como principal resíduo, tem-se o hélio e o processo de produção de energia deixaria lixo nuclear de baixa perigosidade. Essa produção de energia seria feita através da fusão nuclear, que produz milhões de graus de temperatura. Teoricamente, para produzir fusão nuclear, também poderia ser utilizado o deutério.[carece de fontes]?\nO trítio é produzido artificialmente por irradiação de lítio metálico ou seixos cerâmicos de lítio num reactor nuclear, e é um dos subprodutos  nas operações normais dos reactores nucleares . O trítio é então  utilizado nas bombas de hidrogénio.\nO trítio também é utilizado em radioluminescência, como na iluminação de relógios de pulso, sinais de saída de emergência e utensílios militares como sistemas de mira de armas de fogo, pressão ou arco, já que a liberação das partículas beta em contato com o fósforo o faz ficar luminescente.[carece de fontes]?"
+  },
+  {
+    "id": "auto-oz-nio",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Química Atmosférica",
+    "difficulty": 2,
+    "question_pt": "É um gás azul-claro de odor nitidamente pungente. Constitui um alótropo do oxigênio muito menos estável que o alótropo diatômico O2, decompondo-se na baixa atmosfera em O2, ou dioxigênio. O ozônio forma-se a partir do dioxigênio pela ação da radiação ultravioleta e de descargas elétricas na atmosfera terrestre. O esta entidade ou ozono, também chamado trioxigênio, é uma molécula inorgânica com a fórmula química O3. (*) Identifique este gás de fórmula O3 que protege a Terra.",
+    "formatted_answer_pt": "<b><u>Ozônio</u></b>",
+    "answer_canonical_pt": "Ozônio",
+    "accept_aliases": [
+      "Ozônio",
+      "Ozono",
+      "Ozonio",
+      "Ozonização",
+      "O3",
+      "Ozónio",
+      "Ozono troposférico",
+      "Trioxigénio"
+    ],
+    "prompt_aliases": [
+      "este gás de"
+    ],
+    "explanation": "O ozônio ou ozono, também chamado trioxigênio, é uma molécula inorgânica com a fórmula química O3. É um gás azul-claro de odor nitidamente pungente. Constitui um alótropo do oxigênio muito menos estável que o alótropo diatômico O2, decompon...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Oz%C3%B4nio",
+    "wiki_extract": "O ozônio ou ozono, também chamado trioxigênio, é uma molécula inorgânica com a fórmula química O3. É um gás azul-claro de odor nitidamente pungente. Constitui um alótropo do oxigênio muito menos estável que o alótropo diatômico O2, decompondo-se na baixa atmosfera em O2, ou dioxigênio. O ozônio forma-se a partir do dioxigênio pela ação da radiação ultravioleta e de descargas elétricas na atmosfera terrestre. Está presente em concentrações muito baixas por toda a atmosfera, com sua maior concentração na camada de ozônio da estratosfera, que absorve a maior parte da radiação ultravioleta do Sol.\nO odor do ozônio lembra o do cloro e pode ser percebido por muitas pessoas em concentrações de apenas 0,1 ppm no ar. A estrutura química do O3 foi determinada em 1865. Mais tarde se comprovou que a molécula possui geometria angular e é fracamente diamagnética. Em condições normais de temperatura e pressão, o ozônio é um gás azul-claro que se condensa, em temperaturas criogênicas, em um líquido azul-escuro e por fim se solidifica em um material violeta-escuro quase negro. Sua instabilidade em relação ao dioxigênio é tamanha que o gás concentrado e o ozônio líquido podem se decompor explosivamente quando submetidos a temperaturas elevadas, choques físicos ou aquecimento rápido até o ponto de ebulição. Por isso, comercialmente é utilizado apenas em baixas concentrações.\nO ozônio é um poderoso agente oxidante, muito mais que o dioxigênio, e possui aplicações industriais e domésticas baseadas em sua capacidade de oxidação. O mesmo potencial oxidante faz com que danifique mucosas e tecidos respiratórios de animais e também tecidos vegetais em concentrações superiores a cerca de 0,1 ppm. Perto da superfície, isso o torna um poluente e um risco respiratório. Na camada de ozônio, concentrações de dois a oito ppm reduzem a quantidade de radiação ultravioleta nociva que chega à superfície terrestre."
+  },
+  {
+    "id": "auto-ur-nio",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Química Nuclear",
+    "difficulty": 2,
+    "question_pt": "À temperatura ambiente, o urânio encontra-se no estado sólido. É um elemento metálico radioativo pertencente à série dos actinídeos. Foi descoberto em 1789 pelo alemão Martin Klaproth na Alemanha. O esta entidade é um elemento químico de símbolo U e de massa atômica igual a 238 u, apresenta número atômico 92 (92 prótons e 92 elétrons), é um elemento natural e comum, muito mais abundante que a prata, abundância comparável à do molibdênio e arsênio, porém, quatro vezes menos abundante que o tório (ver: Reator de tório). (*) Identifique este elemento actinídeo de número atômico 92.",
+    "formatted_answer_pt": "<b><u>Urânio</u></b>",
+    "answer_canonical_pt": "Urânio",
+    "accept_aliases": [
+      "Urânio",
+      "Uranio"
+    ],
+    "prompt_aliases": [
+      "este elemento actinídeo"
+    ],
+    "explanation": "O urânio é um elemento químico de símbolo U e de massa atômica igual a 238 u, apresenta número atômico 92 (92 prótons e 92 elétrons), é um elemento natural e comum, muito mais abundante que a prata, abundância comparável à do molibdênio e a...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Ur%C3%A2nio",
+    "wiki_extract": "O urânio é um elemento químico de símbolo U e de massa atômica igual a 238 u, apresenta número atômico 92 (92 prótons e 92 elétrons), é um elemento natural e comum, muito mais abundante que a prata, abundância comparável à do molibdênio e arsênio, porém, quatro vezes menos abundante que o tório (ver: Reator de tório).\nÀ temperatura ambiente, o urânio encontra-se no estado sólido. É um elemento metálico radioativo pertencente à série dos actinídeos.\nFoi descoberto em 1789 pelo alemão Martin Klaproth na Alemanha. Foi o primeiro elemento onde se descobriu a propriedade da radioatividade. Seus isótopos mais comuns têm uma meia-vida longa (~4,5 bilhões de anos para o urânio-238 e ~700 milhões de anos para o urânio-235).\nO Urânio é utilizado em indústria bélica (bombas atômicas e no secundário para bombas de hidrogênio), e como combustível em usinas nucleares para geração de energia elétrica.\nA Agência Internacional de Energia Atómica, estimou as reservas mundiais de urânio em 5,4 milhões de toneladas em todo mundo em 2009, sendo que 31% está na Austrália, 12% no Cazaquistão, 9% no Canadá e 9% na Rússia. A produção mundial subiu cerca de 50 000 toneladas em 2009 comparando com 2008, sendo os maiores produtores em 2009 o Cazaquistão (28%), o Canadá (20%), a Austrália (16%), a Namíbia (9%), a Rússia (7%), o Níger (6%) e Uzbequistão (5%).\nA nova mina de mineração Tumalapalli revelada à imprensa em agosto de 2011, está localizada no Estado de Andhra Pradesh, no sul da Índia, e pode se tornar a maior reserva de Urânio do mundo. Segundo o Departamento de Energia Atômica da Índia, é confirmado que a mina contém 49 mil toneladas de minério. No entanto há indicações de que esta quantidade total seja três vezes maior que isso, o que alcançaria uma capacidade total de produção de 150 mil toneladas. Assim, passaria a ser a maior do mundo, ainda que se tratando de urânio de baixo grau.\n\n"
+  },
+  {
+    "id": "auto-diamante",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Mineralogia",
+    "difficulty": 2,
+    "question_pt": "É a forma triangular estável do carbono em pressões acima de 6 GPa (60 kbar). Comercializados como pedras preciosas, os diamantes possuem um alto valor agregado. Normalmente, o diamante cristaliza com estrutura cúbica e pode ser sintetizado industrialmente. O esta entidade é um cristal sob uma forma alotrópica do carbono, de fórmula química C. (*) Identifique este alótropo do carbono com dureza 10 na escala de Mohs.",
+    "formatted_answer_pt": "<b><u>Diamante</u></b>",
+    "answer_canonical_pt": "Diamante",
+    "accept_aliases": [
+      "Diamante",
+      "Diamantes",
+      "Diamante sintético",
+      "Diamantífero"
+    ],
+    "prompt_aliases": [
+      "este alótropo do"
+    ],
+    "explanation": "O diamante é um cristal sob uma forma alotrópica do carbono, de fórmula química C. É a forma triangular estável do carbono em pressões acima de 6 GPa (60 kbar). Comercializados como pedras preciosas, os diamantes possuem um alto valor agreg...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Diamante",
+    "wiki_extract": "O diamante é um cristal sob uma forma alotrópica do carbono, de fórmula química C. É a forma triangular estável do carbono em pressões acima de 6 GPa (60 kbar). Comercializados como pedras preciosas, os diamantes possuem um alto valor agregado. Normalmente, o diamante cristaliza com estrutura cúbica e pode ser sintetizado industrialmente. Outra forma de cristalização do diamante é a hexagonal, menos comum na natureza e com dureza menor (9,5 na escala de Mohs). A característica que difere os diamantes de outras formas alotrópicas, é o fato de cada átomo de carbono estar hibridizado em sp³, e encontrar-se ligado a outros 4 átomos de carbono por meio de ligações covalentes em um arranjo tridimensional tetraédrico. O diamante pode ser convertido em grafite, o alótropo termodinamicamente estável em baixas pressões, aplicando-se temperaturas acima de 1 500 °C sob vácuo ou atmosfera inerte. Em condições ambientes, essa conversão é extremamente lenta, tornando-se negligenciada.\nCristaliza no sistema cúbico, geralmente em cristais com forma octaédrica (8 faces) ou hexaquisoctaédrica (48 faces), frequentemente com superfícies curvas, arredondadas, incolores ou coradas. Os diamantes de cor escura são pouco conhecidos e o seu valor como gema é menor devido ao seu aspecto pouco atrativo. Diferente do que se pensou durante anos, os diamantes não são eternos, pois o carbono definha com o tempo, mas os diamantes duram mais que qualquer ser humano.\nSendo carbono puro, o diamante arde quando exposto a uma chama, transformando-se em dióxido de carbono. É solúvel em diversos ácidos e infusível, exceto a altas pressões.\nO diamante é o mais duro material de ocorrência natural que se conhece. Sua dureza é superada pelos também compostos (sintéticos) de carbono, grafeno e carbono acetilênico linear (conhecido também como carbino). Isto significa que não pode ser riscado por nenhum outro mineral ou substância, exceto o próprio diamante, funcionando como um importante material abrasivo. No entanto, é muito frágil, e isso deve-se à clivagem octaédrica perfeita segundo (2o). Estas duas características fizeram com que o diamante não fosse talhado durante muitos anos. A maior jazida do mundo, revelada pela Rússia ao mundo em 2012, porém de conhecimento do Kremlin desde 1970, tem capacidade para suprir diamantes, mesmo para uso industrial, pelos próximos 3000 anos.\nA jazida conta com trilhões de quilates, e conta com 10 vezes mais diamantes do que todas as jazidas conhecidas existentes no mundo hoje, juntas. Ela situa-se numa cratera com extensão de 100 km entre a região de Krasnoiarsk e da República de Sakha na Sibéria, Rússia. Tal cratera teve origem há 35 milhões de anos, com a queda de um asteroide, e seus diamantes são duas vezes mais resistentes, duros, do que os encontrados em outros lugares. A sua origem é decorrente da pressão e do calor gerado no impacto. Tal durabilidade é do interesse de certos setores industriais, pois é ótimo e de extrema utilidade para confecção de equipamentos das indústrias eletrônica e ótica, assim como em equipamentos para perfuração do solo. Outras jazidas no mundo são da África do Sul. Outras jazidas importantes situam-se na Rússia (segundo maior produtor) e na Austrália (terceiro maior produtor), entre outras de menor importância.\nEm outubro de 2019, um dos diamantes mais raros do mundo foi descoberto na República de Sakha da Sibéria; ele foi designado de “diamante Matryoshka”, em homenagem às icônicas bonecas russas. O diamante mede apenas 4,8 mm x 4,9 mm x 2,8 mm, e dentro dele existe uma cavidade interna que contém outro diamante medindo apenas 1,6 milímetro cúbico. Ainda não foi estimado o valor da pedra, mas a empresa que a descobriu (ALROSA) disse que suas características a tornará uma das mais valiosas do mundo.\nA densidade é de 3,48. O brilho é adamantino, derivado do elevadíssimo índice de refração (2,42). Recorde-se que todos os minerais com índice de refracção maior ou igual a 1,9 possuem este brilho. No entanto, os cristais não cortados podem apresentar um brilho gorduroso. Pode apresentar fluorescência, ou seja, a incidência dos raios ultravioleta produzem luminescência com cores variadas originando colorações azul, rosa, amarela ou verde."
+  },
+  {
+    "id": "auto-supercondutividade",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Física da Matéria Condensada",
+    "difficulty": 2,
+    "question_pt": "Ao contrário de um condutor elétrico metálico comum, cuja resistência diminui gradualmente à medida que a temperatura é reduzida, mesmo nas proximidades do zero absoluto, um supercondutor tem uma temperatura crítica característica abaixo da qual sua resistência cai abruptamente para zero. Uma corrente elétrica que percorre um circuito fechado de fio supercondutor pode persistir indefinidamente sem uma fonte de energia. O fenômeno da supercondutividade foi descoberto em 1911 pelo físico neerlandês Heike Kamerlingh Onnes. A esta entidade é um conjunto de propriedades físicas observadas nos supercondutores, materiais condutor nos quais a resistência elétrica é exatamente nula e os campos magnéticos são expulsos do material. (*) Identifique este fenômeno de resistência elétrica exatamente nula.",
+    "formatted_answer_pt": "<b><u>Supercondutividade</u></b>",
+    "answer_canonical_pt": "Supercondutividade",
+    "accept_aliases": [
+      "Supercondutividade",
+      "Superconductividade",
+      "Supercondutor",
+      "Superconductor",
+      "Supercondutores",
+      "Supercondutividade a alta temperatura",
+      "Supercondutora"
+    ],
+    "prompt_aliases": [
+      "este fenômeno de"
+    ],
+    "explanation": "A supercondutividade é um conjunto de propriedades físicas observadas nos supercondutores, materiais condutor nos quais a resistência elétrica é exatamente nula e os campos magnéticos são expulsos do material. Ao contrário de um condutor el...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Supercondutividade",
+    "wiki_extract": "A supercondutividade é um conjunto de propriedades físicas observadas nos supercondutores, materiais condutor nos quais a resistência elétrica é exatamente nula e os campos magnéticos são expulsos do material. Ao contrário de um condutor elétrico metálico comum, cuja resistência diminui gradualmente à medida que a temperatura é reduzida, mesmo nas proximidades do zero absoluto, um supercondutor tem uma temperatura crítica característica abaixo da qual sua resistência cai abruptamente para zero. Uma corrente elétrica que percorre um circuito fechado de fio supercondutor pode persistir indefinidamente sem uma fonte de energia.\nO fenômeno da supercondutividade foi descoberto em 1911 pelo físico neerlandês Heike Kamerlingh Onnes. Assim como o ferromagnetismo e as linhas espectrais atômicas, a supercondutividade é um fenômeno que só pode ser explicado pela mecânica quântica. Uma de suas características é o efeito Meissner, a expulsão do campo magnético do interior do supercondutor quando o material passa para o estado supercondutor. A ocorrência desse efeito mostra que a supercondutividade não pode ser entendida simplesmente como a idealização da condutividade perfeita na física clássica.\nEm 1986, descobriu-se que alguns materiais cupratos cerâmicos com estrutura de perovskita têm temperatura crítica superior a 35 K, cerca de −238 °C. Pouco depois, Chu Ching-wu constatou que a substituição do lantânio por ítrio, formando YBCO, elevava a temperatura crítica a 92 K, cerca de −181 °C. Isso permitia utilizar nitrogênio líquido como refrigerante. Uma temperatura de transição tão alta não pode ser explicada pela teoria dos supercondutores convencionais, e esses materiais passaram a ser chamados de supercondutores de alta temperatura. O nitrogênio líquido, disponível a baixo custo, entra em ebulição a 77 K, cerca de −196 °C. A existência de supercondutividade acima dessa temperatura tornou experimentos e aplicações menos difíceis do que aqueles que exigem temperaturas ainda mais baixas."
+  },
+  {
+    "id": "auto-b-son-de-higgs",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Física de Partículas",
+    "difficulty": 2,
+    "question_pt": "No Modelo Padrão, a partícula de Higgs é um bóson escalar massivo que se acopla (interage) com partículas cuja massa provém de suas interações com o campo de Higgs; possui spin nulo, paridade par (positiva), carga elétrica neutra e carga de cor nula. Trata-se de uma partícula instável, sofrendo decaimento em outras partículas em frações infinitesimais de segundo após a sua criação. O campo de Higgs é um campo escalar composto por duas componentes eletricamente neutras e duas carregadas, formando um dubleto complexo sob a simetria de isospin fraco SU(2). O esta entidade, por vezes denominado partícula de Higgs, é uma partícula elementar descrita pelo Modelo Padrão da física de partículas, produzida pela excitação quântica do campo de Higgs, um dos campos postulados pela física teórica. (*) Identifique esta partícula fundamental apelidada de partícula de Deus.",
+    "formatted_answer_pt": "<b><u>Bóson de Higgs</u></b>",
+    "answer_canonical_pt": "Bóson de Higgs",
+    "accept_aliases": [
+      "Bóson de Higgs",
+      "Bosão de Higgs",
+      "Bósons de Higgs",
+      "Bósões de Higgs",
+      "Bosões de Higgs",
+      "Partícula de Deus"
+    ],
+    "prompt_aliases": [
+      "esta partícula fundamental"
+    ],
+    "explanation": "O bóson de Higgs, por vezes denominado partícula de Higgs, é uma partícula elementar descrita pelo Modelo Padrão da física de partículas, produzida pela excitação quântica do campo de Higgs, um dos campos postulados pela física teórica. No ...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/B%C3%B3son_de_Higgs",
+    "wiki_extract": "O bóson de Higgs, por vezes denominado partícula de Higgs, é uma partícula elementar descrita pelo Modelo Padrão da física de partículas, produzida pela excitação quântica do campo de Higgs, um dos campos postulados pela física teórica. No Modelo Padrão, a partícula de Higgs é um bóson escalar massivo que se acopla (interage) com partículas cuja massa provém de suas interações com o campo de Higgs; possui spin nulo, paridade par (positiva), carga elétrica neutra e carga de cor nula. Trata-se de uma partícula instável, sofrendo decaimento em outras partículas em frações infinitesimais de segundo após a sua criação.\nO campo de Higgs é um campo escalar composto por duas componentes eletricamente neutras e duas carregadas, formando um dubleto complexo sob a simetria de isospin fraco SU(2). O seu \"potencial em chapéu mexicano\" induz o campo a assumir um valor não nulo em todas as regiões do espaço (mesmo no vácuo perfeito), o que quebra espontaneamente a simetria de isospin fraco da interação eletrofraca e, mediante o mecanismo de Higgs, confere massa de repouso às partículas elementares massivas do Modelo Padrão, inclusive ao próprio bóson de Higgs. A comprovação da existência real desse campo constituiu a última predição basilar não verificada do Modelo Padrão, sendo tratada durante várias décadas como \"o problema central da física de partículas\".\nTanto o campo quanto o bóson foram nomeados em homenagem ao físico britânico Peter Higgs, que em 1964, junto a outros cinco cientistas divididos em três grupos independentes, formulou o mecanismo de Higgs, processo pelo qual certas partículas fundamentais adquirem massa. Todas as partículas elementares conhecidas até então deveriam ser desprovidas de massa em escalas de altíssima energia; demonstrar formalmente como algumas delas adquiriam massa em patamares energéticos mais baixos representava um impasse teórico formidável. Caso as hipóteses propostas estivessem corretas, um bóson escalar (dotado de propriedades específicas) deveria obrigatoriamente existir. Essa partícula hipotética foi designada como bóson de Higgs, passando a servir de parâmetro de teste decisivo para determinar a validade física do campo.\nApós uma busca de quarenta anos, uma partícula subatômica compatível com as previsões teóricas foi descoberta em 2012 pelos experimentos ATLAS e CMS no Grande Colisor de Hádrons (LHC) do CERN, nas proximidades de Genebra, Suíça. Análises subsequentes confirmaram que o comportamento do novo estado coincidia com as propriedades esperadas para o bóson de Higgs. Físicos de duas das três equipes pioneiras, Peter Higgs e François Englert, foram laureados com o Nobel de Física em 2013 por suas deduções teóricas. Embora a teoria tenha se consagrado associada ao nome de Higgs, múltiplos pesquisadores desenvolveram partes constitutivas do modelo de maneira independente entre 1960 e 1972.\nNos meios de comunicação populares, o bóson de Higgs foi frequentemente rotulado como a \"partícula de Deus\", epíteto derivado do livro de divulgação científica lançado em 1993 pelo Nobel de Física Leon M. Lederman, intitulado A Partícula de Deus. O apelido é amplamente criticado pela comunidade de físicos, incluindo o próprio Peter Higgs."
+  },
+  {
+    "id": "auto-fus-o-nuclear",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Física Nuclear",
+    "difficulty": 2,
+    "question_pt": "A fusão nuclear requer muita energia para acontecer, e geralmente libera muito mais energia do que a que consome. Quando ocorre com elementos mais leves que o ferro e o níquel (que possuem as maiores forças de coesão nuclear de todos os átomos, sendo portanto mais estáveis) ela geralmente libera energia, e com elementos mais pesados ela consome. Até hoje, início do século XXI, ainda não foi encontrada uma forma de controlar comercialmente a fusão nuclear, como acontece com a fissão, embora existam laboratórios de pesquisa que utilizam reatores de fusão nuclear em pesquisas científicas. esta entidade é o processo no qual dois ou mais núcleos atômicos se juntam e formam um outro núcleo de maior número atômico. (*) Identifique este processo energético que alimenta o núcleo das estrelas.",
+    "formatted_answer_pt": "<b><u>Fusão nuclear</u></b>",
+    "answer_canonical_pt": "Fusão nuclear",
+    "accept_aliases": [
+      "Fusão nuclear",
+      "Fusão do hidrogênio",
+      "Fusão termonuclear",
+      "Fusão de hidrogênio"
+    ],
+    "prompt_aliases": [
+      "este processo energético"
+    ],
+    "explanation": "Fusão nuclear é o processo no qual dois ou mais núcleos atômicos se juntam e formam um outro núcleo de maior número atômico. A fusão nuclear requer muita energia para acontecer, e geralmente libera muito mais energia do que a que consome. Q...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Fus%C3%A3o_nuclear",
+    "wiki_extract": "Fusão nuclear é o processo no qual dois ou mais núcleos atômicos se juntam e formam um outro núcleo de maior número atômico. A fusão nuclear requer muita energia para acontecer, e geralmente libera muito mais energia do que a que consome. Quando ocorre com elementos mais leves que o ferro e o níquel (que possuem as maiores forças de coesão nuclear de todos os átomos, sendo portanto mais estáveis) ela geralmente libera energia, e com elementos mais pesados ela consome. Até hoje, início do século XXI, ainda não foi encontrada uma forma de controlar comercialmente a fusão nuclear, como acontece com a fissão, embora existam laboratórios de pesquisa que utilizam reatores de fusão nuclear em pesquisas científicas. Um projeto que caminha para a demonstração da viabilidade comercial do uso da fusão nuclear controlada é o ITER. \nO principal tipo de fusão que ocorre no interior das estrelas é o de hidrogênio em hélio, onde quatro prótons se fundem em uma partícula alfa (um núcleo de hélio), liberando dois pósitrons, dois neutrinos e energia. Mas, dentro desse processo, ocorrem várias reações individuais, que variam de acordo com a massa da estrela. Para estrelas do tamanho do Sol ou menores, a cadeia próton-próton é a reação dominante. Em estrelas de massa elevada predomina o ciclo CNO.\nA fusão de deutério e trítio (isótopos do hidrogênio) pode gerar nêutrons, o que é perigoso e torna o processo menos eficaz. A fusão aneutrônica (sem geração de nêutrons) é possível com o uso de elementos como o hélio-3 (raro na Terra), lítio e boro (abundantes na superfície terrestre), entre outros.\nVale ressaltar que há conservação da energia, e, portanto, pode-se calcular a massa dos quatro prótons e do núcleo de hélio, e subtrair a soma das massas das partículas iniciais daquela do produto desta reação nuclear para calcular a energia produzida.\nUtilizando a equação E=mc², pode-se calcular a energia liberada, oriunda da diferença de massas. Uma vez que o valor de c é muito grande (cerca de 3×108 m/s), mesmo uma massa muito pequena corresponde a uma enorme quantidade de energia. Este fato levou muitos engenheiros e cientistas a iniciar projetos para o desenvolvimento de reatores de fusão (Tokamaks) de modo a gerar eletricidade (por exemplo, a fusão de poucos cm³ de deutério, um isótopo de hidrogênio, produziria uma energia equivalente àquela produzida pela queima de 20 toneladas de carvão)."
+  },
+  {
+    "id": "auto-fiss-o-nuclear",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Física Nuclear",
+    "difficulty": 2,
+    "question_pt": "Os isótopos formados pela divisão têm massa parecida, no entanto geralmente seguem a proporção de massa de 3 para 2. O processo de fissão é uma reação exotérmica onde há liberação de energia e ocorre em usinas nucleares e em bombas atômicas. A fissão é considerada uma forma de transmutação nuclear pois os fragmentos gerados não são do mesmo elemento do que o isótopo gerador. esta entidade, na física nuclear, é a quebra do núcleo de um átomo instável em dois núcleos menores pelo bombardeamento de partículas como nêutrons. (*) Identifique este processo de divisão do núcleo atômico pesado.",
+    "formatted_answer_pt": "<b><u>Fissão nuclear</u></b>",
+    "answer_canonical_pt": "Fissão nuclear",
+    "accept_aliases": [
+      "Fissão nuclear",
+      "Fissão",
+      "Cisão nuclear",
+      "Fisão nuclear",
+      "Fissão Nuclear",
+      "Fissão atômica"
+    ],
+    "prompt_aliases": [
+      "este processo de"
+    ],
+    "explanation": "Fissão nuclear, na física nuclear, é a quebra do núcleo de um átomo instável em dois núcleos menores pelo bombardeamento de partículas como nêutrons. Os isótopos formados pela divisão têm massa parecida, no entanto geralmente seguem a propo...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Fiss%C3%A3o_nuclear",
+    "wiki_extract": "Fissão nuclear, na física nuclear, é a quebra do núcleo de um átomo instável em dois núcleos menores pelo bombardeamento de partículas como nêutrons. Os isótopos formados pela divisão têm massa parecida, no entanto geralmente seguem a proporção de massa de 3 para 2.\nO processo de fissão é uma reação exotérmica onde há liberação de energia e ocorre em usinas nucleares e em bombas atômicas. A fissão é considerada uma forma de transmutação nuclear pois os fragmentos gerados não são do mesmo elemento do que o isótopo gerador.\n\n"
+  },
+  {
+    "id": "auto-tubo-de-raios-cat-dicos",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Física Experimental",
+    "difficulty": 2,
+    "question_pt": "Quando os elétrons atingem essa superfície, parte de sua energia é convertida em luz visível. Os tubos de raios catódicos foram utilizados principalmente em televisores, monitores de computador, osciloscópios e outros equipamentos de visualização. Dependendo da aplicação, o feixe de elétrons pode ser direcionado por campos elétricos ou magnéticos. O esta entidade (TRC; do inglês Cathode Ray Tube, CRT), também conhecido como cinescópio em aplicações de televisão, é um dispositivo eletrônico a vácuo que produz imagens por meio de um feixe de elétrons dirigido a uma superfície revestida de material fosforescente. (*) Identifique este dispositivo experimental que levou à descoberta do elétron.",
+    "formatted_answer_pt": "<b><u>Tubo de raios catódicos</u></b>",
+    "answer_canonical_pt": "Tubo de raios catódicos",
+    "accept_aliases": [
+      "Tubo de raios catódicos",
+      "Cinescópio",
+      "TRC",
+      "Tubos de raios catódicos",
+      "CRT"
+    ],
+    "prompt_aliases": [
+      "este dispositivo experimental"
+    ],
+    "explanation": "O tubo de raios catódicos (TRC; do inglês Cathode Ray Tube, CRT), também conhecido como cinescópio em aplicações de televisão, é um dispositivo eletrônico a vácuo que produz imagens por meio de um feixe de elétrons dirigido a uma superfície...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Tubo_de_raios_cat%C3%B3dicos",
+    "wiki_extract": "O tubo de raios catódicos (TRC; do inglês Cathode Ray Tube, CRT), também conhecido como cinescópio em aplicações de televisão, é um dispositivo eletrônico a vácuo que produz imagens por meio de um feixe de elétrons dirigido a uma superfície revestida de material fosforescente. Quando os elétrons atingem essa superfície, parte de sua energia é convertida em luz visível.\nOs tubos de raios catódicos foram utilizados principalmente em televisores, monitores de computador, osciloscópios e outros equipamentos de visualização. Dependendo da aplicação, o feixe de elétrons pode ser direcionado por campos elétricos ou magnéticos. Nos televisores e monitores convencionais, o feixe percorre repetidamente a superfície da tela para formar a imagem; nos osciloscópios, pode representar graficamente a variação de um sinal elétrico.\nUma versão importante do dispositivo foi desenvolvida pelo físico alemão Karl Ferdinand Braun em 1897. No mesmo ano, o físico Joseph John Thomson publicou estudos que contribuíram decisivamente para demonstrar que os raios catódicos eram constituídos por partículas de carga negativa, posteriormente identificadas como elétrons.\n\n"
+  },
+  {
+    "id": "auto-efeito-doppler",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Física Clássica",
+    "difficulty": 2,
+    "question_pt": "Foi-lhe atribuído este nome em homenagem a Christian Doppler, que o descreveu teoricamente pela primeira vez em 1842. A primeira comprovação experimental foi obtida por Buys Ballot, em 1845, numa experiência em que uma locomotiva puxava um vagão com vários trompetistas. Este efeito é percebido, por exemplo, ao se escutar o som - que é uma onda mecânica - emitido por uma ambulância que passa em alta velocidade. esta entidade é um fenômeno físico observado nas ondas quando emitidas ou refletidas por um objeto que está em movimento com relação ao observador. (*) Identifique este desvio aparente na frequência de ondas em movimento.",
+    "formatted_answer_pt": "<b><u>Efeito Doppler</u></b>",
+    "answer_canonical_pt": "Efeito Doppler",
+    "accept_aliases": [
+      "Efeito Doppler",
+      "Efeito de Doppler",
+      "Efeito doopler",
+      "Efeito Doppler-Fizeau",
+      "Deslocamento Doppler",
+      "Desvio para o vermelho por aberração"
+    ],
+    "prompt_aliases": [
+      "este desvio aparente"
+    ],
+    "explanation": "Efeito Doppler é um fenômeno físico observado nas ondas quando emitidas ou refletidas por um objeto que está em movimento com relação ao observador. Foi-lhe atribuído este nome em homenagem a Christian Doppler, que o descreveu teoricamente ...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Efeito_Doppler",
+    "wiki_extract": "Efeito Doppler é um fenômeno físico observado nas ondas quando emitidas ou refletidas por um objeto que está em movimento com relação ao observador. Foi-lhe atribuído este nome em homenagem a Christian Doppler, que o descreveu teoricamente pela primeira vez em 1842. A primeira comprovação experimental foi obtida por Buys Ballot, em 1845, numa experiência em que uma locomotiva puxava um vagão com vários trompetistas.\nEste efeito é percebido, por exemplo, ao se escutar o som - que é uma onda mecânica - emitido por uma ambulância que passa em alta velocidade. O observador percebe que o tom, em relação ao emitido, fica mais agudo enquanto ela se aproxima, idêntico no momento da passagem e mais grave quando a ambulância começa a se afastar. Graças também ao conhecimento deste efeito é possível determinar a velocidade de estrelas e galáxias, uma vez que a luz é uma onda eletromagnética.\nNas ondas eletromagnéticas, este fenômeno foi descoberto de maneira independente, em 1848, pelo francês Hippolyte Fizeau. Por este motivo, o efeito Doppler também é chamado efeito Doppler-Fizeau."
+  },
+  {
+    "id": "auto-entropia",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Termodinâmica",
+    "difficulty": 2,
+    "question_pt": "Entropia também é geralmente associada a aleatoriedade, dispersão de matéria e energia, e \"desordem\" (não em senso comum) de um sistema termodinâmico. A entropia é a entidade física que rege a segunda lei da termodinâmica, a qual estabelece que a ela deve aumentar para processos espontâneos e em sistemas isolados. Para sistemas abertos, deve-se estabelecer que a entropia do universo (sistema e suas vizinhanças) deve aumentar devido ao processo espontâneo até o meio formado por sistema + vizinhanças atingir um valor máximo no estado de equilíbrio. A esta entidade (do grego εντροπία, entropía), unidade [J/K] (joules por kelvin), é uma grandeza termodinâmica que mede o grau de liberdade molecular de um sistema, e está associado ao seu número de configurações (ou microestados), ou seja, de quantas maneiras as partículas (átomos, íons ou moléculas) podem se distribuir em níveis energéticos quantizados, incluindo translacionais, vibracionais, rotacionais, e eletrônicos. (*) Identifique esta grandeza que mede o grau de desordem de um sistema.",
+    "formatted_answer_pt": "<b><u>Entropia</u></b>",
+    "answer_canonical_pt": "Entropia",
+    "accept_aliases": [
+      "Entropia",
+      "Introdução à entropia",
+      "Introdução não técnica à entropia"
+    ],
+    "prompt_aliases": [
+      "esta grandeza que"
+    ],
+    "explanation": "A entropia (do grego εντροπία, entropía), unidade [J/K] (joules por kelvin), é uma grandeza termodinâmica que mede o grau de liberdade molecular de um sistema, e está associado ao seu número de configurações (ou microestados), ou seja, de q...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Entropia",
+    "wiki_extract": "A entropia (do grego εντροπία, entropía), unidade [J/K] (joules por kelvin), é uma grandeza termodinâmica que mede o grau de liberdade molecular de um sistema, e está associado ao seu número de configurações (ou microestados), ou seja, de quantas maneiras as partículas (átomos, íons ou moléculas) podem se distribuir em níveis energéticos quantizados, incluindo translacionais, vibracionais, rotacionais, e eletrônicos. Entropia também é geralmente associada a aleatoriedade, dispersão de matéria e energia, e \"desordem\" (não em senso comum) de um sistema termodinâmico. A entropia é a entidade física que rege a segunda lei da termodinâmica, a qual estabelece que a ela deve aumentar para processos espontâneos e em sistemas isolados. Para sistemas abertos, deve-se estabelecer que a entropia do universo (sistema e suas vizinhanças) deve aumentar devido ao processo espontâneo até o meio formado por sistema + vizinhanças atingir um valor máximo no estado de equilíbrio. Nesse ponto, é importante ressaltar que vizinhanças se entende como a parte do resto do universo capaz de interagir com o sistema, através de, por exemplo, trocas de calor.\nA segunda lei da termodinâmica foi primeiramente relacionada historicamente com processos cíclicos que convertiam calor em trabalho. Percebeu-se que energia térmica (calor) não poderia ser completamente convertida em trabalho em máquinas térmicas de motor perpétuo, sempre havendo a necessidade de perda de uma quantidade mínima de calor para um reservatório frio para que o sistema voltasse ao estado original. Dessa maneira, a variação de entropia de um processo está relacionada com a parcela de energia que não pode ser transformada em trabalho em transformações termodinâmicas a dada temperatura. Por esse fato, a mensuração da variação de entropia está diretamente relacionada a processos reversíveis, uma vez que processos no equilíbrio (ou mais próximos possíveis às condições de equilíbrio) estão associados com a máxima energia que um sistema pode perder para as vizinhanças na forma de trabalho (chamado de trabalho máximo ou trabalho útil). Portanto a energia \"não disponível\" é o mínimo valor que não pode ser descartado na forma de calor reversível  em um processo que ocorre espontaneamente.  Em outras palavras, a variação de entropia mede o grau de irreversibilidade de um processo.\nA parcela máxima de energia interna de um sistema pode mais ser convertida em trabalho em um dado processo pode ser determinada pelo produto da variação de energia interna do processo subtraído do produto da variação entropia S pela temperatura absoluta T do sistema no respectivo estado (desde que a temperatura constante). Essa parcela máxima de energia é conhecida como variação de energia livre de Helmholtz (ΔA). Dessa maneira, define-se a energia livre de Helmholtz  como \n  \n    \n      \n        A\n        =\n        U\n        −\n        T\n        S\n      \n    \n    {\\displaystyle A=U-TS}\n  \n . Esse valor, assim como a entropia, é uma função de estado do sistema, e por tal dá origem a um potencial termodinâmico: a energia livre de Helmholtz do sistema em consideração. Esse valor prevê espontaneidade a processos que ocorrem a temperatura e volume constante, e deve diminuir para processos espontâneos, correspondendo, portanto, ao trabalho máximo. Para processos que ocorrem a pressão e temperatura constante, pode-se usar, analogamente, a energia livre de Gibbs, sendo útil particularmente para prever espontaneidade para reações químicas e mudanças de fase.\nA entropia não é uma grandeza que busca mensurar a energia ou a matéria totais encerradas pelas fronteiras do sistema termodinâmico, mas sim como esta matéria e esta energia encontram-se armazenadas e distribuídas no sistema definido por tais fronteiras. Assim, embora uma grandeza bem distinta das grandezas massa, energia interna e quantidade de matéria, a entropia de um sistema encontra-se certamente relacionada às grandezas citadas, sendo, da mesma forma que as anteriores, uma propriedade do sistema. A fim de definir-se um sistema simples especificam-se a energia interna U, a massa m - especificamente a quantidade de matéria N e a natureza das partículas que integram o sistema - e o seu volume V, e ao fazê-lo determina-se também, de forma automática, o valor da entropia S do sistema - uma grandeza escalar - no estado final a ser atingido uma vez dado tempo suficiente para que todos os processos necessários aconteçam. Assim a entropia S nos estados de equilíbrio termodinâmico é uma função das grandezas antes citadas: \n  \n    \n      \n        S\n        =\n        \n          S\n          \n            (\n            U\n            ,\n            V\n            ,\n            N\n            )\n          \n        \n      \n    \n    {\\displaystyle S=S_{(U,V,N)}}\n  \n.\nAssim, segundo a Segunda Lei da Termodinâmica, processos que levam o sistema do estado inicial, logo após  ter sido isolado, até o estado de final (o estado de equilíbrio termodinâmico ) ocorrem sempre de forma a provocarem aumentos ou, no limite, a manutenção, do valor da entropia do sistema. Não ocorrem processos que impliquem a diminuição da entropia total de um sistema isolado. A entropia é, pois, uma função de estado que obedece a um princípio de maximização, o \"princípio da máxima entropia\": a entropia em um estado de equilíbrio termodinâmico - satisfeitas as restrições impostas ao sistema - é sempre a máxima possível. Portanto, sistemas fora do equilíbrio tendem a caminhar irreversivelmente para o estado de equilíbrio, e o aumento de entropia indicará o sentido espontâneo do processo.\nA entropia é uma função de estado cujo valor sempre cresce durante processos naturais em sistemas isolados; e quando escrita em função das grandezas extensivas energia interna U, volume V e número de elementos N - no caso dos sistemas termodinâmicos mais simples - a entropia \n  \n    \n      \n        S\n        =\n        \n          S\n          \n            (\n            U\n            ,\n            V\n            ,\n            N\n            )\n          \n        \n      \n    \n    {\\displaystyle S=S_{(U,V,N)}}\n  \n é, assim como as respectivas Transformadas de Legendre, uma equação fundamental para o sistema termodinâmico em questão. É, então, possível, a partir desta e de todo o formalismo termodinâmico, obter-se qualquer informação física relevante para o sistema em estudo.\nSe expressa em função de uma ou mais grandezas que não as citadas — cônjuges a si — a expressão para a entropia S reduz-se a uma mera equação de estado. As equações de estado, embora relacionem valores de grandezas termodinâmicas nos estados de equilíbrio, não retêm em si, individualmente, todas as informações acerca do sistema. É necessário o conhecimento de todas as equações de estado para recuperar-se a completeza acerca das informações, para a partir delas se estabelecer uma equação fundamental, e via transformada de Legendre se estabelecer qualquer das demais equações fundamentais."
+  },
+  {
+    "id": "auto-eletromagnetismo",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Física",
+    "difficulty": 2,
+    "question_pt": "A força eletromagnética é uma das quatro forças fundamentais da natureza. É a força dominante nas interações de átomos e moléculas. O eletromagnetismo pode ser pensado como uma combinação de eletrostática e magnetismo, dois fenômenos distintos, mas intimamente interligados. esta entidade, na física, é uma interação que ocorre entre partículas com carga elétrica por meio de campos eletromagnéticos. (*) Identifique esta força fundamental unificada por James Clerk Maxwell.",
+    "formatted_answer_pt": "<b><u>Eletromagnetismo</u></b>",
+    "answer_canonical_pt": "Eletromagnetismo",
+    "accept_aliases": [
+      "Eletromagnetismo",
+      "Energia eletromagnética",
+      "Teoria eletromagnética",
+      "Eletromagnética",
+      "Onda luminosa",
+      "Eletrodinâmica",
+      "Eletromagnético",
+      "Electrodinâmica",
+      "Sinal eletromagnético",
+      "Energia electromagnética",
+      "Unidades elétricas"
+    ],
+    "prompt_aliases": [
+      "esta força fundamental"
+    ],
+    "explanation": "Eletromagnetismo, na física, é uma interação que ocorre entre partículas com carga elétrica por meio de campos eletromagnéticos. A força eletromagnética é uma das quatro forças fundamentais da natureza. É a força dominante nas interações de...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Eletromagnetismo",
+    "wiki_extract": "Eletromagnetismo, na física, é uma interação que ocorre entre partículas com carga elétrica por meio de campos eletromagnéticos. A força eletromagnética é uma das quatro forças fundamentais da natureza. É a força dominante nas interações de átomos e moléculas. O eletromagnetismo pode ser pensado como uma combinação de eletrostática e magnetismo, dois fenômenos distintos, mas intimamente interligados. As forças eletromagnéticas ocorrem entre quaisquer duas partículas carregadas, causando uma atração entre partículas com cargas opostas e repulsão entre partículas com a mesma carga, enquanto o magnetismo é uma interação que ocorre exclusivamente entre partículas carregadas em movimento relativo. Esses dois efeitos se combinam para criar campos eletromagnéticos nas proximidades de partículas carregadas, que podem acelerar outras partículas carregadas por meio da força de Lorentz. Em alta energia, a força fraca e a força eletromagnética são unificadas como uma única força eletrofraca.\nA força eletromagnética é responsável por muitos dos fenômenos químicos e físicos observados na vida cotidiana. A atração eletrostática entre os núcleos atômicos e seus elétrons mantém os átomos juntos. As forças elétricas também permitem que diferentes átomos se combinem em moléculas, incluindo as macromoléculas, como as proteínas que formam a base da vida. Enquanto isso, as interações magnéticas entre os momentos magnéticos de spin [en] e momento angular dos elétrons também desempenham um papel na reatividade química; tais relações são estudadas na química de spin [en]. O eletromagnetismo também desempenha um papel crucial na tecnologia moderna: produção, transformação e distribuição de energia elétrica; produção e detecção de luz, calor e som; fibra ótica e comunicação sem fio, sensores; computação; eletrólise; galvanoplastia; e motores e atuadores mecânicos.\nO eletromagnetismo tem sido estudado desde os tempos antigos. Muitas civilizações antigas, incluindo os gregos e os maias, criaram teorias abrangentes para explicar raios, eletricidade estática e a atração entre pedaços magnetizados de minério de ferro. No entanto, não foi até o final do século XVIII que os cientistas começaram a desenvolver uma base matemática para entender a natureza das interações eletromagnéticas. Nos séculos XVIII e XIX, cientistas e matemáticos proeminentes como Coulomb, Gauss e Faraday desenvolveram leis homônimas que ajudaram a explicar a formação e a interação dos campos eletromagnéticos. Este processo culminou na década de 1860 com a descoberta das equações de Maxwell, um conjunto de quatro equações diferenciais parciais que fornecem uma descrição completa dos campos eletromagnéticos clássicos. Além de fornecer uma base matemática sólida para as relações entre eletricidade e magnetismo que os cientistas vêm explorando há séculos, as equações de Maxwell também preveem a existência de ondas eletromagnéticas autossustentáveis. Maxwell postulou que tais ondas constituem a luz visível, o que mais tarde se provou verdadeiro. De fato, raios gama, raios X, radiação ultravioleta, visível, infravermelha, micro-ondas e ondas de rádio foram todos determinados como sendo radiação eletromagnética diferindo apenas em sua faixa de frequências.\nNa era moderna, os cientistas continuaram a refinar o teorema do eletromagnetismo para levar em conta os efeitos da física moderna, incluindo a mecânica quântica e a relatividade. De fato, as implicações teóricas do eletromagnetismo, particularmente o estabelecimento da velocidade da luz com base nas propriedades do \"meio\" de propagação (permeabilidade e permissividade), ajudaram a inspirar a teoria da relatividade especial de Einstein em 1905. Enquanto isso, o campo da eletrodinâmica quântica (E.D.Q.)  modificou as equações de Maxwell para serem consistentes com a natureza quantizada da matéria. Na eletrodinâmica quântica (E.D.Q.), o campo eletromagnético é expresso em termos de partículas discretas conhecidas como fótons, que também são os quanta físicos da luz. Hoje, existem muitos problemas no eletromagnetismo que permanecem sem solução, como a existência de monopolos magnéticos e o mecanismo pelo qual alguns organismos podem sentir campos elétricos e magnéticos.\n\n"
+  },
+  {
+    "id": "auto-curitiba",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Paraná",
+    "difficulty": 2,
+    "question_pt": "Localiza-se no Primeiro Planalto Paranaense, a 934 metros de altitude, a mais de 110 quilômetros do Oceano Atlântico e a 1 386 km ao sul de Brasília, capital federal. Com 1 773 718 habitantes, é o município mais populoso do Paraná e da Região Sul e o oitavo mais populoso do país, segundo o censo demográfico de 2022 realizado pelo IBGE. Elevada à condição de vila em 1693, a partir de um pequeno povoado bandeirante, Curitiba tornou-se uma importante parada comercial com a abertura da estrada tropeira entre Sorocaba e Viamão, vindo, em 1853, a ser a capital da recém-emancipada Província do Paraná. esta entidade é a capital do estado brasileiro do Paraná. (*) Identifique esta capital paranaense famosa pelo Jardim Botânico e urbanismo pioneiro.",
+    "formatted_answer_pt": "<b><u>Curitiba</u></b>",
+    "answer_canonical_pt": "Curitiba",
+    "accept_aliases": [
+      "Curitiba",
+      "Curitibano",
+      "História de Curitiba",
+      "Curitiba - história",
+      "Curitiba-PR",
+      "Curitiba, Paraná",
+      "CWG",
+      "Cultura de Curitiba",
+      "Geografia de Curitiba",
+      "Capital paranaense"
+    ],
+    "prompt_aliases": [
+      "esta capital paranaense"
+    ],
+    "explanation": "Curitiba é a capital do estado brasileiro do Paraná. Localiza-se no Primeiro Planalto Paranaense, a 934 metros de altitude, a mais de 110 quilômetros do Oceano Atlântico e a 1 386 km ao sul de Brasília, capital federal. Com 1 773 718 habita...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Curitiba",
+    "wiki_extract": "Curitiba é a capital do estado brasileiro do Paraná. Localiza-se no Primeiro Planalto Paranaense, a 934 metros de altitude, a mais de 110 quilômetros do Oceano Atlântico e a 1 386 km ao sul de Brasília, capital federal. Com 1 773 718 habitantes, é o município mais populoso do Paraná e da Região Sul e o oitavo mais populoso do país, segundo o censo demográfico de 2022 realizado pelo IBGE.\nElevada à condição de vila em 1693, a partir de um pequeno povoado bandeirante, Curitiba tornou-se uma importante parada comercial com a abertura da estrada tropeira entre Sorocaba e Viamão, vindo, em 1853, a ser a capital da recém-emancipada Província do Paraná.  Desde então, a cidade, conhecida pelas suas ruas largas, manteve um ritmo de crescimento urbano fortalecido pela chegada de diversos imigrantes europeus ao longo do século XIX, na maioria, alemães, poloneses, ucranianos e italianos, que contribuíram para a atual diversidade cultural. Atualmente Curitiba é considerada a capital mais desenvolvida do Brasil, tendo um baixo índice de desemprego e um parque industrial diversificado.\nCuritiba experimentou diversos planos urbanísticos e legislações que visavam controlar seu crescimento, que a levaram a ficar famosa internacionalmente pelas suas inovações urbanísticas e cuidado com o meio ambiente. A maior delas foi no transporte público, cujo sistema inspirou o TransMilenio, implantado em Bogotá, na Colômbia.\nConsiderada uma cidade global pela Globalization and World Cities Research Network (GaWC), na categoria \"Suficiência\" (a menor de todas), foi eleita pela Organização das Nações Unidas para a Educação, a Ciência e a Cultura (Unesco) uma das \"cidades criativas\" do Brasil em 2014, ao lado de Florianópolis. Curitiba é a capital mais desenvolvida do país, de acordo com o Índice FIRJAN de Desenvolvimento Municipal (2025), conta com a segunda melhor taxa de alfabetização e saneamento básico entre as capitais, atrás de São Paulo, e, segundo o Atlas da Violência 2024, divulgado pelo Instituto de Pesquisa Econômica Aplicada (Ipea) e pelo Fórum Brasileiro de Segurança Pública (FBSP), é a oitava capital mais segura do Brasil. Com um PIB de mais de 120 bilhões de reais, é a sétima cidade mais rica da nação. Curitiba foi classificada pelo Índice Verde de Cidades de 2015, realizado pela Siemens com a Economist Intelligence Unit, como a mais ambientalmente sustentável da América Latina.\n\n"
+  },
+  {
+    "id": "auto-belo-horizonte",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Minas Gerais",
+    "difficulty": 2,
+    "question_pt": "Sua população é de 2 315 560 habitantes, segundo o censo de 2022, sendo o sexto município mais populoso do país, o terceiro da Região Sudeste e o primeiro de seu estado. Com uma área de aproximadamente 331 km², possui uma geografia diversificada, com morros e baixadas. Dista cerca de 716 km de Brasília, é a segunda capital estadual mais próxima da capital federal, depois de Goiânia. esta entidade é a capital do estado brasileiro de Minas Gerais. (*) Identifique esta capital mineira planejada por Aarão Reis nos pés da Serra do Curral.",
+    "formatted_answer_pt": "<b><u>Belo Horizonte</u></b>",
+    "answer_canonical_pt": "Belo Horizonte",
+    "accept_aliases": [
+      "Belo Horizonte",
+      "Cidade de Minas",
+      "Beagá",
+      "Pontos turísticos de Belo Horizonte",
+      "Arraial do Curral del-Rei",
+      "Cidade de Belo Horizonte",
+      "Belo Horizonte, Minas Gerais",
+      "Belo-horizontino"
+    ],
+    "prompt_aliases": [
+      "esta capital mineira"
+    ],
+    "explanation": "Belo Horizonte é a capital do estado brasileiro de Minas Gerais. Sua população é de 2 315 560 habitantes, segundo o censo de 2022, sendo o sexto município mais populoso do país, o terceiro da Região Sudeste e o primeiro de seu estado. Com u...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Belo_Horizonte",
+    "wiki_extract": "Belo Horizonte é a capital do estado brasileiro de Minas Gerais. Sua população é de 2 315 560 habitantes, segundo o censo de 2022, sendo o sexto município mais populoso do país, o terceiro da Região Sudeste e o primeiro de seu estado. Com uma área de aproximadamente 331 km², possui uma geografia diversificada, com morros e baixadas. Dista cerca de 716 km de Brasília, é a segunda capital estadual mais próxima da capital federal, depois de Goiânia.\nCercada pela Serra do Curral, que lhe serve de moldura natural e referência histórica, foi planejada e construída para ser a capital política e administrativa do estado mineiro sob influência das ideias do positivismo, num momento de forte apelo da ideologia republicana no país. Sofreu um inesperado crescimento populacional acelerado, chegando a mais de um milhão de habitantes com quase setenta anos de fundação. Entre as décadas de 1930 e 1940, ocorreu também o avanço da industrialização, além de muitas construções de inspiração modernista, notadamente as casas do bairro Cidade Jardim, que ajudaram a definir a fisionomia da cidade.\nA capital mineira é sede da terceira concentração urbana mais populosa do país. Belo Horizonte já foi indicada pelo Population Crisis Commitee, da ONU, como a metrópole com melhor qualidade de vida na América Latina e a 45.ª entre as 100 melhores cidades do mundo (dados de 2008). Em 2010, a cidade gerou 1,4% do PIB do país, e, em 2013, era o quarto maior PIB entre os municípios brasileiros, responsável por 1,53% do total das riquezas produzidas no país. Uma evidência do desenvolvimento da cidade nos últimos tempos é a classificação da revista América Economía, na qual, já em 2009, Belo Horizonte aparecia como uma das dez melhores cidades latino-americanas para fazer negócios, segunda do Brasil (atrás de São Paulo) e à frente de cidades como Rio de Janeiro, Brasília e Curitiba.\nBelo Horizonte é classificada como uma metrópole e exerce significativa influência nacional, seja do ponto de vista cultural, econômico ou político. Conta com importantes monumentos, parques e museus, como o Museu de Arte da Pampulha, o Museu de Artes e Ofícios, o Museu de Ciências Naturais da PUC Minas, o Circuito Cultural Praça da Liberdade, o Conjunto Arquitetônico da Pampulha, o Mercado Central e a Savassi, e eventos de grande repercussão, como o Festival Internacional de Teatro, Palco e Rua (FIT-BH), o Verão Arte Contemporânea (VAC), o Festival Internacional de Curtas e o Encontro Internacional de Literaturas em Língua Portuguesa. É também nacionalmente conhecida como a \"capital nacional dos botecos\", por existirem mais bares per capita do que em qualquer outra grande cidade do Brasil.\n\n"
+  },
+  {
+    "id": "auto-florian-polis",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Santa Catarina",
+    "difficulty": 2,
+    "question_pt": "Florianópolis é também apelidado de \"Ilha da Magia\", decorrente de seus folclóricos contos e histórias de bruxas e criaturas mágicas que habitam na ilha, popularizados pelo escritor Franklin Cascaes. É uma das três ilhas-capitais do Brasil, cujas respectivas regiões metropolitanas abrangem inteiramente ilhas localizadas no litoral brasileiro ao longo do Oceano Atlântico, sendo que a maior parte do município está localizada na Ilha de Santa Catarina. A cidade tem uma população estimada de 587 486 habitantes, de acordo com o censo demográfico de 2025 do Instituto Brasileiro de Geografia e Estatística (IBGE). esta entidade, conhecido coloquialmente como Floripa, é a capital do estado brasileiro de Santa Catarina, na região Sul do país. (*) Identifique esta capital catarinense apelidada de Ilha da Magia.",
+    "formatted_answer_pt": "<b><u>Florianópolis</u></b>",
+    "answer_canonical_pt": "Florianópolis",
+    "accept_aliases": [
+      "Florianópolis",
+      "Floripa",
+      "Florianopolis",
+      "Florianópolis-SC",
+      "Vila de Nossa Senhora do Desterro",
+      "Nossa Senhora de Desterro",
+      "Florianopolitano",
+      "Metrô de Florianópolis",
+      "Metropolitano de Florianópolis",
+      "Florianópolis, Santa Catarina",
+      "Florianopolense"
+    ],
+    "prompt_aliases": [
+      "esta capital catarinense"
+    ],
+    "explanation": "Florianópolis, conhecido coloquialmente como Floripa, é a capital do estado brasileiro de Santa Catarina, na região Sul do país. Florianópolis é também apelidado de \"Ilha da Magia\", decorrente de seus folclóricos contos e histórias de bruxa...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Florian%C3%B3polis",
+    "wiki_extract": "Florianópolis, conhecido coloquialmente como Floripa, é a capital do estado brasileiro de Santa Catarina, na região Sul do país. Florianópolis é também apelidado de \"Ilha da Magia\", decorrente de seus folclóricos contos e histórias de bruxas e criaturas mágicas que habitam na ilha, popularizados pelo escritor Franklin Cascaes. É uma das três ilhas-capitais do Brasil, cujas respectivas regiões metropolitanas abrangem inteiramente ilhas localizadas no litoral brasileiro ao longo do Oceano Atlântico, sendo que a maior parte do município está localizada na Ilha de Santa Catarina. \nA cidade tem uma população estimada de 587 486 habitantes, de acordo com o censo demográfico de 2025 do Instituto Brasileiro de Geografia e Estatística (IBGE). É o segundo município mais populoso do estado, após Joinville, o 5º mais populoso da região Sul, após Curitiba, Porto Alegre, Joinville e Londrina, e o 39º mais populoso do Brasil. A região metropolitana tem uma população estimada de 1 356 861 habitantes, a 21ª maior do país. Florianópolis conta com uma área de 674,844 km², a posicionando em 29º lugar em municípios por extensão territorial em Santa Catarina.\nA ilha de Santa Catarina possui uma rica história que remonta aos tempos pré-coloniais, com vestígios arqueológicos indicando ocupação pelo Homem de Sambaqui desde aproximadamente 4800 a.C. Povos carijós, grupos indígenas locais, já praticavam agricultura e subsistiam da pesca e coleta de moluscos quando os primeiros europeus chegaram, no século XVI. A colonização efetiva começou com Francisco Dias Velho em 1673, seguida por uma ocupação militar a partir de 1737 e a imigração açoriana no século XVIII, que impulsionou a agricultura e a indústria local. A ilha se desenvolveu significativamente ao longo dos séculos, tornando-se capital de Santa Catarina em 1823 e passando por urbanização intensa no século XX, com expansão econômica e grande aumento populacional.\nA economia de Florianópolis é fortemente baseada na tecnologia da informação, no turismo e nos serviços. A cidade tem mais de 100 praias registradas e é um centro de atividade de navegação. O jornal estadunidense The New York Times afirmou em 2009 que \"Florianópolis era o destino do ano\". A Newsweek considerou que o município é uma das \"dez cidades mais dinâmicas do mundo\" em 2006. O Índice de Cidades Empreendedoras (ICE) de 2014, elaborado pela filial brasileira da ONG norte-americana Endeavor, elegeu a cidade como o melhor ambiente para o empreendedorismo no país. A cidade também foi considerada pela Organização das Nações Unidas para a Educação, a Ciência e a Cultura (Unesco) uma das \"cidades criativas\" do Brasil em 2014, ao lado de Curitiba. Florianópolis é conhecida por ter uma elevada qualidade de vida; em 2010, era a capital brasileira com maior pontuação do Índice de Desenvolvimento Humano (IDH), calculado pelo PNUD, das Nações Unidas. Por outro lado, aparece como a décima  mais desenvolvida, de acordo com o Índice FIRJAN de Desenvolvimento Municipal (2025). Segundo o Atlas da Violência 2024, divulgado pelo Instituto de Pesquisa Econômica Aplicada (Ipea) e pelo Fórum Brasileiro de Segurança Pública (FBSP), é a capital mais segura do Brasil.\n\n"
+  },
+  {
+    "id": "auto-porto-alegre",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Rio Grande do Sul",
+    "difficulty": 2,
+    "question_pt": "Com uma área de quase 500 km², encontra-se sobre um terreno diversificado, com morros, baixadas e um grande lago: o Guaíba. Está a 2 027 km da capital nacional, Brasília. A cidade foi constituída a partir da chegada de casais açorianos em meados do século XVIII. esta entidade ([ˈpoʁtu aˈlɛɡɾi] ()) é a capital do estado brasileiro do Rio Grande do Sul. (*) Identifique esta capital gaúcha banhada pelo lago Guaíba.",
+    "formatted_answer_pt": "<b><u>Porto Alegre</u></b>",
+    "answer_canonical_pt": "Porto Alegre",
+    "accept_aliases": [
+      "Porto Alegre",
+      "Porto-alegrense",
+      "Porto dos Dorneles",
+      "Nossa Senhora Madre de Deus de Porto Alegre",
+      "Porto de São Francisco dos Casais",
+      "Porto do Viamão",
+      "Esporte em Porto Alegre",
+      "Demografia de Porto Alegre",
+      "Esportes em Porto Alegre"
+    ],
+    "prompt_aliases": [
+      "esta capital gaúcha"
+    ],
+    "explanation": "Porto Alegre ([ˈpoʁtu aˈlɛɡɾi] ()) é a capital do estado brasileiro do Rio Grande do Sul. Com uma área de quase 500 km², encontra-se sobre um terreno diversificado, com morros, baixadas e um grande lago: o Guaíba. Está a 2 027 km da capital...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Porto_Alegre",
+    "wiki_extract": "Porto Alegre ([ˈpoʁtu aˈlɛɡɾi] ()) é a capital do estado brasileiro do Rio Grande do Sul. Com uma área de quase 500 km², encontra-se sobre um terreno diversificado, com morros, baixadas e um grande lago: o Guaíba. Está a 2 027 km da capital nacional, Brasília. \nA cidade foi constituída a partir da chegada de casais açorianos em meados do século XVIII. No século XIX contou com o influxo de muitos imigrantes alemães e italianos, recebendo também espanhóis, africanos, poloneses e libaneses. Desenvolveu-se com rapidez e hoje abriga quase 1,4 milhão de habitantes dentro dos limites municipais e mais de 4 milhões na Região Metropolitana, a quinta mais populosa do Brasil e a maior concentração urbana da Região Sul.  \nRecebeu numerosos prêmios e títulos assinalando-a como uma das cidades mais ricas do mundo, com uma alta qualidade de vida (na média), alto nível de alfabetização, baixa taxa de desemprego, e como uma das melhores capitais brasileiras para morar, trabalhar, fazer negócios, estudar e se divertir. Além disso, Porto Alegre é um polo regional de atração de migrantes em busca de melhores condições e oportunidades e tem uma infraestrutura em vários aspectos superior às demais capitais do Brasil. Ganhou destaque internacional através da instituição do Orçamento Participativo, sediou as primeiras edições do Fórum Social Mundial e foi escolhida como uma das sedes da Copa do Mundo de 2014. Também tem uma cultura ampla e diversificada, contando com duas das principais universidades brasileiras (UFRGS e a PUCRS), tem intensa atividade em todas as áreas das artes, esportes e ciências, muitas vezes com projeção nacional, além de possuir ricas tradições folclóricas, um significativo patrimônio histórico em edificações centenárias e numerosos museus.\nPor outro lado, Porto Alegre é uma cidade muito desigual, apresentando zonas bem estruturadas e com elevados indicadores socioeconômicos, mas também tem outras extremamente precarizadas e com populações vulneráveis e desassistidas, especialmente nas periferias. A população de baixa renda de modo geral, e também as mulheres, os negros, indígenas e minorias, foram historicamente e continuam discriminados, têm representação política desproporcional, menos oportunidades, menos acesso aos bens de consumo, aos serviços e às vantagens da plena cidadania. A cidade enfrenta muitos outros desafios, entre eles sérios problemas ambientais, elevados índices de criminalidade, declínio na qualidade da educação escolar pública, uma situação de crise crônica no sistema de saúde, progressiva erosão nas estruturas de governança democrática, e em 2024 era a sexta cidade brasileira com mais alto custo de vida e estava entre as 163 mais caras do mundo."
+  },
+  {
+    "id": "auto-recife",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Pernambuco",
+    "difficulty": 2,
+    "question_pt": "Com área territorial de aproximadamente 218 km², é formado por uma planície aluvial, tendo as ilhas, penínsulas e manguezais como suas principais características geográficas. Cidade nordestina com o melhor Índice de Desenvolvimento Humano (IDH-M), o Recife é a quarta capital brasileira na hierarquia da gestão federal, após Brasília, Rio de Janeiro e São Paulo, e possui o quinto aglomerado urbano mais populoso do Brasil, com 3,7 milhões de habitantes em 2022, superado apenas pelas concentrações urbanas de São Paulo, Rio de Janeiro, Belo Horizonte e Brasília. A capital pernambucana tem, num raio de 300 km, três capitais estaduais sob sua influência direta: João Pessoa (122 km), Maceió (257 km) e Natal (286 km). esta entidade é a capital do estado brasileiro de Pernambuco, na Região Nordeste do país. (*) Identifique esta capital pernambucana cortada pelos rios Capibaribe e Beberibe.",
+    "formatted_answer_pt": "<b><u>Recife</u></b>",
+    "answer_canonical_pt": "Recife",
+    "accept_aliases": [
+      "Recife",
+      "Turismo no Recife",
+      "Recife - PE",
+      "A cidade do brega",
+      "Santo Antônio das Cacimbas do Recife do Porto",
+      "RPAR 1",
+      "RPAR 1.1",
+      "RPAR 1.2",
+      "RPAR 1.3",
+      "RPAR 2"
+    ],
+    "prompt_aliases": [
+      "esta capital pernambucana"
+    ],
+    "explanation": "Recife é a capital do estado brasileiro de Pernambuco, na Região Nordeste do país. Com área territorial de aproximadamente 218 km², é formado por uma planície aluvial, tendo as ilhas, penínsulas e manguezais como suas principais característ...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Recife",
+    "wiki_extract": "Recife é a capital do estado brasileiro de Pernambuco, na Região Nordeste do país. Com área territorial de aproximadamente 218 km², é formado por uma planície aluvial, tendo as ilhas, penínsulas e manguezais como suas principais características geográficas. Cidade nordestina com o melhor Índice de Desenvolvimento Humano (IDH-M), o Recife é a quarta capital brasileira na hierarquia da gestão federal, após Brasília, Rio de Janeiro e São Paulo, e possui o quinto aglomerado urbano mais populoso do Brasil, com 3,7 milhões de habitantes em 2022, superado apenas pelas concentrações urbanas de São Paulo, Rio de Janeiro, Belo Horizonte e Brasília. A capital pernambucana tem, num raio de 300 km, três capitais estaduais sob sua influência direta: João Pessoa (122 km), Maceió (257 km) e Natal (286 km).\nO Recife é a metrópole mais rica do Norte-Nordeste e sétima do Brasil, articulando, em sua região geográfica intermediária, 71 cidades, que somam um PIB de 135 bilhões de reais. Já o município isoladamente detém o vigésimo maior PIB do país e o maior PIB per capita entre as capitais nordestinas. A cidade é a nona mais populosa do país, e sua região metropolitana é a sétima do Brasil em população, além de ser a terceira área metropolitana mais densamente habitada do país, atrás apenas de São Paulo e Rio de Janeiro. A capital pernambucana desempenha um forte papel centralizador em seu estado e região: abriga sedes de órgãos e instituições como a Sudene, a Eletrobras Chesf, o Comando Militar do Nordeste, o Cindacta III, o TRF da 5ª Região, dentre muitas outras, e o maior número de consulados estrangeiros fora do eixo Rio-São Paulo, sediando consulados-gerais de países como Estados Unidos, China, Alemanha, França e Reino Unido. O município foi eleito por pesquisa da MasterCard Worldwide de 2013 como uma das 65 cidades com economia mais desenvolvida dos mercados emergentes no mundo: apenas cinco cidades brasileiras entraram na lista, tendo o Recife recebido a quarta posição, após São Paulo, Rio de Janeiro e Brasília, e à frente de Curitiba.\nMais antiga entre as capitais estaduais brasileiras, O Recife surgiu como \"Ribeira de Mar dos Arrecifes dos Navios\" no ano de 1537, na principal área portuária da Capitania de Pernambuco, a mais rica capitania do Brasil Colônia, conhecida em todo o mundo comercial da época graças à cultura da cana-de-açúcar e ao pau-brasil (ou pau-de-pernambuco). No século XVII, a cidade foi por 24 anos a sede da colônia de Nova Holanda, que teve como um dos administradores o conde Maurício de Nassau. Após a expulsão dos neerlandeses, feita na Insurreição Pernambucana, o Recife emergiu como a cidade mais importante de Pernambuco, tendo uma grande vocação comercial influenciada principalmente pelos comerciantes portugueses, os chamados \"mascates\". A atual área metropolitana do Recife foi palco de muitos dos primeiros fatos históricos do Novo Mundo: no Cabo de Santo Agostinho ocorreu o descobrimento do Brasil pelo navegador espanhol Vicente Yáñez Pinzón no dia 26 de janeiro de 1500; na Ilha de Itamaracá estabeleceu-se, em 1516, o primeiro \"Governador das Partes do Brasil\", Pero Capico, que ali construiu o primeiro engenho de açúcar de que se tem notícia na América portuguesa.\nDentre as suas muitas alcunhas atribuídas, \"Veneza Brasileira\" é a mais conhecida. O romancista francês Albert Camus esteve no Recife em 1949 e comparou a capital pernambucana a outra cidade italiana ao descrevê-la, em seu livro Diário de Viagem, como a \"Florença dos Trópicos\". O Centro Histórico do Recife — em que pesem as demolições e descaracterizações — representa em conjunto com os sítios históricos de Olinda, Igarassu e Jaboatão dos Guararapes um dos mais valiosos patrimônios barrocos do Brasil. Faz parte da Rede de Cidades Criativas da UNESCO como \"Cidade da Música\". A Cidade do Recife também é lembrada como \"O Berço da Astronomia Moderna nas Américas\", devido a ter sido o primeiro lugar do planeta a construir um observatório astronômico por financiamento estatal, no período colonial holandês. Outra alcunha é \"Marco Zero da Ciência no Brasil\"."
+  },
+  {
+    "id": "auto-fortaleza",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Ceará",
+    "difficulty": 2,
+    "question_pt": "Distante 2 285 km de Brasília, capital federal, a cidade desenvolveu-se às margens do riacho Pajeú, e sua toponímia é uma alusão ao Forte Schoonenborch, construído pelos holandeses durante sua segunda permanência no local, entre 1649 e 1654, e que deu origem ao município. O lema de Fortaleza, presente em seu brasão, é a palavra em latim Fortitudine, que, em português, significa \"por/com força, valor, coragem\". Está localizada no litoral Atlântico, a uma altitude média de dezesseis metros, com 34 km de praias. esta entidade é a capital do estado brasileiro do Ceará, na Região Nordeste do país. (*) Identifique esta capital cearense famosa pelas praias de Iracema e do Futuro.",
+    "formatted_answer_pt": "<b><u>Fortaleza</u></b>",
+    "answer_canonical_pt": "Fortaleza",
+    "accept_aliases": [
+      "Fortaleza",
+      "Terra da Luz",
+      "Fortaleza, Ceará",
+      "Fortaleza-CE",
+      "Capital cearense"
+    ],
+    "prompt_aliases": [
+      "esta capital cearense"
+    ],
+    "explanation": "Fortaleza é a capital do estado brasileiro do Ceará, na Região Nordeste do país. Distante 2 285 km de Brasília, capital federal, a cidade desenvolveu-se às margens do riacho Pajeú, e sua toponímia é uma alusão ao Forte Schoonenborch, constr...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Fortaleza",
+    "wiki_extract": "Fortaleza é a capital do estado brasileiro do Ceará, na Região Nordeste do país. Distante 2 285 km de Brasília, capital federal, a cidade desenvolveu-se às margens do riacho Pajeú, e sua toponímia é uma alusão ao Forte Schoonenborch, construído pelos holandeses durante sua segunda permanência no local, entre 1649 e 1654, e que deu origem ao município. O lema de Fortaleza, presente em seu brasão, é a palavra em latim Fortitudine, que, em português, significa \"por/com força, valor, coragem\".\nEstá localizada no litoral Atlântico, a uma altitude média de dezesseis metros, com 34 km de praias. Fortaleza possui pouco mais de 312 km² de área e 2 428 678 habitantes segundo o Censo Demográfico de 2022, além da maior densidade demográfica entre as capitais do país, com 8 390,76 hab/km². É a maior cidade das regiões Norte e Nordeste em população e a quarta do Brasil. A Região Metropolitana de Fortaleza é a sexta mais populosa do Brasil e a primeira do Norte-Nordeste, com 3.903.945 habitantes em 2022. É a cidade nordestina com a maior área de influência regional e possui a terceira maior rede urbana do Brasil em população, atrás apenas de São Paulo e do Rio de Janeiro.\nAtualmente, é a décima primeira cidade mais rica do país em PIB e a 1.ª mais rica do Nordeste, com um PIB de cerca de 73 bilhões de reais. Possui, ainda, a terceira região metropolitana mais rica das regiões Norte e Nordeste. É importante centro industrial e comercial do Brasil, com o oitavo maior poder de compra municipal da nação. No turismo, em 2012, a cidade alcançou as marcas de segundo destino mais desejado do Brasil e quarta cidade brasileira que mais recebeu turistas de acordo com o Ministério do Turismo. É sede do Banco do Nordeste, da Transnordestina Logística e do DNOCS. A BR-116, a mais importante rodovia do país, começa em Fortaleza. O município faz parte do Mercado Comum de Cidades do Mercosul.\nBatizada de Loira Desposada do Sol pelos versos do poeta Paula Ney, a metrópole cearense é a terra natal de nomes como o ex-presidente Castelo Branco e Dom Hélder Câmara, assim como Juvenal Galeno, Alberto Nepomuceno, Gustavo Barroso, Casimiro Montenegro Filho, José de Alencar, Karim Aïnouz, Maurício Peixoto e Rachel de Queiroz. É a capital brasileira mais próxima da Europa, a 5 608 km de Lisboa, em Portugal.\n\n"
+  },
+  {
+    "id": "auto-bel-m",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Pará",
+    "difficulty": 2,
+    "question_pt": "Localizada na Região Norte do país, às margens da baía do Guajará e a cerca de 2 120 quilômetros de Brasília, sua população é de 1 303 403 habitantes, segundo o Censo 2022, sendo o município mais populoso do estado, o segundo da Região Norte e o décimo segundo do país. Com uma área total de 1 059,458 quilômetros quadrados, a cidade abrange quarenta e duas ilhas que representam 65% de seu território, e apresenta clima equatorial quente e úmido, sendo a capital mais chuvosa do Brasil. Classificada entre os municípios com melhor qualidade de vida da Região Norte, possui um Índice de Desenvolvimento Humano (IDH) de 0,746 (alto), ocupando a 22.ª posição entre as capitais brasileiras. esta entidade, também chamada de esta entidade do Pará, é um município brasileiro e capital do estado do Pará. (*) Identifique esta capital paraense banhada pela baía do Guajará e casa do Círio de Nazaré.",
+    "formatted_answer_pt": "<b><u>Belém</u></b>",
+    "answer_canonical_pt": "Belém",
+    "accept_aliases": [
+      "Belém",
+      "Belém (Pará)",
+      "Belém do Pará",
+      "Biblioteca Memorial Jonh S. Oliver",
+      "Santa Maria de Belém do Grão-Pará",
+      "Belém-PA",
+      "Belém, Pará",
+      "Santa Maria de Belém do Grão Pará",
+      "Arena Yamada"
+    ],
+    "prompt_aliases": [
+      "esta capital paraense"
+    ],
+    "explanation": "Belém, também chamada de Belém do Pará, é um município brasileiro e capital do estado do Pará. Localizada na Região Norte do país, às margens da baía do Guajará e a cerca de 2 120 quilômetros de Brasília, sua população é de 1 303 403 habita...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Bel%C3%A9m_(Par%C3%A1)",
+    "wiki_extract": "Belém, também chamada de Belém do Pará, é um município brasileiro e capital do estado do Pará. Localizada na Região Norte do país, às margens da baía do Guajará e a cerca de 2 120 quilômetros de Brasília, sua população é de 1 303 403 habitantes, segundo o Censo 2022, sendo o município mais populoso do estado, o segundo da Região Norte e o décimo segundo do país. Com uma área total de 1 059,458 quilômetros quadrados, a cidade abrange quarenta e duas ilhas que representam 65% de seu território, e apresenta clima equatorial quente e úmido, sendo a capital mais chuvosa do Brasil. Classificada entre os municípios com melhor qualidade de vida da Região Norte, possui um Índice de Desenvolvimento Humano (IDH) de 0,746 (alto), ocupando a 22.ª posição entre as capitais brasileiras.\nFundada em 1616 por Francisco Caldeira Castelo Branco como o povoado colonial Feliz Lusitânia, Belém foi erguida sobre o antigo território indígena dos Tupinambás, estruturando-se em torno do Forte do Presépio, construído para assegurar o domínio português na Amazônia durante a União Ibérica. Ao longo de sua história, destacou-se como entreposto comercial no século XVII e, posteriormente, como importante centro urbano e econômico durante o ciclo da borracha no século XIX. A partir da década de 1940, iniciou-se um processo de verticalização urbana, concentrado sobretudo ao longo da Avenida Presidente Vargas.\nClassificada como metrópole regional, segundo o Instituto Brasileiro de Geografia e Estatística (IBGE) em 2018, Belém exerce influência sobre o Pará, o Amapá e parte do Maranhão e Tocantins, com uma população de 9,3 milhões de habitantes sob sua área de influência. Seu produto interno bruto (PIB) é de 40 536 061 mil, com o setor de serviços dominando a economia municipal, responsável por 86,6% do total. Entretanto, a capital enfrenta sérios problemas sociais e ambientais, tais como 57,1% da população vivendo em favelas, apenas 19% possui acesso à coleta de esgoto e apenas 44% da cidade possui arborização, o que torna Belém uma das capitais mais quentes do Brasil. Além de ter um dos menores índices de progresso social do Brasil.\nA cidade conta com importantes pontos históricos e culturais como o Forte do Presépio, Theatro da Paz, Estação das Docas, Mercado Ver-o-Peso, Museu de Arte Sacra, Museu Paraense Emílio Goeldi, Praça do Relógio e Praça da República. Predominantemente católica, realiza anualmente o Círio de Nazaré, a maior procissão dessa religião do mundo, reconhecida como Patrimônio Cultural Imaterial da Humanidade pela UNESCO. Palco de grandes eventos, Belém sediou o Fórum Social Mundial em 2009, o Global Citizen Festival em 2025 e sediou a 30.ª edição da Conferência das Nações Unidas sobre as Mudanças Climáticas (COP30) no mesmo ano, na qual tornou-se capital federal temporária do Brasil entre os dias 11 e 21 de novembro, em transferência simbólica de Brasília para a capital paraense.\n\n"
+  },
+  {
+    "id": "auto-s-o-lu-s",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Maranhão",
+    "difficulty": 2,
+    "question_pt": "É a única capital brasileira fundada por franceses, no dia 8 de setembro de 1612, posteriormente invadida por holandeses e, por fim, colonizada pelos portugueses. Localiza-se na ilha de Upaon-Açu no Atlântico Sul, entre as baías de São Marcos e São José de Ribamar, no Golfão Maranhense. Em 1621, quando o Brasil foi dividido em duas unidades administrativas — Estado do Maranhão e Estado do Brasil —, São Luís foi a capital da primeira unidade administrativa. esta entidade, também chamada de esta entidade do Maranhão, é a capital do estado brasileiro do Maranhão. (*) Identifique esta capital maranhense fundada por franceses e famosa pelos azulejos coloniais.",
+    "formatted_answer_pt": "<b><u>São Luís</u></b>",
+    "answer_canonical_pt": "São Luís",
+    "accept_aliases": [
+      "São Luís",
+      "São Luís (Maranhão)",
+      "São Luís do Maranhão",
+      "Jamaica Brasileira",
+      "Ilha do Amor",
+      "Atenas Brasileira",
+      "Ludovicenses",
+      "São Luís, MA",
+      "São Luís, Maranhão",
+      "Cidade dos Azulejos"
+    ],
+    "prompt_aliases": [
+      "esta capital maranhense"
+    ],
+    "explanation": "São Luís, também chamada de São Luís do Maranhão, é a capital do estado brasileiro do Maranhão. É a única capital brasileira fundada por franceses, no dia 8 de setembro de 1612, posteriormente invadida por holandeses e, por fim, colonizada ...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/S%C3%A3o_Lu%C3%ADs_(Maranh%C3%A3o)",
+    "wiki_extract": "São Luís, também chamada de São Luís do Maranhão, é a capital do estado brasileiro do Maranhão. É a única capital brasileira fundada por franceses, no dia 8 de setembro de 1612, posteriormente invadida por holandeses e, por fim, colonizada pelos portugueses. Localiza-se na ilha de Upaon-Açu no Atlântico Sul, entre as baías de São Marcos e São José de Ribamar, no Golfão Maranhense. Em 1621, quando o Brasil foi dividido em duas unidades administrativas — Estado do Maranhão e Estado do Brasil —, São Luís foi a capital da primeira unidade administrativa. No ano de 1997, o Centro Histórico da cidade foi declarado patrimônio cultural da humanidade pela Unesco.\nCom uma população estimada em 1 090 229  habitantes em 2026, São Luís é o município mais populoso do Maranhão e o quarto da Região Nordeste. Sua área é de 583 km², dos quais 211 km² estão em perímetro urbano (12.ª maior área urbana do país). O município é sede da Região de Planejamento da Ilha do Maranhão (composta pelos quatro municípios localizados na ilha de Upaon-Açu) e da Região Metropolitana de São Luís, composta por 13 municípios que totalizavam 1 726 262 habitantes em 2016. O Índice de Desenvolvimento Humano (IDH) de São Luís, segundo dados das Nações Unidas datados do ano 2010, é de 0,768, o 3.° melhor IDH entre as capitais da região Nordeste do Brasil e o 4.° entre todos os 1794 municípios da região. \nA capital maranhense tem um forte setor industrial por conta de grandes corporações e empresas de diversas áreas que se instalaram na cidade pela sua privilegiada posição geográfica entre as regiões Norte e Nordeste do país. Seu litoral estrategicamente localizado, bem mais próximo de grandes centros importadores de produtos brasileiros como Europa e Estados Unidos, permite economia de combustíveis e redução no prazo de entrega de mercadorias provenientes do Brasil pelo Porto do Itaqui, que é o segundo mais profundo do mundo e um dos mais movimentados e bem estruturados para o comércio exterior no país.\nA cidade está ligada ao interior do estado e ao estado do Piauí pela ferrovia São Luís-Teresina, bem como aos estados vizinhos Pará e Tocantins por meio das ferrovias Estrada de Ferro Carajás e Ferrovia Norte-Sul, sendo que esta última conecta a cidade à Região Centro-Oeste, o que facilita e barateia o escoamento agrícola do interior do país para o Porto do Itaqui. Por rodovia, a capital maranhense é servida pela BR-135 (duplicada), que liga a ilha ao continente, e pelo transporte aéreo conta com o Aeroporto Internacional Marechal Cunha Machado, com capacidade de atender 5,1 milhões de passageiros por ano. Também há um serviço de ferry-boats, realizando a Travessia São Luís-Alcântara.\n\n"
+  },
+  {
+    "id": "auto-olinda",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Pernambuco",
+    "difficulty": 2,
+    "question_pt": "É a quinta cidade mais populosa do estado com 349 976 habitantes, é também a mais densamente povoada da Região Nordeste e a sétima de todo Brasil, possuindo 8 474 habitantes por km² em seu território de 41,3 km². Fundada em 1535 e elevada à condição de vila em 12 de março de 1537, Olinda é a mais antiga entre as cidades brasileiras com centro histórico declarado Patrimônio Histórico e Cultural da Unesco, recebeu este título em 1982, dois após o de Ouro Preto. O centro histórico é marcada por casarios coloniais, construções religiosas barrocas, reunindo uma arquitetura predominantemente do século XVIII. esta entidade é um município brasileiro do Estado de Pernambuco, pertecente à Região Metropolitana do Recife. (*) Identifique esta histórica cidade pernambucana famosa pelos bonecos gigantes e Alto da Sé.",
+    "formatted_answer_pt": "<b><u>Olinda</u></b>",
+    "answer_canonical_pt": "Olinda",
+    "accept_aliases": [
+      "Olinda",
+      "Passarinho",
+      "Olinda, Pernambuco",
+      "Olindense"
+    ],
+    "prompt_aliases": [
+      "esta histórica cidade"
+    ],
+    "explanation": "Olinda é um município brasileiro do Estado de Pernambuco, pertecente à Região Metropolitana do Recife. É a quinta cidade mais populosa do estado com 349 976 habitantes, é também a mais densamente povoada da Região Nordeste e a sétima de tod...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Olinda",
+    "wiki_extract": "Olinda é um município brasileiro do Estado de Pernambuco, pertecente à Região Metropolitana do Recife. É a quinta cidade mais populosa do estado com 349 976 habitantes, é também a mais densamente povoada da Região Nordeste e a sétima de todo Brasil, possuindo 8 474 habitantes por km² em seu território de 41,3 km². \nFundada em 1535 e elevada à condição de vila em 12 de março de 1537, Olinda é a mais antiga entre as cidades brasileiras com centro histórico declarado Patrimônio Histórico e Cultural da Unesco, recebeu este título em 1982, dois após o de Ouro Preto. O centro histórico é marcada por casarios coloniais, construções religiosas barrocas, reunindo uma arquitetura predominantemente do século XVIII. Olinda foi capital de Pernambuco até 1827 e, em 2006, eleita a primeira Capital Brasileira da Cultura.\nOlinda é um município litorâneo, situado às margens do Oceano Atlântico. Seu relevo é formado por planícies e colinas, com altitude média de 16 metros. Localizada a aproximadamente 6 km do Recife, limita-se com a capital pernambucana ao sul e a oeste e com Paulista ao norte. Em 2023, seu PIB foi de R$ 7,02 bilhões, com PIB per capita de R$ 20 072,57. A economia é impulsionada principalmente pelo comércio, pelos serviços e pelo turismo. Com 96,36% de sua área urbanizada, Olinda está entre os municípios mais urbanizados do Brasil e integra a Região Metropolitana do Recife."
+  },
+  {
+    "id": "auto-gramado",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Rio Grande do Sul",
+    "difficulty": 2,
+    "question_pt": "Localiza-se na Serra Gaúcha, mais precisamente na Região das Hortênsias, a uma latitude 29º 22' 44\" sul e a uma longitude 50º 52' 26\" oeste, estando a uma altitude de 830 metros. Sua população estimada em 2022 é de 40 134 habitantes, sendo o 54.º mais populoso do estado. Possui uma área de 237,019 km². esta entidade é um município do estado do Rio Grande do Sul, no Brasil. (*) Identifique este famoso município da Serra Gaúcha sede do Festival de Cinema.",
+    "formatted_answer_pt": "<b><u>Gramado</u></b>",
+    "answer_canonical_pt": "Gramado",
+    "accept_aliases": [
+      "Gramado",
+      "Galgo alado",
+      "Bandeira de Gramado",
+      "Hollywood Dream Cars"
+    ],
+    "prompt_aliases": [
+      "este famoso município"
+    ],
+    "explanation": "Gramado é um município do estado do Rio Grande do Sul, no Brasil. Localiza-se na Serra Gaúcha, mais precisamente na Região das Hortênsias, a uma latitude 29º 22' 44\" sul e a uma longitude 50º 52' 26\" oeste, estando a uma altitude de 830 met...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Gramado",
+    "wiki_extract": "Gramado é um município do estado do Rio Grande do Sul, no Brasil. Localiza-se na Serra Gaúcha, mais precisamente na Região das Hortênsias, a uma latitude 29º 22' 44\" sul e a uma longitude 50º 52' 26\" oeste, estando a uma altitude de 830 metros. Sua população estimada em 2022 é de 40 134 habitantes, sendo o 54.º mais populoso do estado. Possui uma área de 237,019 km². Seu principal acesso se dá através da RS-115, embora também seja atendida pelas rodovias RS-235 e RS-373.\nO município de Gramado foi criado pela Lei 2 522, de 15 de dezembro de 1954, após ser emancipado da cidade de Taquara. A região era habitada por índios caingangues e, posteriormente, foi colonizada por descendentes de açorianos, imigrantes alemães e italianos. Sua demografia é etnicamente variada, com forte influência alemã e italiana, o que se reflete especialmente na culinária e na arquitetura urbana e rural. Gramado também foi colonizado, em menor número, por portugueses, sírios e libaneses. Com uma economia voltada ao turismo, a cidade recebeu 7,9 milhões de turistas em 2025.\n\n"
+  },
+  {
+    "id": "auto-tiradentes",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Minas Gerais",
+    "difficulty": 2,
+    "question_pt": "Localiza-se na região central mineira e ocupa uma área de cerca de 80 km², sendo que 5 km² estão em perímetro urbano. Sua população foi estimada em 7 744 habitantes em 2022. Anteriormente denominada São José del Rei, foi uma das mais importantes vilas mineiras do Brasil Colônia, sendo um dos polos da produção aurífera. esta entidade é um município brasileiro no interior do estado de Minas Gerais, Região Sudeste do país. (*) Identifique este histórico município mineiro aos pés da Serra de São José.",
+    "formatted_answer_pt": "<b><u>Tiradentes</u></b>",
+    "answer_canonical_pt": "Tiradentes",
+    "accept_aliases": [
+      "Tiradentes",
+      "Tiradentes (Minas Gerais)",
+      "São José del-Rei",
+      "Arraial Velho de Santo Antônio",
+      "São José do Rio das Mortes",
+      "Tiradentes - pontos turísticos",
+      "Pontos turisticos de tiradentes"
+    ],
+    "prompt_aliases": [
+      "este histórico município"
+    ],
+    "explanation": "Tiradentes é um município brasileiro no interior do estado de Minas Gerais, Região Sudeste do país. Localiza-se na região central mineira e ocupa uma área de cerca de 80 km², sendo que 5 km² estão em perímetro urbano. Sua população foi esti...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Tiradentes_(Minas_Gerais)",
+    "wiki_extract": "Tiradentes é um município brasileiro no interior do estado de Minas Gerais, Região Sudeste do país. Localiza-se na região central mineira e ocupa uma área de cerca de 80 km², sendo que 5 km² estão em perímetro urbano. Sua população foi estimada em 7 744 habitantes em 2022.\nAnteriormente denominada São José del Rei, foi uma das mais importantes vilas mineiras do Brasil Colônia, sendo um dos polos da produção aurífera. O seu atual nome é uma homenagem a Tiradentes. Sendo um dos primeiros atos da proclamação da República."
+  },
+  {
+    "id": "auto-fernando-de-noronha",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Pernambuco",
+    "difficulty": 2,
+    "question_pt": "Formado por 21 ilhas, ilhotas e rochedos de origem vulcânica, ocupa uma área total de 26 km² — dos quais 17 km² são da ilha principal — e se situa no Oceano Atlântico a nordeste do Brasil continental, distando 350 km do Rio Grande do Norte e 545 km da capital pernambucana, Recife. O centro comercial da ilha é o núcleo urbano de Vila dos Remédios. A administração do Parque Nacional está atualmente a cargo do Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio). esta entidade é um arquipélago brasileiro do estado de Pernambuco. (*) Identifique este arquipélago vulcânico brasileiro famoso pela Baía do Sancho.",
+    "formatted_answer_pt": "<b><u>Fernando de Noronha</u></b>",
+    "answer_canonical_pt": "Fernando de Noronha",
+    "accept_aliases": [
+      "Fernando de Noronha",
+      "Baía de Santo Antônio",
+      "Baía dos Golfinhos",
+      "Baía dos Porcos",
+      "Ilha de Fernando de Noronha",
+      "Praia da Cacimba do Padre",
+      "Arquipélago de Fernando de Noronha",
+      "Fernando de noronha",
+      "São João da Quaresma",
+      "Cacimba do Padre"
+    ],
+    "prompt_aliases": [
+      "este arquipélago vulcânico"
+    ],
+    "explanation": "Fernando de Noronha é um arquipélago brasileiro do estado de Pernambuco. Formado por 21 ilhas, ilhotas e rochedos de origem vulcânica, ocupa uma área total de 26 km² — dos quais 17 km² são da ilha principal — e se situa no Oceano Atlântico ...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Fernando_de_Noronha",
+    "wiki_extract": "Fernando de Noronha é um arquipélago brasileiro do estado de Pernambuco. Formado por 21 ilhas, ilhotas e rochedos de origem vulcânica, ocupa uma área total de 26 km² — dos quais 17 km² são da ilha principal — e se situa no Oceano Atlântico a nordeste do Brasil continental, distando 350 km do Rio Grande do Norte e 545 km da capital pernambucana, Recife. O centro comercial da ilha é o núcleo urbano de Vila dos Remédios. A administração do Parque Nacional está atualmente a cargo do Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio). É também a Região intermediária e imediata do Recife.\nAvistada pela primeira vez entre 1500 e 1502, tem sua descoberta atribuída a uma expedição comandada pelo explorador Fernão de Loronha, embora haja controvérsias; porém é certo que o primeiro a descrevê-la foi Américo Vespúcio, em expedição realizada entre 1503 e 1504. Primeira capitania hereditária do Brasil, o arquipélago sofreu constantes invasões de ingleses, franceses e holandeses entre os séculos XVI e XVIII. Em 24 de setembro de 1700, Fernando de Noronha tornou-se, por carta régia, dependência de Pernambuco, capitania com a qual já tinha uma ligação histórica. Em 1736, a ilha foi invadida pela Companhia Francesa das Índias Orientais, passando-se a chamar Isle Dauphine, porém, no ano seguinte, uma expedição enviada pelo Recife expulsou os franceses.\nEm 1942, com a Segunda Guerra Mundial, o arquipélago tornou-se território federal, cuja sigla era FN, passando a servir como base avançada de guerra; mas voltou à administração pernambucana quatro décadas e meia depois, no ano de 1988. Atualmente Fernando de Noronha constitui um distrito estadual de Pernambuco, e é gerida por um administrador-geral designado pelo governo do estado.\nApós uma campanha liderada pelo ambientalista José Truda Palazzo Júnior, em 14 de outubro de 1988 a maior parte do arquipélago foi declarada Parque Nacional, com cerca de 11 270 ha, para a proteção das espécies endêmicas lá existentes e da área de concentração dos golfinhos rotadores (Stenella longirostris), que se reúnem diariamente na Baía dos Golfinhos — o lugar de observação mais regular da espécie em todo o planeta. No ano de 2001 a UNESCO declarou Fernando de Noronha Patrimônio Natural da Humanidade. A fauna é tão rica que pesquisadores continuam descobrindo novas espécies endêmicas de peixes na região — em 2020, uma expedição descobriu quatro novas espécies de peixes ainda não descritas pela ciência.\n\n"
+  },
+  {
+    "id": "auto-foz-do-igua-u",
+    "origin": "wikipedia_br",
+    "category": "Cidades do Brasil",
+    "subcategory": "Paraná",
+    "difficulty": 2,
+    "question_pt": "Dista 643 quilômetros da capital estadual, sua área territorial é de 617,701 km², dos quais 61,200 km² estão em perímetro urbano, e sua população, conforme o censo de 2022, é de 285 415 habitantes. Segundo artigo publicado pela revista Exame, em março de 2014, é o terceiro destino de turistas estrangeiros no país e o primeiro da região sul. Conhecida internacionalmente pelas Cataratas do Iguaçu, uma das vencedoras do concurso que escolheu as 7 Maravilhas da Natureza, e pela Usina Hidrelétrica de Itaipu, a segunda maior do mundo em tamanho e primeira em geração de energia, que em 1996 foi considerada uma das 7 Maravilhas do Mundo Moderno pela Sociedade Americana de Engenheiros Civis. esta entidade é um município brasileiro localizado na região oeste do estado do Paraná. (*) Identifique este município paranaense na tríplice fronteira que abriga as monumentais Cataratas.",
+    "formatted_answer_pt": "<b><u>Foz do Iguaçu</u></b>",
+    "answer_canonical_pt": "Foz do Iguaçu",
+    "accept_aliases": [
+      "Foz do Iguaçu",
+      "Foz do Iguassu",
+      "Foz de Iguaçu",
+      "Terra das Cataratas"
+    ],
+    "prompt_aliases": [
+      "este município paranaense"
+    ],
+    "explanation": "Foz do Iguaçu é um município brasileiro localizado na região oeste do estado do Paraná. Dista 643 quilômetros da capital estadual, sua área territorial é de 617,701 km², dos quais 61,200 km² estão em perímetro urbano, e sua população, confo...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Foz_do_Igua%C3%A7u",
+    "wiki_extract": "Foz do Iguaçu é um município brasileiro localizado na região oeste do estado do Paraná. Dista 643 quilômetros da capital estadual, sua área territorial é de 617,701 km², dos quais 61,200 km² estão em perímetro urbano, e sua população, conforme o censo de 2022, é de 285 415 habitantes.\nSegundo artigo publicado pela revista Exame, em março de 2014, é o terceiro destino de turistas estrangeiros no país e o primeiro da região sul. Conhecida internacionalmente pelas Cataratas do Iguaçu, uma das vencedoras do concurso que escolheu as 7 Maravilhas da Natureza, e pela Usina Hidrelétrica de Itaipu, a segunda maior do mundo em tamanho e primeira em geração de energia, que em 1996 foi considerada uma das 7 Maravilhas do Mundo Moderno pela Sociedade Americana de Engenheiros Civis.\nFoz integra uma região urbana trinacional com mais de 700 mil habitantes, constituída também por Ciudad del Este, no Paraguai, e Puerto Iguazú, na Argentina, países com os quais faz fronteira. Iguaçu é topônimo indígena, podendo ser decomposto originalmente em Y (água) e guazú (grande), ocorrendo, por acréscimo de uma vogal, a atual denominação. Seus moradores são designados pelo gentílico \"iguaçuense\".\n\n"
+  },
+  {
+    "id": "auto-heitor-villa-lobos",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Música Erudita",
+    "difficulty": 2,
+    "question_pt": "Compositor prolífico, escreveu numerosas obras orquestrais, de câmara, instrumentais e vocais, totalizando mais de 2 mil obras até sua morte, em 1959. Destaca-se por ter sido o principal responsável pela descoberta de uma linguagem peculiarmente brasileira na música, sendo considerado o maior expoente da música do modernismo no Brasil, compondo obras que contêm nuances das culturas regionais brasileiras, com os elementos das canções populares e indígenas. Suas composições foram influenciadas tanto pela música folclórica brasileira quanto por elementos estilísticos da tradição clássica europeia, como exemplificado por suas Bachianas Brasileiras. esta entidade (Rio de Janeiro, 5 de março de 1887 – Rio de Janeiro, 17 de novembro de 1959) foi um compositor, maestro, violoncelista, pianista e violonista brasileiro, descrito como \"a figura criativa mais significativa do Século XX na música clássica brasileira\", e se tornando o compositor sul-americano mais conhecido de todos os tempos. (*) Identifique este monumental compositor modernista autor das Bachianas Brasileiras.",
+    "formatted_answer_pt": "<b><u>Heitor Villa-Lobos</u></b>",
+    "answer_canonical_pt": "Heitor Villa-Lobos",
+    "accept_aliases": [
+      "Heitor Villa-Lobos",
+      "Villa-Lobos",
+      "Villa Lobos",
+      "Vila-Lobos",
+      "Heitor Vila-Lobos",
+      "Vira Lobos",
+      "Heitor Villa Lobos",
+      "Heitor Villa-Lôbos",
+      "Heitor Villalobos",
+      "Yerma"
+    ],
+    "prompt_aliases": [
+      "este monumental compositor"
+    ],
+    "explanation": "Heitor Villa-Lobos (Rio de Janeiro, 5 de março de 1887 – Rio de Janeiro, 17 de novembro de 1959) foi um compositor, maestro, violoncelista, pianista e violonista brasileiro, descrito como \"a figura criativa mais significativa do Século XX n...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Heitor_Villa-Lobos",
+    "wiki_extract": "Heitor Villa-Lobos (Rio de Janeiro, 5 de março de 1887 – Rio de Janeiro, 17 de novembro de 1959) foi um compositor, maestro, violoncelista, pianista e violonista brasileiro, descrito como \"a figura criativa mais significativa do Século XX na música clássica brasileira\", e se tornando o compositor sul-americano mais conhecido de todos os tempos. Compositor prolífico, escreveu numerosas obras orquestrais, de câmara, instrumentais e vocais, totalizando mais de 2 mil obras até sua morte, em 1959.\nDestaca-se por ter sido o principal responsável pela descoberta de uma linguagem peculiarmente brasileira na música, sendo considerado o maior expoente da música do modernismo no Brasil, compondo obras que contêm nuances das culturas regionais brasileiras, com os elementos das canções populares e indígenas.\nSuas composições foram influenciadas tanto pela música folclórica brasileira quanto por elementos estilísticos da tradição clássica europeia, como exemplificado por suas Bachianas Brasileiras. Suas Etudes para violão (1929) foram dedicados a Andrés Segovia, enquanto seus 5 Prelúdios (1940) foram dedicados à sua esposa Arminda Neves d'Almeida, também conhecida como \"Mindinha\". Ambas são obras importantes no repertório violonístico.\nSua data de nascimento é celebrada, no Brasil, como \"Dia Nacional da Música Clássica\". Em 2011, seu nome foi inscrito no Livro de Aço dos heróis nacionais depositado no Panteão da Pátria e da Liberdade Tancredo Neves."
+  },
+  {
+    "id": "auto-tom-jobim",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Música Popular Brasileira",
+    "difficulty": 2,
+    "question_pt": "Considerado um dos grandes expoentes da música brasileira, Jobim internacionalizou a bossa nova e, com a ajuda de importantes artistas estadunidenses, fundiu-a com o jazz nos anos 1960 para criar uma nova sonoridade, de sucesso popular. Por isso, às vezes é conhecido como o \"pai da bossa nova\". Suas canções foram executadas por muitos cantores e instrumentistas internacionalmente desde o início da década de 1960. Antônio Carlos Brasileiro de Almeida \"Tom\" Jobim (Rio de Janeiro, 25 de janeiro de 1927 – Nova Iorque, 8 de dezembro de 1994) foi um compositor, pianista, violonista, arranjador e cantor brasileiro. (*) Identifique este compositor e maestro coautor de Garota de Ipanema e Águas de Março.",
+    "formatted_answer_pt": "<b><u>Tom Jobim</u></b>",
+    "answer_canonical_pt": "Tom Jobim",
+    "accept_aliases": [
+      "Tom Jobim",
+      "Antonio Carlos Jobim",
+      "António Carlos Jobim",
+      "Antônio Carlos Brasileiro de Almeida Jobim",
+      "Terra Brasilis",
+      "Inútil Paisagem",
+      "Love Strings & Jobim",
+      "Antônio Carlos Jobim"
+    ],
+    "prompt_aliases": [
+      "este compositor e"
+    ],
+    "explanation": "Antônio Carlos Brasileiro de Almeida \"Tom\" Jobim (Rio de Janeiro, 25 de janeiro de 1927 – Nova Iorque, 8 de dezembro de 1994) foi um compositor, pianista, violonista, arranjador e cantor brasileiro. Considerado um dos grandes expoentes da m...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Tom_Jobim",
+    "wiki_extract": "Antônio Carlos Brasileiro de Almeida \"Tom\" Jobim (Rio de Janeiro, 25 de janeiro de 1927 – Nova Iorque, 8 de dezembro de 1994) foi um compositor, pianista, violonista, arranjador e cantor brasileiro. Considerado um dos grandes expoentes da música brasileira, Jobim internacionalizou a bossa nova e, com a ajuda de importantes artistas estadunidenses, fundiu-a com o jazz nos anos 1960 para criar uma nova sonoridade, de sucesso popular. Por isso, às vezes é conhecido como o \"pai da bossa nova\".\nSuas canções foram executadas por muitos cantores e instrumentistas internacionalmente desde o início da década de 1960. Em 1965, o álbum Getz/Gilberto foi o primeiro disco de jazz a ganhar o prêmio Grammy de Álbum do Ano. Ele também ganhou o prêmio nas categorias de Melhor Álbum Instrumental de Jazz e de Álbum Melhor Produzido. O single do álbum \"Garota de Ipanema\", composta por Jobim, tornou-se uma das canções mais gravadas de todos os tempos e o álbum ganhou o prêmio de Gravação do Ano. \nJobim compôs muitas canções que hoje fazem parte dos repertórios clássicos do jazz e do pop. \"Garota de Ipanema\" já foi gravada mais de 240 vezes por outros artistas. Seu álbum de 1967 com Frank Sinatra, Francis Albert Sinatra e Antônio Carlos Jobim, foi indicado para Álbum do Ano em 1968.\nEm levantamento de 2022, produzido pelo ECAD, Tom tem 8 das 15 músicas brasileiras mais regravadas da história, contando canções solo ou em parceria, sendo a mais regravada Garota de Ipanema, que fez em parceria com Vinicius de Moraes."
+  },
+  {
+    "id": "auto-chico-buarque",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Música e Literatura",
+    "difficulty": 2,
+    "question_pt": "É considerado por muitos críticos o maior artista vivo da música brasileira. Sua discografia conta com aproximadamente oitenta obras, entre elas discos-solo, em parceria com outros músicos e compactos. Ganhou destaque como cantor a partir de 1966, quando lançou seu primeiro álbum, Chico Buarque de Hollanda, e venceu o Festival de Música Popular Brasileira com a música A Banda. Francisco Buarque de Hollanda OMC • ComIH, mais conhecido como esta entidade (Rio de Janeiro, DF, 19 de junho de 1944), é um cantor, compositor, violonista, dramaturgo, escritor e ator brasileiro. (*) Identifique este compositor e escritor autor de Construção e vencedor do Prêmio Camões.",
+    "formatted_answer_pt": "<b><u>Chico Buarque</u></b>",
+    "answer_canonical_pt": "Chico Buarque",
+    "accept_aliases": [
+      "Chico Buarque",
+      "Chico Buarque de Hollanda",
+      "Francisco Buarque de Hollanda",
+      "Chico Buarque:Francisco Buarque de Hollanda",
+      "Chico Buarque de Holanda",
+      "Julinho da Adelaide",
+      "Milton & Chico",
+      "Show 1º de Maio"
+    ],
+    "prompt_aliases": [
+      "este compositor e"
+    ],
+    "explanation": "Francisco Buarque de Hollanda OMC • ComIH, mais conhecido como Chico Buarque (Rio de Janeiro, DF, 19 de junho de 1944), é um cantor, compositor, violonista, dramaturgo, escritor e ator brasileiro. É considerado por muitos críticos o maior a...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Chico_Buarque",
+    "wiki_extract": "Francisco Buarque de Hollanda OMC • ComIH, mais conhecido como Chico Buarque (Rio de Janeiro, DF, 19 de junho de 1944), é um cantor, compositor, violonista, dramaturgo, escritor e ator brasileiro. É considerado por muitos críticos o maior artista vivo da música brasileira. Sua discografia conta com aproximadamente oitenta obras, entre elas discos-solo, em parceria com outros músicos e compactos.\nGanhou destaque como cantor a partir de 1966, quando lançou seu primeiro álbum, Chico Buarque de Hollanda, e venceu o Festival de Música Popular Brasileira com a música A Banda. Autoexilou-se na Itália em 1969, devido à crescente repressão do regime militar do Brasil nos chamados \"anos de chumbo\", tornando-se, ao retornar, em 1970, um dos artistas mais ativos na crítica política e na luta pela democratização no país. Em 1971, foi lançado Construção, tido pela crítica como um de seus melhores trabalhos, e em 1976, Meus Caros Amigos - ambos os discos figuram, por exemplo, na lista dos 100 maiores discos da música brasileira organizada pela revista Rolling Stone Brasil.\nAlém da notabilidade como músico, desenvolveu ao longo dos anos uma carreira literária (escreveu seu primeiro conto aos 18 anos), sendo autor de peças teatrais e romances. Foi vencedor de três Prêmios Jabuti: o de melhor romance em 1992 com Estorvo e o de Livro do Ano, tanto pelo livro Budapeste, lançado em 2004, como por Leite Derramado, em 2010. Em 2019, foi distinguido com o Prémio Camões, o principal troféu literário da língua portuguesa, pelo conjunto da obra.\nNeto de Cristóvão Buarque de Hollanda e filho de Sérgio Buarque de Hollanda e Maria Amélia Cesário Alvim, Chico é irmão das cantoras Miúcha, Ana de Hollanda e Cristina Buarque, além da fotógrafa Maria do Carmo Buarque de Hollanda (Piii), do professor e economista Sergio Buarque de Hollanda Filho e do advogado Alvaro Augusto Buarque de Hollanda."
+  },
+  {
+    "id": "auto-caetano-veloso",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Música",
+    "difficulty": 2,
+    "question_pt": "Com uma carreira que ultrapassa seis décadas, Caetano construiu uma obra musical marcada pela releitura e renovação e considerada amplamente como possuidora de grande valor intelectual e poético. Embora desde cedo tivesse aprendido a tocar violão em Salvador, escrito entre os anos de 1960 e 1962 críticas de cinema para o Diário de Notícias e conhecido o trabalho dos cantores de rádios e dos músicos de bossa nova (notavelmente João Gilberto, seu \"mestre supremo\" e com quem dividiria o palco anos mais tarde), Caetano iniciou seu trabalho profissionalmente apenas em 1965, com o compacto \"Cavaleiro/Samba em Paz\", enquanto acompanhava a irmã mais nova Maria Bethânia por suas apresentações nacionais do espetáculo Opinião, no Rio de Janeiro. Nessa década, conheceu Gilberto Gil, Gal Costa e Tom Zé, participou dos festivais de música popular da Rede Record e compôs trilhas de filmes. Caetano Emanuel Viana Teles Veloso (Santo Amaro, 7 de agosto de 1942) é um cantor, músico, compositor, produtor, arranjador e escritor brasileiro. (*) Identifique este cantor e compositor baiano um dos líderes do movimento Tropicalista.",
+    "formatted_answer_pt": "<b><u>Caetano Veloso</u></b>",
+    "answer_canonical_pt": "Caetano Veloso",
+    "accept_aliases": [
+      "Caetano Veloso",
+      "Caetano Emanuel Viana Teles Veloso",
+      "Caetano Velloso",
+      "Caetano Emanuel Vianna Telles Neila Velloso",
+      "MTV ao Vivo",
+      "Moreno Veloso"
+    ],
+    "prompt_aliases": [
+      "este cantor e"
+    ],
+    "explanation": "Caetano Emanuel Viana Teles Veloso (Santo Amaro, 7 de agosto de 1942) é um cantor, músico, compositor, produtor, arranjador e escritor brasileiro. Com uma carreira que ultrapassa seis décadas, Caetano construiu uma obra musical marcada pela...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Caetano_Veloso",
+    "wiki_extract": "Caetano Emanuel Viana Teles Veloso (Santo Amaro, 7 de agosto de 1942) é um cantor, músico, compositor, produtor, arranjador e escritor brasileiro. Com uma carreira que ultrapassa seis décadas, Caetano construiu uma obra musical marcada pela releitura e renovação e considerada amplamente como possuidora de grande valor intelectual e poético. Embora desde cedo tivesse aprendido a tocar violão em Salvador, escrito entre os anos de 1960 e 1962 críticas de cinema para o Diário de Notícias e conhecido o trabalho dos cantores de rádios e dos músicos de bossa nova (notavelmente João Gilberto, seu \"mestre supremo\" e com quem dividiria o palco anos mais tarde), Caetano iniciou seu trabalho profissionalmente apenas em 1965, com o compacto \"Cavaleiro/Samba em Paz\", enquanto acompanhava a irmã mais nova Maria Bethânia por suas apresentações nacionais do espetáculo Opinião, no Rio de Janeiro.\nNessa década, conheceu Gilberto Gil, Gal Costa e Tom Zé, participou dos festivais de música popular da Rede Record e compôs trilhas de filmes. Em 1967, saiu seu primeiro LP, Domingo, com Gal Costa, e, no ano seguinte, liderou o movimento chamado Tropicalismo, que renovou o cenário musical brasileiro e os modos de se apresentar e criar música no Brasil, através do disco Tropicalia ou Panis et Circencis, ao lado de vários músicos. Em 1968, face ao endurecimento do regime militar no Brasil, compôs o hino \"É Proibido Proibir\", que foi desclassificado e amplamente vaiado durante o III Festival Internacional da Canção. Em 1969, foi preso pelo regime militar e partiu para exílio político em Londres, onde lançou o disco Caetano Veloso (1971), disco com temática melancólica e com canções compostas em inglês e endereçadas aos que ficaram no Brasil.\nO disco Transa (1972) representou seu retorno ao país e seu experimento com compassos de reggae. Em 1976, uniu-se a Gal Costa, Gilberto Gil e Maria Bethânia para formar os Doces Bárbaros, grupo influenciado pela temática hippie dos anos 1970, lançando um disco, Doces Bárbaros, e saindo em turnê. Na década de 1980, mais sóbrio, apadrinhou e se inspirou nos grupos de rock brasileiros, aventurou-se na produções dos discos Outras Palavras, Cores, Nomes, Uns e Velô, e, em 1986, participou de um programa de televisão com Chico Buarque. Na década de 1990, escreveu o livro Verdade Tropical (1997) e o disco Livro (1998). Ganhou o Prêmio Grammy em 2000, na categoria World Music. Com o disco A Foreign Sound, cantou clássicos norte-americanos. Em 2006, lançou o álbum Cê, fruto de sua experimentação com o rock e o underground. Unindo estes gêneros ao samba, Zii e Zie, de 2009, manteve a parceria com a Banda Cê, que encerrou-se no disco Abraçaço, de 2012.\nCaetano Veloso é considerado um dos artistas brasileiros mais influentes desde a década de 1960, tendo já sido chamado de \"aedo pós-moderno\". Em 2004, foi considerado um dos mais respeitados e produtivos músicos latino-americanos do mundo, tendo mais de cinquenta discos lançados e canções em trilhas sonoras de filmes como Hable con Ella, de Pedro Almodovar e Frida, de Julie Taymor. Ao longo de sua carreira, também se converteu numa das personalidades mais polêmicas no Brasil. É uma das figuras mais importantes da música popular brasileira e considerado internacionalmente um dos melhores compositores do século XX, sendo comparado a nomes como Bob Dylan, Bob Marley, John Lennon e Paul McCartney. Foi eleito pela revista Rolling Stone o 4º maior artista da música brasileira de todos os tempos pelo conjunto da obra e pela mesma revista o 8º maior cantor brasileiro de todos os tempos."
+  },
+  {
+    "id": "auto-gilberto-gil",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Música",
+    "difficulty": 2,
+    "question_pt": "Com uma carreira de mais de seis décadas, é conhecido por sua relevante contribuição na música brasileira e por ser vencedor de prêmios Grammy Awards, Grammy Latino e galardoado pelo governo francês com a Ordem Nacional do Mérito (1997). Em 1999, foi nomeado \"Artista pela Paz\", pela UNESCO. Gil foi também embaixador da ONU para agricultura e alimentação, e ministro da Cultura do Brasil, entre 2003 e 2008, durante partes dos dois primeiros mandatos do presidente Luiz Inácio Lula da Silva. Gilberto Passos Gil Moreira (Salvador, 26 de junho de 1942) é um cantor, compositor, músico, político e escritor brasileiro. (*) Identifique este músico baiano ex-Ministro da Cultura e membro da Academia Brasileira de Letras.",
+    "formatted_answer_pt": "<b><u>Gilberto Gil</u></b>",
+    "answer_canonical_pt": "Gilberto Gil",
+    "accept_aliases": [
+      "Gilberto Gil",
+      "Gilberto Passos Gil Moreira",
+      "Oslodum",
+      "Gilberto dos Passos Gil Moreira",
+      "Gege Produções Artísticas",
+      "Gege Produções"
+    ],
+    "prompt_aliases": [
+      "este músico baiano"
+    ],
+    "explanation": "Gilberto Passos Gil Moreira (Salvador, 26 de junho de 1942) é um cantor, compositor, músico, político e escritor brasileiro. Com uma carreira de mais de seis décadas, é conhecido por sua relevante contribuição na música brasileira e por ser...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Gilberto_Gil",
+    "wiki_extract": "Gilberto Passos Gil Moreira (Salvador, 26 de junho de 1942) é um cantor, compositor, músico, político e escritor brasileiro. Com uma carreira de mais de seis décadas, é conhecido por sua relevante contribuição na música brasileira e por ser vencedor de prêmios Grammy Awards, Grammy Latino e galardoado pelo governo francês com a Ordem Nacional do Mérito (1997). Em 1999, foi nomeado \"Artista pela Paz\", pela UNESCO.\nGil foi também embaixador da ONU para agricultura e alimentação, e ministro da Cultura do Brasil, entre 2003 e 2008, durante partes dos dois primeiros mandatos do presidente Luiz Inácio Lula da Silva.\nEm mais de cinquenta álbuns lançados, o cantor incorpora a gama eclética de suas influências, incluindo rock, gêneros tipicamente brasileiros, música africana, funk, música disco e reggae. Em 2021, foi eleito para a cadeira de número 20 da Academia Brasileira de Letras.\n\n"
+  },
+  {
+    "id": "auto-paulo-freire",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Educação e Filosofia",
+    "difficulty": 2,
+    "question_pt": "É considerado um dos pensadores mais notáveis na história da pedagogia mundial, tendo influenciado o movimento chamado pedagogia crítica. É também o Patrono da Educação Brasileira. Seu trabalho teórico envolve uma forte crítica da educação bancária comum em seu tempo, na qual o professor faz \"depósitos\" de conhecimento no aluno, que os recebe passivamente. Paulo Reglus Neves Freire OMC (Recife, 19 de setembro de 1921 – São Paulo, 2 de maio de 1997) foi um educador e filósofo brasileiro. (*) Identifique este patrono da educação brasileira autor de Pedagogia do Oprimido.",
+    "formatted_answer_pt": "<b><u>Paulo Freire</u></b>",
+    "answer_canonical_pt": "Paulo Freire",
+    "accept_aliases": [
+      "Paulo Freire",
+      "Paulo Régis Neves Freire",
+      "Paulo Reglus Neves Freire"
+    ],
+    "prompt_aliases": [
+      "este patrono da"
+    ],
+    "explanation": "Paulo Reglus Neves Freire OMC (Recife, 19 de setembro de 1921 – São Paulo, 2 de maio de 1997) foi um educador e filósofo brasileiro. É considerado um dos pensadores mais notáveis na história da pedagogia mundial, tendo influenciado o movime...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Paulo_Freire",
+    "wiki_extract": "Paulo Reglus Neves Freire OMC (Recife, 19 de setembro de 1921 – São Paulo, 2 de maio de 1997) foi um educador e filósofo brasileiro. É considerado um dos pensadores mais notáveis na história da pedagogia mundial, tendo influenciado o movimento chamado pedagogia crítica. É também o Patrono da Educação Brasileira.\nSeu trabalho teórico envolve uma forte crítica da educação bancária comum em seu tempo, na qual o professor faz \"depósitos\" de conhecimento no aluno, que os recebe passivamente. Em vez disso, Freire propõe uma educação dialógica, isto é, fundamentada no diálogo. Tal educação é também problematizadora, pois induz os educandos a terem uma postura crítica ante a realidade que os oprime. Freire também é famoso por ter desenvolvido um método de alfabetização de adultos que busca desenvolver essa consciência crítica no momento da alfabetização. Freire, acreditando que todos os homens têm por vocação o ser mais, buscava que eles fossem sujeitos de suas ações, atingissem sua plena realização enquanto seres humanos e fossem capazes de transformar o mundo.\nSeu principal trabalho, Pedagogia do Oprimido, livro em que propõe sua pedagogia dialógica, se diferenciou do \"vanguardismo\" dos intelectuais de esquerda tradicionais, pois defendeu o diálogo com as pessoas simples, e não a imposição de ideias pré-concebidas sobre elas (o que, para Freire, é mero ativismo). Trata-se do terceiro livro mais citado em trabalhos acadêmicos de ciências sociais em todo o mundo.\nFoi o brasileiro mais homenageado da história, com pelo menos 35 títulos de Doutor Honoris Causa de universidades da Europa e América; e recebeu diversos galardões como o prêmio da UNESCO de Educação para a Paz em 1986. Em 13 de abril de 2012 foi sancionada a Lei nº 12 612, que declara o educador Paulo Freire Patrono da Educação Brasileira. Embora suas ideias nunca tenham sido amplamente aplicadas em todo o território brasileiro, experiências pontuais são registradas. Na cidade de Diadema, por exemplo, o referencial freireano foi orientador da política pública de educação, na gestão municipal de 2004 a 2008. Segundo uma pesquisa envolvendo três estados brasileiros (São Paulo, Minas Gerais e Paraná), Paulo Freire é o nome de escola mais comum."
+  },
+  {
+    "id": "auto-darcy-ribeiro",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Antropologia",
+    "difficulty": 2,
+    "question_pt": "Suas ideias de identidade latino-americana influenciaram vários estudiosos latino-americanos posteriores. Como Ministro da Educação do Brasil realizou profundas reformas, o que o levou a ser convidado a participar de reformas universitárias no Chile, Peru, Venezuela, México e Uruguai, depois de deixar o Brasil devido à ditadura militar de 1964. Foi casado com a etnóloga e antropóloga Berta Ribeiro até 1974. Marcos Darcy Silveira Ribeiro (Montes Claros, 26 de outubro de 1922 – Brasília, 17 de fevereiro de 1997) foi um antropólogo, historiador, sociólogo, escritor e político brasileiro, filiado ao Partido Democrático Trabalhista (PDT) e conhecido por seu foco em relação aos indígenas e à educação no país. (*) Identifique este antropólogo e educador fundador da UnB e autor de O Povo Brasileiro.",
+    "formatted_answer_pt": "<b><u>Darcy Ribeiro</u></b>",
+    "answer_canonical_pt": "Darcy Ribeiro",
+    "accept_aliases": [
+      "Darcy Ribeiro",
+      "Darci Ribeiro",
+      "Marcos Darcy Silveira Ribeiro"
+    ],
+    "prompt_aliases": [
+      "este antropólogo e"
+    ],
+    "explanation": "Marcos Darcy Silveira Ribeiro (Montes Claros, 26 de outubro de 1922 – Brasília, 17 de fevereiro de 1997) foi um antropólogo, historiador, sociólogo, escritor e político brasileiro, filiado ao Partido Democrático Trabalhista (PDT) e conhecid...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Darcy_Ribeiro",
+    "wiki_extract": "Marcos Darcy Silveira Ribeiro (Montes Claros, 26 de outubro de 1922 – Brasília, 17 de fevereiro de 1997) foi um antropólogo, historiador, sociólogo, escritor e político brasileiro, filiado ao Partido Democrático Trabalhista (PDT) e conhecido por seu foco em relação aos indígenas e à educação no país.\nSuas ideias de identidade latino-americana influenciaram vários estudiosos latino-americanos posteriores. Como Ministro da Educação do Brasil realizou profundas reformas, o que o levou a ser convidado a participar de reformas universitárias no Chile, Peru, Venezuela, México e Uruguai, depois de deixar o Brasil devido à ditadura militar de 1964. Foi casado com a etnóloga e antropóloga Berta Ribeiro até 1974.\nEm novembro de 2024, Darcy teve seu nome inscrito no Livro de Aço do Panteão da Pátria e da Liberdade Tancredo Neves, recebendo assim o título de \"Herói Nacional\"."
+  },
+  {
+    "id": "auto-carlos-chagas",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Medicina",
+    "difficulty": 2,
+    "question_pt": "Atuante na saúde pública do Brasil, iniciou sua carreira no combate à malária. Destacou-se ao descobrir o protozoário Trypanosoma cruzi (cujo nome foi uma homenagem ao seu mestre e amigo Oswaldo Cruz) e a tripanossomíase americana, conhecida como doença de Chagas. Ele foi o primeiro e até os dias atuais permanece como o único cientista na história da medicina a descrever completamente uma doença infecciosa: o patógeno, o vetor (Triatominae), os hospedeiros, as manifestações clínicas e a epidemiologia. Carlos Ribeiro Justiniano Chagas (Oliveira, 9 de julho de 1878 – Rio de Janeiro, 8 de novembro de 1934) foi um cientista, médico sanitarista, professor, infectologista e bacteriologista brasileiro. (*) Identifique este cientista que descreveu integralmente o ciclo infeccioso da tripanossomíase.",
+    "formatted_answer_pt": "<b><u>Carlos Chagas</u></b>",
+    "answer_canonical_pt": "Carlos Chagas",
+    "accept_aliases": [
+      "Carlos Chagas",
+      "Carlos Justiniano Ribeiro Chagas"
+    ],
+    "prompt_aliases": [
+      "este cientista que"
+    ],
+    "explanation": "Carlos Ribeiro Justiniano Chagas (Oliveira, 9 de julho de 1878 – Rio de Janeiro, 8 de novembro de 1934) foi um cientista, médico sanitarista, professor, infectologista e bacteriologista brasileiro. Atuante na saúde pública do Brasil, inicio...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Carlos_Chagas",
+    "wiki_extract": "Carlos Ribeiro Justiniano Chagas (Oliveira, 9 de julho de 1878 – Rio de Janeiro, 8 de novembro de 1934) foi um cientista, médico sanitarista, professor, infectologista e bacteriologista brasileiro. Atuante na saúde pública do Brasil, iniciou sua carreira no combate à malária. Destacou-se ao descobrir o protozoário Trypanosoma cruzi (cujo nome foi uma homenagem ao seu mestre e amigo Oswaldo Cruz) e a tripanossomíase americana, conhecida como doença de Chagas. Ele foi o primeiro e até os dias atuais permanece como o único cientista na história da medicina a descrever completamente uma doença infecciosa: o patógeno, o vetor (Triatominae), os hospedeiros, as manifestações clínicas e a epidemiologia.\nFoi diversas vezes laureado com prêmios e títulos de instituições do mundo inteiro. Também trabalhou no combate à leptospirose e às doenças venéreas.\n\n"
+  },
+  {
+    "id": "auto-oswaldo-cruz",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Medicina e Sanitarismo",
+    "difficulty": 2,
+    "question_pt": "Pioneiro no estudo das moléstias tropicais e da microbiologia no Brasil, foi uma figura central na história da saúde pública nacional, conhecido por seu trabalho no combate à epidemias e na promoção da vacinação. Ele é considerado um dos pais da saúde pública brasileira. Paulista, nascido no interior do estado, mudou-se para o Rio de Janeiro em 1877. Oswaldo Gonçalves Cruz (São Luiz do Paraitinga, 5 de agosto de 1872 – Petrópolis, 11 de fevereiro de 1917) foi um médico, bacteriologista, epidemiologista e sanitarista brasileiro. (*) Identifique este sanitarista pioneiro na erradicação da febre amarela e peste bubônica.",
+    "formatted_answer_pt": "<b><u>Oswaldo Cruz</u></b>",
+    "answer_canonical_pt": "Oswaldo Cruz",
+    "accept_aliases": [
+      "Oswaldo Cruz",
+      "Oswaldo Gonçalves Cruz",
+      "Osvaldo Gonçalves Cruz",
+      "Osvaldo Cruz"
+    ],
+    "prompt_aliases": [
+      "este sanitarista pioneiro"
+    ],
+    "explanation": "Oswaldo Gonçalves Cruz (São Luiz do Paraitinga, 5 de agosto de 1872 – Petrópolis, 11 de fevereiro de 1917) foi um médico, bacteriologista, epidemiologista e sanitarista brasileiro. Pioneiro no estudo das moléstias tropicais e da microbiolog...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Oswaldo_Cruz",
+    "wiki_extract": "Oswaldo Gonçalves Cruz (São Luiz do Paraitinga, 5 de agosto de 1872 – Petrópolis, 11 de fevereiro de 1917) foi um médico, bacteriologista, epidemiologista e sanitarista brasileiro. Pioneiro no estudo das moléstias tropicais e da microbiologia no Brasil, foi uma figura central na história da saúde pública nacional, conhecido por seu trabalho no combate à epidemias e na promoção da vacinação. Ele é considerado um dos pais da saúde pública brasileira.\nPaulista, nascido no interior do estado, mudou-se para o Rio de Janeiro em 1877. Ingressou na Faculdade de Medicina do Rio de Janeiro em 1887, aos 15 anos. Em 1902 tornou-se diretor do Instituto Soroterápico Federal, transformado depois em Instituto Oswaldo Cruz, e que hoje é a internacionalmente respeitada Fundação Oswaldo Cruz.\nFoi eleito o 25.º maior brasileiro de todos os tempos do programa do SBT, enquanto a Folha de S.Paulo o posicionou na 13.ª colocação em sua lista de mesmo nome."
+  },
+  {
+    "id": "auto-aleijadinho",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Escultura Barroca",
+    "difficulty": 2,
+    "question_pt": "29 de agosto de 1730 ou, mais provavelmente, 1738 – Ouro Preto, 18 de novembro de 1814) foi um importante escultor, entalhador e arquiteto do Brasil colonial. Pouco se sabe com certeza sobre sua biografia, que permanece até hoje envolta em cerrado véu de lendas, mitos e controvérsia, tornando muito árduo o trabalho de pesquisa sobre ele. A principal fonte documental sobre o Aleijadinho é uma nota biográfica escrita somente cerca de quarenta anos depois de sua morte. Antônio Francisco Lisboa, mais conhecido como esta entidade, (Ouro Preto, c. (*) Identifique este maior mestre do barroco mineiro autor dos profetas de Congonhas.",
+    "formatted_answer_pt": "<b><u>Aleijadinho</u></b>",
+    "answer_canonical_pt": "Aleijadinho",
+    "accept_aliases": [
+      "Aleijadinho",
+      "António Francisco Lisboa",
+      "Antônio Francisco Lisboa"
+    ],
+    "prompt_aliases": [
+      "este maior mestre"
+    ],
+    "explanation": "Antônio Francisco Lisboa, mais conhecido como Aleijadinho, (Ouro Preto, c. 29 de agosto de 1730 ou, mais provavelmente, 1738 – Ouro Preto, 18 de novembro de 1814) foi um importante escultor, entalhador e arquiteto do Brasil colonial.\nPouco ...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Aleijadinho",
+    "wiki_extract": "Antônio Francisco Lisboa, mais conhecido como Aleijadinho, (Ouro Preto, c. 29 de agosto de 1730 ou, mais provavelmente, 1738 – Ouro Preto, 18 de novembro de 1814) foi um importante escultor, entalhador e arquiteto do Brasil colonial.\nPouco se sabe com certeza sobre sua biografia, que permanece até hoje envolta em cerrado véu de lendas, mitos e controvérsia, tornando muito árduo o trabalho de pesquisa sobre ele. A principal fonte documental sobre o Aleijadinho é uma nota biográfica escrita somente cerca de quarenta anos depois de sua morte. Sua trajetória é reconstituída principalmente através das obras que deixou, embora mesmo neste âmbito sua contribuição seja controversa, já que a atribuição da autoria da maior parte das mais de quatrocentas criações que hoje existem associadas ao seu nome foi feita sem qualquer comprovação documental, baseando-se apenas em critérios de semelhança estilística com peças documentadas.\nToda sua obra, com um estilo que incorpora elementos do Barroco e do Rococó, entre talhas, projetos arquitetônicos, relevos e estatuária, foi realizada em Minas Gerais, especialmente nas cidades de Ouro Preto, Sabará, São João del-Rei e Congonhas. Os principais monumentos que contêm suas obras são a Igreja de São Francisco de Assis de Ouro Preto e o Santuário do Bom Jesus de Matosinhos. \nEntre os especialistas sua reputação está firmemente estabelecida, instalado no panteão dos maiores expoentes da arte colonial do Brasil, e frequentemente apontado como o maior de todos. É um dos artistas mais estudados pelos historiadores brasileiros, sendo objeto de volumosa bibliografia especializada. Ultrapassando as fronteiras, para alguns estudiosos estrangeiros, Aleijadinho é o maior nome do Barroco americano, merecendo um lugar destacado na história da arte do ocidente. Seu nome e legado estão em todos os livros de história da arte brasileira, conhecido das escolas às universidades. O sucesso crítico e a articulação de diversos intelectuais e historiadores com organismos oficiais levou à sua monumentalização e transformação em ícone da arte brasileira e da identidade nacional em formação, mas seu prestígio muitas vezes foi sequestrado para projetos políticos e ideológicos controversos. É muito celebrado nos meios de comunicação, agências de turismo e veículos oficiais em particular no estado de Minas Gerais, que o transformou em um dos seus gênios tutelares, e suas obras são consideradas um dos seus principais patrimônios artísticos, históricos e simbólicos e um dos seus principais atrativos turísticos.\n\n"
+  },
+  {
+    "id": "auto-tarsila-do-amaral",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Pintura Modernista",
+    "difficulty": 2,
+    "question_pt": "É considerada uma das principais artistas modernistas latino-americanas, além de ser considerada a pintora que melhor alcançou as aspirações brasileiras de expressão nacionalista nesse estilo artístico. Como integrante do Grupo dos Cinco, Tarsila também é considerada uma grande influência no movimento da arte moderna no Brasil, ao lado de Anita Malfatti, Menotti Del Picchia, Mário de Andrade e Oswald de Andrade. Foi fundamental na formação do movimento estético, Antropofagia (1928-1929); na verdade, foi Tarsila quem com seu célebre quadro, Abaporu, inspirou o famoso Manifesto Antropófago de Oswald de Andrade. Tarsila de Aguiar do Amaral (Capivari, 1 de setembro de 1886 – São Paulo, 17 de janeiro de 1973) foi uma pintora, desenhista, escultora, ilustradora, cronista e tradutora brasileira. (*) Identifique esta pintora modernista paulista criadora do célebre quadro Abaporu.",
+    "formatted_answer_pt": "<b><u>Tarsila do Amaral</u></b>",
+    "answer_canonical_pt": "Tarsila do Amaral",
+    "accept_aliases": [
+      "Tarsila do Amaral",
+      "Tarsila do amaral",
+      "Tarsila",
+      "Tarcila do amaral"
+    ],
+    "prompt_aliases": [
+      "esta pintora modernista"
+    ],
+    "explanation": "Tarsila de Aguiar do Amaral (Capivari, 1 de setembro de 1886 – São Paulo, 17 de janeiro de 1973) foi uma pintora, desenhista, escultora, ilustradora, cronista e tradutora brasileira. É considerada uma das principais artistas modernistas lat...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Tarsila_do_Amaral",
+    "wiki_extract": "Tarsila de Aguiar do Amaral (Capivari, 1 de setembro de 1886 – São Paulo, 17 de janeiro de 1973) foi uma pintora, desenhista, escultora, ilustradora, cronista e tradutora brasileira. É considerada uma das principais artistas modernistas latino-americanas, além de ser considerada a pintora que melhor alcançou as aspirações brasileiras de expressão nacionalista nesse estilo artístico.\nComo integrante do Grupo dos Cinco, Tarsila também é considerada uma grande influência no movimento da arte moderna no Brasil, ao lado de Anita Malfatti, Menotti Del Picchia, Mário de Andrade e Oswald de Andrade. Foi fundamental na formação do movimento estético, Antropofagia (1928-1929); na verdade, foi Tarsila quem com seu célebre quadro, Abaporu, inspirou o famoso Manifesto Antropófago de Oswald de Andrade.\n\n"
+  },
+  {
+    "id": "auto-candido-portinari",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Artes Visuais",
+    "difficulty": 2,
+    "question_pt": "Portinari pintou mais de cinco mil obras, de pequenos esboços e pinturas de proporções padrão (como O Lavrador de Café), até gigantescos murais, como os painéis Guerra e Paz, presenteados à sede da ONU em Nova Iorque em 1956. Em dezembro de 2010, graças aos esforços de seu filho, estes murais retornaram ao Brasil para exibição no Teatro Municipal do Rio de Janeiro. esta entidade (Brodowski, 29 de dezembro de 1903 – Rio de Janeiro, 6 de fevereiro de 1962) foi um artista plástico brasileiro, considerado um dos mais importantes pintores brasileiros de todos os tempos, sendo o que mais alcançou projeção internacional. (*) Identifique este pintor paulista autor dos painéis Guerra e Paz na sede da ONU.",
+    "formatted_answer_pt": "<b><u>Candido Portinari</u></b>",
+    "answer_canonical_pt": "Candido Portinari",
+    "accept_aliases": [
+      "Candido Portinari",
+      "Candido Torquato Portinari",
+      "Portinari",
+      "Cândido Portinari",
+      "Cândido portinari"
+    ],
+    "prompt_aliases": [
+      "este pintor paulista"
+    ],
+    "explanation": "Candido Portinari (Brodowski, 29 de dezembro de 1903 – Rio de Janeiro, 6 de fevereiro de 1962) foi um artista plástico brasileiro, considerado um dos mais importantes pintores brasileiros de todos os tempos, sendo o que mais alcançou projeç...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Candido_Portinari",
+    "wiki_extract": "Candido Portinari (Brodowski, 29 de dezembro de 1903 – Rio de Janeiro, 6 de fevereiro de 1962) foi um artista plástico brasileiro, considerado um dos mais importantes pintores brasileiros de todos os tempos, sendo o que mais alcançou projeção internacional. \nPortinari pintou mais de cinco mil obras, de pequenos esboços e pinturas de proporções padrão (como O Lavrador de Café), até gigantescos murais, como os painéis Guerra e Paz, presenteados à sede da ONU em Nova Iorque em 1956. Em dezembro de 2010, graças aos esforços de seu filho, estes murais retornaram ao Brasil para exibição no Teatro Municipal do Rio de Janeiro.\n\n"
+  },
+  {
+    "id": "auto-marta",
+    "origin": "wikipedia_br",
+    "category": "Personalidades do Brasil",
+    "subcategory": "Esportes",
+    "difficulty": 2,
+    "question_pt": "Atualmente, joga pelo Orlando Pride, dos Estados Unidos (EUA). Já foi escolhida como melhor futebolista do mundo por seis vezes, sendo cinco de forma consecutiva, um recorde não apenas entre mulheres, mas também entre homens. Foi considerada pela Revista Época como um dos 100 brasileiros mais influentes do ano de 2009. esta entidade Vieira da Silva (Dois Riachos, 19 de fevereiro de 1986) é uma futebolista brasileira que atua como ponta-esquerda ou meio-campista. (*) Identifique esta lendária futebolista alagoana eleita seis vezes a melhor do mundo pela FIFA.",
+    "formatted_answer_pt": "<b><u>Marta</u></b>",
+    "answer_canonical_pt": "Marta",
+    "accept_aliases": [
+      "Marta",
+      "Marta (futebolista)",
+      "Marta Vieira da Silva"
+    ],
+    "prompt_aliases": [
+      "esta lendária futebolista"
+    ],
+    "explanation": "Marta Vieira da Silva (Dois Riachos, 19 de fevereiro de 1986) é uma futebolista brasileira que atua como ponta-esquerda ou meio-campista. Atualmente, joga pelo Orlando Pride, dos Estados Unidos (EUA).\nJá foi escolhida como melhor futebolist...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Marta_(futebolista)",
+    "wiki_extract": "Marta Vieira da Silva (Dois Riachos, 19 de fevereiro de 1986) é uma futebolista brasileira que atua como ponta-esquerda ou meio-campista. Atualmente, joga pelo Orlando Pride, dos Estados Unidos (EUA).\nJá foi escolhida como melhor futebolista do mundo por seis vezes, sendo cinco de forma consecutiva, um recorde não apenas entre mulheres, mas também entre homens. Foi considerada pela Revista Época como um dos 100 brasileiros mais influentes do ano de 2009.\nDesde 2015, é a maior artilheira da história da Seleção Brasileira (contando a masculina e a feminina), com 116 gols. Já vestiu a camisa canarinha mais de 200 vezes. Foi três vezes medalhista de prata em Jogos Olímpicos (Atenas, 2004; Pequim, 2008; Paris, 2024), bicampeã dos Jogos Pan-Americanos (2003 e 2007) e vice-campeã da Copa do Mundo (2007). A Rainha, como é conhecida, conquistou quatro vezes o título da Copa América (2003, 2010, 2018 e 2025).\nNo duelo entre Itália e Brasil, pela fase de grupos da Copa do Mundo de 2019, Marta marcou seu 17º gol, consagrando-se como a maior artilheira da Copa do Mundo de Futebol Feminino. Além disso, é a primeira pessoa a marcar em cinco edições diferentes do torneio (considerando homens e mulheres). Foi eleita a melhor jogadora de futebol da história pela Federação Internacional de História e Estatísticas do Futebol (IFFHS).\n\n"
+  },
+  {
+    "id": "auto-prudente-de-morais",
+    "origin": "wikipedia_br",
+    "category": "Políticos do Brasil",
+    "subcategory": "República Velha",
+    "difficulty": 2,
+    "question_pt": "Antes de chegar ao Executivo federal, foi vereador e presidente da Câmara Municipal de Piracicaba, deputado provincial, deputado geral, dirigente republicano paulista, governador de São Paulo, senador, presidente da Assembleia Nacional Constituinte de 1890–1891 e presidente do Senado Federal. Formado pela Faculdade de Direito de São Paulo em 1863, Prudente pertenceu à geração de bacharéis paulistas que vinculou advocacia, imprensa, municipalismo, abolicionismo gradual, federalismo e propaganda republicana. Sua carreira começou em Piracicaba, cidade à qual permaneceu ligado por atividade profissional, propriedade, vida familiar e memória política, e ganhou dimensão provincial depois da fundação do Partido Republicano Paulista (PRP) e da reorganização do republicanismo em São Paulo. Prudente José de Morais Barros (Mairinque, 4 de outubro de 1841 – Piracicaba, 3 de dezembro de 1902) foi um advogado e político brasileiro, terceiro presidente do Brasil e primeiro civil a ocupar a Presidência da República pelo voto direto. (*) Identifique este político paulista que foi o primeiro presidente civil do Brasil.",
+    "formatted_answer_pt": "<b><u>Prudente de Morais</u></b>",
+    "answer_canonical_pt": "Prudente de Morais",
+    "accept_aliases": [
+      "Prudente de Morais",
+      "Prudente José de Moraes Barros",
+      "Prudente José de Morais e Barros",
+      "Prudente José de Morais Barros",
+      "Prudente de Moraes"
+    ],
+    "prompt_aliases": [
+      "este político paulista"
+    ],
+    "explanation": "Prudente José de Morais Barros (Mairinque, 4 de outubro de 1841 – Piracicaba, 3 de dezembro de 1902) foi um advogado e político brasileiro, terceiro presidente do Brasil e primeiro civil a ocupar a Presidência da República pelo voto direto....",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Prudente_de_Morais",
+    "wiki_extract": "Prudente José de Morais Barros (Mairinque, 4 de outubro de 1841 – Piracicaba, 3 de dezembro de 1902) foi um advogado e político brasileiro, terceiro presidente do Brasil e primeiro civil a ocupar a Presidência da República pelo voto direto. Antes de chegar ao Executivo federal, foi vereador e presidente da Câmara Municipal de Piracicaba, deputado provincial, deputado geral, dirigente republicano paulista, governador de São Paulo, senador, presidente da Assembleia Nacional Constituinte de 1890–1891 e presidente do Senado Federal.\nFormado pela Faculdade de Direito de São Paulo em 1863, Prudente pertenceu à geração de bacharéis paulistas que vinculou advocacia, imprensa, municipalismo, abolicionismo gradual, federalismo e propaganda republicana. Sua carreira começou em Piracicaba, cidade à qual permaneceu ligado por atividade profissional, propriedade, vida familiar e memória política, e ganhou dimensão provincial depois da fundação do Partido Republicano Paulista (PRP) e da reorganização do republicanismo em São Paulo.\nNa República, Prudente converteu-se em uma das principais figuras civis do regime nascente. Nomeado governador de São Paulo após a Proclamação da República, elegeu-se senador e presidiu a Constituinte que elaborou a Constituição brasileira de 1891, a primeira constituição republicana do país. Em 1891, foi candidato civil à Presidência na eleição indireta vencida pelo marechal Deodoro da Fonseca; em 1894, venceu a primeira eleição presidencial direta do Brasil, apoiado por forças civis, republicanos paulistas e setores interessados na normalização constitucional após os governos militares de Deodoro e Floriano Peixoto.\nSeu governo, entre 1894 e 1898, enfrentou a herança da Revolução Federalista, tensões entre civis e militares, crise fiscal, queda das receitas externas, pressões de credores internacionais, disputas diplomáticas e a Guerra de Canudos. A Presidência foi marcada pela tentativa de recompor a autoridade civil, pela negociação do funding loan de 1898, por controvérsias sobre repressão política e pelo atentado de 5 de novembro de 1897, no qual o ministro da Guerra, marechal Carlos Machado Bittencourt, foi assassinado ao defender o presidente.\nMorreu em Piracicaba em 1902, quatro anos depois de deixar o poder, e passou a ser lembrado como símbolo da passagem entre a fase militar da República e a hegemonia civil paulista que se consolidaria com Campos Sales e o arranjo político conhecido como política dos governadores. Sua memória foi preservada em acervos como o Museu Prudente de Moraes, a Biblioteca Brasiliana Guita e José Mindlin, o Arquivo Público do Estado de São Paulo, a Biblioteca Nacional, a Biblioteca da Presidência da República e o Senado Federal.\n\n"
+  },
+  {
+    "id": "auto-jo-o-goulart",
+    "origin": "wikipedia_br",
+    "category": "Políticos do Brasil",
+    "subcategory": "República Populista",
+    "difficulty": 2,
+    "question_pt": "Anteriormente, foi o 14.º vice-presidente do Brasil, de 31 de janeiro de 1956 a 25 de agosto de 1961, sob os presidentes Juscelino Kubitschek e Jânio Quadros. Notavelmente, nas eleições de 1955, Jango obteve mais votos para vice-presidente do que o próprio JK para presidente, e foi o primeiro político brasileiro a ser reeleito para um segundo mandato consecutivo no mesmo cargo executivo federal (vice-presidência). Herdeiro político de Getúlio Vargas, Jango é considerado um dos principais expoentes do trabalhismo no Brasil. João Belchior Marques Goulart (São Borja, 1 de março de 1919 – Mercedes, 6 de dezembro de 1976), conhecido popularmente como Jango, foi um advogado, agropecuarista e político brasileiro, que serviu como o 24.º presidente do Brasil, de 7 de setembro de 1961 a 2 de abril de 1964, quando foi deposto por um golpe militar. (*) Identifique este presidente gaúcho apelidado de Jango deposto pelo golpe militar de 1964.",
+    "formatted_answer_pt": "<b><u>João Goulart</u></b>",
+    "answer_canonical_pt": "João Goulart",
+    "accept_aliases": [
+      "João Goulart",
+      "Jango",
+      "João Belchior Marques Goulart",
+      "Jango Goulart"
+    ],
+    "prompt_aliases": [
+      "este presidente gaúcho"
+    ],
+    "explanation": "João Belchior Marques Goulart (São Borja, 1 de março de 1919 – Mercedes, 6 de dezembro de 1976), conhecido popularmente como Jango, foi um advogado, agropecuarista e político brasileiro, que serviu como o 24.º presidente do Brasil, de 7 de ...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Jo%C3%A3o_Goulart",
+    "wiki_extract": "João Belchior Marques Goulart (São Borja, 1 de março de 1919 – Mercedes, 6 de dezembro de 1976), conhecido popularmente como Jango, foi um advogado, agropecuarista e político brasileiro, que serviu como o 24.º presidente do Brasil, de 7 de setembro de 1961 a 2 de abril de 1964, quando foi deposto por um golpe militar. Anteriormente, foi o 14.º vice-presidente do Brasil, de 31 de janeiro de 1956 a 25 de agosto de 1961, sob os presidentes Juscelino Kubitschek e Jânio Quadros. Notavelmente, nas eleições de 1955, Jango obteve mais votos para vice-presidente do que o próprio JK para presidente, e foi o primeiro político brasileiro a ser reeleito para um segundo mandato consecutivo no mesmo cargo executivo federal (vice-presidência).\nHerdeiro político de Getúlio Vargas, Jango é considerado um dos principais expoentes do trabalhismo no Brasil. Sua presidência foi marcada por intensa polarização política e social, com propostas de reformas de base que visavam profundas transformações estruturais no país. Sua deposição instaurou uma ditadura militar que durou 21 anos. Jango faleceu no exílio na Argentina.\n\n"
+  },
+  {
+    "id": "auto-leonel-brizola",
+    "origin": "wikipedia_br",
+    "category": "Políticos do Brasil",
+    "subcategory": "Trabalhismo",
+    "difficulty": 2,
+    "question_pt": "Considerado um líder trabalhista, foi governador do Rio de Janeiro e do Rio Grande do Sul, sendo o único político eleito pelo povo para governar dois estados diferentes em toda a história do Brasil. Brizola nasceu em Carazinho, no distrito rural de São Bento, no Noroeste do Rio Grande do Sul. Viveu seus primeiros anos no interior do estado, mudando-se para Porto Alegre em 1936. Leonel de Moura Brizola (nascido Itagiba de Moura Brizola; Carazinho, 22 de janeiro de 1922 – Rio de Janeiro, 21 de junho de 2004) foi um engenheiro civil e político brasileiro, filiado ao Partido Democrático Trabalhista (PDT), do qual foi fundador e presidente. (*) Identifique este líder político gaúcho e fluminense da Campanha da Legalidade e dos CIEPs.",
+    "formatted_answer_pt": "<b><u>Leonel Brizola</u></b>",
+    "answer_canonical_pt": "Leonel Brizola",
+    "accept_aliases": [
+      "Leonel Brizola",
+      "Brizola",
+      "Leonel de Moura Brizola",
+      "Brizolismo",
+      "Leonel Brizola Neto"
+    ],
+    "prompt_aliases": [
+      "este líder político"
+    ],
+    "explanation": "Leonel de Moura Brizola (nascido Itagiba de Moura Brizola; Carazinho, 22 de janeiro de 1922 – Rio de Janeiro, 21 de junho de 2004) foi um engenheiro civil e político brasileiro, filiado ao Partido Democrático Trabalhista (PDT), do qual foi ...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Leonel_Brizola",
+    "wiki_extract": "Leonel de Moura Brizola (nascido Itagiba de Moura Brizola; Carazinho, 22 de janeiro de 1922 – Rio de Janeiro, 21 de junho de 2004) foi um engenheiro civil e político brasileiro, filiado ao Partido Democrático Trabalhista (PDT), do qual foi fundador e presidente. Considerado um líder trabalhista, foi governador do Rio de Janeiro e do Rio Grande do Sul, sendo o único político eleito pelo povo para governar dois estados diferentes em toda a história do Brasil.\nBrizola nasceu em Carazinho, no distrito rural de São Bento, no Noroeste do Rio Grande do Sul. Viveu seus primeiros anos no interior do estado, mudando-se para Porto Alegre em 1936. Lá, deu prosseguimento aos seus estudos e trabalhou como engraxate, graxeiro, ascensorista e servidor público. Ingressou no curso de engenharia civil na Universidade Federal do Rio Grande do Sul em 1945, graduando-se em 1949. Enquanto ainda estudava na UFRGS, ingressou na política, ficando responsável por organizar a Ala Moça do Partido Trabalhista Brasileiro. Em um evento político, conheceu Neusa Goulart, irmã do também político João Goulart, com a qual se casou em 1950 e teve três filhos.\nEm 1947, Brizola foi eleito deputado estadual pelo PTB. Tornou-se um político em ascensão no estado: em 1954, foi eleito deputado federal, com uma votação recorde; dois anos depois, elegeu-se prefeito de Porto Alegre; e, em 1958, governador do Rio Grande do Sul. Como governador, tornou-se proeminente por suas políticas sociais e por promover a Campanha da Legalidade, em defesa da democracia e da posse de Goulart como presidente. Em 1962, transferiu seu domicílio eleitoral para a Guanabara, estado pelo qual elegeu-se deputado federal. Durante o governo de Goulart, este e Brizola mantiveram uma relação tumultuada, mas uniram-se novamente antes do golpe militar de 1964. Depois que suas propostas de resistência não foram bem-sucedidas, Brizola exilou-se no Uruguai.\nVoltou ao Brasil em 1979, depois de um exílio de quinze anos no Uruguai, nos Estados Unidos e em Portugal. No mesmo ano, fundou e presidiu o Partido Democrático Trabalhista, um partido social-democrata e populista. Em 1982, foi eleito governador do Rio de Janeiro, iniciando um programa de construção dos Centros Integrados de Educação Pública. Na eleição presidencial de 1989, ficou em terceiro lugar, com uma diferença inferior a 1% em relação ao segundo colocado. Um ano depois, voltou a governar o Rio de Janeiro, sendo eleito no primeiro turno. A partir daí, não logrou êxito em nenhuma das quatro eleições que disputou, de vice-presidente de Lula da Silva em 1998 a senador pelo Rio de Janeiro em 2002. Faleceu, em 2004, vítima de um infarto agudo do miocárdio."
+  },
+  {
+    "id": "auto-en-as-carneiro",
+    "origin": "wikipedia_br",
+    "category": "Políticos do Brasil",
+    "subcategory": "Nova República",
+    "difficulty": 2,
+    "question_pt": "Considerado uma liderança do conservadorismo nacionalista no Brasil, fundou o extinto Partido de Reedificação da Ordem Nacional (PRONA). Foi filiado a ele de 1989, sua fundação, até 2006, quando ocorreu a fusão do PRONA com o antigo Partido Liberal (PL), surgindo o Partido da República (PR), atualmente Partido Liberal (PL), ao qual Enéas foi filiado de 2006 a 2007, ano de sua morte. Em sua juventude, Enéas se interessou pela leitura dos textos de Friedrich Engels, tornando-se num entusiasta do socialismo científico. Enéas Ferreira Carneiro (Rio Branco, 5 de novembro de 1938 – Rio de Janeiro, 6 de maio de 2007) foi um militar, professor, médico e polímata brasileiro, mais conhecido por sua atuação como cardiologista e político. (*) Identifique este cardiologista e político nacionalista famoso pelo bordão Meu nome é Enéas.",
+    "formatted_answer_pt": "<b><u>Enéas Carneiro</u></b>",
+    "answer_canonical_pt": "Enéas Carneiro",
+    "accept_aliases": [
+      "Enéas Carneiro",
+      "Enéas Ferreira Carneiro",
+      "Enéias carneiro",
+      "Eneas Carneiro",
+      "Eneias Carneiro",
+      "Enéias Carneiro",
+      "Eneas Ferreira Carneiro",
+      "Enéas Ferreira"
+    ],
+    "prompt_aliases": [
+      "este cardiologista e"
+    ],
+    "explanation": "Enéas Ferreira Carneiro (Rio Branco, 5 de novembro de 1938 – Rio de Janeiro, 6 de maio de 2007) foi um militar, professor, médico e polímata brasileiro, mais conhecido por sua atuação como cardiologista e político. Considerado uma liderança...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/En%C3%A9as_Carneiro",
+    "wiki_extract": "Enéas Ferreira Carneiro (Rio Branco, 5 de novembro de 1938 – Rio de Janeiro, 6 de maio de 2007) foi um militar, professor, médico e polímata brasileiro, mais conhecido por sua atuação como cardiologista e político. Considerado uma liderança do conservadorismo nacionalista no Brasil, fundou o extinto Partido de Reedificação da Ordem Nacional (PRONA). Foi filiado a ele de 1989, sua fundação, até 2006, quando ocorreu a fusão do PRONA com o antigo Partido Liberal (PL), surgindo o Partido da República (PR), atualmente Partido Liberal (PL), ao qual Enéas foi filiado de 2006 a 2007, ano de sua morte.\nEm sua juventude, Enéas se interessou pela leitura dos textos de Friedrich Engels, tornando-se num entusiasta do socialismo científico. Segundo suas próprias palavras, ele sonhava com a União Soviética que emergia na Guerra Fria, mas deixou de ser socialista porque \"quando o Estado toma conta dos meios de produção, a competição some, e satisfeitas as necessidades básicas, como habitação, a sociedade entra em letargia e não se desenvolve\".\nApós se candidatar três vezes à Presidência da República (1989, 1994 e 1998) e uma vez à prefeitura de São Paulo (2000), em 2002 foi eleito deputado federal pelo estado de São Paulo, recebendo votação recorde: mais de 1,57 milhões de votos, a segunda maior votação já registrada no país. Em 2006, com mais de 386 mil votos, reelegeu-se. Tornou-se comentado em todo o Brasil a partir de 1989, quando de sua primeira candidatura, por seu bordão \"Meu nome é Enéas!\", usado ao término de seus pronunciamentos no horário eleitoral gratuito.\nEra conhecido por seu nacionalismo, conservadorismo moral, defesa de estatais e proposta de um sistema econômico protecionista-intervencionista, nem neoliberal nem socialista. É rotulado, por vezes, como de extrema-direita, apesar de que Enéas rejeitava a classificação esquerda-direita, por serem \"as duas faces da mesma moeda\", definindo-se apenas como nacionalista, posicionamento que é visto como parte da chamada \"direita envergonhada\". Ele também foi associado ao integralismo, devido às supostas semelhanças entre os eleitores do PRONA e os membros da Ação Integralista Brasileira.\n\n"
+  },
+  {
+    "id": "auto-bento-gon-alves-da-silva",
+    "origin": "wikipedia_br",
+    "category": "Políticos do Brasil",
+    "subcategory": "Guerra dos Farrapos",
+    "difficulty": 2,
+    "question_pt": "Ele foi o primeiro presidente da República Rio-Grandense e uma das figuras mais importantes da história do Rio Grande do Sul. Filho do alferes português Joaquim Gonçalves da Silva e de Perpétua da Costa Meireles, neta de Jerônimo de Ornelas Meneses e Vasconcelos, rico fazendeiro rio-grandense, nasceu na Fazenda da Piedade, pertencente à família de sua mãe. esta entidade (Triunfo, 23 de setembro de 1788 – Pedras Brancas, 18 de julho de 1847) foi um militar brasileiro, um dos líderes da Revolução Farroupilha, que buscava a independência da província do Rio Grande do Sul do Império do Brasil. (*) Identifique este líder militar e presidente da efêmera República Rio-Grandense.",
+    "formatted_answer_pt": "<b><u>Bento Gonçalves da Silva</u></b>",
+    "answer_canonical_pt": "Bento Gonçalves da Silva",
+    "accept_aliases": [
+      "Bento Gonçalves da Silva"
+    ],
+    "prompt_aliases": [
+      "este líder militar"
+    ],
+    "explanation": "Bento Gonçalves da Silva (Triunfo, 23 de setembro de 1788 – Pedras Brancas, 18 de julho de 1847) foi um militar brasileiro, um dos líderes da Revolução Farroupilha, que buscava a independência da província do Rio Grande do Sul do Império do...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Bento_Gon%C3%A7alves_da_Silva",
+    "wiki_extract": "Bento Gonçalves da Silva (Triunfo, 23 de setembro de 1788 – Pedras Brancas, 18 de julho de 1847) foi um militar brasileiro, um dos líderes da Revolução Farroupilha, que buscava a independência da província do Rio Grande do Sul do Império do Brasil. Ele foi o primeiro presidente da República Rio-Grandense e uma das figuras mais importantes da história do Rio Grande do Sul.\nFilho do alferes português Joaquim Gonçalves da Silva e de Perpétua da Costa Meireles, neta de Jerônimo de Ornelas Meneses e Vasconcelos, rico fazendeiro rio-grandense, nasceu na Fazenda da Piedade, pertencente à família de sua mãe."
+  },
+  {
+    "id": "auto-canal-do-panam-",
+    "origin": "qbreader",
+    "category": "Curiosidades do Mundo",
+    "subcategory": "Engenharia e Geografia",
+    "difficulty": 2,
+    "question_pt": "A passagem permite que os navios cruzem entre os dois oceanos sem contornar a América do Sul pela passagem de Drake, pelo estreito de Magalhães ou pelo estreito de Beagle, encurtando as viagens marítimas. Um sistema de eclusas eleva as embarcações do nível do mar até o lago Gatún, cerca de 26 metros acima dele. Os navios atravessam o lago e o trecho escavado na cordilheira antes de descerem ao outro oceano. O Canal do Panamá é uma via navegável artificial de cerca de 80 quilômetros que atravessa o istmo do Panamá e liga o mar do Caribe, no oceano Atlântico, ao oceano Pacífico. (*) Identifique este canal hidroviário artificial que conecta os oceanos Atlântico e Pacífico.",
+    "formatted_answer_pt": "<b><u>Canal do Panamá</u></b>",
+    "answer_canonical_pt": "Canal do Panamá",
+    "accept_aliases": [
+      "Canal do Panamá",
+      "Canal de Panamá",
+      "Canal do panama"
+    ],
+    "prompt_aliases": [
+      "este canal hidroviário"
+    ],
+    "explanation": "O Canal do Panamá é uma via navegável artificial de cerca de 80 quilômetros que atravessa o istmo do Panamá e liga o mar do Caribe, no oceano Atlântico, ao oceano Pacífico. A passagem permite que os navios cruzem entre os dois oceanos sem c...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Canal_do_Panam%C3%A1",
+    "wiki_extract": "O Canal do Panamá é uma via navegável artificial de cerca de 80 quilômetros que atravessa o istmo do Panamá e liga o mar do Caribe, no oceano Atlântico, ao oceano Pacífico. A passagem permite que os navios cruzem entre os dois oceanos sem contornar a América do Sul pela passagem de Drake, pelo estreito de Magalhães ou pelo estreito de Beagle, encurtando as viagens marítimas.\nUm sistema de eclusas eleva as embarcações do nível do mar até o lago Gatún, cerca de 26 metros acima dele. Os navios atravessam o lago e o trecho escavado na cordilheira antes de descerem ao outro oceano. A água doce que alimenta as eclusas vem dos lagos da bacia hidrográfica do canal, o que torna o funcionamento da passagem dependente das chuvas e das reservas de água.\nA construção começou sob direção francesa em 1881 e foi interrompida em 1889 por dificuldades de engenharia, falta de financiamento e mortes causadas por doenças tropicais. Os Estados Unidos assumiram as obras em 1904 e inauguraram o canal em 15 de agosto de 1914. O controle estadunidense sobre a passagem e a Zona do Canal foi gradualmente encerrado pelos Tratados Torrijos-Carter, de 1977. Desde 31 de dezembro de 1999, o canal está sob administração panamenha, exercida pela Autoridade do Canal do Panamá.\nA ampliação, construída entre 2007 e 2016, acrescentou uma terceira via de eclusas, maior que as originais, para receber navios neopanamax. A operação comercial dessa via começou em 26 de junho de 2016. O aumento da capacidade também trouxe novas exigências de gestão da água, e as secas podem limitar o calado das embarcações e o número de travessias."
+  },
+  {
+    "id": "auto-grande-barreira-de-coral",
+    "origin": "qbreader",
+    "category": "Curiosidades do Mundo",
+    "subcategory": "Oceanografia",
+    "difficulty": 2,
+    "question_pt": "A Grande Barreira de Coral pode ser vista do espaço e é a maior estrutura do mundo feita unicamente por organismos vivos. As estruturas dos recifes são compostas por milhares de milhões de minúsculos organismos, conhecidos como pólipos de coral. Ela suporta uma grande biodiversidade e foi eleita um dos patrimônios mundiais da Humanidade em 1981. A esta entidade Australiana é uma imensa faixa de corais composta por cerca de 2 900 recifes, 600 ilhas continentais e 300 atóis de coral, situada entre as praias do nordeste da Austrália e Papua-Nova Guiné, que possui 2 200 quilômetros de comprimento, com largura variando de 30 km a 740 km. (*) Identifique esta colossal estrutura viva marinha na costa nordeste da Austrália.",
+    "formatted_answer_pt": "<b><u>Grande Barreira de Coral</u></b>",
+    "answer_canonical_pt": "Grande Barreira de Coral",
+    "accept_aliases": [
+      "Grande Barreira de Coral",
+      "Grande Barreira de Recifes",
+      "Grande Barreira de Corais",
+      "Grande Barreira Coralina",
+      "Great Barrier Reef",
+      "Grande Barreira de Corais da Austrália"
+    ],
+    "prompt_aliases": [
+      "esta colossal estrutura"
+    ],
+    "explanation": "A Grande Barreira de Coral Australiana é uma imensa faixa de corais composta por cerca de 2 900 recifes, 600 ilhas continentais e 300 atóis de coral, situada entre as praias do nordeste da Austrália e Papua-Nova Guiné, que possui 2 200 quil...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Grande_Barreira_de_Coral",
+    "wiki_extract": "A Grande Barreira de Coral Australiana é uma imensa faixa de corais composta por cerca de 2 900 recifes, 600 ilhas continentais e 300 atóis de coral, situada entre as praias do nordeste da Austrália e Papua-Nova Guiné, que possui 2 200 quilômetros de comprimento, com largura variando de 30 km a 740 km.\nA Grande Barreira de Coral pode ser vista do espaço e é a maior estrutura do mundo feita unicamente por organismos vivos. As estruturas dos recifes são compostas por milhares de milhões de minúsculos organismos, conhecidos como pólipos de coral. Ela suporta uma grande biodiversidade e foi eleita um dos patrimônios mundiais da Humanidade em 1981. Ela também foi eleita pelo canal de TV americano CNN como uma das Sete maravilhas naturais do mundo, e uma das finalistas na lista elaborada pela Fundação New7Wonders. O Conselho Nacional de Queensland também nomeou como um dos símbolos estaduais do estado australiano de Queensland. Uma grande parte do recife é protegido pelo Parque Marinho de Grande Barreira de Corais, que ajuda a limitar os impactos do uso humano, como pesca e turismo. Outras pressões ambientais sobre o recife envolvem o escoamento superficial, as alterações climáticas acompanhadas do embranquecimento maciço dos corais e surtos na população de estrela-do-mar coroa-de-espinhos, que se alimenta dos corais.\nA Grande Barreira de Coral tem sido conhecida pelo seu uso pelos aborígenes locais e pelos nativos da Ilhas do Estreito de Torres, e é um importante componente para a cultura local. A Grande Barreira é um importante destino turístico especialmente nas regiões das ilhas de Whitsunday e da cidade de Cairns. O turismo é uma importante atividade para a região, movimentando até 8 bilhões de dólares por ano.\nA saúde da Grande Barreira, que abriga 400 tipos de coral, 1 500 espécies de peixes e 4 000 variedades de moluscos, começou a se deteriorar na década de 1990 pelo duplo impacto do aquecimento de água do mar e o aumento de sua acidez pela maior presença de dióxido de carbono na atmosfera."
+  },
+  {
+    "id": "auto-canal-de-suez",
+    "origin": "qbreader",
+    "category": "Curiosidades do Mundo",
+    "subcategory": "Engenharia",
+    "difficulty": 2,
+    "question_pt": "Separa a África da Ásia e a península do Sinai do restante do território egípcio. Com 193,3 km de extensão, permite a navegação entre a Europa e a Ásia sem contornar a África. Em 1858, o diplomata francês Ferdinand de Lesseps fundou a Companhia do Canal de Suez para construir a passagem. O esta entidade (قناة السويس, Qanāt as-Suwais) é uma via navegável artificial ao nível do mar, no Egito, que liga o mar Mediterrâneo ao mar Vermelho através do istmo de Suez. (*) Identifique este canal artificial no Egito que conecta o mar Mediterrâneo ao mar Vermelho.",
+    "formatted_answer_pt": "<b><u>Canal de Suez</u></b>",
+    "answer_canonical_pt": "Canal de Suez",
+    "accept_aliases": [
+      "Canal de Suez",
+      "Canal do Suez",
+      "Zona do Canal de Suez",
+      "Canal Faraónico",
+      "Canal de Ptolemeu",
+      "Canal de Ptolomeu",
+      "Canal de Trajano",
+      "Canal de Heliópolis"
+    ],
+    "prompt_aliases": [
+      "este canal artificial"
+    ],
+    "explanation": "O canal de Suez (قناة السويس, Qanāt as-Suwais) é uma via navegável artificial ao nível do mar, no Egito, que liga o mar Mediterrâneo ao mar Vermelho através do istmo de Suez. Separa a África da Ásia e a península do Sinai do restante do ter...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Canal_de_Suez",
+    "wiki_extract": "O canal de Suez (قناة السويس, Qanāt as-Suwais) é uma via navegável artificial ao nível do mar, no Egito, que liga o mar Mediterrâneo ao mar Vermelho através do istmo de Suez. Separa a África da Ásia e a península do Sinai do restante do território egípcio. Com 193,3 km de extensão, permite a navegação entre a Europa e a Ásia sem contornar a África.\nEm 1858, o diplomata francês Ferdinand de Lesseps fundou a Companhia do Canal de Suez para construir a passagem. As obras duraram de 1859 a 1869, e a inauguração ocorreu em 17 de novembro de 1869. O canal liga o Atlântico Norte ao norte do oceano Índico pelo Mediterrâneo e pelo mar Vermelho, dispensando a passagem pelo Atlântico Sul e pelo sul do Índico. Estende-se de Porto Saíde, ao norte, a Porto Tewfik, na cidade de Suez, ao sul.\nO traçado original tinha uma única faixa de navegação, com locais de passagem no desvio de Ballah e no Grande Lago Amargo. O projeto de Alois Negrelli dispensava eclusas, permitindo a passagem livre da água do mar. Ao norte dos lagos Amargos, a corrente costuma seguir para o norte no inverno e para o sul no verão. Ao sul dos lagos, muda com a maré em Suez.\nO canal pertencia ao governo egípcio, mas a empresa concessionária era controlada por acionistas europeus, sobretudo britânicos e franceses. Em julho de 1956, o presidente Gamal Abdel Nasser nacionalizou a companhia, decisão que levou à Crise de Suez, em outubro e novembro daquele ano. A administração e a manutenção cabem à empresa estatal Autoridade do Canal de Suez. A Convenção de Constantinopla estabelece a liberdade de passagem de navios mercantes e de guerra, em tempos de paz ou de guerra e sem distinção de bandeira. O atalho também é um ponto de estrangulamento naval, de interesse para as marinhas do Egito e de Israel, países com costas e bases no Mediterrâneo e no mar Vermelho. Fechado pelo Egito no início da Guerra dos Seis Dias, em 5 de junho de 1967, permaneceu sem navegação por oito anos, até 5 de junho de 1975.\nEm 2014, o governo egípcio começou a construir uma via paralela de 35 km e a alargar e aprofundar outros 37 km nas passagens de Ballah e dos lagos Amargos, para reduzir o tempo de travessia. O projeto previa elevar a capacidade de 49 para 97 navios por dia e custou cerca de US$ 8,5 bilhões. O financiamento veio de certificados de investimento remunerados, oferecidos exclusivamente a pessoas e entidades egípcias. Em 2016, a autoridade do canal abriu um novo canal lateral na extremidade norte da ampliação oriental. Ele permite a entrada e a saída de navios do terminal de contêineres oriental sem interromper a passagem dos comboios, que antes impedia essas manobras.\n\n"
+  },
+  {
+    "id": "auto-coliseu",
+    "origin": "qbreader",
+    "category": "Curiosidades do Mundo",
+    "subcategory": "História e Arquitetura",
+    "difficulty": 2,
+    "question_pt": "Construído com tijolos revestidos de argamassa e areia, e originalmente cobertos com travertino é o maior anfiteatro já construído e está situado a leste do Fórum Romano. A construção começou sob o governo do imperador Vespasiano em 72 d.C. e foi concluída em 80 d.C., sob o regime do seu sucessor e herdeiro, Tito. esta entidade (em italiano:  Colosseo), também conhecido como Anfiteatro Flaviano (em latim: Amphitheatrum Flavium; em italiano:  Anfiteatro Flavio), é um anfiteatro oval localizado no centro da cidade de Roma, capital da Itália. (*) Identifique este monumental anfiteatro flaviano erguido em Roma para lutas de gladiadores.",
+    "formatted_answer_pt": "<b><u>Coliseu</u></b>",
+    "answer_canonical_pt": "Coliseu",
+    "accept_aliases": [
+      "Coliseu",
+      "Coliseu romano",
+      "Coliseu Romano",
+      "Anfiteatro Flávio",
+      "Anfiteatro de Flávio",
+      "Anfiteatro Flaviano",
+      "Coliseu de Roma",
+      "Anfiteatro flaviano"
+    ],
+    "prompt_aliases": [
+      "este monumental anfiteatro"
+    ],
+    "explanation": "Coliseu (em italiano:  Colosseo), também conhecido como Anfiteatro Flaviano (em latim: Amphitheatrum Flavium; em italiano:  Anfiteatro Flavio), é um anfiteatro oval localizado no centro da cidade de Roma, capital da Itália. Construído com t...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Coliseu",
+    "wiki_extract": "Coliseu (em italiano:  Colosseo), também conhecido como Anfiteatro Flaviano (em latim: Amphitheatrum Flavium; em italiano:  Anfiteatro Flavio), é um anfiteatro oval localizado no centro da cidade de Roma, capital da Itália. Construído com tijolos revestidos de argamassa e areia, e originalmente cobertos com travertino é o maior anfiteatro já construído e está situado a leste do Fórum Romano.\nA construção começou sob o governo do imperador Vespasiano em 72 d.C. e foi concluída em 80 d.C., sob o regime do seu sucessor e herdeiro, Tito. Outras modificações foram feitas durante o reinado de Domiciano (81-96). Estes três imperadores são conhecidos como a dinastia flaviana e o anfiteatro foi nomeado em latim desta maneira por sua associação com o nome da família (Flavius).\nO Coliseu poderia abrigar, estima-se, entre 50 mil e 80 mil espectadores, com uma audiência média de cerca de 65 mil pessoas. O edifício era usado para combates de gladiadores e espetáculos públicos, tais como simulações de batalhas marítimas (em um curto período de tempo como o hipogeu era inundado através de mecanismos de apoio), caças de animais selvagens, execuções, encenações de batalhas famosas e dramas baseados na mitologia clássica. O prédio deixou de ser usado para entretenimento na era medieval. Mais tarde foi reutilizado para vários fins, tais como habitação, oficinas, sede de uma ordem religiosa, uma fortaleza, uma pedreira e um santuário cristão. Em 2007, o monumento foi eleito informalmente como uma das sete maravilhas do mundo moderno.\nEmbora parcialmente arruinado por causa de danos causados ​​por terremotos e saques, o Coliseu é ainda um símbolo da Roma Imperial. É uma das atrações turísticas mais populares da capital italiana e tem também conexões com a Igreja Católica Romana, pois, a cada Sexta-feira Santa, o Papa guia a Via-crúcis que começa na área em torno do Coliseu. O Coliseu também é retratado na versão italiana da moeda de 5 cêntimos de euro.\n\n"
+  },
+  {
+    "id": "auto-chich-n-itz-",
+    "origin": "qbreader",
+    "category": "Curiosidades do Mundo",
+    "subcategory": "Arqueologia Pré-Colombiana",
+    "difficulty": 2,
+    "question_pt": "O sítio arqueológico está localizado no município de Tinum, no estado de Yucatán, México. Chichén Itzá era um polo urbano importante dos maias na planície norte no início (600-900) e no final (cerca 800-900) do período clássico e também no início do período pós-clássico (cerca de 900-1200). O local exibe vários estilos arquitetônicos, reminiscentes dos estilos vistos no México central. Chichén Itzá (do iucateque: Chi'ch'èen Ìitsha)  foi uma grande cidade pré-colombiana construída pela civilização maia no final do período clássico. (*) Identifique esta cidade-estado maia na península de Iucatã famosa pela pirâmide de Kukulcán.",
+    "formatted_answer_pt": "<b><u>Chichén Itzá</u></b>",
+    "answer_canonical_pt": "Chichén Itzá",
+    "accept_aliases": [
+      "Chichén Itzá",
+      "Chichen itza",
+      "Cidade Pré-Hispânica de Chichén-Itzá",
+      "Chichen Itza",
+      "Pirâmide de Chichén Itzá",
+      "Chichen iza",
+      "Chicheniza",
+      "Chichén-Itzá"
+    ],
+    "prompt_aliases": [
+      "esta cidade-estado maia"
+    ],
+    "explanation": "Chichén Itzá (do iucateque: Chi'ch'èen Ìitsha)  foi uma grande cidade pré-colombiana construída pela civilização maia no final do período clássico. O sítio arqueológico está localizado no município de Tinum, no estado de Yucatán, México.\nCh...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Chich%C3%A9n_Itz%C3%A1",
+    "wiki_extract": "Chichén Itzá (do iucateque: Chi'ch'èen Ìitsha)  foi uma grande cidade pré-colombiana construída pela civilização maia no final do período clássico. O sítio arqueológico está localizado no município de Tinum, no estado de Yucatán, México.\nChichén Itzá era um polo urbano importante dos maias na planície norte no início (600-900) e no final (cerca 800-900) do período clássico e também no início do período pós-clássico (cerca de 900-1200). O local exibe vários estilos arquitetônicos, reminiscentes dos estilos vistos no México central. Acreditava-se que a presença de estilos desta região era sinal da migração direta ou mesmo da conquista do México central, mas a maioria de interpretações contemporâneas veem a presença destes estilos não maias mais como o resultado da difusão cultural.\nA cidade era um dos maiores centros urbanos dos maias e provavelmente foi uma das grandes cidades míticas, ou Tollans, referidas na literatura mesoamericana. Chichén Itzá pode ter tido a população mais diversa no mundo maia, um fator que poderia ter contribuído à variedade de estilos arquitetônicos encontrados no local.\nAs ruínas de Chichén Itzá são de propriedade federal e a administração do local é mantida pelo Instituto Nacional de Antropologia e História do México. A terra sob os monumentos era de propriedade privada até 29 de março de 2010, quando foi comprada pelo estado de Yucatán. Chichén Itzá é um dos sítios arqueológicos mais visitados no México; cerca de 1,4 milhões de turistas visitam as ruínas a cada ano."
+  },
+  {
+    "id": "auto-machu-picchu",
+    "origin": "qbreader",
+    "category": "Curiosidades do Mundo",
+    "subcategory": "Civilização Inca",
+    "difficulty": 2,
+    "question_pt": "Está situado no distrito de Machupicchu, na província de Urubamba, cerca de 80 quilômetros a noroeste de Cusco, acima do Vale Sagrado e ao longo do rio Urubamba, que forma um cânion profundo com um clima subtropical de montanha. Frequentemente chamada de \"Cidade Perdida dos Incas\", Machu Picchu é um dos símbolos mais icônicos da civilização inca e um importante sítio arqueológico nas Américas. Estima-se que tenha sido construída por volta de 1450, e acredita-se que tenha servido como propriedade do imperador inca Pachacuti, embora não existam registros escritos contemporâneos para confirmar isso. esta entidade  é uma cidadela inca do século XV localizada na Cordilheira Oriental do sul do Peru, em uma crista montanhosa a 2.430 metros de altura. (*) Identifique esta cidadela inca do século XV encravada no alto da Cordilheira dos Andes.",
+    "formatted_answer_pt": "<b><u>Machu Picchu</u></b>",
+    "answer_canonical_pt": "Machu Picchu",
+    "accept_aliases": [
+      "Machu Picchu",
+      "Santuário Histórico de Machu Picchu",
+      "Machu Pichu",
+      "Macchu Picchu",
+      "Parque Arqueológico de Machu Picchu",
+      "Macchu Pichu"
+    ],
+    "prompt_aliases": [
+      "esta cidadela inca"
+    ],
+    "explanation": "Machu Picchu  é uma cidadela inca do século XV localizada na Cordilheira Oriental do sul do Peru, em uma crista montanhosa a 2.430 metros de altura. Está situado no distrito de Machupicchu, na província de Urubamba, cerca de 80 quilômetros ...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Machu_Picchu",
+    "wiki_extract": "Machu Picchu  é uma cidadela inca do século XV localizada na Cordilheira Oriental do sul do Peru, em uma crista montanhosa a 2.430 metros de altura. Está situado no distrito de Machupicchu, na província de Urubamba, cerca de 80 quilômetros a noroeste de Cusco, acima do Vale Sagrado e ao longo do rio Urubamba, que forma um cânion profundo com um clima subtropical de montanha.\nFrequentemente chamada de \"Cidade Perdida dos Incas\", Machu Picchu é um dos símbolos mais icônicos da civilização inca e um importante sítio arqueológico nas Américas. Estima-se que tenha sido construída por volta de 1450, e acredita-se que tenha servido como propriedade do imperador inca Pachacuti, embora não existam registros escritos contemporâneos para confirmar isso. O sítio foi abandonado aproximadamente um século depois, provavelmente durante a conquista espanhola. A datação moderna por radiocarbono situa sua ocupação entre c. 1420 e 1530.\nMachu Picchu foi construída no estilo clássico inca, apresentando paredes de pedra seca finamente trabalhadas. Estruturas notáveis incluem o Templo do Sol, o Templo das Três Janelas e a pedra ritual Intihuatana. Embora o local fosse conhecido localmente e alcançado no início do século XX pelo explorador peruano Agustín Lizárraga, ele foi trazido à atenção internacional em 1911 pelo historiador americano Hiram Bingham III. O nome inca original do local pode ter sido Huayna Picchu, em homenagem à montanha onde parte do complexo se encontra.\nDesignado Santuário Histórico Nacional pelo Peru em 1981 e Patrimônio Mundial pela UNESCO em 1983, Machu Picchu também foi nomeado uma das Novas Sete Maravilhas do Mundo em 2007. Desde 2025  O local recebe mais de 1,5 milhão de visitantes anualmente, tornando-se o destino turístico internacional mais visitado do Peru.\n\n"
+  },
+  {
+    "id": "auto-petra",
+    "origin": "qbreader",
+    "category": "Curiosidades do Mundo",
+    "subcategory": "Arqueologia",
+    "difficulty": 2,
+    "question_pt": "A cidade é famosa por sua arquitetura esculpida em rocha e por seu sistema de canalização de água. Outro nome para Petra é Cidade Rosa, devido à cor das pedras do local. Estabelecido possivelmente já em 312 a.C. esta entidade (do grego πέτρα, esta entidade; árabe: البتراء, Al-Bitrā/Al-Batrā), originalmente conhecida pelos nabateus como Raqmu, é uma cidade histórica e arqueológica localizada no sul da Jordânia. (*) Identifique esta histórica cidade dos nabateus esculpida em rochas de arenito rosado na Jordânia.",
+    "formatted_answer_pt": "<b><u>Petra</u></b>",
+    "answer_canonical_pt": "Petra",
+    "accept_aliases": [
+      "Petra",
+      "Ruínas de Petra"
+    ],
+    "prompt_aliases": [
+      "esta histórica cidade"
+    ],
+    "explanation": "Petra (do grego πέτρα, petra; árabe: البتراء, Al-Bitrā/Al-Batrā), originalmente conhecida pelos nabateus como Raqmu, é uma cidade histórica e arqueológica localizada no sul da Jordânia. A cidade é famosa por sua arquitetura esculpida em roc...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Petra",
+    "wiki_extract": "Petra (do grego πέτρα, petra; árabe: البتراء, Al-Bitrā/Al-Batrā), originalmente conhecida pelos nabateus como Raqmu, é uma cidade histórica e arqueológica localizada no sul da Jordânia. A cidade é famosa por sua arquitetura esculpida em rocha e por seu sistema de canalização de água. Outro nome para Petra é Cidade Rosa, devido à cor das pedras do local.\nEstabelecido possivelmente já em 312 a.C. como a capital dos árabes nabateus, é um símbolo jordaniano, assim como a atração turística a mais visitada do país. Os nabateus eram árabes nômades que aproveitaram a proximidade de Petra com as rotas comerciais regionais para estabelecê-la como um importante centro comercial. Os nabateus também são conhecidos por sua grande habilidade na construção de métodos eficientes de coleta de água em desertos áridos e seu talento em esculpir estruturas em rochas sólidas.\nPetra encontra-se na encosta de Jebel al-Madhbah (identificado por alguns como bíblico Monte Hor) em uma bacia entre as montanhas que formam o flanco oriental de Arabah (Wadi Araba), o grande vale que vai do Mar Morto ao Golfo de Aqaba. O local é um Patrimônio Mundial da UNESCO desde 1985.\nO sítio arqueológico permaneceu desconhecido para o mundo ocidental até 1812, quando foi introduzido pelo explorador suíço Johann Ludwig Burckhardt. Foi descrita como \"uma cidade rosa e vermelha tão velha quanto o tempo\" em um poema de John William Burgon. A UNESCO a descreveu como \"uma das mais preciosas propriedades culturais da herança cultural do homem\". Petra foi nomeada entre uma das Novas Sete Maravilhas do Mundo em 2007 e também foi escolhido pela revista Smithsonian como um dos \"28 lugares para ver antes de morrer\".\n\n"
+  },
+  {
+    "id": "auto-penicilina",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Farmacologia",
+    "difficulty": 2,
+    "question_pt": "A maioria das penicilinas são derivadas do ácido 6-aminopenicilânico, diferenciando-se umas das outras conforme a substituição na cadeia lateral do seu grupo amino. A benzilpenicilina, ou penicilina G, foi o primeiro antibiótico amplamente utilizado na medicina; a sua descoberta foi atribuída ao médico e bacteriologista escocês Alexander Fleming em 1928, que juntamente com os cientistas Ernst Boris Chain e Howard Walter Florey  (que criaram um método para produzir em massa o medicamento) ganhou o Prêmio Nobel de Medicina em 1945. O fármaco está disponível desde 1941, sendo o primeiro antibiótico a ser utilizado com sucesso. As penicilinas são antibióticos do grupo dos betalactâmicos profusamente utilizados no tratamento de infecções causadas por bactérias sensíveis. (*) Identifique este primeiro antibiótico natural descoberto por acaso por Alexander Fleming em 1928.",
+    "formatted_answer_pt": "<b><u>Penicilina</u></b>",
+    "answer_canonical_pt": "Penicilina",
+    "accept_aliases": [
+      "Penicilina",
+      "Penicilinas",
+      "Ureidopenicilina",
+      "Carboxipenicilina"
+    ],
+    "prompt_aliases": [
+      "este primeiro antibiótico"
+    ],
+    "explanation": "As penicilinas são antibióticos do grupo dos betalactâmicos profusamente utilizados no tratamento de infecções causadas por bactérias sensíveis. A maioria das penicilinas são derivadas do ácido 6-aminopenicilânico, diferenciando-se umas das...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Penicilina",
+    "wiki_extract": "As penicilinas são antibióticos do grupo dos betalactâmicos profusamente utilizados no tratamento de infecções causadas por bactérias sensíveis. A maioria das penicilinas são derivadas do ácido 6-aminopenicilânico, diferenciando-se umas das outras conforme a substituição na cadeia lateral do seu grupo amino. A benzilpenicilina, ou penicilina G, foi o primeiro antibiótico amplamente utilizado na medicina; a sua descoberta foi atribuída ao médico e bacteriologista escocês Alexander Fleming em 1928, que juntamente com os cientistas Ernst Boris Chain e Howard Walter Florey  (que criaram um método para produzir em massa o medicamento) ganhou o Prêmio Nobel de Medicina em 1945. O fármaco está disponível desde 1941, sendo o primeiro antibiótico a ser utilizado com sucesso.\nAs penicilinas são bactericidas: por sua semelhança estrutural com a D-alanil-D-alanina terminal das cadeias do peptidoglicano, o principal constituinte da parede bacteriana, ligam-se às proteínas ligadoras de penicilina (PBPs) e inibem a transpeptidação que dá rigidez à parede. Desta forma, a penicilina actua debilitando a parede bacteriana e favorecendo a lise osmótica da bactéria durante o processo de multiplicação.\nExiste uma grande diversidade de penicilinas. Algumas espécies de fungos do género Penicillium sintetizam naturalmente penicilinas, como o primeiro tipo isolado, a penicilina G. Porém, devido ao aparecimento de resistências, outras famílias foram desenvolvidas seguindo basicamente duas estratégias: a adição de precursores da cadeia lateral ao meio de cultura do fungo produtor, o que se traduz na produção de penicilinas biossintéticas; e a modificação química da penicilina obtida pela fermentação biotecnológica, dando lugar às penicilinas semissintéticas.\nAs penicilinas diferenciam-se entre si de acordo com o seu espectro de ação. Por exemplo, a benzilpenicilina é eficaz contra bactérias gram-positivas como estreptococos e estafilococos, assim como gonococos e meningococos, porém deve administrar-se por via parenteral (por injeção) devido à sua sensibilidade ao pH ácido do estômago. A fenoximetilpenicilina é, no entanto, resistente a este pH e pode ser administrada por via oral. A ampicilina, além de apresentar resistência ao pH, é efetiva contra  bactérias gram-negativas como Haemophilus, Salmonella e Shigella.\nAs penicilinas são pouco tóxicas, mas podem causar alergias. Cerca de 10% dos pacientes relatam alergia à penicilina, mas, quando avaliados por especialistas, a grande maioria deles pode usar o medicamento com segurança; as reações graves, como a anafilaxia, são raras. Como o choque anafilático pode ser fatal, é necessário perguntar ao paciente sobre alergias antes de iniciar o tratamento.\nAlém das suas propriedades antibacterianas, a penicilina é um antídoto eficaz contra os efeitos de envenenamento por α-amanitina, um dos aminoácidos tóxicos dos fungos do género Amanita."
+  },
+  {
+    "id": "auto-insulina",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Bioquímica e Medicina",
+    "difficulty": 2,
+    "question_pt": "Esta é também essencial no metabolismo de sacarídeos (hidrato de carbono), na síntese de proteínas e no armazenamento de lípidos (gorduras). É produzida nas células beta das ilhotas de Langerhans, do pâncreas endócrino. Atua numa grande parte das células do organismo, como nas células presentes no fígado, em músculos e no tecido adiposo, contudo não atua em células específicas cujos transportadores membranares não são sensíveis à insulina, como é o caso das células nervosas. esta entidade é uma hormona responsável pela redução da glicemia (taxa de glicose no sangue), ao promover a entrada de glicose nas células. (*) Identifique este hormônio pancreático essencial descoberto por Banting e Best em 1921.",
+    "formatted_answer_pt": "<b><u>Insulina</u></b>",
+    "answer_canonical_pt": "Insulina",
+    "accept_aliases": [
+      "Insulina"
+    ],
+    "prompt_aliases": [
+      "este hormônio pancreático"
+    ],
+    "explanation": "Insulina é uma hormona responsável pela redução da glicemia (taxa de glicose no sangue), ao promover a entrada de glicose nas células. Esta é também essencial no metabolismo de sacarídeos (hidrato de carbono), na síntese de proteínas e no a...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Insulina",
+    "wiki_extract": "Insulina é uma hormona responsável pela redução da glicemia (taxa de glicose no sangue), ao promover a entrada de glicose nas células. Esta é também essencial no metabolismo de sacarídeos (hidrato de carbono), na síntese de proteínas e no armazenamento de lípidos (gorduras).\nÉ produzida nas células beta das ilhotas de Langerhans, do pâncreas endócrino. Atua numa grande parte das células do organismo, como nas células presentes no fígado, em músculos e no tecido adiposo, contudo não atua em células específicas cujos transportadores membranares não são sensíveis à insulina, como é o caso das células nervosas.\nAs membranas celulares não são permeáveis à glicose, com isso há uma obrigação de se ter proteínas transportadoras presentes na membrana plasmática; essas proteínas transportadoras são a GLUT1 e a GLUT7, que têm características distintas de funcionamento e distribuição tecidual.\nQuando a produção de insulina é deficiente, a glicose acumula-se no sangue e na urina, destruindo as células por falta de abastecimento: diabetes mellitus. Para doentes nessa condição, a insulina é providenciada através de injeções, ou bombas de insulina. Recentemente foi aprovado o uso de insulina inalada. Porém, ainda existem controvérsias acerca do uso do produto comercializado pela Pfizer. A agência de saúde britânica não recomenda o uso.\nA insulina é um polipéptido de estrutura química plenamente conhecida, e pode ser sintetizada a partir de diversos animais. Mais recentemente, surgiram os medicamentos análogos de insulina, que constituem moléculas que, não sendo insulina, possuem as mesmas características químicas e portanto reactivas. São moléculas \"de insulina\" modificadas em laboratório.\n\n"
+  },
+  {
+    "id": "auto-hemoglobina",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Fisiologia e Bioquímica",
+    "difficulty": 2,
+    "question_pt": "Composta de 4 moléculas proteicas de estrutura terciária e 4 grupamentos heme que contém o ferro, cada íon ferro é capaz de se ligar frouxamente a uma molécula de oxigênio. A esta entidade (frequentemente abreviada como Hb) é uma metaloproteína (iões metálicos na estrutura) que contém ferro, presente nos glóbulos vermelhos (eritrócitos) e que permite o transporte de oxigénio pelo sistema circulatório. (*) Identifique esta proteína transportadora de oxigênio rica em ferro presente nos glóbulos vermelhos.",
+    "formatted_answer_pt": "<b><u>Hemoglobina</u></b>",
+    "answer_canonical_pt": "Hemoglobina",
+    "accept_aliases": [
+      "Hemoglobina",
+      "Hb",
+      "Emoglobina",
+      "Oxiemoglobina"
+    ],
+    "prompt_aliases": [
+      "esta proteína transportadora"
+    ],
+    "explanation": "A Hemoglobina (frequentemente abreviada como Hb) é uma metaloproteína (iões metálicos na estrutura) que contém ferro, presente nos glóbulos vermelhos (eritrócitos) e que permite o transporte de oxigénio pelo sistema circulatório.\nComposta d...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Hemoglobina",
+    "wiki_extract": "A Hemoglobina (frequentemente abreviada como Hb) é uma metaloproteína (iões metálicos na estrutura) que contém ferro, presente nos glóbulos vermelhos (eritrócitos) e que permite o transporte de oxigénio pelo sistema circulatório.\nComposta de 4 moléculas proteicas de estrutura terciária e 4 grupamentos heme que contém o ferro, cada íon ferro é capaz de se ligar frouxamente a uma molécula de oxigênio."
+  },
+  {
+    "id": "auto-fotoss-ntese",
+    "origin": "qbreader",
+    "category": "Ciência",
+    "subcategory": "Botânica e Bioquímica",
+    "difficulty": 2,
+    "question_pt": "Essa energia permite que produzam matéria para crescer e chega aos demais seres vivos pelas cadeias alimentares. Na forma realizada por plantas, algas e cianobactérias, a água e o dióxido de carbono participam da formação de matéria orgânica, e o oxigênio é liberado. Quase todo o oxigênio livre da atmosfera e das águas tem essa origem. esta entidade é o processo pelo qual plantas, algas e algumas bactérias captam parte da energia da luz e a guardam em substâncias orgânicas. (*) Identifique este processo biológico que converte luz solar, água e CO2 em glicose e oxigênio.",
+    "formatted_answer_pt": "<b><u>Fotossíntese</u></b>",
+    "answer_canonical_pt": "Fotossíntese",
+    "accept_aliases": [
+      "Fotossíntese",
+      "Fotossintéticos",
+      "Captura de carbono",
+      "Fotossíntese nas plantas",
+      "Como plantas soltam oxigenio",
+      "Fotossintético",
+      "Fotossintética",
+      "Fotossintato"
+    ],
+    "prompt_aliases": [
+      "este processo biológico"
+    ],
+    "explanation": "Fotossíntese é o processo pelo qual plantas, algas e algumas bactérias captam parte da energia da luz e a guardam em substâncias orgânicas. Essa energia permite que produzam matéria para crescer e chega aos demais seres vivos pelas cadeias ...",
+    "wiki_url": "https://pt.wikipedia.org/wiki/Fotoss%C3%ADntese",
+    "wiki_extract": "Fotossíntese é o processo pelo qual plantas, algas e algumas bactérias captam parte da energia da luz e a guardam em substâncias orgânicas. Essa energia permite que produzam matéria para crescer e chega aos demais seres vivos pelas cadeias alimentares.\nNa forma realizada por plantas, algas e cianobactérias, a água e o dióxido de carbono participam da formação de matéria orgânica, e o oxigênio é liberado. Quase todo o oxigênio livre da atmosfera e das águas tem essa origem. Outras bactérias aproveitam a luz sem liberar oxigênio porque retiram elétrons de substâncias diferentes da água, em uma forma chamada fotossíntese anoxigênica.\nDentro das células, pigmentos como a clorofila absorvem luz e iniciam uma sequência de transferências de energia e elétrons. A energia captada alimenta a produção de compostos orgânicos a partir do carbono do CO2. A organização dessas etapas muda entre os grupos e também responde à quantidade e à cor da luz, à temperatura, à água e aos gases disponíveis.\nAo produzir matéria orgânica, a fotossíntese sustenta a maior parte dos ecossistemas e participa dos ciclos do carbono e do oxigênio. O uso da água por ancestrais das cianobactérias começou a enriquecer oceanos e atmosfera com oxigênio, enquanto os cloroplastos das plantas e das algas descendem de cianobactérias que passaram a viver dentro de outras células.\nO caminho entre a luz que alcança uma folha e a formação de nova biomassa reúne fenômenos que duram de frações mínimas de segundo a estações inteiras. Compreendê-lo permite explicar o crescimento das plantas, a produtividade dos oceanos, os limites impostos pelo ambiente e as tentativas de aproveitar a luz na agricultura, na produção de combustíveis e em sistemas artificiais."
   }
 ]

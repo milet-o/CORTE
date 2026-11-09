@@ -23,7 +23,6 @@ import {
   BookOpen, 
   ExternalLink, 
   Clock, 
-  HelpCircle, 
   Flame, 
   CheckCircle2, 
   XCircle, 
@@ -42,15 +41,18 @@ interface QuizbowlReaderProps {
 }
 
 export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps) {
+  // Evita hydration mismatch no SSR
+  const [isMounted, setIsMounted] = useState(false);
+
   // Modo de Jogo: 'daily' (padrão) ou 'unlimited'
   const [gameMode, setGameMode] = useState<'daily' | 'unlimited'>('daily');
 
   // Estado do Modo Diário
-  const todayStr = getTodayDateString();
   const [dailyResult, setDailyResult] = useState<DailyResult | null>(null);
   const [dailyQuestionData, setDailyQuestionData] = useState<{ tossup: Tossup; dayIndex: number; dateStr: string } | null>(null);
   const [copiedShare, setCopiedShare] = useState(false);
   const [timeUntilTomorrow, setTimeUntilTomorrow] = useState('');
+  const [streakCount, setStreakCount] = useState<number>(0);
 
   // Configurações do jogo ilimitado
   const [unlimitedQuestions, setUnlimitedQuestions] = useState<Tossup[]>(initialQuestions);
@@ -97,8 +99,9 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
   const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const answerInputRef = useRef<HTMLInputElement | null>(null);
 
-  // Carrega resultado diário salvo do cookie no início
+  // Montagem do cliente: carrega cookies sem causar hydration mismatch
   useEffect(() => {
+    setIsMounted(true);
     const stored = getStoredDailyResult();
     if (stored) {
       setDailyResult(stored);
@@ -106,12 +109,14 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     const dailyData = getDailyQuestion(initialQuestions);
     setDailyQuestionData(dailyData);
 
-    // Contagem regressiva até a meia-noite para o próximo corte diário
+    const savedStreak = Number(getCookie('corte_streak') || (stored ? stored.streak : 0));
+    setStreakCount(savedStreak);
+
     const updateCountdown = () => {
       const now = new Date();
       const tomorrow = new Date();
       tomorrow.setHours(24, 0, 0, 0);
-      const diff = tomorrow.getTime() - now.getTime();
+      const diff = Math.max(0, tomorrow.getTime() - now.getTime());
       const hours = Math.floor(diff / (1000 * 60 * 60));
       const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const secs = Math.floor((diff % (1000 * 60)) / 1000);
@@ -184,7 +189,6 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
     if (readerIntervalRef.current) clearInterval(readerIntervalRef.current);
 
-    // Medição em milissegundos e porcentagem
     const now = performance.now();
     const startTime = readingStartTimeRef.current || now;
     const elapsedMs = Math.max(120, Math.round(now - startTime));
@@ -202,7 +206,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
     setTimeout(() => {
       answerInputRef.current?.focus();
-    }, 50);
+    }, 60);
   }, [status, currentWordIndex]);
 
   // Loop de leitura palavra por palavra
@@ -305,7 +309,6 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
       const isCorrect = res.status === 'correct';
 
-      // SE FOR MODO DIÁRIO: Salva nos Cookies e atualiza Ofensiva 🔥
       if (gameMode === 'daily' && dailyQuestionData) {
         const saved = saveStoredDailyResult({
           dateStr: dailyQuestionData.dateStr,
@@ -319,9 +322,9 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
           cutTimeMs: measuredCutTimeMs,
         });
         setDailyResult(saved);
+        setStreakCount(saved.streak);
       }
 
-      // SE FOR MODO ILIMITADO: Atualiza placar e marca pergunta como vista
       if (gameMode === 'unlimited') {
         markQuestionSeen(currentQuestion.id);
         const isNeg = res.points < 0;
@@ -354,7 +357,6 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     setStatus('revealed');
   };
 
-  // Filtragem no Modo Ilimitado com exclusão de perguntas já vistas
   const filterUnlimited = async (cat: string) => {
     setSelectedCategory(cat);
     try {
@@ -366,7 +368,6 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
       const data = await res.json();
       if (data.questions && data.questions.length > 0) {
         const seenIds = getSeenQuestionIds();
-        // Filtra as não vistas primeiro (se houver)
         const unseens = data.questions.filter((q: Tossup) => !seenIds.includes(q.id));
         setUnlimitedQuestions(unseens.length > 0 ? unseens : data.questions);
         setUnlimitedIndex(0);
@@ -376,7 +377,6 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     }
   };
 
-  // Copiar resumo do Corte Diário para compartilhar
   const handleCopyShare = () => {
     if (!dailyResult) return;
     const text = formatShareText(dailyResult);
@@ -385,50 +385,45 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     setTimeout(() => setCopiedShare(false), 2500);
   };
 
-  const streak = Number(getCookie('corte_streak') || (dailyResult ? dailyResult.streak : 0));
-
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8 space-y-7">
-      {/* Topo / Barra de Navegação Estilo Salinha */}
-      <header className="flex flex-col md:flex-row md:items-center justify-between gap-5 border-b-2 border-ink/20 pb-6">
-        <div>
-          <div className="flex items-center gap-2.5">
-            <h1 className="font-serif font-black text-4xl sm:text-5xl tracking-tight text-ink flex items-center">
+    <div className="max-w-4xl mx-auto px-3.5 sm:px-6 py-4 sm:py-8 space-y-5 sm:space-y-6">
+      {/* Topo / Barra de Navegação Estilo Salinha com Ergonomia Mobile */}
+      <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 border-b-2 border-ink/15 pb-4 sm:pb-5">
+        <div className="flex items-center justify-between sm:justify-start gap-3">
+          <div className="flex items-center gap-2">
+            <h1 className="font-serif font-black text-3xl sm:text-5xl tracking-tight text-ink flex items-center">
               corte<span className="text-or">.</span>
             </h1>
-            <span className="bg-creme border-2 border-ink px-3 py-0.5 rounded-full text-xs font-black uppercase tracking-wider text-ink shadow-solid-sm flex items-center gap-1">
-              <Flame className="w-3.5 h-3.5 text-or fill-or" />
-              {streak} {streak === 1 ? 'dia de ofensiva' : 'dias de ofensiva'}
+            <span className="bg-creme border-2 border-ink px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-wider text-ink shadow-solid-sm flex items-center gap-1">
+              <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-or fill-or" />
+              {isMounted ? streakCount : 0} {streakCount === 1 ? 'dia' : 'dias'}
             </span>
           </div>
-          <p className="text-suave text-sm sm:text-base font-medium mt-1">
-            o jogo de cortar o narrador. quanto mais cedo você cortar, mais pontos ganha!
-          </p>
         </div>
 
-        {/* Chave Seletora de Modo (Diário vs Ilimitado) */}
-        <div className="flex items-center bg-card border-[3px] border-ink rounded-full p-1 shadow-solid self-start md:self-auto">
+        {/* Chave Seletora de Modo (Diário vs Ilimitado) Compacta no Celular */}
+        <div className="flex items-center bg-card border-[3px] border-ink rounded-full p-1 shadow-solid w-full sm:w-auto justify-center">
           <button
             onClick={() => setGameMode('daily')}
-            className={`btn-salinha px-4 py-2 text-xs sm:text-sm font-black transition ${
+            className={`btn-salinha flex-1 sm:flex-initial px-4 py-1.5 text-xs sm:text-sm font-black transition ${
               gameMode === 'daily'
                 ? 'bg-or text-white border-2 border-ink shadow-solid-sm'
                 : 'bg-transparent text-ink border-transparent shadow-none hover:bg-paper'
             }`}
           >
-            <Calendar className="w-4 h-4 mr-1.5" />
-            Modo Diário
+            <Calendar className="w-3.5 h-3.5 mr-1" />
+            Diário
           </button>
           <button
             onClick={() => setGameMode('unlimited')}
-            className={`btn-salinha px-4 py-2 text-xs sm:text-sm font-black transition ${
+            className={`btn-salinha flex-1 sm:flex-initial px-4 py-1.5 text-xs sm:text-sm font-black transition ${
               gameMode === 'unlimited'
                 ? 'bg-mu text-ink border-2 border-ink shadow-solid-sm'
                 : 'bg-transparent text-ink border-transparent shadow-none hover:bg-paper'
             }`}
           >
-            <InfinityIcon className="w-4 h-4 mr-1.5" />
-            Modo Ilimitado
+            <InfinityIcon className="w-3.5 h-3.5 mr-1" />
+            Ilimitado
           </button>
         </div>
       </header>
@@ -436,120 +431,119 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
       {/* ======================================================== */}
       {/* 📅 CASO 1: MODO DIÁRIO JÁ CONCLUÍDO HOJE                */}
       {/* ======================================================== */}
-      {gameMode === 'daily' && dailyResult ? (
-        <div className="card-salinha p-7 sm:p-10 space-y-6 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border-[3px] border-ink bg-creme shadow-solid mb-2">
+      {isMounted && gameMode === 'daily' && dailyResult ? (
+        <div className="card-salinha p-5 sm:p-9 space-y-5 text-center">
+          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border-[3px] border-ink bg-creme shadow-solid mb-1">
             {dailyResult.isPower ? (
-              <Zap className="w-8 h-8 text-mu-dark fill-mu-dark animate-bounce" />
+              <Zap className="w-7 h-7 sm:w-8 sm:h-8 text-mu-dark fill-mu-dark animate-bounce" />
             ) : dailyResult.isCorrect ? (
-              <CheckCircle2 className="w-8 h-8 text-gr-dark" />
+              <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8 text-gr-dark" />
             ) : (
-              <XCircle className="w-8 h-8 text-rd" />
+              <XCircle className="w-7 h-7 sm:w-8 sm:h-8 text-rd" />
             )}
           </div>
 
           <div>
-            <span className="bg-mu border-2 border-ink px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider text-ink shadow-solid-sm">
+            <span className="bg-mu border-2 border-ink px-3 py-1 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-wider text-ink shadow-solid-sm">
               Corte do Dia #{dailyResult.dayIndex} Concluído!
             </span>
-            <h2 className="font-serif font-black text-3xl sm:text-4xl text-ink mt-3">
+            <h2 className="font-serif font-black text-2xl sm:text-4xl text-ink mt-2.5">
               {dailyResult.isPower
                 ? '💥 Corte Perfeito no POWER!'
                 : dailyResult.isCorrect
                 ? '✅ Você Acertou o Corte!'
                 : '❌ Quase! Resposta Incorreta'}
             </h2>
-            <p className="text-suave font-medium mt-1">
+            <p className="text-suave text-sm sm:text-base font-medium mt-1">
               Gabarito de hoje: <strong className="text-ink">{dailyResult.answerCanonical}</strong>
             </p>
           </div>
 
-          {/* Cards de Métricas em Milissegundos e Porcentagem */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto pt-2">
-            <div className="bg-card border-2 border-ink rounded-2xl p-3 shadow-solid-sm">
-              <div className="text-[11px] font-bold uppercase text-suave">Pontuação</div>
-              <div className="text-2xl font-black text-or">
-                {dailyResult.points > 0 ? `+${dailyResult.points}` : dailyResult.points} pts
+          {/* Cards de Métricas */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 max-w-2xl mx-auto pt-1">
+            <div className="bg-card border-2 border-ink rounded-2xl p-2.5 sm:p-3 shadow-solid-sm">
+              <div className="text-[10px] sm:text-[11px] font-bold uppercase text-suave">Pontos</div>
+              <div className="text-xl sm:text-2xl font-black text-or">
+                {dailyResult.points > 0 ? `+${dailyResult.points}` : dailyResult.points}
               </div>
             </div>
 
-            <div className="bg-card border-2 border-ink rounded-2xl p-3 shadow-solid-sm">
-              <div className="text-[11px] font-bold uppercase text-suave">Corte Preciso</div>
-              <div className="text-2xl font-black text-bl-dark">{dailyResult.cutPercentage}%</div>
-              <div className="text-[10px] text-suave font-semibold">da pergunta lida</div>
+            <div className="bg-card border-2 border-ink rounded-2xl p-2.5 sm:p-3 shadow-solid-sm">
+              <div className="text-[10px] sm:text-[11px] font-bold uppercase text-suave">Corte</div>
+              <div className="text-xl sm:text-2xl font-black text-bl-dark">{dailyResult.cutPercentage}%</div>
+              <div className="text-[9px] sm:text-[10px] text-suave font-semibold">do texto lido</div>
             </div>
 
-            <div className="bg-card border-2 border-ink rounded-2xl p-3 shadow-solid-sm">
-              <div className="text-[11px] font-bold uppercase text-suave">Tempo Real</div>
-              <div className="text-2xl font-black text-gr-dark">{dailyResult.cutTimeMs} ms</div>
-              <div className="text-[10px] text-suave font-semibold">({(dailyResult.cutTimeMs / 1000).toFixed(1)}s de reação)</div>
+            <div className="bg-card border-2 border-ink rounded-2xl p-2.5 sm:p-3 shadow-solid-sm">
+              <div className="text-[10px] sm:text-[11px] font-bold uppercase text-suave">Reação</div>
+              <div className="text-xl sm:text-2xl font-black text-gr-dark">{dailyResult.cutTimeMs} ms</div>
+              <div className="text-[9px] sm:text-[10px] text-suave font-semibold">({(dailyResult.cutTimeMs / 1000).toFixed(1)}s)</div>
             </div>
 
-            <div className="bg-card border-2 border-ink rounded-2xl p-3 shadow-solid-sm">
-              <div className="text-[11px] font-bold uppercase text-suave">Ofensiva</div>
-              <div className="text-2xl font-black text-ink flex items-center justify-center gap-1">
-                <Flame className="w-5 h-5 text-or fill-or" />
-                {dailyResult.streak} {dailyResult.streak === 1 ? 'dia' : 'dias'}
+            <div className="bg-card border-2 border-ink rounded-2xl p-2.5 sm:p-3 shadow-solid-sm">
+              <div className="text-[10px] sm:text-[11px] font-bold uppercase text-suave">Ofensiva</div>
+              <div className="text-xl sm:text-2xl font-black text-ink flex items-center justify-center gap-1">
+                <Flame className="w-4 h-4 text-or fill-or" />
+                {dailyResult.streak}d
               </div>
             </div>
           </div>
 
-          {/* Botões de Ação do Modo Diário */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
+          {/* Botões de Ação */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 pt-3">
             <button
               onClick={handleCopyShare}
-              className="btn-salinha w-full sm:w-auto bg-gr hover:bg-gr-dark text-white px-8 py-4 text-base tracking-wide uppercase shadow-solid cursor-pointer"
+              className="btn-salinha w-full sm:w-auto bg-gr hover:bg-gr-dark text-white px-7 py-3.5 text-sm sm:text-base tracking-wide uppercase shadow-solid cursor-pointer"
             >
               {copiedShare ? (
                 <>
-                  <Check className="w-5 h-5 mr-2" /> Copiado para a Área de Transferência!
+                  <Check className="w-4 h-4 mr-1.5" /> Copiado com Sucesso!
                 </>
               ) : (
                 <>
-                  <Share2 className="w-5 h-5 mr-2" /> Compartilhar Meu Corte
+                  <Share2 className="w-4 h-4 mr-1.5" /> Compartilhar Meu Corte
                 </>
               )}
             </button>
 
             <button
               onClick={() => setGameMode('unlimited')}
-              className="btn-salinha w-full sm:w-auto bg-mu hover:bg-mu-dark text-ink px-8 py-4 text-base tracking-wide uppercase shadow-solid cursor-pointer"
+              className="btn-salinha w-full sm:w-auto bg-mu hover:bg-mu-dark text-ink px-7 py-3.5 text-sm sm:text-base tracking-wide uppercase shadow-solid cursor-pointer"
             >
-              Jogar Modo Ilimitado <ChevronRight className="w-5 h-5 ml-1" />
+              Jogar Modo Ilimitado <ChevronRight className="w-4 h-4 ml-1" />
             </button>
           </div>
 
-          <div className="pt-4 text-xs font-bold text-suave flex items-center justify-center gap-1.5">
-            <Timer className="w-4 h-4 text-or" />
-            Próximo Corte Diário disponível em: <span className="font-mono text-ink text-sm font-black">{timeUntilTomorrow}</span>
+          <div className="pt-2 text-[11px] sm:text-xs font-bold text-suave flex items-center justify-center gap-1">
+            <Timer className="w-3.5 h-3.5 text-or" />
+            Próximo Corte Diário em: <span className="font-mono text-ink text-xs sm:text-sm font-black">{timeUntilTomorrow}</span>
           </div>
         </div>
       ) : (
         /* ======================================================== */
         /* 🕹️ CASO 2: JOGO ATIVO (MODO DIÁRIO OU ILIMITADO)         */
         /* ======================================================== */
-        <div className="space-y-6">
-          {/* Se for Modo Ilimitado: Filtros e Placar de Sessão */}
+        <div className="space-y-4 sm:space-y-6">
+          {/* Se for Modo Ilimitado: Filtros e Placar */}
           {gameMode === 'unlimited' && (
-            <div className="space-y-4">
-              {/* Placar de Maratona */}
-              <div className="flex items-center justify-between bg-card border-[3px] border-ink rounded-2xl p-3 px-4 shadow-solid">
-                <span className="text-xs font-black uppercase text-ink flex items-center gap-1.5">
-                  <InfinityIcon className="w-4 h-4 text-mu-dark" /> Sessão Ilimitada:
+            <div className="space-y-3">
+              <div className="flex items-center justify-between bg-card border-[3px] border-ink rounded-2xl p-2.5 px-3.5 shadow-solid">
+                <span className="text-xs font-black uppercase text-ink flex items-center gap-1">
+                  <InfinityIcon className="w-3.5 h-3.5 text-mu-dark" /> Ilimitado:
                 </span>
 
-                <div className="flex items-center gap-3 text-xs font-bold">
-                  <div>Pontos: <strong className="text-gr-dark text-base">{stats.score}</strong></div>
-                  <div>Powers: <strong className="text-mu-dark text-base">{stats.powers}</strong></div>
-                  <div>Acertos: <strong className="text-ink text-base">{stats.tens}</strong></div>
-                  <div>Negs: <strong className="text-rd text-base">{stats.negs}</strong></div>
+                <div className="flex items-center gap-2.5 text-xs font-bold">
+                  <div>Pts: <strong className="text-gr-dark text-sm">{stats.score}</strong></div>
+                  <div>15s: <strong className="text-mu-dark text-sm">{stats.powers}</strong></div>
+                  <div>10s: <strong className="text-ink text-sm">{stats.tens}</strong></div>
+                  <div>-5s: <strong className="text-rd text-sm">{stats.negs}</strong></div>
                 </div>
               </div>
 
-              {/* Categorias no Ilimitado */}
-              <div className="bg-card border-[3px] border-ink rounded-2xl p-3 shadow-solid flex flex-wrap items-center gap-1.5">
-                <span className="text-xs font-black uppercase text-ink mr-1 flex items-center gap-1">
-                  <Sparkles className="w-3.5 h-3.5 text-or" /> Categorias:
+              {/* Categorias no Ilimitado com rolagem horizontal suave no mobile */}
+              <div className="bg-card border-[3px] border-ink rounded-2xl p-2.5 shadow-solid flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+                <span className="text-xs font-black uppercase text-ink mr-1 flex items-center gap-1 shrink-0">
+                  <Sparkles className="w-3 h-3 text-or" /> Temas:
                 </span>
                 {[
                   'Todas',
@@ -564,7 +558,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                   <button
                     key={cat}
                     onClick={() => filterUnlimited(cat)}
-                    className={`tag-salinha px-3 py-1 text-xs font-bold transition ${
+                    className={`tag-salinha px-2.5 py-1 text-xs font-bold transition shrink-0 ${
                       selectedCategory === cat
                         ? 'bg-mu text-ink shadow-solid-sm'
                         : 'bg-paper/70 text-suave hover:bg-paper hover:text-ink'
@@ -579,48 +573,48 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
           {/* Cartão Central da Pergunta */}
           {currentQuestion ? (
-            <div className="space-y-6">
-              <div className="card-salinha p-6 sm:p-8 relative overflow-hidden">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="card-salinha p-4 sm:p-8 relative overflow-hidden">
                 {/* Topo do Card com Selos */}
-                <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-5 border-b-2 border-ink/15">
-                  <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b-2 border-ink/15">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
                     {gameMode === 'daily' ? (
-                      <span className="bg-or text-white border-2 border-ink text-xs font-black px-3 py-1 rounded-full shadow-solid-sm flex items-center gap-1">
-                        <Calendar className="w-3.5 h-3.5" />
+                      <span className="bg-or text-white border-2 border-ink text-[11px] sm:text-xs font-black px-2.5 py-0.5 rounded-full shadow-solid-sm flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
                         CORTE DO DIA #{dailyQuestionData?.dayIndex}
                       </span>
                     ) : (
-                      <span className="bg-creme border-2 border-ink text-ink text-xs font-black px-2.5 py-0.5 rounded-full shadow-solid-sm">
+                      <span className="bg-creme border-2 border-ink text-ink text-[11px] sm:text-xs font-black px-2 py-0.5 rounded-full shadow-solid-sm">
                         #{unlimitedIndex + 1} de {unlimitedQuestions.length}
                       </span>
                     )}
 
-                    <span className="bg-paper border-2 border-ink text-xs font-black px-2.5 py-0.5 rounded-full shadow-solid-sm">
-                      {currentQuestion.category} &bull; {currentQuestion.subcategory}
+                    <span className="bg-paper border-2 border-ink text-[11px] sm:text-xs font-black px-2 py-0.5 rounded-full shadow-solid-sm">
+                      {currentQuestion.category}
                     </span>
                   </div>
 
                   {/* Indicador de Power */}
                   <div>
                     {isPowerEligible ? (
-                      <span className="inline-flex items-center gap-1 bg-mu border-2 border-ink text-ink text-xs font-black px-3 py-1 rounded-full shadow-solid-sm animate-pulse">
-                        <Zap className="w-3.5 h-3.5 fill-ink" />
-                        POWER (+15 PTS)
+                      <span className="inline-flex items-center gap-1 bg-mu border-2 border-ink text-ink text-[11px] sm:text-xs font-black px-2.5 py-0.5 rounded-full shadow-solid-sm animate-pulse">
+                        <Zap className="w-3 h-3 fill-ink" />
+                        POWER (+15)
                       </span>
                     ) : (
-                      <span className="bg-paper border-2 border-ink/40 text-suave text-xs font-bold px-2.5 py-0.5 rounded-full">
-                        Normal (+10 pts)
+                      <span className="bg-paper border-2 border-ink/40 text-suave text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full">
+                        Normal (+10)
                       </span>
                     )}
                   </div>
                 </div>
 
                 {/* Texto da Pergunta com Leitura Progressiva */}
-                <div className="min-h-[170px] text-xl sm:text-2xl leading-relaxed sm:leading-loose text-ink font-normal">
+                <div className="min-h-[140px] sm:min-h-[170px] text-lg sm:text-2xl leading-relaxed sm:leading-loose text-ink font-normal">
                   {status === 'idle' && currentWordIndex === 0 ? (
-                    <div className="text-suave font-serif italic flex items-center gap-3 pt-6 text-lg sm:text-xl">
-                      <Play className="w-6 h-6 text-or fill-or animate-bounce" />
-                      Clique em "Iniciar Leitura" ou aperte a <strong>Barra de Espaço</strong> para cortar...
+                    <div className="text-suave font-serif italic flex items-center gap-2.5 pt-4 text-base sm:text-xl">
+                      <Play className="w-5 h-5 text-or fill-or animate-bounce shrink-0" />
+                      Clique em <strong>"Iniciar"</strong> ou aperte <strong>CORTAR</strong> a qualquer momento...
                     </div>
                   ) : (
                     <div>
@@ -635,8 +629,8 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                             <span
                               key={idx}
                               aria-hidden="true"
-                              className="inline-block mr-2 h-4 bg-[#e2dbce] rounded select-none align-middle"
-                              style={{ width: `${Math.max(26, Math.min(80, word.length * 10))}px` }}
+                              className="inline-block mr-1.5 h-3.5 sm:h-4 bg-[#e2dbce] rounded select-none align-middle"
+                              style={{ width: `${Math.max(22, Math.min(75, word.length * 9))}px` }}
                             />
                           );
                         }
@@ -650,13 +644,13 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                                 : 'text-ink'
                             } ${
                               isBuzzedHere
-                                ? 'bg-rd text-white px-2 py-0.5 rounded-lg border-2 border-ink font-bold shadow-solid-sm'
+                                ? 'bg-rd text-white px-1.5 py-0.5 rounded-md border-2 border-ink font-bold shadow-solid-sm'
                                 : ''
                             }`}
                           >
                             {word}
                             {isReadingHead && (
-                              <span className="inline-block w-2 h-6 bg-or ml-1 rounded-full align-middle cursor-leitura" />
+                              <span className="inline-block w-1.5 h-5 bg-or ml-1 rounded-full align-middle cursor-leitura" />
                             )}
                           </span>
                         );
@@ -666,10 +660,10 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 </div>
 
                 {/* Barra de Progresso da Pergunta */}
-                <div className="mt-8 pt-4 border-t-2 border-ink/15 flex items-center justify-between text-xs font-bold text-suave">
-                  <div className="flex items-center gap-3">
+                <div className="mt-6 pt-3.5 border-t-2 border-ink/15 flex items-center justify-between text-[11px] sm:text-xs font-bold text-suave">
+                  <div className="flex items-center gap-2 sm:gap-3">
                     <span>Leitura:</span>
-                    <div className="w-36 sm:w-48 h-3 bg-paper border-2 border-ink rounded-full overflow-hidden p-0.5">
+                    <div className="w-28 sm:w-48 h-2.5 sm:h-3 bg-paper border-2 border-ink rounded-full overflow-hidden p-0.5">
                       <div
                         className={`h-full rounded-full transition-all duration-150 ${
                           isPowerEligible ? 'bg-mu' : 'bg-gr'
@@ -681,26 +675,26 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                     </div>
                   </div>
                   <span>
-                    {currentWordIndex} de {words.current.length} palavras
+                    {currentWordIndex}/{words.current.length}
                   </span>
                 </div>
               </div>
 
-              {/* Área de Ação e Buzzer */}
-              <div className="card-salinha p-5 sm:p-6">
+              {/* Área de Ação e Buzzer Móvel Amigável */}
+              <div className="card-salinha p-4 sm:p-6">
                 {status === 'buzzed' ? (
-                  <div className="space-y-4">
+                  <div className="space-y-3.5">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-rd font-black text-sm uppercase tracking-wider">
-                        <Scissors className="w-5 h-5 text-rd" />
-                        CORTADO AOS {measuredCutPercent}% ({measuredCutTimeMs} ms)! QUAL É A RESPOSTA?
+                      <div className="flex items-center gap-1.5 text-rd font-black text-xs sm:text-sm uppercase tracking-wider">
+                        <Scissors className="w-4 h-4 text-rd" />
+                        CORTADO AOS {measuredCutPercent}% ({measuredCutTimeMs} ms)!
                       </div>
-                      <div className="flex items-center gap-1 font-mono text-base font-black text-ink bg-mu border-2 border-ink px-3 py-1 rounded-full shadow-solid-sm">
-                        <Clock className="w-4 h-4" /> {buzzTimeRemaining}s
+                      <div className="flex items-center gap-1 font-mono text-sm sm:text-base font-black text-ink bg-mu border-2 border-ink px-2.5 py-0.5 rounded-full shadow-solid-sm">
+                        <Clock className="w-3.5 h-3.5" /> {buzzTimeRemaining}s
                       </div>
                     </div>
 
-                    <div className="w-full h-2.5 bg-paper border-2 border-ink rounded-full overflow-hidden p-0.5">
+                    <div className="w-full h-2 bg-paper border-2 border-ink rounded-full overflow-hidden p-0.5">
                       <div
                         className="h-full bg-rd rounded-full transition-all duration-1000 ease-linear"
                         style={{ width: `${(buzzTimeRemaining / 7) * 100}%` }}
@@ -708,8 +702,8 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                     </div>
 
                     {promptMessage && (
-                      <div className="bg-creme border-2 border-ink text-ink p-3 rounded-2xl text-sm font-bold flex items-center gap-2 shadow-solid-sm">
-                        <AlertTriangle className="w-5 h-5 text-or flex-shrink-0" />
+                      <div className="bg-creme border-2 border-ink text-ink p-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 shadow-solid-sm">
+                        <AlertTriangle className="w-4 h-4 text-or shrink-0" />
                         <span>{promptMessage}</span>
                       </div>
                     )}
@@ -719,7 +713,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                         e.preventDefault();
                         submitAnswer();
                       }}
-                      className="flex flex-col sm:flex-row gap-2.5 pt-1"
+                      className="flex flex-col sm:flex-row gap-2 pt-1"
                     >
                       <input
                         ref={answerInputRef}
@@ -727,52 +721,53 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                         value={userAnswer}
                         onChange={(e) => setUserAnswer(e.target.value)}
                         placeholder="Digite sua resposta..."
-                        className="flex-1 bg-card border-3 border-ink rounded-2xl px-5 py-3.5 text-ink text-lg font-bold placeholder-ink/40 focus:outline-none shadow-solid"
+                        className="flex-1 bg-card border-3 border-ink rounded-2xl px-4 py-3 text-ink text-base sm:text-lg font-bold placeholder-ink/40 focus:outline-none shadow-solid"
                         autoFocus
                       />
                       <button
                         type="submit"
-                        className="btn-salinha bg-gr hover:bg-gr-dark text-white px-8 py-3.5 text-base uppercase tracking-wider cursor-pointer shadow-solid"
+                        className="btn-salinha bg-gr hover:bg-gr-dark text-white px-6 py-3 text-sm sm:text-base uppercase tracking-wider cursor-pointer shadow-solid"
                       >
                         Confirmar
                       </button>
                     </form>
                   </div>
                 ) : (
-                  <div className="flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+                    {/* Botão de Cortar Grande e Chamativo em Laranja Salinha */}
                     <button
                       onClick={handleBuzz}
                       disabled={status === 'judged' || status === 'revealed'}
-                      className={`btn-salinha w-full sm:w-auto px-8 py-4 text-xl tracking-wide uppercase transition ${
+                      className={`btn-salinha w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-lg sm:text-xl tracking-wide uppercase transition ${
                         status === 'judged' || status === 'revealed'
                           ? 'bg-paper text-ink/30 border-ink/30 shadow-none cursor-not-allowed'
                           : 'bg-or hover:bg-or-dark text-white shadow-solid cursor-pointer'
                       }`}
                     >
-                      <Scissors className="w-6 h-6 mr-2" />
-                      CORTAR! <span className="text-xs bg-ink text-white px-2.5 py-0.5 rounded-full ml-2 font-mono">Espaço</span>
+                      <Scissors className="w-5 h-5 mr-1.5" />
+                      CORTAR! <span className="text-[11px] bg-ink text-white px-2 py-0.5 rounded-full ml-1.5 font-mono hidden sm:inline">Espaço</span>
                     </button>
 
-                    <div className="flex items-center gap-2.5 w-full sm:w-auto justify-end">
+                    <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
                       <button
                         onClick={toggleReading}
                         disabled={status === 'judged' || status === 'revealed'}
-                        className="btn-salinha bg-card hover:bg-paper text-ink px-5 py-3 text-sm cursor-pointer shadow-solid-sm"
+                        className="btn-salinha flex-1 sm:flex-initial bg-card hover:bg-paper text-ink px-4 py-2.5 sm:py-3 text-xs sm:text-sm cursor-pointer shadow-solid-sm"
                       >
                         {status === 'reading' ? (
                           <>
-                            <Pause className="w-4 h-4 mr-1.5" /> Pausar
+                            <Pause className="w-3.5 h-3.5 mr-1" /> Pausar
                           </>
                         ) : (
                           <>
-                            <Play className="w-4 h-4 mr-1.5 fill-ink" /> Iniciar Leitura
+                            <Play className="w-3.5 h-3.5 mr-1 fill-ink" /> Iniciar
                           </>
                         )}
                       </button>
 
                       <button
                         onClick={revealAnswer}
-                        className="btn-salinha bg-paper hover:bg-[#e4ddce] text-ink px-4 py-3 text-sm cursor-pointer shadow-solid-sm"
+                        className="btn-salinha bg-paper hover:bg-[#e4ddce] text-ink px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm cursor-pointer shadow-solid-sm"
                       >
                         Gabarito
                       </button>
@@ -780,9 +775,9 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                       {gameMode === 'unlimited' && (
                         <button
                           onClick={nextUnlimitedQuestion}
-                          className="btn-salinha bg-mu hover:bg-mu-dark text-ink px-6 py-3 text-sm cursor-pointer shadow-solid-sm"
+                          className="btn-salinha bg-mu hover:bg-mu-dark text-ink px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm cursor-pointer shadow-solid-sm"
                         >
-                          Próxima <ChevronRight className="w-4 h-4 ml-1" />
+                          Próxima <ChevronRight className="w-3.5 h-3.5 ml-1" />
                         </button>
                       )}
                     </div>
@@ -793,7 +788,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
               {/* Veredito do Juiz Nativo */}
               {judgment && (
                 <div
-                  className={`p-5 rounded-3xl border-[3.5px] border-ink shadow-solid flex items-start gap-4 transition-all ${
+                  className={`p-4 sm:p-5 rounded-2xl sm:rounded-3xl border-[3px] border-ink shadow-solid flex items-start gap-3 transition-all ${
                     judgment.status === 'correct'
                       ? judgment.points === 15
                         ? 'bg-mu'
@@ -802,14 +797,14 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                   }`}
                 >
                   {judgment.status === 'correct' ? (
-                    <CheckCircle2 className="w-8 h-8 text-ink flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7 text-ink shrink-0 mt-0.5" />
                   ) : (
-                    <XCircle className="w-8 h-8 text-rd flex-shrink-0 mt-0.5" />
+                    <XCircle className="w-6 h-6 sm:w-7 sm:h-7 text-rd shrink-0 mt-0.5" />
                   )}
                   <div className="flex-1 space-y-1">
-                    <div className="font-black text-lg flex items-center justify-between text-ink">
+                    <div className="font-black text-base sm:text-lg flex items-center justify-between text-ink">
                       <span>{judgment.message}</span>
-                      <span className="font-mono text-xl font-black px-3 py-0.5 rounded-full bg-card border-2 border-ink shadow-solid-sm">
+                      <span className="font-mono text-lg font-black px-2.5 py-0.5 rounded-full bg-card border-2 border-ink shadow-solid-sm">
                         {judgment.points > 0 ? `+${judgment.points}` : judgment.points} pts
                       </span>
                     </div>
@@ -824,39 +819,39 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
               {/* Gabarito e Bloco de Resumo da Wikipédia */}
               {(status === 'judged' || status === 'revealed') && (
-                <div className="card-salinha p-6 sm:p-7 space-y-4">
+                <div className="card-salinha p-4 sm:p-7 space-y-3.5">
                   <div>
-                    <span className="text-xs uppercase font-black tracking-wider text-suave">
+                    <span className="text-[11px] uppercase font-black tracking-wider text-suave">
                       Resposta Oficial:
                     </span>
                     <div
-                      className="text-2xl font-black text-or mt-1"
+                      className="text-xl sm:text-2xl font-black text-or mt-0.5"
                       dangerouslySetInnerHTML={{ __html: currentQuestion.formatted_answer_pt }}
                     />
                   </div>
 
                   {currentQuestion.explanation && (
-                    <div className="pt-3 border-t-2 border-ink/15 text-sm sm:text-base text-ink leading-relaxed">
+                    <div className="pt-2.5 border-t-2 border-ink/15 text-xs sm:text-base text-ink leading-relaxed">
                       <span className="font-bold">Contexto: </span>
                       {currentQuestion.explanation}
                     </div>
                   )}
 
                   {currentQuestion.wiki_url && (
-                    <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
+                    <div className="pt-1 flex flex-wrap items-center justify-between gap-2.5">
                       <a
                         href={currentQuestion.wiki_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="tag-salinha inline-flex items-center gap-1.5 bg-bl text-white text-xs px-3.5 py-1.5 hover:bg-bl-dark shadow-solid-sm"
+                        className="tag-salinha inline-flex items-center gap-1 bg-bl text-white text-[11px] sm:text-xs px-3 py-1 hover:bg-bl-dark shadow-solid-sm"
                       >
-                        <BookOpen className="w-3.5 h-3.5" /> Ler na Wikipédia <ExternalLink className="w-3 h-3" />
+                        <BookOpen className="w-3 h-3" /> Wikipédia <ExternalLink className="w-3 h-3" />
                       </a>
 
-                      <div className="flex flex-wrap items-center gap-1 text-xs">
-                        <span className="font-bold text-suave mr-1">Variações aceitas:</span>
-                        {currentQuestion.accept_aliases.slice(0, 4).map((alias, i) => (
-                          <span key={i} className="bg-paper border border-ink/30 px-2 py-0.5 rounded-md font-semibold text-ink">
+                      <div className="flex flex-wrap items-center gap-1 text-[11px]">
+                        <span className="font-bold text-suave mr-1">Aceitos:</span>
+                        {currentQuestion.accept_aliases.slice(0, 3).map((alias, i) => (
+                          <span key={i} className="bg-paper border border-ink/30 px-1.5 py-0.5 rounded font-semibold text-ink">
                             {alias}
                           </span>
                         ))}
@@ -864,18 +859,17 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                     </div>
                   )}
 
-                  {/* Se foi no modo diário, oferece o botão de compartilhar e ir ao ilimitado */}
                   {gameMode === 'daily' && dailyResult && (
-                    <div className="pt-4 border-t-2 border-ink/15 flex flex-wrap gap-3">
+                    <div className="pt-3 border-t-2 border-ink/15 flex flex-col sm:flex-row gap-2.5">
                       <button
                         onClick={handleCopyShare}
-                        className="btn-salinha bg-gr hover:bg-gr-dark text-white px-6 py-3 text-sm cursor-pointer shadow-solid-sm"
+                        className="btn-salinha w-full sm:w-auto bg-gr hover:bg-gr-dark text-white px-5 py-2.5 text-xs sm:text-sm cursor-pointer shadow-solid-sm"
                       >
                         {copiedShare ? '✅ Copiado!' : '📋 Compartilhar Meu Corte'}
                       </button>
                       <button
                         onClick={() => setGameMode('unlimited')}
-                        className="btn-salinha bg-mu hover:bg-mu-dark text-ink px-6 py-3 text-sm cursor-pointer shadow-solid-sm"
+                        className="btn-salinha w-full sm:w-auto bg-mu hover:bg-mu-dark text-ink px-5 py-2.5 text-xs sm:text-sm cursor-pointer shadow-solid-sm"
                       >
                         Jogar Modo Ilimitado →
                       </button>
@@ -885,11 +879,11 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
               )}
             </div>
           ) : (
-            <div className="card-salinha text-center py-20">
+            <div className="card-salinha text-center py-16">
               <p className="text-suave font-bold">Nenhuma pergunta encontrada com esses filtros.</p>
               <button
                 onClick={() => filterUnlimited('Todas')}
-                className="btn-salinha mt-4 bg-mu text-ink px-5 py-2 text-sm cursor-pointer shadow-solid-sm"
+                className="btn-salinha mt-3 bg-mu text-ink px-4 py-2 text-xs font-bold cursor-pointer shadow-solid-sm"
               >
                 Resetar Filtros
               </button>
