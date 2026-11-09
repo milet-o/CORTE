@@ -68,7 +68,7 @@ export interface DailyResult {
 /**
  * Gera o texto formatado para compartilhar no WhatsApp / Discord / Redes
  */
-export function formatShareText(result: DailyResult): string {
+export function formatShareText(result: DailyResult, siteUrl?: string): string {
   const statusEmoji = result.isPower ? '⚡' : result.isCorrect ? '🟢' : '❌';
   const pointsStr = result.points > 0 ? `+${result.points}` : `${result.points}`;
   const secondsStr = (result.cutTimeMs / 1000).toFixed(1);
@@ -78,12 +78,15 @@ export function formatShareText(result: DailyResult): string {
   const filledBlocks = Math.max(1, Math.min(totalBlocks, Math.round((result.cutPercentage / 100) * totalBlocks)));
   const bar = '▓'.repeat(filledBlocks) + '░'.repeat(totalBlocks - filledBlocks);
 
+  const finalUrl = siteUrl || (typeof window !== 'undefined' ? window.location.origin : 'https://corte-h0ub.onrender.com');
+  const streakText = result.streak === 1 ? '1 dia' : `${result.streak} dias seguidos`;
+
   return [
     `✂️ corte. #${result.dayIndex} — ${pointsStr} pts`,
     `${statusEmoji} [${bar}] ${result.cutPercentage}% da pergunta`,
     `⏱️ Corte em ${result.cutTimeMs} ms (${secondsStr}s)`,
-    `🔥 Ofensiva: ${result.streak} ${result.streak === 1 ? 'dia' : 'dias'} seguidos`,
+    `🔥 Ofensiva: ${streakText}`,
     ``,
-    `Acerte o corte de hoje em: https://corte-quizbowl.onrender.com`
+    `Acerte o corte de hoje em: ${finalUrl}`
   ].join('\n');
 }

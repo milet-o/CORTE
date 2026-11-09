@@ -379,7 +379,8 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
   const handleCopyShare = () => {
     if (!dailyResult) return;
-    const text = formatShareText(dailyResult);
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://corte-h0ub.onrender.com';
+    const text = formatShareText(dailyResult, origin);
     navigator.clipboard.writeText(text);
     setCopiedShare(true);
     setTimeout(() => setCopiedShare(false), 2500);
