@@ -33,13 +33,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Efeito de botão com clique tátil e sombra sólida do Salinha */
+/* Efeito de botão com clique tátil e sombra sólida suavizada */
 .btn-salinha {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid var(--ink);
-  box-shadow: 4px 4px 0 var(--ink);
+  border: 2.5px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
   border-radius: 9999px;
   font-weight: 800;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
@@ -48,20 +48,20 @@ body {
 
 .btn-salinha:hover:not(:disabled) {
   transform: translate(-1px, -1px);
-  box-shadow: 5px 5px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
 }
 
 .btn-salinha:active:not(:disabled) {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 1px 1px 0 var(--ink);
 }
 
-/* Card estilo folha / sticker do Salinha */
+/* Card estilo folha / sticker com borda e sombra suavizadas */
 .card-salinha {
   background-color: var(--card);
-  border: 3.5px solid var(--ink);
-  box-shadow: 5px 5px 0 var(--ink);
-  border-radius: 24px;
+  border: 2.5px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  border-radius: 20px;
 }
 
 /* Tag adesivo */

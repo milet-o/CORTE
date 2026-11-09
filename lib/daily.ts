@@ -32,21 +32,30 @@ export function getTodayDateString(): string {
 }
 
 /**
- * Seleciona a pergunta determinística do dia com base na data
+ * Seleciona a pergunta determinística do dia com base na data.
+ * A pergunta diária é SEMPRE FÁCIL (difficulty === 1, com fallback para <= 2).
  */
 export function getDailyQuestion(questions: Tossup[], dateStr?: string): { tossup: Tossup; dayIndex: number; dateStr: string } {
   const date = dateStr || getTodayDateString();
   const hash = hashString(`corte-daily-seed-${date}`);
-  const total = questions.length;
+  
+  // Filtra apenas perguntas de nível FÁCIL
+  const easyQuestions = questions.filter(q => q.difficulty === 1);
+  const pool = easyQuestions.length > 0 
+    ? easyQuestions 
+    : questions.filter(q => q.difficulty <= 2);
+  const finalPool = pool.length > 0 ? pool : questions;
+
+  const total = finalPool.length;
   const index = total > 0 ? hash % total : 0;
   
-  // Número ordinal do dia (ex: dia 1, dia 2... a partir de uma data base)
+  // Número ordinal do dia (a partir de 01/11/2026)
   const baseEpoch = new Date('2026-11-01').getTime();
   const currentEpoch = new Date(date).getTime();
   const dayNumber = Math.max(1, Math.floor((currentEpoch - baseEpoch) / (1000 * 60 * 60 * 24)) + 1);
 
   return {
-    tossup: questions[index],
+    tossup: finalPool[index],
     dayIndex: dayNumber,
     dateStr: date
   };

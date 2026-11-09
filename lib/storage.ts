@@ -43,6 +43,16 @@ export function getStoredDailyResult(): DailyResult | null {
 }
 
 /**
+ * Limpa o resultado do dia de hoje para permitir rejogar/testar
+ */
+export function clearDailyResult(dateStr?: string) {
+  if (typeof window === 'undefined') return;
+  const today = dateStr || getTodayDateString();
+  document.cookie = `corte_daily_${today}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+  localStorage.removeItem(`corte_daily_${today}`);
+}
+
+/**
  * Salva o resultado do jogo diário e recalcula a ofensiva (streak)
  */
 export function saveStoredDailyResult(

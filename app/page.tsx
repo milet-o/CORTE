@@ -3,6 +3,9 @@ import path from 'path';
 import QuizbowlReader from '@/components/QuizbowlReader';
 import { Tossup } from '@/types/quizbowl';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default function Home() {
   const filePath = path.resolve(process.cwd(), 'data/questions.json');
   let initialQuestions: Tossup[] = [];
@@ -17,7 +20,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen text-ink pb-16">
+    <main className="min-h-screen lg:h-screen lg:max-h-screen lg:overflow-hidden text-ink">
       <QuizbowlReader initialQuestions={initialQuestions} />
     </main>
   );

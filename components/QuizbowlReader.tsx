@@ -1,17 +1,16 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Tossup, JudgmentResult, PlayerStats } from '@/types/quizbowl';
 import { 
   getDailyQuestion, 
-  getTodayDateString, 
   DailyResult, 
   formatShareText 
 } from '@/lib/daily';
 import { 
   getStoredDailyResult, 
   saveStoredDailyResult, 
-  getSeenQuestionIds, 
+  clearDailyResult,
   markQuestionSeen,
   getCookie
 } from '@/lib/storage';
@@ -33,11 +32,27 @@ import {
   Calendar, 
   Infinity as InfinityIcon,
   Timer,
-  Check
+  Check,
+  Layers,
+  Gauge,
+  RotateCcw,
+  Eye
 } from 'lucide-react';
 
 interface QuizbowlReaderProps {
   initialQuestions: Tossup[];
+}
+
+/**
+ * Função para embaralhar array aleatoriamente (Fisher-Yates)
+ */
+function shuffleArray<T>(array: T[]): T[] {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }
 
 export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps) {
@@ -47,18 +62,55 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
   // Modo de Jogo: 'daily' (padrão) ou 'unlimited'
   const [gameMode, setGameMode] = useState<'daily' | 'unlimited'>('daily');
 
-  // Estado do Modo Diário
+  // Estado do Modo Diário (sempre questão fácil)
   const [dailyResult, setDailyResult] = useState<DailyResult | null>(null);
   const [dailyQuestionData, setDailyQuestionData] = useState<{ tossup: Tossup; dayIndex: number; dateStr: string } | null>(null);
   const [copiedShare, setCopiedShare] = useState(false);
   const [timeUntilTomorrow, setTimeUntilTomorrow] = useState('');
   const [streakCount, setStreakCount] = useState<number>(0);
 
-  // Configurações do jogo ilimitado
-  const [unlimitedQuestions, setUnlimitedQuestions] = useState<Tossup[]>(initialQuestions);
+  // Lista de todas as categorias e dificuldades disponíveis no banco
+  const availableCategories = useMemo(() => [
+    'Ciência',
+    'História',
+    'Geografia',
+    'Literatura',
+    'Cidades do Brasil',
+    'Personalidades do Brasil',
+    'Políticos do Brasil',
+    'Curiosidades do Mundo',
+    'Artes',
+    'Mitologia',
+    'Linguística'
+  ], []);
+
+  const categoryLabels: Record<string, string> = useMemo(() => ({
+    'Ciência': 'Ciência',
+    'História': 'História',
+    'Geografia': 'Geografia',
+    'Literatura': 'Literatura',
+    'Cidades do Brasil': 'Cidades BR',
+    'Personalidades do Brasil': 'Personalidades',
+    'Políticos do Brasil': 'Políticos BR',
+    'Curiosidades do Mundo': 'Mundo',
+    'Artes': 'Artes',
+    'Mitologia': 'Mitologia',
+    'Linguística': 'Linguística',
+  }), []);
+
+  const availableDifficulties = useMemo(() => [
+    { label: 'Fácil', key: 'easy', match: (d: number) => d <= 1 },
+    { label: 'Média', key: 'medium', match: (d: number) => d === 2 },
+    { label: 'Difícil', key: 'hard', match: (d: number) => d >= 3 },
+  ], []);
+
+  // Filtros Multi-seleção (Modo Ilimitado)
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(['Todas']);
+  const [selectedDifficulties, setSelectedDifficulties] = useState<string[]>(['Qualquer']);
+
+  // Questões do Modo Ilimitado (Filtradas e Randomizadas)
+  const [unlimitedQuestions, setUnlimitedQuestions] = useState<Tossup[]>([]);
   const [unlimitedIndex, setUnlimitedIndex] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState<string>('Todas');
-  const [wpm, setWpm] = useState(240);
 
   // Estado da leitura da pergunta ativa
   const [status, setStatus] = useState<'idle' | 'reading' | 'buzzed' | 'judged' | 'revealed'>('idle');
@@ -88,29 +140,50 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     wrongAnswers: 0,
   });
 
-  // Pergunta atualmente em exibição
-  const currentQuestion = gameMode === 'daily' 
-    ? dailyQuestionData?.tossup || null 
-    : unlimitedQuestions[unlimitedIndex] || null;
+  // Aplica filtros e randomiza para o Modo Ilimitado
+  const applyFiltersAndRandomize = useCallback((cats: string[], diffs: string[], resetIndex = true) => {
+    let pool = [...initialQuestions];
 
-  const words = useRef<string[]>([]);
-  const powerWordIndex = useRef<number>(-1);
-  const readerIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  const answerInputRef = useRef<HTMLInputElement | null>(null);
+    // Filtro multiclicável de Categorias
+    if (!cats.includes('Todas') && cats.length > 0) {
+      pool = pool.filter(q => cats.includes(q.category));
+    }
 
-  // Montagem do cliente: carrega cookies sem causar hydration mismatch
+    // Filtro multiclicável de Dificuldades
+    if (!diffs.includes('Qualquer') && diffs.length > 0) {
+      pool = pool.filter(q => {
+        return diffs.some(diffKey => {
+          const def = availableDifficulties.find(d => d.key === diffKey);
+          return def ? def.match(q.difficulty) : false;
+        });
+      });
+    }
+
+    // Randomiza a ordem para que NUNCA venha na ordem do banco
+    const shuffled = shuffleArray(pool);
+    setUnlimitedQuestions(shuffled);
+    if (resetIndex) {
+      setUnlimitedIndex(0);
+    }
+  }, [initialQuestions, availableDifficulties]);
+
+  // Montagem do cliente
   useEffect(() => {
     setIsMounted(true);
     const stored = getStoredDailyResult();
     if (stored) {
       setDailyResult(stored);
     }
+
+    // Pergunta diária sempre FÁCIL
     const dailyData = getDailyQuestion(initialQuestions);
     setDailyQuestionData(dailyData);
 
     const savedStreak = Number(getCookie('corte_streak') || (stored ? stored.streak : 0));
     setStreakCount(savedStreak);
+
+    // Inicializa o modo ilimitado com randomização
+    applyFiltersAndRandomize(['Todas'], ['Qualquer'], true);
 
     const updateCountdown = () => {
       const now = new Date();
@@ -128,7 +201,54 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     updateCountdown();
     const timer = setInterval(updateCountdown, 1000);
     return () => clearInterval(timer);
-  }, [initialQuestions]);
+  }, [initialQuestions, applyFiltersAndRandomize]);
+
+  // Alternadores de filtro multi-seleção de categorias
+  const toggleCategory = (cat: string) => {
+    let nextCats: string[];
+    if (cat === 'Todas') {
+      nextCats = ['Todas'];
+    } else {
+      const filtered = selectedCategories.filter(c => c !== 'Todas');
+      if (filtered.includes(cat)) {
+        nextCats = filtered.filter(c => c !== cat);
+        if (nextCats.length === 0) nextCats = ['Todas'];
+      } else {
+        nextCats = [...filtered, cat];
+      }
+    }
+    setSelectedCategories(nextCats);
+    applyFiltersAndRandomize(nextCats, selectedDifficulties, true);
+  };
+
+  // Alternadores de filtro multi-seleção de dificuldades
+  const toggleDifficulty = (diffKey: string) => {
+    let nextDiffs: string[];
+    if (diffKey === 'Qualquer') {
+      nextDiffs = ['Qualquer'];
+    } else {
+      const filtered = selectedDifficulties.filter(d => d !== 'Qualquer');
+      if (filtered.includes(diffKey)) {
+        nextDiffs = filtered.filter(d => d !== diffKey);
+        if (nextDiffs.length === 0) nextDiffs = ['Qualquer'];
+      } else {
+        nextDiffs = [...filtered, diffKey];
+      }
+    }
+    setSelectedDifficulties(nextDiffs);
+    applyFiltersAndRandomize(selectedCategories, nextDiffs, true);
+  };
+
+  // Pergunta atualmente em exibição
+  const currentQuestion = gameMode === 'daily' 
+    ? dailyQuestionData?.tossup || null 
+    : unlimitedQuestions[unlimitedIndex] || null;
+
+  const words = useRef<string[]>([]);
+  const powerWordIndex = useRef<number>(-1);
+  const readerIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const answerInputRef = useRef<HTMLInputElement | null>(null);
 
   // Prepara as palavras e localiza a fronteira do Power (*)
   useEffect(() => {
@@ -170,6 +290,13 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     setMeasuredCutPercent(0);
   };
 
+  // Permite ao usuário reiniciar e treinar o Diário sem cache bloqueante
+  const handleResetDaily = () => {
+    clearDailyResult();
+    setDailyResult(null);
+    resetQuestionState();
+  };
+
   // Iniciar / pausar leitura
   const toggleReading = () => {
     if (status === 'reading') {
@@ -192,78 +319,77 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     const now = performance.now();
     const startTime = readingStartTimeRef.current || now;
     const elapsedMs = Math.max(120, Math.round(now - startTime));
-    const totalWords = Math.max(1, words.current.length);
-    const cutPercent = Math.min(100, Math.max(1, Math.round((currentWordIndex / totalWords) * 100)));
+    const totalWords = words.current.length || 1;
+    const currentWordsRead = Math.max(1, currentWordIndex);
+    const cutPercent = Math.min(100, Math.max(1, Math.round((currentWordsRead / totalWords) * 100)));
 
     setMeasuredCutTimeMs(elapsedMs);
     setMeasuredCutPercent(cutPercent);
 
-    const isPower = currentWordIndex <= powerWordIndex.current;
-    setBuzzedAtWordIndex(currentWordIndex);
-    setIsPowerEligible(isPower);
     setStatus('buzzed');
+    setBuzzedAtWordIndex(currentWordIndex);
     setBuzzTimeRemaining(7);
 
     setTimeout(() => {
       answerInputRef.current?.focus();
-    }, 60);
+    }, 50);
   }, [status, currentWordIndex]);
 
-  // Loop de leitura palavra por palavra
+  // Timer de 7 segundos para responder após o corte
   useEffect(() => {
-    if (status !== 'reading') return;
-
-    const intervalMs = Math.round(60000 / wpm);
-
-    readerIntervalRef.current = setInterval(() => {
-      setCurrentWordIndex((prev) => {
-        const next = prev + 1;
-
-        if (next > powerWordIndex.current) {
-          setIsPowerEligible(false);
-        }
-
-        if (next >= words.current.length) {
-          if (readerIntervalRef.current) clearInterval(readerIntervalRef.current);
-          setStatus('idle');
-          return words.current.length;
-        }
-
-        return next;
-      });
-    }, intervalMs);
-
-    return () => {
-      if (readerIntervalRef.current) clearInterval(readerIntervalRef.current);
-    };
-  }, [status, wpm]);
-
-  // Timer do buzzer (7 segundos regressivos)
-  useEffect(() => {
-    if (status !== 'buzzed') return;
-
-    timerIntervalRef.current = setInterval(() => {
-      setBuzzTimeRemaining((prev) => {
-        if (prev <= 1) {
-          if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
-          submitAnswer(true);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
+    if (status === 'buzzed') {
+      timerIntervalRef.current = setInterval(() => {
+        setBuzzTimeRemaining((prev) => {
+          if (prev <= 1) {
+            clearInterval(timerIntervalRef.current!);
+            submitAnswer(true);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    }
 
     return () => {
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     };
   }, [status]);
 
-  // Atalhos de teclado
+  // Intervalo de leitura palavra por palavra
+  useEffect(() => {
+    if (status === 'reading') {
+      const intervalMs = Math.round(60000 / 240); // 240 WPM
+
+      readerIntervalRef.current = setInterval(() => {
+        setCurrentWordIndex((prev) => {
+          const next = prev + 1;
+
+          if (powerWordIndex.current !== -1 && next > powerWordIndex.current) {
+            setIsPowerEligible(false);
+          }
+
+          if (next >= words.current.length) {
+            clearInterval(readerIntervalRef.current!);
+            setStatus('idle');
+            return words.current.length;
+          }
+
+          return next;
+        });
+      }, intervalMs);
+    }
+
+    return () => {
+      if (readerIntervalRef.current) clearInterval(readerIntervalRef.current);
+    };
+  }, [status]);
+
+  // Teclado: Barra de Espaço para CORTAR
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.code === 'Space') {
-        const activeTag = document.activeElement?.tagName.toLowerCase();
-        if (activeTag !== 'input' && activeTag !== 'textarea') {
+      if (e.code === 'Space' && (status === 'reading' || status === 'idle')) {
+        const target = e.target as HTMLElement;
+        if (target.tagName !== 'INPUT' && target.tagName !== 'TEXTAREA') {
           e.preventDefault();
           handleBuzz();
         }
@@ -272,7 +398,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleBuzz]);
+  }, [handleBuzz, status]);
 
   // Submeter ao Juiz Nativo
   const submitAnswer = async (timedOut = false) => {
@@ -347,6 +473,8 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     if (unlimitedIndex < unlimitedQuestions.length - 1) {
       setUnlimitedIndex((prev) => prev + 1);
     } else {
+      // Re-embaralha ao chegar ao fim do pool
+      setUnlimitedQuestions(shuffleArray(unlimitedQuestions));
       setUnlimitedIndex(0);
     }
   };
@@ -355,26 +483,6 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     if (readerIntervalRef.current) clearInterval(readerIntervalRef.current);
     setCurrentWordIndex(words.current.length);
     setStatus('revealed');
-  };
-
-  const filterUnlimited = async (cat: string) => {
-    setSelectedCategory(cat);
-    try {
-      const params = new URLSearchParams();
-      if (cat !== 'Todas') params.append('category', cat);
-      params.append('random', 'true');
-
-      const res = await fetch(`/api/questions?${params.toString()}`);
-      const data = await res.json();
-      if (data.questions && data.questions.length > 0) {
-        const seenIds = getSeenQuestionIds();
-        const unseens = data.questions.filter((q: Tossup) => !seenIds.includes(q.id));
-        setUnlimitedQuestions(unseens.length > 0 ? unseens : data.questions);
-        setUnlimitedIndex(0);
-      }
-    } catch (err) {
-      console.error('Erro ao filtrar questões:', err);
-    }
   };
 
   const handleCopyShare = () => {
@@ -386,508 +494,210 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     setTimeout(() => setCopiedShare(false), 2500);
   };
 
+  // Helper para rotular dificuldade na pergunta
+  const getDifficultyBadge = (diff: number) => {
+    if (diff <= 1) return { label: 'Fácil', bg: 'bg-[#d8f3dc] text-[#1b4332]' };
+    if (diff === 2) return { label: 'Média', bg: 'bg-[#fff4dc] text-[#b45309]' };
+    return { label: 'Difícil', bg: 'bg-[#ffccd5] text-[#9f1239]' };
+  };
+
   return (
-    <div className="max-w-4xl mx-auto px-3.5 sm:px-6 py-4 sm:py-8 space-y-5 sm:space-y-6">
-      {/* Topo / Barra de Navegação Estilo Salinha com Ergonomia Mobile */}
-      <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 border-b-2 border-ink/15 pb-4 sm:pb-5">
-        <div className="flex items-center justify-between sm:justify-start gap-3">
-          <div className="flex items-center gap-2">
-            <h1 className="font-serif font-black text-3xl sm:text-5xl tracking-tight text-ink flex items-center">
-              corte<span className="text-or">.</span>
-            </h1>
-            <span className="bg-creme border-2 border-ink px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-wider text-ink shadow-solid-sm flex items-center gap-1">
-              <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-or fill-or" />
-              {isMounted ? streakCount : 0} {streakCount === 1 ? 'dia' : 'dias'}
-            </span>
-          </div>
+    <div className="h-full flex flex-col justify-between p-3 sm:p-5 max-w-[1650px] mx-auto select-none">
+      {/* ======================================================== */}
+      {/* 1. HEADER FIXO COMPACTO (SEM ROLAGEM)                    */}
+      {/* ======================================================== */}
+      <header className="flex items-center justify-between border-b-2 border-ink/15 pb-2.5 mb-3 shrink-0">
+        <div className="flex items-center gap-3">
+          <h1 className="font-serif font-black text-3xl sm:text-4xl tracking-tight text-ink flex items-center">
+            corte<span className="text-or">.</span>
+          </h1>
+          <span className="bg-creme border-2 border-ink px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-wider text-ink shadow-solid-sm flex items-center gap-1">
+            <Flame className="w-3.5 h-3.5 text-or fill-or" />
+            {isMounted ? streakCount : 0} {streakCount === 1 ? 'dia' : 'dias'}
+          </span>
         </div>
 
-        {/* Chave Seletora de Modo (Diário vs Ilimitado) Compacta no Celular */}
-        <div className="flex items-center bg-card border-[3px] border-ink rounded-full p-1 shadow-solid w-full sm:w-auto justify-center">
-          <button
-            onClick={() => setGameMode('daily')}
-            className={`btn-salinha flex-1 sm:flex-initial px-4 py-1.5 text-xs sm:text-sm font-black transition ${
-              gameMode === 'daily'
-                ? 'bg-or text-white border-2 border-ink shadow-solid-sm'
-                : 'bg-transparent text-ink border-transparent shadow-none hover:bg-paper'
-            }`}
-          >
-            <Calendar className="w-3.5 h-3.5 mr-1" />
-            Diário
-          </button>
-          <button
-            onClick={() => setGameMode('unlimited')}
-            className={`btn-salinha flex-1 sm:flex-initial px-4 py-1.5 text-xs sm:text-sm font-black transition ${
-              gameMode === 'unlimited'
-                ? 'bg-mu text-ink border-2 border-ink shadow-solid-sm'
-                : 'bg-transparent text-ink border-transparent shadow-none hover:bg-paper'
-            }`}
-          >
-            <InfinityIcon className="w-3.5 h-3.5 mr-1" />
-            Ilimitado
-          </button>
+        {/* Chave Seletora de Modo (Diário vs Ilimitado) e Placar */}
+        <div className="flex items-center gap-3">
+          {gameMode === 'unlimited' && (
+            <div className="hidden md:flex items-center gap-2 bg-card border-2 border-ink rounded-full px-3 py-1 shadow-solid-sm text-xs font-bold text-ink">
+              <span>Pts: <strong className="text-gr-dark">{stats.score}</strong></span>
+              <span className="text-ink/30">&bull;</span>
+              <span>15s: <strong className="text-mu-dark">{stats.powers}</strong></span>
+              <span className="text-ink/30">&bull;</span>
+              <span>10s: <strong>{stats.tens}</strong></span>
+              <span className="text-ink/30">&bull;</span>
+              <span>-5s: <strong className="text-rd">{stats.negs}</strong></span>
+            </div>
+          )}
+
+          <div className="flex items-center bg-card border-[2.5px] border-ink rounded-full p-0.5 shadow-solid-sm">
+            <button
+              onClick={() => {
+                setGameMode('daily');
+                resetQuestionState();
+              }}
+              className={`btn-salinha px-3.5 py-1 text-xs font-black transition ${
+                gameMode === 'daily'
+                  ? 'bg-or text-white border-2 border-ink shadow-solid-sm'
+                  : 'bg-transparent text-ink border-transparent shadow-none hover:bg-paper'
+              }`}
+            >
+              <Calendar className="w-3.5 h-3.5 mr-1" />
+              Diário
+            </button>
+            <button
+              onClick={() => {
+                setGameMode('unlimited');
+                resetQuestionState();
+              }}
+              className={`btn-salinha px-3.5 py-1 text-xs font-black transition ${
+                gameMode === 'unlimited'
+                  ? 'bg-mu text-ink border-2 border-ink shadow-solid-sm'
+                  : 'bg-transparent text-ink border-transparent shadow-none hover:bg-paper'
+              }`}
+            >
+              <InfinityIcon className="w-3.5 h-3.5 mr-1" />
+              Ilimitado
+            </button>
+          </div>
         </div>
       </header>
 
       {/* ======================================================== */}
-      {/* 📅 CASO 1: MODO DIÁRIO JÁ CONCLUÍDO HOJE                */}
+      {/* 2. ÁREA PRINCIPAL: GRID DE 2 COLUNAS (NO SCROLL)         */}
       {/* ======================================================== */}
-      {isMounted && gameMode === 'daily' && dailyResult ? (
-        <div className="card-salinha p-5 sm:p-9 space-y-5 text-center">
-          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border-[3px] border-ink bg-creme shadow-solid mb-1">
-            {dailyResult.isPower ? (
-              <Zap className="w-7 h-7 sm:w-8 sm:h-8 text-mu-dark fill-mu-dark animate-bounce" />
-            ) : dailyResult.isCorrect ? (
-              <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8 text-gr-dark" />
-            ) : (
-              <XCircle className="w-7 h-7 sm:w-8 sm:h-8 text-rd" />
-            )}
-          </div>
-
-          <div>
-            <span className="bg-mu border-2 border-ink px-3 py-1 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-wider text-ink shadow-solid-sm">
-              Corte do Dia #{dailyResult.dayIndex} Concluído!
-            </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-ink mt-2.5">
-              {dailyResult.isPower
-                ? '💥 Corte Perfeito no POWER!'
-                : dailyResult.isCorrect
-                ? '✅ Você Acertou o Corte!'
-                : '❌ Quase! Resposta Incorreta'}
-            </h2>
-            <p className="text-suave text-sm sm:text-base font-medium mt-1">
-              Gabarito de hoje: <strong className="text-ink">{dailyResult.answerCanonical}</strong>
-            </p>
-          </div>
-
-          {/* Cards de Métricas */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 max-w-2xl mx-auto pt-1">
-            <div className="bg-card border-2 border-ink rounded-2xl p-2.5 sm:p-3 shadow-solid-sm">
-              <div className="text-[10px] sm:text-[11px] font-bold uppercase text-suave">Pontos</div>
-              <div className="text-xl sm:text-2xl font-black text-or">
-                {dailyResult.points > 0 ? `+${dailyResult.points}` : dailyResult.points}
-              </div>
-            </div>
-
-            <div className="bg-card border-2 border-ink rounded-2xl p-2.5 sm:p-3 shadow-solid-sm">
-              <div className="text-[10px] sm:text-[11px] font-bold uppercase text-suave">Corte</div>
-              <div className="text-xl sm:text-2xl font-black text-bl-dark">{dailyResult.cutPercentage}%</div>
-              <div className="text-[9px] sm:text-[10px] text-suave font-semibold">do texto lido</div>
-            </div>
-
-            <div className="bg-card border-2 border-ink rounded-2xl p-2.5 sm:p-3 shadow-solid-sm">
-              <div className="text-[10px] sm:text-[11px] font-bold uppercase text-suave">Reação</div>
-              <div className="text-xl sm:text-2xl font-black text-gr-dark">{dailyResult.cutTimeMs} ms</div>
-              <div className="text-[9px] sm:text-[10px] text-suave font-semibold">({(dailyResult.cutTimeMs / 1000).toFixed(1)}s)</div>
-            </div>
-
-            <div className="bg-card border-2 border-ink rounded-2xl p-2.5 sm:p-3 shadow-solid-sm">
-              <div className="text-[10px] sm:text-[11px] font-bold uppercase text-suave">Ofensiva</div>
-              <div className="text-xl sm:text-2xl font-black text-ink flex items-center justify-center gap-1">
-                <Flame className="w-4 h-4 text-or fill-or" />
-                {dailyResult.streak}d
-              </div>
-            </div>
-          </div>
-
-          {/* Botões de Ação */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 pt-3">
-            <button
-              onClick={handleCopyShare}
-              className="btn-salinha w-full sm:w-auto bg-gr hover:bg-gr-dark text-white px-7 py-3.5 text-sm sm:text-base tracking-wide uppercase shadow-solid cursor-pointer"
-            >
-              {copiedShare ? (
-                <>
-                  <Check className="w-4 h-4 mr-1.5" /> Copiado com Sucesso!
-                </>
-              ) : (
-                <>
-                  <Share2 className="w-4 h-4 mr-1.5" /> Compartilhar Meu Corte
-                </>
-              )}
-            </button>
-
-            <button
-              onClick={() => setGameMode('unlimited')}
-              className="btn-salinha w-full sm:w-auto bg-mu hover:bg-mu-dark text-ink px-7 py-3.5 text-sm sm:text-base tracking-wide uppercase shadow-solid cursor-pointer"
-            >
-              Jogar Modo Ilimitado <ChevronRight className="w-4 h-4 ml-1" />
-            </button>
-          </div>
-
-          <div className="pt-2 text-[11px] sm:text-xs font-bold text-suave flex items-center justify-center gap-1">
-            <Timer className="w-3.5 h-3.5 text-or" />
-            Próximo Corte Diário em: <span className="font-mono text-ink text-xs sm:text-sm font-black">{timeUntilTomorrow}</span>
-          </div>
-        </div>
-      ) : (
-        /* ======================================================== */
-        /* 🕹️ CASO 2: JOGO ATIVO (MODO DIÁRIO OU ILIMITADO)         */
-        /* ======================================================== */
-        <div className="space-y-4 sm:space-y-6">
-          {/* Se for Modo Ilimitado: Filtros e Placar */}
-          {gameMode === 'unlimited' && (
-            <div className="space-y-3">
-              <div className="flex items-center justify-between bg-card border-[3px] border-ink rounded-2xl p-2.5 px-3.5 shadow-solid">
-                <span className="text-xs font-black uppercase text-ink flex items-center gap-1">
-                  <InfinityIcon className="w-3.5 h-3.5 text-mu-dark" /> Ilimitado:
-                </span>
-
-                <div className="flex items-center gap-2.5 text-xs font-bold">
-                  <div>Pts: <strong className="text-gr-dark text-sm">{stats.score}</strong></div>
-                  <div>15s: <strong className="text-mu-dark text-sm">{stats.powers}</strong></div>
-                  <div>10s: <strong className="text-ink text-sm">{stats.tens}</strong></div>
-                  <div>-5s: <strong className="text-rd text-sm">{stats.negs}</strong></div>
-                </div>
-              </div>
-
-              {/* Categorias no Ilimitado com rolagem horizontal suave no mobile */}
-              <div className="bg-card border-[3px] border-ink rounded-2xl p-2.5 shadow-solid flex items-center gap-1.5 overflow-x-auto no-scrollbar">
-                <span className="text-xs font-black uppercase text-ink mr-1 flex items-center gap-1 shrink-0">
-                  <Sparkles className="w-3 h-3 text-or" /> Temas:
-                </span>
-                {[
-                  'Todas',
-                  'Ciência',
-                  'História',
-                  'Geografia',
-                  'Literatura',
-                  'Linguística',
-                  'Mitologia',
-                  'Artes',
-                  'Cidades do Brasil',
-                  'Personalidades do Brasil',
-                  'Políticos do Brasil',
-                  'Curiosidades do Mundo',
-                ].map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => filterUnlimited(cat)}
-                    className={`tag-salinha px-2.5 py-1 text-xs font-bold transition shrink-0 ${
-                      selectedCategory === cat
-                        ? 'bg-mu text-ink shadow-solid-sm'
-                        : 'bg-paper/70 text-suave hover:bg-paper hover:text-ink'
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Cartão Central da Pergunta */}
+      <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-4 overflow-hidden">
+        
+        {/* ---------------------------------------------------- */}
+        {/* COLUNA DA ESQUERDA: A PERGUNTA (7/12 = ~58% LARGURA) */}
+        {/* ---------------------------------------------------- */}
+        <div className="lg:col-span-7 h-full flex flex-col justify-between card-salinha p-5 sm:p-7 relative overflow-hidden bg-card">
           {currentQuestion ? (
-            <div className="space-y-4 sm:space-y-6">
-              <div className="card-salinha p-4 sm:p-8 relative overflow-hidden">
-                {/* Topo do Card com Selos */}
-                <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b-2 border-ink/15">
-                  <div className="flex items-center gap-1.5 sm:gap-2">
-                    {gameMode === 'daily' ? (
-                      <span className="bg-or text-white border-2 border-ink text-[11px] sm:text-xs font-black px-2.5 py-0.5 rounded-full shadow-solid-sm flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
-                        CORTE DO DIA #{dailyQuestionData?.dayIndex}
-                      </span>
-                    ) : (
-                      <span className="bg-creme border-2 border-ink text-ink text-[11px] sm:text-xs font-black px-2 py-0.5 rounded-full shadow-solid-sm">
-                        #{unlimitedIndex + 1} de {unlimitedQuestions.length}
-                      </span>
-                    )}
-
-                    <span className="bg-paper border-2 border-ink text-[11px] sm:text-xs font-black px-2 py-0.5 rounded-full shadow-solid-sm">
-                      {currentQuestion.category}
+            <>
+              {/* Topo do Card com Badges */}
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-ink/15 shrink-0">
+                <div className="flex items-center gap-2">
+                  {gameMode === 'daily' ? (
+                    <span className="bg-or text-white border-2 border-ink text-[11px] sm:text-xs font-black px-2.5 py-0.5 rounded-full shadow-solid-sm flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      CORTE DO DIA #{dailyQuestionData?.dayIndex}
                     </span>
-                  </div>
+                  ) : (
+                    <span className="bg-creme border-2 border-ink text-ink text-[11px] sm:text-xs font-black px-2 py-0.5 rounded-full shadow-solid-sm">
+                      #{unlimitedIndex + 1} de {unlimitedQuestions.length}
+                    </span>
+                  )}
 
-                  {/* Indicador de Power */}
-                  <div>
-                    {isPowerEligible ? (
-                      <span className="inline-flex items-center gap-1 bg-mu border-2 border-ink text-ink text-[11px] sm:text-xs font-black px-2.5 py-0.5 rounded-full shadow-solid-sm animate-pulse">
-                        <Zap className="w-3 h-3 fill-ink" />
-                        POWER (+15)
+                  <span className="bg-paper border-2 border-ink text-[11px] sm:text-xs font-black px-2.5 py-0.5 rounded-full shadow-solid-sm">
+                    {currentQuestion.category}
+                  </span>
+
+                  {/* Badge de Dificuldade */}
+                  {(() => {
+                    const badge = getDifficultyBadge(currentQuestion.difficulty);
+                    return (
+                      <span className={`border-2 border-ink text-[11px] sm:text-xs font-black px-2 py-0.5 rounded-full shadow-solid-sm ${badge.bg}`}>
+                        {badge.label}
                       </span>
-                    ) : (
-                      <span className="bg-paper border-2 border-ink/40 text-suave text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full">
-                        Normal (+10)
-                      </span>
-                    )}
-                  </div>
+                    );
+                  })()}
                 </div>
 
-                {/* Texto da Pergunta com Leitura Progressiva */}
-                <div className="min-h-[140px] sm:min-h-[170px] text-lg sm:text-2xl leading-relaxed sm:leading-loose text-ink font-normal">
-                  {status === 'idle' && currentWordIndex === 0 ? (
-                    <div className="text-suave font-serif italic flex items-center gap-2.5 pt-4 text-base sm:text-xl">
-                      <Play className="w-5 h-5 text-or fill-or animate-bounce shrink-0" />
-                      Clique em <strong>"Iniciar"</strong> ou aperte <strong>CORTAR</strong> a qualquer momento...
-                    </div>
+                {/* Badge de Power */}
+                <div>
+                  {isPowerEligible ? (
+                    <span className="inline-flex items-center gap-1 bg-mu border-2 border-ink text-ink text-[11px] sm:text-xs font-black px-2.5 py-0.5 rounded-full shadow-solid-sm animate-pulse">
+                      <Zap className="w-3 h-3 fill-ink" />
+                      POWER (+15)
+                    </span>
                   ) : (
-                    <div>
-                      {words.current.map((word, idx) => {
-                        const isRevealed = idx < currentWordIndex || status === 'revealed' || status === 'judged';
-                        const isWordPower = idx <= powerWordIndex.current;
-                        const isBuzzedHere = idx === buzzedAtWordIndex;
-                        const isReadingHead = idx === currentWordIndex - 1 && status === 'reading';
+                    <span className="bg-paper border-2 border-ink/40 text-suave text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full">
+                      Normal (+10)
+                    </span>
+                  )}
+                </div>
+              </div>
 
-                        if (!isRevealed) {
-                          return (
-                            <span
-                              key={idx}
-                              aria-hidden="true"
-                              className="inline-block mr-1.5 h-3.5 sm:h-4 bg-[#e2dbce] rounded select-none align-middle"
-                              style={{ width: `${Math.max(22, Math.min(75, word.length * 9))}px` }}
-                            />
-                          );
-                        }
+              {/* Corpo da Pergunta com Leitura Dinâmica */}
+              <div className="flex-1 min-h-0 overflow-y-auto pr-1 text-xl sm:text-2xl lg:text-[1.65rem] leading-relaxed sm:leading-loose text-ink font-normal flex flex-col justify-center">
+                {status === 'idle' && currentWordIndex === 0 ? (
+                  <div className="text-suave font-serif italic flex items-center gap-2.5 text-lg sm:text-xl py-4">
+                    <Play className="w-5 h-5 text-or fill-or animate-bounce shrink-0" />
+                    Pressione <strong>"Iniciar"</strong> na lateral ou use a tecla <strong>Espaço</strong> para cortar...
+                  </div>
+                ) : (
+                  <div>
+                    {words.current.map((word, idx) => {
+                      const isRevealed = idx < currentWordIndex || status === 'revealed' || status === 'judged';
+                      const isWordPower = idx <= powerWordIndex.current;
+                      const isBuzzedHere = idx === buzzedAtWordIndex;
+                      const isReadingHead = idx === currentWordIndex - 1 && status === 'reading';
 
+                      if (!isRevealed) {
                         return (
                           <span
                             key={idx}
-                            className={`inline-block mr-1.5 transition-colors ${
-                              isWordPower && status === 'reading'
-                                ? 'text-ink font-semibold'
-                                : 'text-ink'
-                            } ${
-                              isBuzzedHere
-                                ? 'bg-rd text-white px-1.5 py-0.5 rounded-md border-2 border-ink font-bold shadow-solid-sm'
-                                : ''
-                            }`}
-                          >
-                            {word}
-                            {isReadingHead && (
-                              <span className="inline-block w-1.5 h-5 bg-or ml-1 rounded-full align-middle cursor-leitura" />
-                            )}
-                          </span>
+                            aria-hidden="true"
+                            className="inline-block mr-1.5 h-3.5 sm:h-4 bg-[#e2dbce] rounded select-none align-middle"
+                            style={{ width: `${Math.max(22, Math.min(80, word.length * 9.5))}px` }}
+                          />
                         );
-                      })}
-                    </div>
-                  )}
-                </div>
+                      }
 
-                {/* Barra de Progresso da Pergunta */}
-                <div className="mt-6 pt-3.5 border-t-2 border-ink/15 flex items-center justify-between text-[11px] sm:text-xs font-bold text-suave">
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    <span>Leitura:</span>
-                    <div className="w-28 sm:w-48 h-2.5 sm:h-3 bg-paper border-2 border-ink rounded-full overflow-hidden p-0.5">
-                      <div
-                        className={`h-full rounded-full transition-all duration-150 ${
-                          isPowerEligible ? 'bg-mu' : 'bg-gr'
-                        }`}
-                        style={{
-                          width: `${Math.min(100, (currentWordIndex / (words.current.length || 1)) * 100)}%`,
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <span>
-                    {currentWordIndex}/{words.current.length}
-                  </span>
-                </div>
-              </div>
-
-              {/* Área de Ação e Buzzer Móvel Amigável */}
-              <div className="card-salinha p-4 sm:p-6">
-                {status === 'buzzed' ? (
-                  <div className="space-y-3.5">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1.5 text-rd font-black text-xs sm:text-sm uppercase tracking-wider">
-                        <Scissors className="w-4 h-4 text-rd" />
-                        CORTADO AOS {measuredCutPercent}% ({measuredCutTimeMs} ms)!
-                      </div>
-                      <div className="flex items-center gap-1 font-mono text-sm sm:text-base font-black text-ink bg-mu border-2 border-ink px-2.5 py-0.5 rounded-full shadow-solid-sm">
-                        <Clock className="w-3.5 h-3.5" /> {buzzTimeRemaining}s
-                      </div>
-                    </div>
-
-                    <div className="w-full h-2 bg-paper border-2 border-ink rounded-full overflow-hidden p-0.5">
-                      <div
-                        className="h-full bg-rd rounded-full transition-all duration-1000 ease-linear"
-                        style={{ width: `${(buzzTimeRemaining / 7) * 100}%` }}
-                      />
-                    </div>
-
-                    {promptMessage && (
-                      <div className="bg-creme border-2 border-ink text-ink p-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 shadow-solid-sm">
-                        <AlertTriangle className="w-4 h-4 text-or shrink-0" />
-                        <span>{promptMessage}</span>
-                      </div>
-                    )}
-
-                    <form
-                      onSubmit={(e) => {
-                        e.preventDefault();
-                        submitAnswer();
-                      }}
-                      className="flex flex-col sm:flex-row gap-2 pt-1"
-                    >
-                      <input
-                        ref={answerInputRef}
-                        type="text"
-                        value={userAnswer}
-                        onChange={(e) => setUserAnswer(e.target.value)}
-                        placeholder="Digite sua resposta..."
-                        className="flex-1 bg-card border-3 border-ink rounded-2xl px-4 py-3 text-ink text-base sm:text-lg font-bold placeholder-ink/40 focus:outline-none shadow-solid"
-                        autoFocus
-                      />
-                      <button
-                        type="submit"
-                        className="btn-salinha bg-gr hover:bg-gr-dark text-white px-6 py-3 text-sm sm:text-base uppercase tracking-wider cursor-pointer shadow-solid"
-                      >
-                        Confirmar
-                      </button>
-                    </form>
-                  </div>
-                ) : (
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-                    {/* Botão de Cortar Grande e Chamativo em Laranja Salinha */}
-                    <button
-                      onClick={handleBuzz}
-                      disabled={status === 'judged' || status === 'revealed'}
-                      className={`btn-salinha w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-lg sm:text-xl tracking-wide uppercase transition ${
-                        status === 'judged' || status === 'revealed'
-                          ? 'bg-paper text-ink/30 border-ink/30 shadow-none cursor-not-allowed'
-                          : 'bg-or hover:bg-or-dark text-white shadow-solid cursor-pointer'
-                      }`}
-                    >
-                      <Scissors className="w-5 h-5 mr-1.5" />
-                      CORTAR! <span className="text-[11px] bg-ink text-white px-2 py-0.5 rounded-full ml-1.5 font-mono hidden sm:inline">Espaço</span>
-                    </button>
-
-                    <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-                      <button
-                        onClick={toggleReading}
-                        disabled={status === 'judged' || status === 'revealed'}
-                        className="btn-salinha flex-1 sm:flex-initial bg-card hover:bg-paper text-ink px-4 py-2.5 sm:py-3 text-xs sm:text-sm cursor-pointer shadow-solid-sm"
-                      >
-                        {status === 'reading' ? (
-                          <>
-                            <Pause className="w-3.5 h-3.5 mr-1" /> Pausar
-                          </>
-                        ) : (
-                          <>
-                            <Play className="w-3.5 h-3.5 mr-1 fill-ink" /> Iniciar
-                          </>
-                        )}
-                      </button>
-
-                      <button
-                        onClick={revealAnswer}
-                        className="btn-salinha bg-paper hover:bg-[#e4ddce] text-ink px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm cursor-pointer shadow-solid-sm"
-                      >
-                        Gabarito
-                      </button>
-
-                      {gameMode === 'unlimited' && (
-                        <button
-                          onClick={nextUnlimitedQuestion}
-                          className="btn-salinha bg-mu hover:bg-mu-dark text-ink px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm cursor-pointer shadow-solid-sm"
+                      return (
+                        <span
+                          key={idx}
+                          className={`inline-block mr-1.5 transition-colors ${
+                            isWordPower && status === 'reading'
+                              ? 'text-ink font-semibold'
+                              : 'text-ink'
+                          } ${
+                            isBuzzedHere
+                              ? 'bg-rd text-white px-1.5 py-0.5 rounded-md border-2 border-ink font-bold shadow-solid-sm'
+                              : ''
+                          }`}
                         >
-                          Próxima <ChevronRight className="w-3.5 h-3.5 ml-1" />
-                        </button>
-                      )}
-                    </div>
+                          {word}
+                          {isReadingHead && (
+                            <span className="inline-block w-2 h-6 bg-or ml-1 rounded-full align-middle cursor-leitura" />
+                          )}
+                        </span>
+                      );
+                    })}
                   </div>
                 )}
               </div>
 
-              {/* Veredito do Juiz Nativo */}
-              {judgment && (
-                <div
-                  className={`p-4 sm:p-5 rounded-2xl sm:rounded-3xl border-[3px] border-ink shadow-solid flex items-start gap-3 transition-all ${
-                    judgment.status === 'correct'
-                      ? judgment.points === 15
-                        ? 'bg-mu'
-                        : 'bg-[#d8f3dc]'
-                      : 'bg-[#ffccd5]'
-                  }`}
-                >
-                  {judgment.status === 'correct' ? (
-                    <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7 text-ink shrink-0 mt-0.5" />
-                  ) : (
-                    <XCircle className="w-6 h-6 sm:w-7 sm:h-7 text-rd shrink-0 mt-0.5" />
-                  )}
-                  <div className="flex-1 space-y-1">
-                    <div className="font-black text-base sm:text-lg flex items-center justify-between text-ink">
-                      <span>{judgment.message}</span>
-                      <span className="font-mono text-lg font-black px-2.5 py-0.5 rounded-full bg-card border-2 border-ink shadow-solid-sm">
-                        {judgment.points > 0 ? `+${judgment.points}` : judgment.points} pts
-                      </span>
-                    </div>
-                    {measuredCutTimeMs > 0 && (
-                      <p className="text-xs font-bold text-ink/80">
-                        ⏱️ Reação: <strong>{measuredCutTimeMs} ms</strong> &bull; Cortou aos <strong>{measuredCutPercent}%</strong> da pergunta
-                      </p>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* Gabarito e Bloco de Resumo da Wikipédia */}
-              {(status === 'judged' || status === 'revealed') && (
-                <div className="card-salinha p-4 sm:p-7 space-y-3.5">
-                  <div>
-                    <span className="text-[11px] uppercase font-black tracking-wider text-suave">
-                      Resposta Oficial:
-                    </span>
+              {/* Base do Card: Barra de Progresso */}
+              <div className="pt-3 mt-2 border-t-2 border-ink/15 flex items-center justify-between text-xs font-bold text-suave shrink-0">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span>Leitura:</span>
+                  <div className="w-32 sm:w-48 h-2.5 bg-paper border-2 border-ink rounded-full overflow-hidden p-0.5">
                     <div
-                      className="text-xl sm:text-2xl font-black text-or mt-0.5"
-                      dangerouslySetInnerHTML={{ __html: currentQuestion.formatted_answer_pt }}
+                      className={`h-full rounded-full transition-all duration-150 ${
+                        isPowerEligible ? 'bg-mu' : 'bg-gr'
+                      }`}
+                      style={{
+                        width: `${Math.min(100, (currentWordIndex / (words.current.length || 1)) * 100)}%`,
+                      }}
                     />
                   </div>
-
-                  {currentQuestion.explanation && (
-                    <div className="pt-2.5 border-t-2 border-ink/15 text-xs sm:text-base text-ink leading-relaxed">
-                      <span className="font-bold">Contexto: </span>
-                      {currentQuestion.explanation}
-                    </div>
-                  )}
-
-                  {currentQuestion.wiki_url && (
-                    <div className="pt-1 flex flex-wrap items-center justify-between gap-2.5">
-                      <a
-                        href={currentQuestion.wiki_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="tag-salinha inline-flex items-center gap-1 bg-bl text-white text-[11px] sm:text-xs px-3 py-1 hover:bg-bl-dark shadow-solid-sm"
-                      >
-                        <BookOpen className="w-3 h-3" /> Wikipédia <ExternalLink className="w-3 h-3" />
-                      </a>
-
-                      <div className="flex flex-wrap items-center gap-1 text-[11px]">
-                        <span className="font-bold text-suave mr-1">Aceitos:</span>
-                        {currentQuestion.accept_aliases.slice(0, 3).map((alias, i) => (
-                          <span key={i} className="bg-paper border border-ink/30 px-1.5 py-0.5 rounded font-semibold text-ink">
-                            {alias}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {gameMode === 'daily' && dailyResult && (
-                    <div className="pt-3 border-t-2 border-ink/15 flex flex-col sm:flex-row gap-2.5">
-                      <button
-                        onClick={handleCopyShare}
-                        className="btn-salinha w-full sm:w-auto bg-gr hover:bg-gr-dark text-white px-5 py-2.5 text-xs sm:text-sm cursor-pointer shadow-solid-sm"
-                      >
-                        {copiedShare ? '✅ Copiado!' : '📋 Compartilhar Meu Corte'}
-                      </button>
-                      <button
-                        onClick={() => setGameMode('unlimited')}
-                        className="btn-salinha w-full sm:w-auto bg-mu hover:bg-mu-dark text-ink px-5 py-2.5 text-xs sm:text-sm cursor-pointer shadow-solid-sm"
-                      >
-                        Jogar Modo Ilimitado →
-                      </button>
-                    </div>
-                  )}
                 </div>
-              )}
-            </div>
+                <span>
+                  {currentWordIndex}/{words.current.length} palavras
+                </span>
+              </div>
+            </>
           ) : (
-            <div className="card-salinha text-center py-16">
-              <p className="text-suave font-bold">Nenhuma pergunta encontrada com esses filtros.</p>
+            <div className="text-center py-20">
+              <p className="text-suave font-bold">Nenhuma pergunta encontrada com os filtros selecionados.</p>
               <button
-                onClick={() => filterUnlimited('Todas')}
+                onClick={() => {
+                  setSelectedCategories(['Todas']);
+                  setSelectedDifficulties(['Qualquer']);
+                  applyFiltersAndRandomize(['Todas'], ['Qualquer'], true);
+                }}
                 className="btn-salinha mt-3 bg-mu text-ink px-4 py-2 text-xs font-bold cursor-pointer shadow-solid-sm"
               >
                 Resetar Filtros
@@ -895,7 +705,370 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
             </div>
           )}
         </div>
-      )}
+
+        {/* ---------------------------------------------------------------------- */}
+        {/* COLUNA DA DIREITA: A ORDEM SOLICITADA PELO USUÁRIO                     */}
+        {/* NO MODO ILIMITADO: 1. FILTROS -> 2. CONTROLES -> 3. GABARITOS          */}
+        {/* NO MODO DIÁRIO:    1. CONTROLES -> 2. GABARITO/RESULTADO               */}
+        {/* ---------------------------------------------------------------------- */}
+        <div className="lg:col-span-5 h-full flex flex-col justify-between gap-3 card-salinha p-4 sm:p-5 overflow-hidden bg-card">
+          
+          {/* =================================================================== */}
+          {/* SE O MODO FOR ILIMITADO: EXIBIR FILTROS NO TOPO (1º LUGAR!)         */}
+          {/* =================================================================== */}
+          {gameMode === 'unlimited' && (
+            <div className="shrink-0 space-y-2 pb-2.5 border-b-2 border-ink/15">
+              {/* Contador Dinâmico de Questões Disponíveis */}
+              <div className="flex items-center justify-between text-xs font-black text-ink">
+                <span className="flex items-center gap-1">
+                  <Layers className="w-3.5 h-3.5 text-or" /> Filtros Ativos:
+                </span>
+                <span className="bg-creme border border-ink px-2 py-0.5 rounded-full text-[11px] shadow-solid-sm">
+                  {unlimitedQuestions.length} questões encontradas
+                </span>
+              </div>
+
+              {/* Filtro Multi-seleção: Dificuldades */}
+              <div className="space-y-1">
+                <div className="text-[10px] font-black uppercase text-suave flex items-center gap-1">
+                  <Gauge className="w-3 h-3 text-bl" /> Dificuldade (Multi-seleção):
+                </div>
+                <div className="flex flex-wrap gap-1.5 p-1 pb-2">
+                  <button
+                    onClick={() => toggleDifficulty('Qualquer')}
+                    className={`tag-salinha px-2.5 py-1 text-[11px] font-bold transition shrink-0 ${
+                      selectedDifficulties.includes('Qualquer')
+                        ? 'bg-mu text-ink shadow-solid-sm'
+                        : 'bg-paper text-suave hover:bg-[#e6dfd1]'
+                    }`}
+                  >
+                    Qualquer
+                  </button>
+                  {availableDifficulties.map(diff => (
+                    <button
+                      key={diff.key}
+                      onClick={() => toggleDifficulty(diff.key)}
+                      className={`tag-salinha px-2.5 py-1 text-[11px] font-bold transition shrink-0 ${
+                        selectedDifficulties.includes(diff.key)
+                          ? 'bg-mu text-ink shadow-solid-sm'
+                          : 'bg-paper text-suave hover:bg-[#e6dfd1]'
+                      }`}
+                    >
+                      {diff.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Filtro Multi-seleção: Temas */}
+              <div className="space-y-1">
+                <div className="text-[10px] font-black uppercase text-suave flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-or" /> Temas (Multi-seleção):
+                </div>
+                <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto p-1 pb-3 scrollbar-thin">
+                  <button
+                    onClick={() => toggleCategory('Todas')}
+                    className={`tag-salinha px-2.5 py-1 text-[11px] font-bold transition shrink-0 ${
+                      selectedCategories.includes('Todas')
+                        ? 'bg-mu text-ink shadow-solid-sm'
+                        : 'bg-paper text-suave hover:bg-[#e6dfd1]'
+                    }`}
+                  >
+                    Todos
+                  </button>
+                  {availableCategories.map(cat => (
+                    <button
+                      key={cat}
+                      onClick={() => toggleCategory(cat)}
+                      title={cat}
+                      className={`tag-salinha px-2.5 py-1 text-[11px] font-bold transition shrink-0 ${
+                        selectedCategories.includes(cat)
+                          ? 'bg-mu text-ink shadow-solid-sm'
+                          : 'bg-paper text-suave hover:bg-[#e6dfd1]'
+                      }`}
+                    >
+                      {categoryLabels[cat] || cat}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* =================================================================== */}
+          {/* OS CONTROLES (BUZZER, INICIAR, GABARITO, PRÓXIMA)                   */}
+          {/* NO ILIMITADO FICA NO MEIO (2º); NO DIÁRIO FICA NO TOPO (1º)         */}
+          {/* =================================================================== */}
+          <div className="shrink-0 space-y-2.5 pb-2.5 border-b-2 border-ink/15">
+            {status === 'buzzed' ? (
+              <div className="space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5 text-rd font-black text-xs uppercase tracking-wider">
+                    <Scissors className="w-4 h-4 text-rd" />
+                    CORTADO AOS {measuredCutPercent}% ({measuredCutTimeMs} ms)!
+                  </div>
+                  <div className="flex items-center gap-1 font-mono text-sm font-black text-ink bg-mu border-2 border-ink px-2.5 py-0.5 rounded-full shadow-solid-sm">
+                    <Clock className="w-3.5 h-3.5" /> {buzzTimeRemaining}s
+                  </div>
+                </div>
+
+                <div className="w-full h-2 bg-paper border-2 border-ink rounded-full overflow-hidden p-0.5">
+                  <div
+                    className="h-full bg-rd rounded-full transition-all duration-1000 ease-linear"
+                    style={{ width: `${(buzzTimeRemaining / 7) * 100}%` }}
+                  />
+                </div>
+
+                {promptMessage && (
+                  <div className="bg-creme border-2 border-ink text-ink p-2 rounded-xl text-xs font-bold flex items-center gap-2 shadow-solid-sm">
+                    <AlertTriangle className="w-4 h-4 text-or shrink-0" />
+                    <span>{promptMessage}</span>
+                  </div>
+                )}
+
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    submitAnswer();
+                  }}
+                  className="flex gap-2"
+                >
+                  <input
+                    ref={answerInputRef}
+                    type="text"
+                    value={userAnswer}
+                    onChange={(e) => setUserAnswer(e.target.value)}
+                    placeholder="Digite sua resposta..."
+                    className="flex-1 bg-paper border-2 border-ink rounded-xl px-3 py-2 text-ink text-base font-bold placeholder-ink/40 focus:outline-none shadow-solid-sm"
+                    autoFocus
+                  />
+                  <button
+                    type="submit"
+                    className="btn-salinha bg-gr hover:bg-gr-dark text-white px-5 py-2 text-xs uppercase tracking-wider cursor-pointer shadow-solid-sm"
+                  >
+                    Confirmar
+                  </button>
+                </form>
+              </div>
+            ) : (
+              <div className="space-y-2.5">
+                {/* Botão de CORTAR Principal */}
+                <button
+                  onClick={handleBuzz}
+                  disabled={status === 'judged' || status === 'revealed'}
+                  className={`btn-salinha w-full py-3.5 text-xl tracking-wide uppercase transition ${
+                    status === 'judged' || status === 'revealed'
+                      ? 'bg-paper text-ink/30 border-ink/30 shadow-none cursor-not-allowed'
+                      : 'bg-or hover:bg-or-dark text-white shadow-solid cursor-pointer'
+                  }`}
+                >
+                  <Scissors className="w-5 h-5 mr-1.5" />
+                  CORTAR! <span className="text-[11px] bg-ink text-white px-2 py-0.5 rounded-full ml-2 font-mono">Espaço</span>
+                </button>
+
+                {/* Linha com Iniciar, Gabarito e Próxima */}
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={toggleReading}
+                    disabled={status === 'judged' || status === 'revealed'}
+                    className="btn-salinha flex-1 bg-card hover:bg-paper text-ink py-2 text-xs cursor-pointer shadow-solid-sm"
+                  >
+                    {status === 'reading' ? (
+                      <>
+                        <Pause className="w-3.5 h-3.5 mr-1" /> Pausar
+                      </>
+                    ) : (
+                      <>
+                        <Play className="w-3.5 h-3.5 mr-1 fill-ink" /> Iniciar
+                      </>
+                    )}
+                  </button>
+
+                  <button
+                    onClick={revealAnswer}
+                    className="btn-salinha px-3.5 bg-paper hover:bg-[#e4ddce] text-ink py-2 text-xs cursor-pointer shadow-solid-sm"
+                  >
+                    Gabarito
+                  </button>
+
+                  {gameMode === 'unlimited' && (
+                    <button
+                      onClick={nextUnlimitedQuestion}
+                      className="btn-salinha flex-1 bg-mu hover:bg-mu-dark text-ink py-2 text-xs cursor-pointer shadow-solid-sm"
+                    >
+                      Próxima <ChevronRight className="w-3.5 h-3.5 ml-1" />
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* =================================================================== */}
+          {/* SEÇÃO DO GABARITO / RESPOSTA CERTA                                  */}
+          {/* NUNCA MOSTRA A RESPOSTA EM CACHE SE O USUÁRIO NÃO CORTOU/PEDIU!     */}
+          {/* =================================================================== */}
+          <div className="flex-1 min-h-0 overflow-y-auto pr-1 flex flex-col justify-center">
+            {/* Caso 1: Pergunta foi respondida ou gabarito revelado ativamente */}
+            {status === 'judged' || status === 'revealed' ? (
+              <div className="space-y-2.5">
+                {/* Veredito do Juiz com Pontuação e Reação (se cortado) */}
+                {judgment && (
+                  <div
+                    className={`p-3 rounded-2xl border-2 border-ink shadow-solid-sm flex items-start gap-2.5 ${
+                      judgment.status === 'correct'
+                        ? judgment.points === 15
+                          ? 'bg-mu'
+                          : 'bg-[#d8f3dc]'
+                        : 'bg-[#ffccd5]'
+                    }`}
+                  >
+                    {judgment.status === 'correct' ? (
+                      <CheckCircle2 className="w-5 h-5 text-ink shrink-0 mt-0.5" />
+                    ) : (
+                      <XCircle className="w-5 h-5 text-rd shrink-0 mt-0.5" />
+                    )}
+                    <div className="flex-1 text-xs">
+                      <div className="font-black text-sm flex items-center justify-between text-ink">
+                        <span>{judgment.message}</span>
+                        <span className="font-mono text-sm font-black px-2 py-0.5 rounded-full bg-card border border-ink">
+                          {judgment.points > 0 ? `+${judgment.points}` : judgment.points} pts
+                        </span>
+                      </div>
+                      {measuredCutTimeMs > 0 && (
+                        <p className="text-[11px] font-bold text-ink/80 mt-0.5">
+                          ⏱️ Reação: <strong>{measuredCutTimeMs} ms</strong> &bull; Cortou aos <strong>{measuredCutPercent}%</strong>
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* Resposta Correta Oficial */}
+                <div className="bg-paper border-2 border-ink rounded-2xl p-3 shadow-solid-sm">
+                  <div className="text-[10px] uppercase font-black text-suave">
+                    Resposta Correta:
+                  </div>
+                  <div
+                    className="text-lg sm:text-xl font-black text-or mt-0.5"
+                    dangerouslySetInnerHTML={{ __html: currentQuestion?.formatted_answer_pt || '' }}
+                  />
+
+                  {currentQuestion?.explanation && (
+                    <p className="text-xs text-ink leading-relaxed mt-1.5 line-clamp-3">
+                      {currentQuestion.explanation}
+                    </p>
+                  )}
+
+                  {currentQuestion?.wiki_url && (
+                    <div className="mt-2 flex items-center justify-between">
+                      <a
+                        href={currentQuestion.wiki_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[11px] font-bold text-bl hover:underline"
+                      >
+                        <BookOpen className="w-3 h-3" /> Ver na Wikipédia <ExternalLink className="w-2.5 h-2.5" />
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+                {/* Ações Específicas do Modo Diário concluído */}
+                {gameMode === 'daily' && (
+                  <div className="space-y-2 pt-1">
+                    {dailyResult && (
+                      <button
+                        onClick={handleCopyShare}
+                        className="btn-salinha w-full bg-gr hover:bg-gr-dark text-white py-2 text-xs uppercase shadow-solid-sm cursor-pointer"
+                      >
+                        {copiedShare ? (
+                          <>
+                            <Check className="w-3.5 h-3.5 mr-1" /> Copiado para o WhatsApp!
+                          </>
+                        ) : (
+                          <>
+                            <Share2 className="w-3.5 h-3.5 mr-1" /> Compartilhar Meu Corte
+                          </>
+                        )}
+                      </button>
+                    )}
+
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => {
+                          setGameMode('unlimited');
+                          resetQuestionState();
+                        }}
+                        className="btn-salinha flex-1 bg-mu hover:bg-mu-dark text-ink py-2 text-xs uppercase shadow-solid-sm cursor-pointer"
+                      >
+                        Modo Ilimitado →
+                      </button>
+                      <button
+                        onClick={handleResetDaily}
+                        title="Limpar e tentar novamente (Treino)"
+                        className="btn-salinha px-3 bg-paper hover:bg-[#e4ddce] text-ink py-2 text-xs uppercase shadow-solid-sm cursor-pointer flex items-center gap-1"
+                      >
+                        <RotateCcw className="w-3 h-3" /> Treinar
+                      </button>
+                    </div>
+
+                    <div className="text-[11px] font-bold text-suave text-center flex items-center justify-center gap-1">
+                      <Timer className="w-3 h-3 text-or" />
+                      Próximo Corte Diário em: <span className="font-mono text-ink font-black">{timeUntilTomorrow}</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : gameMode === 'daily' && dailyResult ? (
+              /* Caso 2: Modo Diário já jogado hoje, mas usuário não pediu o gabarito nesta sessão (NÃO ESTRAGA O SPOILER!) */
+              <div className="bg-creme border-2 border-ink rounded-2xl p-4 shadow-solid-sm space-y-3 text-center">
+                <div className="inline-flex items-center gap-1.5 text-xs font-black text-gr-dark uppercase">
+                  <CheckCircle2 className="w-4 h-4 text-gr" /> Você já concluiu o corte de hoje!
+                </div>
+                <p className="text-xs text-ink font-medium">
+                  🔥 Ofensiva mantida: <strong>{streakCount} {streakCount === 1 ? 'dia' : 'dias'}</strong>
+                </p>
+                <div className="flex flex-col gap-2 pt-1">
+                  <button
+                    onClick={revealAnswer}
+                    className="btn-salinha bg-card hover:bg-paper text-ink py-2 text-xs uppercase shadow-solid-sm cursor-pointer flex items-center justify-center gap-1.5"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-or" /> Ver Meu Gabarito
+                  </button>
+                  <button
+                    onClick={handleResetDaily}
+                    className="btn-salinha bg-paper hover:bg-[#e4ddce] text-ink py-2 text-xs uppercase shadow-solid-sm cursor-pointer flex items-center justify-center gap-1.5"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" /> Jogar Novamente (Treino)
+                  </button>
+                  <button
+                    onClick={() => {
+                      setGameMode('unlimited');
+                      resetQuestionState();
+                    }}
+                    className="btn-salinha bg-mu hover:bg-mu-dark text-ink py-2 text-xs uppercase shadow-solid-sm cursor-pointer"
+                  >
+                    Jogar Modo Ilimitado →
+                  </button>
+                </div>
+                <div className="text-[10px] font-bold text-suave flex items-center justify-center gap-1 pt-1">
+                  <Timer className="w-3 h-3 text-or" />
+                  Próximo em: <span className="font-mono text-ink font-black">{timeUntilTomorrow}</span>
+                </div>
+              </div>
+            ) : (
+              /* Caso 3: Pergunta ainda não respondida - mensagem de incentivo (SEM SPOILER!) */
+              <div className="text-center py-4 text-suave text-xs font-medium space-y-1">
+                <Sparkles className="w-5 h-5 text-or mx-auto animate-pulse" />
+                <p className="font-bold text-ink">A resposta aparecerá aqui assim que você cortar!</p>
+                <p className="text-[11px]">Quanto mais cedo você cortar antes do (*), maior a sua pontuação.</p>
+              </div>
+            )}
+          </div>
+
+        </div>
+      </div>
     </div>
   );
 }
