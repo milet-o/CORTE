@@ -17,6 +17,52 @@ export function setCookie(name: string, value: string, days = 365) {
 }
 
 /**
+ * Atualiza e retorna a ofensiva (streak) diária baseada em acessos ao site.
+ * Sempre que o usuário entra no site num novo dia consecutivo, a ofensiva aumenta.
+ * Se entrar no mesmo dia, mantém. Se pular um dia ou for o primeiro acesso, ajusta para 1.
+ */
+export function recordDailyVisit(): number {
+  if (typeof window === 'undefined') return 1;
+
+  const today = getTodayDateString();
+  const lastDate = getCookie(LAST_PLAYED_DATE_KEY) || localStorage.getItem(LAST_PLAYED_DATE_KEY);
+  let currentStreak = Number(getCookie(STREAK_KEY) || localStorage.getItem(STREAK_KEY) || '0');
+
+  if (!lastDate) {
+    // Primeiro acesso
+    currentStreak = 1;
+  } else if (lastDate === today) {
+    // Já acessou hoje, garante no mínimo 1
+    currentStreak = Math.max(1, currentStreak);
+  } else {
+    // Calcula diferença em dias no calendário (UTC/local seguro)
+    const [lastY, lastM, lastD] = lastDate.split('-').map(Number);
+    const [todayY, todayM, todayD] = today.split('-').map(Number);
+    const lastTime = Date.UTC(lastY, lastM - 1, lastD);
+    const todayTime = Date.UTC(todayY, todayM - 1, todayD);
+    const diffDays = Math.round((todayTime - lastTime) / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 1) {
+      // Dia consecutivo (ontem -> hoje)
+      currentStreak = Math.max(1, currentStreak) + 1;
+    } else if (diffDays > 1) {
+      // Quebrou a sequência
+      currentStreak = 1;
+    } else {
+      currentStreak = Math.max(1, currentStreak);
+    }
+  }
+
+  setCookie(STREAK_KEY, String(currentStreak), 365);
+  localStorage.setItem(STREAK_KEY, String(currentStreak));
+
+  setCookie(LAST_PLAYED_DATE_KEY, today, 365);
+  localStorage.setItem(LAST_PLAYED_DATE_KEY, today);
+
+  return currentStreak;
+}
+
+/**
  * Retorna o resultado do dia de hoje, se já foi jogado
  */
 export function getStoredDailyResult(): DailyResult | null {
@@ -59,23 +105,7 @@ export function saveStoredDailyResult(
   data: Omit<DailyResult, 'streak'>
 ): DailyResult {
   const today = data.dateStr;
-  const lastDate = getCookie(LAST_PLAYED_DATE_KEY) || localStorage.getItem(LAST_PLAYED_DATE_KEY);
-  let currentStreak = Number(getCookie(STREAK_KEY) || localStorage.getItem(STREAK_KEY) || '0');
-
-  // Verifica se o último dia jogado foi ontem (mantém streak) ou antes (reseta)
-  if (lastDate) {
-    const lastTime = new Date(lastDate).getTime();
-    const todayTime = new Date(today).getTime();
-    const diffDays = Math.round((todayTime - lastTime) / (1000 * 60 * 60 * 24));
-
-    if (diffDays === 1) {
-      currentStreak += 1;
-    } else if (diffDays > 1) {
-      currentStreak = 1;
-    }
-  } else {
-    currentStreak = 1;
-  }
+  const currentStreak = Number(getCookie(STREAK_KEY) || localStorage.getItem(STREAK_KEY) || '1');
 
   const finalResult: DailyResult = {
     ...data,
@@ -85,12 +115,6 @@ export function saveStoredDailyResult(
   const serialized = JSON.stringify(finalResult);
   setCookie(`corte_daily_${today}`, serialized, 30);
   localStorage.setItem(`corte_daily_${today}`, serialized);
-
-  setCookie(STREAK_KEY, String(currentStreak), 365);
-  localStorage.setItem(STREAK_KEY, String(currentStreak));
-
-  setCookie(LAST_PLAYED_DATE_KEY, today, 365);
-  localStorage.setItem(LAST_PLAYED_DATE_KEY, today);
 
   return finalResult;
 }

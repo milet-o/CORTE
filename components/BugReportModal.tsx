@@ -22,8 +22,7 @@ export default function BugReportModal({ isOpen, onClose, context = 'Geral' }: B
       setIsSuccess(false);
       setErrorMessage(null);
       setDescription('');
-      const savedName = localStorage.getItem('corte_player_name') || '';
-      setReporterName(savedName);
+      setReporterName('');
     }
   }, [isOpen]);
 
@@ -116,7 +115,7 @@ export default function BugReportModal({ isOpen, onClose, context = 'Geral' }: B
                 value={reporterName}
                 onChange={(e) => setReporterName(e.target.value)}
                 maxLength={30}
-                placeholder="Ex: Felipe"
+                placeholder="Ex: Anônimo, Jogador, etc."
                 className="w-full bg-paper border-2 border-ink rounded-xl px-3 py-1.5 text-xs text-ink font-bold placeholder-ink/40 focus:outline-none shadow-solid-sm"
               />
             </div>

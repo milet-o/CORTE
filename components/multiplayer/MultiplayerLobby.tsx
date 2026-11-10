@@ -125,7 +125,7 @@ export default function MultiplayerLobby({
             value={playerName}
             onChange={(e) => setPlayerName(e.target.value)}
             maxLength={14}
-            placeholder="Ex: Felipe, Campeão, etc."
+            placeholder="Ex: TesouraDeOuro, Campeão, etc."
             className="w-full bg-paper border-2 border-ink rounded-xl px-3.5 py-2 text-ink font-bold placeholder-ink/40 focus:outline-none shadow-solid-sm transition-shadow focus:shadow-solid"
             autoFocus
           />

@@ -9,6 +9,7 @@ import {
   clearDailyResult,
   markQuestionSeen,
   getSeenQuestionIds,
+  recordDailyVisit,
   getCookie,
 } from '@/lib/storage';
 import MultiplayerRoom from '@/components/MultiplayerRoom';
@@ -160,8 +161,9 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     const dailyData = getDailyQuestion(initialQuestions);
     setDailyQuestionData(dailyData);
 
-    const savedStreak = Number(getCookie('corte_streak') || (stored ? stored.streak : 0));
-    setStreakCount(savedStreak);
+    // Registra visita diária do usuário no site e atualiza a ofensiva
+    const currentStreak = recordDailyVisit();
+    setStreakCount(currentStreak);
 
     applyFiltersAndRandomize(['Todas'], ['Qualquer'], true);
 
@@ -538,8 +540,8 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     if (unlimitedIndex < unlimitedQuestions.length - 1) {
       setUnlimitedIndex((prev) => prev + 1);
     } else {
-      setUnlimitedQuestions(shuffleArray(unlimitedQuestions));
-      setUnlimitedIndex(0);
+      // Quando esgotar o lote atual, re-aplica priorizando apenas as que continuarem inéditas
+      applyFiltersAndRandomize(selectedCategories, selectedDifficulties, true);
     }
   };
 
