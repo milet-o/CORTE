@@ -16,6 +16,7 @@
   --bl: #4f7fd0;
   --rd: #e0463a;
   --suave: #4d433d;
+  --spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 body {
@@ -33,7 +34,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Efeito de botão com clique tátil e sombra sólida suavizada */
+/* Efeito de botão com clique tátil e mola elástica */
 .btn-salinha {
   display: inline-flex;
   align-items: center;
@@ -42,39 +43,45 @@ body {
   box-shadow: 3px 3px 0 var(--ink);
   border-radius: 9999px;
   font-weight: 800;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transition: transform 0.18s var(--spring-bounce), box-shadow 0.18s var(--spring-bounce);
   user-select: none;
 }
 
 .btn-salinha:hover:not(:disabled) {
-  transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0 var(--ink);
+  transform: translate(-1.5px, -1.5px);
+  box-shadow: 4.5px 4.5px 0 var(--ink);
 }
 
 .btn-salinha:active:not(:disabled) {
-  transform: translate(2px, 2px);
+  transform: translate(2px, 2px) scale(0.97);
   box-shadow: 1px 1px 0 var(--ink);
 }
 
-/* Card estilo folha / sticker com borda e sombra suavizadas */
+/* Card estilo folha com expansão/stretch suave */
 .card-salinha {
   background-color: var(--card);
   border: 2.5px solid var(--ink);
   box-shadow: 3px 3px 0 var(--ink);
   border-radius: 20px;
+  transition: all 0.28s var(--spring-bounce);
 }
 
-/* Tag adesivo */
+/* Tag adesivo com micro-pulo tátil */
 .tag-salinha {
   border: 2px solid var(--ink);
   box-shadow: 2px 2px 0 var(--ink);
   border-radius: 9999px;
   font-weight: 700;
-  transition: all 0.12s ease;
+  transition: transform 0.16s var(--spring-bounce), box-shadow 0.16s var(--spring-bounce), background-color 0.15s ease;
+}
+
+.tag-salinha:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 3px 3px 0 var(--ink);
 }
 
 .tag-salinha:active {
-  transform: translate(1px, 1px);
+  transform: translate(1px, 1px) scale(0.94);
   box-shadow: 1px 1px 0 var(--ink);
 }
 
@@ -89,10 +96,90 @@ mark.destaque {
 
 /* Cursor de leitura estilo caneta/carimbo */
 @keyframes pisca-cursor {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0; transform: scaleY(0.7); }
 }
 
 .cursor-leitura {
   animation: pisca-cursor 0.7s infinite;
+}
+
+/* ======================================================== */
+/* BIG UPDATE DE ANIMAÇÕES: CARTOON, SPRING & JELLY         */
+/* ======================================================== */
+
+/* 1. Efeito Jelly Pop para cliques em bolinhas de cor e adesivos */
+@keyframes jelly-pop {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.3) rotate(-3deg); }
+  65% { transform: scale(0.9) rotate(2deg); }
+  85% { transform: scale(1.1); }
+  100% { transform: scale(1.12); }
+}
+
+.animate-jelly {
+  animation: jelly-pop 0.35s var(--spring-bounce) forwards;
+}
+
+/* 2. Tremidinha Cartoon de Erro (Shake) */
+@keyframes cartoon-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px) rotate(-1.5deg); }
+  40% { transform: translateX(6px) rotate(1.5deg); }
+  60% { transform: translateX(-4px) rotate(-1deg); }
+  80% { transform: translateX(3px) rotate(0.5deg); }
+}
+
+.animate-cartoon-shake {
+  animation: cartoon-shake 0.35s ease-in-out;
+}
+
+/* 3. Carimbo de Acerto (Stamp Pop) */
+@keyframes stamp-pop {
+  0% { transform: scale(1.22) rotate(-4deg); opacity: 0.4; }
+  60% { transform: scale(0.96) rotate(1deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.animate-stamp {
+  animation: stamp-pop 0.28s var(--spring-bounce) forwards;
+}
+
+/* 4. Tesoura Snip Animada */
+@keyframes snip-cut {
+  0% { transform: rotate(0deg) scale(1); }
+  30% { transform: rotate(-25deg) scale(1.2); }
+  60% { transform: rotate(10deg) scale(0.9); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.animate-snip {
+  animation: snip-cut 0.25s var(--spring-bounce);
+}
+
+/* 5. Transição suave de entrada de palavra lida */
+@keyframes word-fade-in {
+  0% { opacity: 0; transform: translateY(3px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-word {
+  animation: word-fade-in 0.12s ease-out forwards;
+}
+
+/* 6. Sanfona / Stretch Suave de container */
+.accordion-stretch {
+  display: grid;
+  transition: grid-template-rows 0.25s var(--spring-bounce), opacity 0.22s ease;
+}
+
+.accordion-stretch-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.accordion-stretch-closed {
+  grid-template-rows: 0fr;
+  opacity: 0;
+  pointer-events: none;
 }

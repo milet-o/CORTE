@@ -107,7 +107,12 @@ function computePowerWordIndex(question: Tossup | null): number {
   return starIdx !== -1 ? starIdx : Math.floor(rawWords.length * 0.45);
 }
 
-export function createRoom(hostName: string, hostColor: string, hostId: string): RoomState {
+export function createRoom(
+  hostName: string, 
+  hostColor: string, 
+  hostId: string, 
+  avatar?: { body: number; eyes: number; mouth: number }
+): RoomState {
   let code = generateRoomCode();
   while (rooms.has(code)) {
     code = generateRoomCode();
@@ -120,6 +125,7 @@ export function createRoom(hostName: string, hostColor: string, hostId: string):
     id: hostId,
     name: hostName.trim().slice(0, 14) || 'Host',
     color: hostColor || MULTIPLAYER_COLORS[0].hex,
+    avatar: avatar || { body: 0, eyes: 0, mouth: 0 },
     isHost: true,
     score: 0,
     powers: 0,
@@ -160,7 +166,13 @@ export function getRoom(code: string): RoomState | null {
   return rooms.get(normalized) || null;
 }
 
-export function joinRoom(code: string, playerName: string, playerColor: string, playerId: string): { success: boolean; room?: RoomState; error?: string } {
+export function joinRoom(
+  code: string, 
+  playerName: string, 
+  playerColor: string, 
+  playerId: string,
+  avatar?: { body: number; eyes: number; mouth: number }
+): { success: boolean; room?: RoomState; error?: string } {
   const room = getRoom(code);
   if (!room) return { success: false, error: 'Sala não encontrada.' };
 
@@ -168,6 +180,7 @@ export function joinRoom(code: string, playerName: string, playerColor: string, 
   if (existing) {
     existing.name = playerName.trim().slice(0, 14) || existing.name;
     existing.color = playerColor || existing.color;
+    if (avatar) existing.avatar = avatar;
     existing.lastActive = Date.now();
     broadcastRoom(room);
     return { success: true, room };
@@ -181,6 +194,7 @@ export function joinRoom(code: string, playerName: string, playerColor: string, 
     id: playerId,
     name: playerName.trim().slice(0, 14) || `Jogador ${room.players.length + 1}`,
     color: playerColor || MULTIPLAYER_COLORS[room.players.length % MULTIPLAYER_COLORS.length].hex,
+    avatar: avatar || { body: Math.floor(Math.random() * 5), eyes: Math.floor(Math.random() * 5), mouth: Math.floor(Math.random() * 5) },
     isHost: room.players.length === 0,
     score: 0,
     powers: 0,
@@ -193,6 +207,21 @@ export function joinRoom(code: string, playerName: string, playerColor: string, 
   room.players.push(newPlayer);
   broadcastRoom(room);
   return { success: true, room };
+}
+
+export function updatePlayerAvatar(
+  code: string,
+  playerId: string,
+  avatar: { body: number; eyes: number; mouth: number }
+): RoomState | null {
+  const room = getRoom(code);
+  if (!room) return null;
+  const player = room.players.find(p => p.id === playerId);
+  if (player) {
+    player.avatar = avatar;
+    broadcastRoom(room);
+  }
+  return room;
 }
 
 export function leaveRoom(code: string, playerId: string): RoomState | null {
@@ -215,6 +244,34 @@ export function leaveRoom(code: string, playerId: string): RoomState | null {
 
   broadcastRoom(room);
   return room;
+}
+
+export function kickPlayer(code: string, hostId: string, targetPlayerId: string): { success: boolean; room?: RoomState; error?: string } {
+  const room = getRoom(code);
+  if (!room) return { success: false, error: 'Sala não encontrada.' };
+  if (room.hostId !== hostId) return { success: false, error: 'Apenas o host pode expulsar jogadores.' };
+  if (targetPlayerId === hostId) return { success: false, error: 'O host não pode expulsar a si mesmo.' };
+
+  const targetIndex = room.players.findIndex(p => p.id === targetPlayerId);
+  if (targetIndex === -1) return { success: false, error: 'Jogador não encontrado na sala.' };
+
+  room.players.splice(targetIndex, 1);
+
+  // Se o jogador expulso era quem estava cortando no momento, cancela o buzz e retoma a leitura
+  if (room.buzzedPlayerId === targetPlayerId) {
+    room.buzzedPlayerId = null;
+    room.buzzStartTime = null;
+    const words = room.currentQuestion ? room.currentQuestion.question_pt.split(/\s+/).filter(Boolean) : [];
+    if (room.currentWordIndex < words.length) {
+      room.roundState = 'reading';
+    } else {
+      room.roundState = 'ending_countdown';
+      room.endCountdownStartTime = Date.now();
+    }
+  }
+
+  broadcastRoom(room);
+  return { success: true, room };
 }
 
 export function updateFilters(code: string, hostId: string, categories: string[], difficulties: string[], wpm?: number): RoomState | null {
@@ -392,7 +449,7 @@ if (!globalThis.__corte_tick_interval) {
       // 1. Corte expirado (10 segundos)
       if (room.roundState === 'buzzed' && room.buzzStartTime) {
         const elapsedSeconds = (now - room.buzzStartTime) / 1000;
-        if (elapsedSeconds >= room.buzzDurationSeconds) {
+        if (elapsedSeconds >= (room.buzzDurationSeconds || 10)) {
           if (room.buzzedPlayerId) {
             submitAnswer(room.code, room.buzzedPlayerId, '', true);
           }
@@ -400,25 +457,29 @@ if (!globalThis.__corte_tick_interval) {
         return;
       }
 
-      // 2. Leitura palavra por palavra
+      // 2. Leitura palavra por palavra respeitando o WPM da sala
       if (room.roundState === 'reading' && room.currentQuestion) {
-        const words = room.currentQuestion.question_pt.split(/\s+/).filter(Boolean);
-        room.currentWordIndex += 1;
+        const wordIntervalMs = Math.round((60 / (room.wpm || 240)) * 1000);
+        if (!room.lastWordTimestamp || (now - room.lastWordTimestamp) >= wordIntervalMs) {
+          room.lastWordTimestamp = now;
+          const words = room.currentQuestion.question_pt.split(/\s+/).filter(Boolean);
+          room.currentWordIndex += 1;
 
-        if (room.currentWordIndex >= words.length) {
-          // Fim do texto da pergunta: entra nos 10 segundos finais para corte
-          room.roundState = 'ending_countdown';
-          room.endCountdownStartTime = now;
+          if (room.currentWordIndex >= words.length) {
+            // Fim do texto da pergunta: entra nos 10 segundos finais para corte
+            room.roundState = 'ending_countdown';
+            room.endCountdownStartTime = now;
+          }
+
+          broadcastRoom(room);
+          return;
         }
-
-        broadcastRoom(room);
-        return;
       }
 
       // 3. Contagem final de 10 segundos após leitura completa
       if (room.roundState === 'ending_countdown' && room.endCountdownStartTime) {
         const elapsed = (now - room.endCountdownStartTime) / 1000;
-        if (elapsed >= room.endCountdownDurationSeconds) {
+        if (elapsed >= (room.endCountdownDurationSeconds || 10)) {
           // Ninguém cortou nos 10s finais: revela gabarito automaticamente
           room.roundState = 'revealed';
           room.endCountdownStartTime = null;
@@ -426,5 +487,5 @@ if (!globalThis.__corte_tick_interval) {
         }
       }
     });
-  }, 250); // Tick a cada 250ms
+  }, 50); // Tick a cada 50ms para precisão de timing
 }

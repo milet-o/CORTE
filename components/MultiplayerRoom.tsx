@@ -1,8 +1,18 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { RoomState, RoomPlayer, MULTIPLAYER_COLORS } from '@/lib/multiplayer/types';
 import { Tossup } from '@/types/quizbowl';
+import CreatureAvatar, { CreatureConfig, DEFAULT_CREATURE, getRandomCreature, HAT_NAMES } from '@/components/CreatureAvatar';
+import { 
+  playClickSound, 
+  playCutSound, 
+  playCorrectSound, 
+  playWrongSound, 
+  playTickSound,
+  playPlayerJoinSound,
+  playGameStartSound
+} from '@/lib/sfx';
 import { 
   Users, 
   Copy, 
@@ -21,19 +31,22 @@ import {
   Gauge,
   Zap,
   AlertTriangle,
-  RotateCcw
+  RotateCcw,
+  Dices
 } from 'lucide-react';
 
 interface MultiplayerRoomProps {
   initialCode?: string | null;
+  initialQuestions?: Tossup[];
   onExit: () => void;
 }
 
-export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoomProps) {
+export default function MultiplayerRoom({ initialCode, initialQuestions, onExit }: MultiplayerRoomProps) {
   // Identidade local do jogador
   const [playerId, setPlayerId] = useState<string>('');
   const [playerName, setPlayerName] = useState<string>('');
   const [playerColor, setPlayerColor] = useState<string>(MULTIPLAYER_COLORS[0].hex);
+  const [playerAvatar, setPlayerAvatar] = useState<CreatureConfig>(DEFAULT_CREATURE);
 
   // Telas: 'lobby' (escolher nick/sala) ou 'in_room'
   const [isInRoom, setIsInRoom] = useState<boolean>(false);
@@ -47,10 +60,17 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
+  // Contagens regressivas suaves e dinâmicas (10s do Buzzer e 10s Finais)
+  const [buzzTimeRemaining, setBuzzTimeRemaining] = useState<number>(10);
+  const [buzzPercentRemaining, setBuzzPercentRemaining] = useState<number>(100);
+  const [endCountdownRemaining, setEndCountdownRemaining] = useState<number>(10);
+  const [endCountdownPercentRemaining, setEndCountdownPercentRemaining] = useState<number>(100);
+
   // Refs e timers
   const answerInputRef = useRef<HTMLInputElement | null>(null);
   const sseRef = useRef<EventSource | null>(null);
   const pollIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const lastTickTimeRef = useRef<number>(0);
 
   // Inicializa id persistente do jogador no navegador
   useEffect(() => {
@@ -67,17 +87,101 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
     const savedColor = localStorage.getItem('corte_player_color');
     if (savedColor) setPlayerColor(savedColor);
 
+    const savedAvatar = localStorage.getItem('corte_player_avatar');
+    if (savedAvatar) {
+      try {
+        setPlayerAvatar(JSON.parse(savedAvatar));
+      } catch (e) {
+        setPlayerAvatar(getRandomCreature());
+      }
+    } else {
+      const initialRnd = getRandomCreature();
+      setPlayerAvatar(initialRnd);
+      localStorage.setItem('corte_player_avatar', JSON.stringify(initialRnd));
+    }
+
     if (initialCode) {
       setRoomCodeInput(initialCode.toUpperCase());
       setLobbyMode('join');
     }
   }, [initialCode]);
 
+  // Timer de 10s para responder ao Cortar (Atualização a 50ms)
+  useEffect(() => {
+    if (!room) return;
+
+    if (room.roundState === 'buzzed' && room.buzzStartTime) {
+      const startTime = room.buzzStartTime;
+      const totalMs = (room.buzzDurationSeconds || 10) * 1000;
+
+      const update = () => {
+        const now = Date.now();
+        const elapsedMs = now - startTime;
+        const remainingMs = Math.max(0, totalMs - elapsedMs);
+        const remainingSec = Math.max(0, Math.ceil(remainingMs / 1000));
+        const percent = Math.min(100, Math.max(0, (remainingMs / totalMs) * 100));
+
+        setBuzzTimeRemaining(remainingSec);
+        setBuzzPercentRemaining(percent);
+
+        if (remainingSec <= 3 && remainingSec > 0) {
+          const nowSec = Math.floor(now / 1000);
+          if (nowSec !== lastTickTimeRef.current) {
+            lastTickTimeRef.current = nowSec;
+            playTickSound();
+          }
+        }
+      };
+
+      update();
+      const interval = setInterval(update, 50);
+      return () => clearInterval(interval);
+    } else {
+      setBuzzTimeRemaining(10);
+      setBuzzPercentRemaining(100);
+    }
+  }, [room?.roundState, room?.buzzStartTime, room?.buzzDurationSeconds]);
+
+  // Timer de 10s finais após leitura completa (Atualização a 50ms)
+  useEffect(() => {
+    if (!room) return;
+
+    if (room.roundState === 'ending_countdown' && room.endCountdownStartTime) {
+      const startTime = room.endCountdownStartTime;
+      const totalMs = (room.endCountdownDurationSeconds || 10) * 1000;
+
+      const update = () => {
+        const now = Date.now();
+        const elapsedMs = now - startTime;
+        const remainingMs = Math.max(0, totalMs - elapsedMs);
+        const remainingSec = Math.max(0, Math.ceil(remainingMs / 1000));
+        const percent = Math.min(100, Math.max(0, (remainingMs / totalMs) * 100));
+
+        setEndCountdownRemaining(remainingSec);
+        setEndCountdownPercentRemaining(percent);
+
+        if (remainingSec <= 3 && remainingSec > 0) {
+          const nowSec = Math.floor(now / 1000);
+          if (nowSec !== lastTickTimeRef.current) {
+            lastTickTimeRef.current = nowSec;
+            playTickSound();
+          }
+        }
+      };
+
+      update();
+      const interval = setInterval(update, 50);
+      return () => clearInterval(interval);
+    } else {
+      setEndCountdownRemaining(10);
+      setEndCountdownPercentRemaining(100);
+    }
+  }, [room?.roundState, room?.endCountdownStartTime, room?.endCountdownDurationSeconds]);
+
   // Conecta ao stream SSE e polling de sincronização
   const connectToRoom = useCallback((code: string) => {
     const normalized = code.trim().toUpperCase();
 
-    // Fecha conexão anterior se houver
     if (sseRef.current) sseRef.current.close();
     if (pollIntervalRef.current) clearInterval(pollIntervalRef.current);
 
@@ -90,13 +194,10 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
           setRoom(data);
         } catch (err) {}
       };
-      sse.onerror = () => {
-        // Fallback para polling se SSE falhar
-      };
       sseRef.current = sse;
     } catch (e) {}
 
-    // 2. Polling de redundância a cada 1.5s para nunca dessincronizar
+    // 2. Polling de redundância a cada 1.5s
     pollIntervalRef.current = setInterval(async () => {
       try {
         const res = await fetch(`/api/rooms/${normalized}`);
@@ -118,6 +219,53 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
     };
   }, []);
 
+  // Efeitos sonoros acionados pelo estado da sala
+  useEffect(() => {
+    if (!room) return;
+
+    if (room.lastJudgment) {
+      if (room.lastJudgment.status === 'correct') {
+        playCorrectSound();
+      } else {
+        playWrongSound();
+      }
+    }
+  }, [room?.lastJudgment?.timestamp]);
+
+  // Notificação com som "Tlup" quando novos amigos entram na sala
+  const prevPlayerCountRef = useRef<number>(0);
+  useEffect(() => {
+    if (room) {
+      if (prevPlayerCountRef.current > 0 && room.players.length > prevPlayerCountRef.current) {
+        playPlayerJoinSound();
+      }
+      prevPlayerCountRef.current = room.players.length;
+    }
+  }, [room?.players.length]);
+
+  // Alerta sonoro de início de partida e piscar título da aba
+  const prevRoundStateRef = useRef<string>('idle');
+  useEffect(() => {
+    if (room) {
+      if (prevRoundStateRef.current !== 'reading' && room.roundState === 'reading') {
+        playGameStartSound();
+        if (typeof document !== 'undefined' && document.hidden) {
+          let count = 0;
+          const originalTitle = document.title;
+          const interval = setInterval(() => {
+            document.title = count % 2 === 0 ? '🚨 CORTE COMEÇOU!' : '✂️ CORTE.';
+            count++;
+            if (count > 8 || !document.hidden) {
+              clearInterval(interval);
+              document.title = originalTitle;
+            }
+          }, 600);
+        }
+      }
+      prevRoundStateRef.current = room.roundState;
+    }
+  }, [room?.roundState]);
+
   // Criação de Sala
   const handleCreateRoom = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -126,6 +274,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
       return;
     }
 
+    playClickSound();
     setErrorMessage(null);
     setIsSubmitting(true);
     localStorage.setItem('corte_player_name', playerName.trim());
@@ -139,6 +288,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
           hostName: playerName.trim(),
           hostColor: playerColor,
           hostId: playerId,
+          avatar: playerAvatar,
         }),
       });
 
@@ -169,6 +319,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
       return;
     }
 
+    playClickSound();
     setErrorMessage(null);
     setIsSubmitting(true);
     const code = roomCodeInput.trim().toUpperCase();
@@ -184,6 +335,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
           playerId,
           playerName: playerName.trim(),
           playerColor,
+          avatar: playerAvatar,
         }),
       });
 
@@ -225,6 +377,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
   // Cortar (Buzzer)
   const handleBuzz = () => {
     if (!room) return;
+    playCutSound();
     sendRoomAction('buzz');
   };
 
@@ -232,6 +385,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
   const handleSubmitAnswer = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     if (!room) return;
+    playClickSound();
     sendRoomAction('submit_answer', { answer: userAnswer.trim() });
     setUserAnswer('');
   };
@@ -269,6 +423,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
   // Copiar link de convite
   const handleCopyLink = () => {
     if (!room) return;
+    playClickSound();
     const origin = typeof window !== 'undefined' ? window.location.origin : 'https://corte-h0ub.onrender.com';
     const link = `${origin}/?sala=${room.code}`;
     navigator.clipboard.writeText(link);
@@ -311,6 +466,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
   // Alternar filtro (apenas Host)
   const toggleCategory = (cat: string) => {
     if (!isHost || !room) return;
+    playClickSound();
     let nextCats: string[];
     if (cat === 'Todas') {
       nextCats = ['Todas'];
@@ -331,6 +487,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
 
   const toggleDifficulty = (diffKey: string) => {
     if (!isHost || !room) return;
+    playClickSound();
     let nextDiffs: string[];
     if (diffKey === 'Qualquer') {
       nextDiffs = ['Qualquer'];
@@ -349,13 +506,70 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
     });
   };
 
+  const setSpeed = (spd: number) => {
+    if (!isHost || !room) return;
+    playClickSound();
+    sendRoomAction('update_filters', {
+      categories: room.selectedCategories,
+      difficulties: room.selectedDifficulties,
+      wpm: spd,
+    });
+  };
+
+  // Contagem dinâmica de perguntas encontradas pelos filtros
+  const matchingQuestionsCount = useMemo(() => {
+    if (!initialQuestions || !room) return 0;
+    return initialQuestions.filter(q => {
+      const matchCat = room.selectedCategories.includes('Todas') || 
+        room.selectedCategories.includes(q.category);
+      const matchDiff = room.selectedDifficulties.includes('Qualquer') || 
+        room.selectedDifficulties.some(diffKey => {
+          if (diffKey === 'easy') return q.difficulty <= 1;
+          if (diffKey === 'medium') return q.difficulty === 2;
+          if (diffKey === 'hard') return q.difficulty >= 3;
+          return false;
+        });
+      return matchCat && matchDiff;
+    }).length;
+  }, [initialQuestions, room?.selectedCategories, room?.selectedDifficulties]);
+
   // ========================================================
-  // TELA 1: LOBBY DE CRIAÇÃO / ENTRADA NA SALA
+  // TELA DE EXPULSO DA SALA (Caso o host tenha removido)
+  // ========================================================
+  if (isInRoom && room && !room.players.some(p => p.id === playerId)) {
+    return (
+      <div className="h-full flex flex-col justify-center items-center p-4 max-w-md mx-auto">
+        <div className="w-full card-salinha p-6 bg-card shadow-solid text-center space-y-4 animate-cartoon-shake">
+          <div className="w-14 h-14 bg-[#ffccd5] border-2 border-ink rounded-full mx-auto flex items-center justify-center shadow-solid-sm">
+            <LogOut className="w-6 h-6 text-rd" />
+          </div>
+          <div>
+            <h2 className="font-serif font-black text-xl text-ink">Você foi removido da sala</h2>
+            <p className="text-xs font-bold text-suave mt-1">O host da sala encerrou sua participação.</p>
+          </div>
+          <button
+            onClick={() => {
+              playClickSound();
+              setIsInRoom(false);
+              setRoom(null);
+              onExit();
+            }}
+            className="btn-salinha w-full py-2.5 bg-or hover:bg-or-dark text-white text-xs uppercase font-black shadow-solid cursor-pointer"
+          >
+            Voltar ao Início
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // ========================================================
+  // TELA 1: LOBBY DE CRIAÇÃO / ENTRADA NA SALA COM STRETCH
   // ========================================================
   if (!isInRoom || !room) {
     return (
       <div className="h-full flex flex-col justify-center items-center p-4 max-w-lg mx-auto">
-        <div className="w-full card-salinha p-6 sm:p-8 bg-card shadow-solid relative">
+        <div className="w-full card-salinha p-6 sm:p-8 bg-card shadow-solid relative transition-all duration-300">
           
           <div className="flex items-center justify-between pb-4 mb-4 border-b-2 border-ink/15">
             <div className="flex items-center gap-2">
@@ -368,33 +582,44 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
               </div>
             </div>
             <button
-              onClick={onExit}
-              className="text-xs font-bold text-suave hover:text-ink underline"
+              onClick={() => {
+                playClickSound();
+                onExit();
+              }}
+              className="text-xs font-bold text-suave hover:text-ink underline transition-transform active:scale-95"
             >
               Voltar
             </button>
           </div>
 
-          {/* Abas Criar vs Entrar */}
-          <div className="flex bg-paper border-2 border-ink rounded-full p-1 mb-5 shadow-solid-sm">
+          {/* Abas Criar vs Entrar com SLIDER DESLIZANTE DE MOLA */}
+          <div className="relative flex bg-paper border-2 border-ink rounded-full p-1 mb-5 shadow-solid-sm select-none">
+            {/* Pílula deslizante com física elástica */}
+            <div 
+              className={`absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full border-2 border-ink shadow-solid-sm transition-transform duration-250 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+                lobbyMode === 'create' ? 'translate-x-0 bg-or' : 'translate-x-full bg-mu'
+              }`}
+            />
             <button
               type="button"
-              onClick={() => setLobbyMode('create')}
-              className={`flex-1 py-1.5 text-xs font-black rounded-full transition ${
-                lobbyMode === 'create'
-                  ? 'bg-or text-white border-2 border-ink shadow-solid-sm'
-                  : 'text-suave hover:text-ink'
+              onClick={() => {
+                setLobbyMode('create');
+                playClickSound();
+              }}
+              className={`relative z-10 flex-1 py-1.5 text-xs font-black transition-colors duration-200 text-center ${
+                lobbyMode === 'create' ? 'text-white' : 'text-ink'
               }`}
             >
               Criar Nova Sala
             </button>
             <button
               type="button"
-              onClick={() => setLobbyMode('join')}
-              className={`flex-1 py-1.5 text-xs font-black rounded-full transition ${
-                lobbyMode === 'join'
-                  ? 'bg-mu text-ink border-2 border-ink shadow-solid-sm'
-                  : 'text-suave hover:text-ink'
+              onClick={() => {
+                setLobbyMode('join');
+                playClickSound();
+              }}
+              className={`relative z-10 flex-1 py-1.5 text-xs font-black transition-colors duration-200 text-center ${
+                lobbyMode === 'join' ? 'text-ink' : 'text-ink'
               }`}
             >
               Entrar com Código
@@ -411,47 +636,166 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
                 onChange={(e) => setPlayerName(e.target.value)}
                 maxLength={14}
                 placeholder="Ex: Felipe, Campeão, etc."
-                className="w-full bg-paper border-2 border-ink rounded-xl px-3.5 py-2 text-ink font-bold placeholder-ink/40 focus:outline-none shadow-solid-sm"
+                className="w-full bg-paper border-2 border-ink rounded-xl px-3.5 py-2 text-ink font-bold placeholder-ink/40 focus:outline-none shadow-solid-sm transition-shadow focus:shadow-solid"
                 autoFocus
               />
             </div>
 
-            {/* Seletor de Cor do Sticker */}
-            <div className="space-y-1.5">
-              <label className="text-xs font-black uppercase text-ink">Sua Cor de Adesivo:</label>
-              <div className="flex gap-2 justify-between">
-                {MULTIPLAYER_COLORS.map((col) => (
-                  <button
-                    key={col.hex}
-                    type="button"
-                    onClick={() => setPlayerColor(col.hex)}
-                    style={{ backgroundColor: col.hex }}
-                    className={`w-9 h-9 rounded-full border-2 border-ink transition transform ${
-                      playerColor === col.hex ? 'scale-110 shadow-solid-sm ring-2 ring-ink ring-offset-2' : 'hover:scale-105'
-                    }`}
-                    title={col.name}
-                  />
-                ))}
+            {/* Mixer de Criaturas (Kenney Creature Mixer) */}
+            <div className="bg-paper border-2 border-ink rounded-2xl p-3 shadow-solid-sm space-y-2.5">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black uppercase text-ink flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-or" /> Seu Monstrinho:
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    playClickSound();
+                    const next = getRandomCreature();
+                    setPlayerAvatar(next);
+                    localStorage.setItem('corte_player_avatar', JSON.stringify(next));
+                  }}
+                  className="btn-salinha bg-card hover:bg-[#e6dfd1] text-ink px-2.5 py-1 text-[11px] font-bold shadow-solid-sm cursor-pointer flex items-center gap-1 active:scale-95 transition-transform"
+                >
+                  <Dices className="w-3.5 h-3.5 text-or" /> Sortear Monstrinho
+                </button>
+              </div>
+
+              <div className="flex items-center justify-between gap-3 pt-0.5">
+                {/* Visualizador do Monstrinho */}
+                <div 
+                  className="p-2 bg-card border-2 border-ink rounded-2xl shadow-solid-sm flex items-center justify-center cursor-pointer hover:scale-105 active:scale-95 transition-transform shrink-0"
+                  onClick={() => {
+                    playClickSound();
+                    const next = getRandomCreature();
+                    setPlayerAvatar(next);
+                    localStorage.setItem('corte_player_avatar', JSON.stringify(next));
+                  }}
+                  title="Clique para sortear outra combinação!"
+                >
+                  <CreatureAvatar config={playerAvatar} color={playerColor} size={68} />
+                </div>
+
+                {/* Seletores rápidos de partes (Corpo, Olhos, Boca) */}
+                <div className="flex-1 flex flex-col gap-1 text-[11px] font-black">
+                  <div className="flex items-center justify-between gap-1">
+                    <span className="text-suave">Corpo:</span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        playClickSound();
+                        setPlayerAvatar(prev => {
+                          const next = { ...prev, body: (prev.body + 1) % 5 };
+                          localStorage.setItem('corte_player_avatar', JSON.stringify(next));
+                          return next;
+                        });
+                      }}
+                      className="px-2 py-0.5 bg-card border border-ink rounded-lg hover:bg-creme cursor-pointer text-[10px]"
+                    >
+                      Forma {(playerAvatar.body % 5) + 1}/5 →
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-between gap-1">
+                    <span className="text-suave">Olhos:</span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        playClickSound();
+                        setPlayerAvatar(prev => {
+                          const next = { ...prev, eyes: (prev.eyes + 1) % 5 };
+                          localStorage.setItem('corte_player_avatar', JSON.stringify(next));
+                          return next;
+                        });
+                      }}
+                      className="px-2 py-0.5 bg-card border border-ink rounded-lg hover:bg-creme cursor-pointer text-[10px]"
+                    >
+                      Olhos {(playerAvatar.eyes % 5) + 1}/5 →
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-between gap-1">
+                    <span className="text-suave">Boca:</span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        playClickSound();
+                        setPlayerAvatar(prev => {
+                          const next = { ...prev, mouth: (prev.mouth + 1) % 5 };
+                          localStorage.setItem('corte_player_avatar', JSON.stringify(next));
+                          return next;
+                        });
+                      }}
+                      className="px-2 py-0.5 bg-card border border-ink rounded-lg hover:bg-creme cursor-pointer text-[10px]"
+                    >
+                      Boca {(playerAvatar.mouth % 5) + 1}/5 →
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-between gap-1">
+                    <span className="text-suave">Chapéu:</span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        playClickSound();
+                        setPlayerAvatar(prev => {
+                          const next = { ...prev, hat: ((prev.hat ?? 0) + 1) % 6 };
+                          localStorage.setItem('corte_player_avatar', JSON.stringify(next));
+                          return next;
+                        });
+                      }}
+                      className="px-2 py-0.5 bg-card border border-ink rounded-lg hover:bg-creme cursor-pointer text-[10px]"
+                    >
+                      {HAT_NAMES[(playerAvatar.hat ?? 0) % 6]} →
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Código da Sala (apenas no modo entrar) */}
-            {lobbyMode === 'join' && (
-              <div className="space-y-1.5 pt-1">
-                <label className="text-xs font-black uppercase text-ink">Código da Sala (5 letras):</label>
-                <input
-                  type="text"
-                  value={roomCodeInput}
-                  onChange={(e) => setRoomCodeInput(e.target.value.toUpperCase())}
-                  maxLength={5}
-                  placeholder="Ex: BRASA"
-                  className="w-full bg-paper border-2 border-ink rounded-xl px-3.5 py-2 font-mono text-center tracking-widest text-lg font-black uppercase text-ink focus:outline-none shadow-solid-sm"
-                />
+            {/* Seletor de Cor do Sticker com JELLY POP */}
+            <div className="space-y-1.5">
+              <label className="text-xs font-black uppercase text-ink">Sua Cor de Adesivo:</label>
+              <div className="flex gap-2 justify-between">
+                {MULTIPLAYER_COLORS.map((col) => {
+                  const isSelected = playerColor === col.hex;
+                  return (
+                    <button
+                      key={col.hex}
+                      type="button"
+                      onClick={() => {
+                        setPlayerColor(col.hex);
+                        playClickSound();
+                      }}
+                      style={{ backgroundColor: col.hex }}
+                      className={`w-9 h-9 rounded-full border-2 border-ink transition-transform duration-200 ${
+                        isSelected 
+                          ? 'scale-115 ring-2 ring-ink ring-offset-2 animate-jelly shadow-solid-sm' 
+                          : 'hover:-translate-y-1 hover:scale-105'
+                      }`}
+                      title={col.name}
+                    />
+                  );
+                })}
               </div>
-            )}
+            </div>
+
+            {/* Código da Sala com EFEITO STRETCH / SANFONA SUAVE */}
+            <div className={`accordion-stretch ${lobbyMode === 'join' ? 'accordion-stretch-open' : 'accordion-stretch-closed'}`}>
+              <div className="overflow-hidden">
+                <div className="space-y-1.5 pt-2 pb-1">
+                  <label className="text-xs font-black uppercase text-ink">Código da Sala (5 letras):</label>
+                  <input
+                    type="text"
+                    value={roomCodeInput}
+                    onChange={(e) => setRoomCodeInput(e.target.value.toUpperCase())}
+                    maxLength={5}
+                    placeholder="Ex: BRASA"
+                    className="w-full bg-paper border-2 border-ink rounded-xl px-3.5 py-2 font-mono text-center tracking-widest text-lg font-black uppercase text-ink focus:outline-none shadow-solid-sm"
+                  />
+                </div>
+              </div>
+            </div>
 
             {errorMessage && (
-              <div className="bg-[#ffccd5] border-2 border-ink rounded-xl p-2.5 text-xs font-bold text-rd flex items-center gap-2">
+              <div className="bg-[#ffccd5] border-2 border-ink rounded-xl p-2.5 text-xs font-bold text-rd flex items-center gap-2 animate-cartoon-shake">
                 <AlertTriangle className="w-4 h-4 shrink-0" />
                 <span>{errorMessage}</span>
               </div>
@@ -460,7 +804,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`btn-salinha w-full py-3 text-sm font-black uppercase tracking-wider text-white shadow-solid cursor-pointer mt-2 ${
+              className={`btn-salinha w-full py-3 text-sm font-black uppercase tracking-wider text-white shadow-solid cursor-pointer mt-2 transition-all ${
                 lobbyMode === 'create' ? 'bg-or hover:bg-or-dark' : 'bg-gr hover:bg-gr-dark'
               }`}
             >
@@ -500,32 +844,47 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
             <button
               onClick={handleCopyLink}
               title="Copiar link da sala para enviar aos amigos"
-              className="ml-1 p-1 hover:bg-card rounded-md transition text-ink"
+              className="ml-1 p-1 hover:bg-card rounded-md transition text-ink active:scale-90"
             >
               {copiedLink ? <Check className="w-3.5 h-3.5 text-gr" /> : <Copy className="w-3.5 h-3.5" />}
             </button>
           </div>
         </div>
 
-        {/* Jogadores Conectados (Até 6) */}
-        <div className="flex items-center gap-1.5 overflow-x-auto py-1 max-w-full">
+        {/* Jogadores Conectados (Até 6 sem barra de rolagem e sem truncar) */}
+        <div className="flex flex-wrap items-center gap-1.5 overflow-visible">
           {room.players.map((p) => (
             <div
               key={p.id}
-              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full border-2 border-ink text-xs font-black shadow-solid-sm transition shrink-0 ${
-                p.id === playerId ? 'ring-2 ring-ink ring-offset-1' : ''
+              className={`flex items-center gap-1.5 pl-1.5 pr-3 py-1 rounded-full border-2 border-ink text-xs font-black shadow-solid-sm transition-transform duration-200 shrink-0 ${
+                p.id === playerId ? 'ring-2 ring-ink ring-offset-1 scale-105' : ''
               }`}
               style={{
                 backgroundColor: p.color,
                 color: '#ffffff',
-                textShadow: '0 1px 2px rgba(0,0,0,0.4)',
+                textShadow: '0 1px 2px rgba(0,0,0,0.5)',
               }}
             >
-              {p.isHost && <Crown className="w-3 h-3 text-mu fill-mu shrink-0" />}
-              <span className="truncate max-w-[85px]">{p.name}</span>
-              <span className="bg-ink/80 text-white px-1.5 py-0.2 rounded-full font-mono text-[10px]">
+              <CreatureAvatar config={p.avatar} color={p.color} size={22} className="shrink-0 -my-1" />
+              {p.isHost && <Crown className="w-3.5 h-3.5 text-mu fill-mu shrink-0 animate-bounce" />}
+              <span>{p.name}</span>
+              <span className="bg-ink/75 text-white px-2 py-0.5 rounded-full font-mono text-[10px] ml-0.5">
                 {p.score} pts
               </span>
+              {isHost && p.id !== playerId && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    playWrongSound();
+                    sendRoomAction('kick_player', { targetPlayerId: p.id });
+                  }}
+                  title={`Expulsar ${p.name} da sala`}
+                  className="w-4 h-4 rounded-full bg-ink/40 hover:bg-rd text-white flex items-center justify-center text-[11px] ml-0.5 transition-colors leading-none font-bold cursor-pointer"
+                >
+                  &times;
+                </button>
+              )}
             </div>
           ))}
         </div>
@@ -533,6 +892,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
         {/* Botão Sair */}
         <button
           onClick={() => {
+            playClickSound();
             sendRoomAction('leave');
             setIsInRoom(false);
             setRoom(null);
@@ -577,7 +937,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
                 </div>
               </div>
 
-              {/* Corpo da Pergunta com Leitura Sincronizada */}
+              {/* Corpo da Pergunta com Leitura Sincronizada e Efeito Máquina de Escrever */}
               <div className="flex-1 min-h-0 overflow-y-auto pr-1 text-xl sm:text-2xl lg:text-[1.65rem] leading-relaxed sm:leading-loose text-ink font-normal flex flex-col justify-center">
                 {room.roundState === 'idle' && room.currentWordIndex === 0 ? (
                   <div className="text-suave font-serif italic flex items-center gap-2.5 text-lg sm:text-xl py-4">
@@ -606,8 +966,8 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
                       return (
                         <span
                           key={idx}
-                          className={`inline-block mr-1.5 transition-colors ${
-                            isWordPower && room.roundState === 'reading'
+                          className={`inline-block mr-1.5 transition-colors animate-word ${
+                            isWordPower
                               ? 'text-ink font-semibold'
                               : 'text-ink'
                           }`}
@@ -637,9 +997,16 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
                 </div>
 
                 {room.roundState === 'ending_countdown' ? (
-                  <span className="text-rd font-black animate-pulse flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5" /> 10s FINAIS PARA CORTAR!
-                  </span>
+                  <div className="flex items-center gap-2 text-rd font-black animate-pulse">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>{endCountdownRemaining}s FINAIS PARA CORTAR!</span>
+                    <div className="w-20 sm:w-28 h-2 bg-paper border border-ink rounded-full overflow-hidden p-0.5">
+                      <div
+                        className="h-full bg-rd rounded-full transition-all duration-75 ease-linear"
+                        style={{ width: `${endCountdownPercentRemaining}%` }}
+                      />
+                    </div>
+                  </div>
                 ) : (
                   <span>
                     {room.currentWordIndex}/{words.length} palavras
@@ -665,11 +1032,51 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
               <span className="flex items-center gap-1">
                 <Layers className="w-3.5 h-3.5 text-or" /> Filtros da Sala:
               </span>
-              {!isHost && (
-                <span className="text-[10px] font-bold text-suave bg-paper border border-ink px-2 py-0.5 rounded-full">
-                  🔒 Gerenciado pelo Host
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-bold text-suave bg-paper border border-ink/40 px-2 py-0.5 rounded-full shadow-solid-sm">
+                  {matchingQuestionsCount} questões
                 </span>
-              )}
+                {!isHost && (
+                  <span className="text-[10px] font-bold text-suave bg-paper border border-ink px-2 py-0.5 rounded-full">
+                    🔒 Host
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Velocidade de Leitura WPM com Liquid Pill */}
+            <div className="flex items-center justify-between pt-0.5">
+              <div className="text-[10px] font-black uppercase text-suave flex items-center gap-1">
+                <Clock className="w-3 h-3 text-or" /> Velocidade:
+              </div>
+              <div className="relative flex bg-paper border border-ink/40 rounded-full p-0.5 select-none w-56">
+                <div
+                  className={`absolute top-0.5 bottom-0.5 rounded-full border border-ink bg-or shadow-solid-sm transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+                    (room.wpm || 240) === 180 ? 'w-[calc(33.333%-2px)] translate-x-0' :
+                    (room.wpm || 240) === 240 ? 'w-[calc(33.333%-2px)] translate-x-[100%]' :
+                    'w-[calc(33.333%-2px)] translate-x-[200%]'
+                  }`}
+                />
+                {[
+                  { label: '180 (3/s)', val: 180 },
+                  { label: '240 (4/s)', val: 240 },
+                  { label: '300 (5/s)', val: 300 },
+                ].map((spd) => (
+                  <button
+                    key={spd.val}
+                    type="button"
+                    disabled={!isHost}
+                    onClick={() => setSpeed(spd.val)}
+                    className={`relative z-10 flex-1 text-center py-0.5 text-[10px] font-bold transition-colors ${
+                      !isHost ? 'cursor-default' : 'cursor-pointer'
+                    } ${
+                      (room.wpm || 240) === spd.val ? 'text-white' : 'text-suave hover:text-ink'
+                    }`}
+                  >
+                    {spd.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Dificuldades */}
@@ -746,7 +1153,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
             </div>
           </div>
 
-          {/* 2. CONTROLES E INPUT DO BUZZER (No meio) */}
+          {/* 2. CONTROLES E INPUT DO BUZZER (No meio com Tesoura Animada) */}
           <div className="shrink-0 space-y-2.5 pb-2.5 border-b-2 border-ink/15">
             {room.roundState === 'buzzed' ? (
               <div className="space-y-2.5">
@@ -755,13 +1162,19 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
                   <>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1.5 text-rd font-black text-xs uppercase tracking-wider animate-pulse">
-                        <Scissors className="w-4 h-4 text-rd" /> VOCÊ CORTOU! DIGITE EM 10s:
+                        <Scissors className="w-4 h-4 text-rd animate-snip" /> VOCÊ CORTOU! DIGITE EM:
                       </div>
+                      <span className="bg-rd text-white font-mono text-xs font-black px-2.5 py-0.5 rounded-full border border-ink shadow-solid-sm animate-pulse">
+                        {buzzTimeRemaining}s
+                      </span>
                     </div>
 
                     {/* Barrinha de 10s descendo suavemente */}
                     <div className="w-full h-2.5 bg-paper border-2 border-ink rounded-full overflow-hidden p-0.5">
-                      <div className="h-full bg-rd rounded-full transition-all duration-1000 ease-linear animate-[pulse_1s_infinite]" style={{ width: '100%' }} />
+                      <div
+                        className="h-full bg-rd rounded-full transition-all duration-75 ease-linear"
+                        style={{ width: `${buzzPercentRemaining}%` }}
+                      />
                     </div>
 
                     <form onSubmit={handleSubmitAnswer} className="flex gap-2">
@@ -771,7 +1184,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
                         value={userAnswer}
                         onChange={(e) => setUserAnswer(e.target.value)}
                         placeholder="Digite sua resposta..."
-                        className="flex-1 bg-paper border-2 border-ink rounded-xl px-3 py-2 text-ink text-base font-bold placeholder-ink/40 focus:outline-none shadow-solid-sm"
+                        className="flex-1 bg-paper border-2 border-ink rounded-xl px-3 py-2 text-ink text-base font-bold placeholder-ink/40 focus:outline-none shadow-solid-sm transition-shadow focus:shadow-solid"
                         autoFocus
                       />
                       <button
@@ -786,18 +1199,24 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
                   /* UM AMIGO CORTOU! TRAVA A TELA E MOSTRA QUEM ESTÁ RESPONDENDO */
                   <div 
                     style={{ backgroundColor: currentBuzzedPlayer?.color || '#e8673a' }}
-                    className="p-3.5 rounded-2xl border-2 border-ink shadow-solid-sm text-white space-y-2"
+                    className="p-3.5 rounded-2xl border-2 border-ink shadow-solid-sm text-white space-y-2 animate-stamp"
                   >
                     <div className="flex items-center justify-between text-xs font-black uppercase">
-                      <span className="flex items-center gap-1.5">
-                        <Scissors className="w-4 h-4" /> {currentBuzzedPlayer?.name} CORTOU!
+                      <span className="flex items-center gap-2">
+                        <CreatureAvatar config={currentBuzzedPlayer?.avatar} color={currentBuzzedPlayer?.color || '#e8673a'} size={28} />
+                        <span className="flex items-center gap-1">
+                          <Scissors className="w-4 h-4" /> {currentBuzzedPlayer?.name} CORTOU!
+                        </span>
                       </span>
                       <span className="bg-ink text-white px-2 py-0.5 rounded-full text-[10px] font-mono">
-                        10 segundos
+                        {buzzTimeRemaining}s restantes
                       </span>
                     </div>
                     <div className="w-full h-2 bg-ink/30 rounded-full overflow-hidden p-0.5">
-                      <div className="h-full bg-white rounded-full animate-pulse" style={{ width: '100%' }} />
+                      <div
+                        className="h-full bg-white rounded-full transition-all duration-75 ease-linear"
+                        style={{ width: `${buzzPercentRemaining}%` }}
+                      />
                     </div>
                     <p className="text-[11px] font-bold text-white/90">
                       Aguardando a resposta de {currentBuzzedPlayer?.name}... Se ele errar, a pergunta continuará!
@@ -806,7 +1225,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
                 )}
               </div>
             ) : (
-              /* ESTADO NORMAL: BOTÃO CORTAR + INICIAR/PRÓXIMA DO HOST */
+              /* ESTADO NORMAL: BOTÃO CORTAR COM SNIP + INICIAR/PRÓXIMA DO HOST */
               <div className="space-y-2.5">
                 <button
                   type="button"
@@ -815,7 +1234,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
                     room.roundState !== 'reading' && room.roundState !== 'ending_countdown' ||
                     myPlayer?.hasBuzzed
                   }
-                  className={`btn-salinha w-full py-3.5 text-xl tracking-wide uppercase transition ${
+                  className={`btn-salinha group w-full py-3.5 text-xl tracking-wide uppercase transition ${
                     myPlayer?.hasBuzzed
                       ? 'bg-paper text-ink/30 border-ink/30 shadow-none cursor-not-allowed'
                       : room.roundState === 'reading' || room.roundState === 'ending_countdown'
@@ -823,7 +1242,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
                         : 'bg-paper text-ink/30 border-ink/30 shadow-none cursor-not-allowed'
                   }`}
                 >
-                  <Scissors className="w-5 h-5 mr-1.5" />
+                  <Scissors className="w-5 h-5 mr-1.5 transition-transform duration-200 group-hover:rotate-[-20deg] group-active:scale-125" />
                   {myPlayer?.hasBuzzed ? 'VOCÊ JÁ CORTOU NESTA QUESTÃO' : 'CORTAR!'}
                   {!myPlayer?.hasBuzzed && (
                     <span className="text-[11px] bg-ink text-white px-2 py-0.5 rounded-full ml-2 font-mono">Espaço</span>
@@ -835,9 +1254,16 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
-                      onClick={() => sendRoomAction('start_question')}
+                      onClick={() => {
+                        playClickSound();
+                        sendRoomAction('start_question');
+                      }}
                       disabled={room.roundState === 'revealed'}
-                      className="btn-salinha flex-1 bg-card hover:bg-paper text-ink py-2 text-xs cursor-pointer shadow-solid-sm"
+                      className={`btn-salinha flex-1 py-2 text-xs cursor-pointer shadow-solid-sm transition-all duration-200 ${
+                        room.roundState === 'idle'
+                          ? 'bg-or hover:bg-or-dark text-white ring-2 ring-or ring-offset-2 animate-pulse font-black shadow-solid'
+                          : 'bg-card hover:bg-paper text-ink'
+                      }`}
                     >
                       {room.roundState === 'reading' ? (
                         <>
@@ -845,14 +1271,17 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
                         </>
                       ) : (
                         <>
-                          <Play className="w-3.5 h-3.5 mr-1 fill-ink" /> Iniciar Leitura
+                          <Play className={`w-3.5 h-3.5 mr-1 ${room.roundState === 'idle' ? 'fill-white' : 'fill-ink'}`} /> Iniciar Leitura
                         </>
                       )}
                     </button>
 
                     <button
                       type="button"
-                      onClick={() => sendRoomAction('next_question')}
+                      onClick={() => {
+                        playClickSound();
+                        sendRoomAction('next_question');
+                      }}
                       className="btn-salinha flex-1 bg-mu hover:bg-mu-dark text-ink py-2 text-xs cursor-pointer shadow-solid-sm"
                     >
                       Próxima Pergunta <ChevronRight className="w-3.5 h-3.5 ml-1" />
@@ -863,16 +1292,16 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
             )}
           </div>
 
-          {/* 3. GABARITO / FEEDBACK DE ACERTO E ERRO (Na base) */}
+          {/* 3. GABARITO / FEEDBACK DE ACERTO E ERRO (Com Stamp & Shake) */}
           <div className="flex-1 min-h-0 overflow-y-auto pr-1 flex flex-col justify-center">
             
-            {/* Flash do Último Julgamento (Erro ou Acerto) */}
+            {/* Flash do Último Julgamento (Erro com Shake ou Acerto com Stamp) */}
             {room.lastJudgment && (
               <div
                 className={`p-3 rounded-2xl border-2 border-ink shadow-solid-sm mb-2 flex items-center justify-between text-xs font-black ${
                   room.lastJudgment.status === 'correct'
-                    ? 'bg-[#d8f3dc] text-[#1b4332]'
-                    : 'bg-[#ffccd5] text-[#9f1239]'
+                    ? 'bg-[#d8f3dc] text-[#1b4332] animate-stamp'
+                    : 'bg-[#ffccd5] text-[#9f1239] animate-cartoon-shake'
                 }`}
               >
                 <span>{room.lastJudgment.message}</span>
@@ -884,7 +1313,7 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
 
             {/* Gabarito quando a questão for finalizada */}
             {room.roundState === 'revealed' ? (
-              <div className="space-y-2.5">
+              <div className="space-y-2.5 animate-stamp">
                 <div className="bg-paper border-2 border-ink rounded-2xl p-3.5 shadow-solid-sm">
                   <div className="text-[10px] uppercase font-black text-suave">
                     Resposta Oficial:
@@ -916,7 +1345,10 @@ export default function MultiplayerRoom({ initialCode, onExit }: MultiplayerRoom
 
                 {isHost && (
                   <button
-                    onClick={() => sendRoomAction('next_question')}
+                    onClick={() => {
+                      playClickSound();
+                      sendRoomAction('next_question');
+                    }}
                     className="btn-salinha w-full bg-mu hover:bg-mu-dark text-ink py-2 text-xs uppercase shadow-solid-sm cursor-pointer"
                   >
                     Iniciar Próxima Pergunta →

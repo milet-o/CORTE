@@ -2,11 +2,13 @@ import { NextResponse } from 'next/server';
 import { 
   joinRoom, 
   leaveRoom, 
+  kickPlayer,
   updateFilters, 
   startQuestion, 
   buzz, 
   submitAnswer, 
   nextQuestion,
+  updatePlayerAvatar,
   getRoom
 } from '@/lib/multiplayer/roomManager';
 
@@ -27,17 +29,35 @@ export async function POST(
 
     switch (action) {
       case 'join': {
-        const { playerName, playerColor } = body;
-        const res = joinRoom(code, playerName, playerColor, playerId);
+        const { playerName, playerColor, avatar } = body;
+        const res = joinRoom(code, playerName, playerColor, playerId, avatar);
         if (!res.success) {
           return NextResponse.json({ error: res.error }, { status: 400 });
         }
         return NextResponse.json({ success: true, room: res.room });
       }
 
+      case 'update_avatar': {
+        const { avatar } = body;
+        const room = updatePlayerAvatar(code, playerId, avatar);
+        return NextResponse.json({ success: true, room });
+      }
+
       case 'leave': {
         const room = leaveRoom(code, playerId);
         return NextResponse.json({ success: true, room });
+      }
+
+      case 'kick_player': {
+        const { targetPlayerId } = body;
+        if (!targetPlayerId) {
+          return NextResponse.json({ error: 'targetPlayerId é obrigatório' }, { status: 400 });
+        }
+        const res = kickPlayer(code, playerId, targetPlayerId);
+        if (!res.success) {
+          return NextResponse.json({ error: res.error }, { status: 403 });
+        }
+        return NextResponse.json({ success: true, room: res.room });
       }
 
       case 'update_filters': {

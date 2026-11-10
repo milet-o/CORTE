@@ -4,6 +4,7 @@ export interface RoomPlayer {
   id: string;
   name: string;
   color: string; // hex
+  avatar?: { body: number; eyes: number; mouth: number; hat?: number };
   isHost: boolean;
   score: number;
   powers: number;
@@ -39,6 +40,7 @@ export interface RoomState {
   // Estado da rodada
   roundState: RoundState;
   currentWordIndex: number;
+  lastWordTimestamp?: number;
   powerWordIndex: number;
   
   // Corte ativo
@@ -69,4 +71,5 @@ export const MULTIPLAYER_COLORS = [
   { name: 'Azul', hex: '#4f7fd0', textHex: '#ffffff' },
   { name: 'Vermelho', hex: '#e0463a', textHex: '#ffffff' },
   { name: 'Roxo', hex: '#8b5cf6', textHex: '#ffffff' },
+  { name: 'Rosa', hex: '#ec4899', textHex: '#ffffff' },
 ];

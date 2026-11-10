@@ -16,6 +16,13 @@ import {
 } from '@/lib/storage';
 import MultiplayerRoom from '@/components/MultiplayerRoom';
 import { 
+  playClickSound, 
+  playCutSound, 
+  playCorrectSound, 
+  playWrongSound, 
+  playTickSound 
+} from '@/lib/sfx';
+import { 
   Zap, 
   Play, 
   Pause, 
@@ -223,6 +230,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
   // Alternadores de filtro multi-seleção de categorias
   const toggleCategory = (cat: string) => {
+    playClickSound();
     let nextCats: string[];
     if (cat === 'Todas') {
       nextCats = ['Todas'];
@@ -241,6 +249,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
   // Alternadores de filtro multi-seleção de dificuldades
   const toggleDifficulty = (diffKey: string) => {
+    playClickSound();
     let nextDiffs: string[];
     if (diffKey === 'Qualquer') {
       nextDiffs = ['Qualquer'];
@@ -312,6 +321,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
   // Permite ao usuário reiniciar e treinar o Diário sem cache bloqueante
   const handleResetDaily = () => {
+    playClickSound();
     clearDailyResult();
     setDailyResult(null);
     resetQuestionState();
@@ -319,6 +329,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
   // Iniciar / pausar leitura
   const toggleReading = () => {
+    playClickSound();
     if (status === 'reading') {
       if (readerIntervalRef.current) clearInterval(readerIntervalRef.current);
       setStatus('idle');
@@ -335,6 +346,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     if (status !== 'reading' && status !== 'idle' && status !== 'ending_countdown') return;
     if (hasBuzzedThisQuestion) return;
 
+    playCutSound();
     if (readerIntervalRef.current) clearInterval(readerIntervalRef.current);
 
     const now = performance.now();
@@ -361,6 +373,9 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     if (status === 'buzzed') {
       timerIntervalRef.current = setInterval(() => {
         setBuzzTimeRemaining((prev) => {
+          if (prev <= 4 && prev > 1) {
+            playTickSound();
+          }
           if (prev <= 1) {
             clearInterval(timerIntervalRef.current!);
             submitAnswer(true);
@@ -381,8 +396,12 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     if (status === 'ending_countdown') {
       const timer = setInterval(() => {
         setEndCountdownRemaining((prev) => {
+          if (prev <= 4 && prev > 1) {
+            playTickSound();
+          }
           if (prev <= 1) {
             clearInterval(timer);
+            playWrongSound();
             setStatus('revealed');
             return 0;
           }
@@ -464,6 +483,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
       const res: JudgmentResult = await response.json();
 
       if (res.status === 'prompt') {
+        playClickSound();
         setPromptMessage(res.message);
         setBuzzTimeRemaining(5);
         setUserAnswer('');
@@ -475,7 +495,8 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
       const isCorrect = res.status === 'correct';
 
       if (isCorrect) {
-        // ACERTOU: pontua e encerra a pergunta com o gabarito
+        // ACERTOU: toca som alegre, pontua e encerra a pergunta
+        playCorrectSound();
         setStatus('judged');
 
         if (gameMode === 'daily' && dailyQuestionData) {
@@ -506,7 +527,8 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
           }));
         }
       } else {
-        // ERROU: computa perda (-5 pts), bloqueia para esta pergunta, e retoma a leitura automaticamente!
+        // ERROU: toca som de erro, computa perda (-5 pts), bloqueia e retoma leitura automaticamente!
+        playWrongSound();
         setHasBuzzedThisQuestion(true);
 
         if (gameMode === 'daily' && dailyQuestionData) {
@@ -551,6 +573,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
   };
 
   const nextUnlimitedQuestion = () => {
+    playClickSound();
     if (unlimitedIndex < unlimitedQuestions.length - 1) {
       setUnlimitedIndex((prev) => prev + 1);
     } else {
@@ -560,6 +583,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
   };
 
   const revealAnswer = () => {
+    playClickSound();
     if (readerIntervalRef.current) clearInterval(readerIntervalRef.current);
     setCurrentWordIndex(words.current.length);
     setStatus('revealed');
@@ -567,6 +591,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
   const handleCopyShare = () => {
     if (!dailyResult) return;
+    playClickSound();
     const origin = typeof window !== 'undefined' ? window.location.origin : 'https://corte-h0ub.onrender.com';
     const text = formatShareText(dailyResult, origin);
     navigator.clipboard.writeText(text);
@@ -586,6 +611,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     return (
       <MultiplayerRoom
         initialCode={roomCodeFromUrl}
+        initialQuestions={initialQuestions}
         onExit={() => {
           setGameMode('daily');
           setRoomCodeFromUrl(null);
@@ -597,7 +623,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
   return (
     <div className="h-full flex flex-col justify-between p-3 sm:p-5 max-w-[1650px] mx-auto select-none">
       {/* ======================================================== */}
-      {/* 1. HEADER FIXO COMPACTO COM SELETOR DE MODOS (3 OPÇÕES)  */}
+      {/* 1. HEADER FIXO COM SLIDER DESLIZANTE DE MOLA             */}
       {/* ======================================================== */}
       <header className="flex items-center justify-between border-b-2 border-ink/15 pb-2.5 mb-3 shrink-0">
         <div className="flex items-center gap-3">
@@ -605,12 +631,12 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
             corte<span className="text-or">.</span>
           </h1>
           <span className="bg-creme border-2 border-ink px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-wider text-ink shadow-solid-sm flex items-center gap-1">
-            <Flame className="w-3.5 h-3.5 text-or fill-or" />
+            <Flame className="w-3.5 h-3.5 text-or fill-or animate-pulse" />
             {isMounted ? streakCount : 0} {streakCount === 1 ? 'dia' : 'dias'}
           </span>
         </div>
 
-        {/* Chave Seletora de Modo (Diário vs Ilimitado vs Amigos) e Placar */}
+        {/* Chave Seletora de Modo (Diário vs Ilimitado vs Amigos) com SLIDER DESLIZANTE */}
         <div className="flex items-center gap-3">
           {gameMode === 'unlimited' && (
             <div className="hidden md:flex items-center gap-2 bg-card border-2 border-ink rounded-full px-3 py-1 shadow-solid-sm text-xs font-bold text-ink">
@@ -624,44 +650,53 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
             </div>
           )}
 
-          <div className="flex items-center bg-card border-[2.5px] border-ink rounded-full p-0.5 shadow-solid-sm">
+          <div className="relative flex items-center bg-card border-[2.5px] border-ink rounded-full p-0.5 shadow-solid-sm select-none w-[310px] sm:w-[340px]">
+            {/* Pílula deslizante com física elástica de mola */}
+            <div 
+              className={`absolute top-0.5 bottom-0.5 w-[calc(33.333%-2px)] rounded-full border-2 border-ink shadow-solid-sm transition-transform duration-250 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+                gameMode === 'daily'
+                  ? 'translate-x-0 bg-or'
+                  : gameMode === 'unlimited'
+                    ? 'translate-x-[100%] bg-mu'
+                    : 'translate-x-[200%] bg-bl'
+              }`}
+            />
             <button
               onClick={() => {
+                playClickSound();
                 setGameMode('daily');
                 resetQuestionState();
               }}
-              className={`btn-salinha px-3 py-1 text-xs font-black transition ${
-                gameMode === 'daily'
-                  ? 'bg-or text-white border-2 border-ink shadow-solid-sm'
-                  : 'bg-transparent text-ink border-transparent shadow-none hover:bg-paper'
+              className={`relative z-10 flex-1 btn-salinha py-1 px-1 text-xs font-black transition-colors duration-200 border-none shadow-none hover:bg-transparent text-center justify-center ${
+                gameMode === 'daily' ? 'text-white' : 'text-ink'
               }`}
             >
-              <Calendar className="w-3.5 h-3.5 mr-1" />
+              <Calendar className="w-3.5 h-3.5 mr-1 shrink-0" />
               Diário
             </button>
             <button
               onClick={() => {
+                playClickSound();
                 setGameMode('unlimited');
                 resetQuestionState();
               }}
-              className={`btn-salinha px-3 py-1 text-xs font-black transition ${
-                gameMode === 'unlimited'
-                  ? 'bg-mu text-ink border-2 border-ink shadow-solid-sm'
-                  : 'bg-transparent text-ink border-transparent shadow-none hover:bg-paper'
+              className={`relative z-10 flex-1 btn-salinha py-1 px-1 text-xs font-black transition-colors duration-200 border-none shadow-none hover:bg-transparent text-center justify-center ${
+                gameMode === 'unlimited' ? 'text-ink' : 'text-ink'
               }`}
             >
-              <InfinityIcon className="w-3.5 h-3.5 mr-1" />
+              <InfinityIcon className="w-3.5 h-3.5 mr-1 shrink-0" />
               Ilimitado
             </button>
             <button
               onClick={() => {
+                playClickSound();
                 setGameMode('multiplayer');
                 resetQuestionState();
               }}
-              className="btn-salinha px-3 py-1 text-xs font-black transition bg-transparent text-ink border-transparent shadow-none hover:bg-paper"
+              className="relative z-10 flex-1 btn-salinha py-1 px-1 text-xs font-black transition-colors duration-200 border-none shadow-none hover:bg-transparent text-center justify-center text-ink"
             >
-              <Users className="w-3.5 h-3.5 mr-1" />
-              Amigos (Sala)
+              <Users className="w-3.5 h-3.5 mr-1 shrink-0" />
+              Amigos
             </button>
           </div>
         </div>
@@ -722,7 +757,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 </div>
               </div>
 
-              {/* Corpo da Pergunta com Leitura Dinâmica */}
+              {/* Corpo da Pergunta com Leitura Dinâmica e Efeito Fade-In Suave */}
               <div className="flex-1 min-h-0 overflow-y-auto pr-1 text-xl sm:text-2xl lg:text-[1.65rem] leading-relaxed sm:leading-loose text-ink font-normal flex flex-col justify-center">
                 {status === 'idle' && currentWordIndex === 0 ? (
                   <div className="text-suave font-serif italic flex items-center gap-2.5 text-lg sm:text-xl py-4">
@@ -751,13 +786,13 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                       return (
                         <span
                           key={idx}
-                          className={`inline-block mr-1.5 transition-colors ${
-                            isWordPower && status === 'reading'
+                          className={`inline-block mr-1.5 transition-colors animate-word ${
+                            isWordPower
                               ? 'text-ink font-semibold'
                               : 'text-ink'
                           } ${
                             isBuzzedHere
-                              ? 'bg-rd text-white px-1.5 py-0.5 rounded-md border-2 border-ink font-bold shadow-solid-sm'
+                              ? 'bg-rd text-white px-1.5 py-0.5 rounded-md border-2 border-ink font-bold shadow-solid-sm animate-stamp'
                               : ''
                           }`}
                         >
@@ -811,6 +846,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
               <p className="text-suave font-bold">Nenhuma pergunta encontrada com os filtros selecionados.</p>
               <button
                 onClick={() => {
+                  playClickSound();
                   setSelectedCategories(['Todas']);
                   setSelectedDifficulties(['Qualquer']);
                   applyFiltersAndRandomize(['Todas'], ['Qualquer'], true);
@@ -838,29 +874,37 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 <span className="flex items-center gap-1">
                   <Layers className="w-3.5 h-3.5 text-or" /> Filtros Ativos:
                 </span>
-                <span className="bg-creme border border-ink px-2 py-0.5 rounded-full text-[11px] shadow-solid-sm">
+                <span className="bg-creme border border-ink px-2 py-0.5 rounded-full text-[11px] shadow-solid-sm transition-transform active:scale-95">
                   {unlimitedQuestions.length} questões encontradas
                 </span>
               </div>
 
-              {/* Velocidade de Leitura WPM */}
+              {/* Velocidade de Leitura WPM com Liquid Pill */}
               <div className="flex items-center justify-between">
                 <div className="text-[10px] font-black uppercase text-suave flex items-center gap-1">
                   <Clock className="w-3 h-3 text-or" /> Velocidade:
                 </div>
-                <div className="flex gap-1">
+                <div className="relative flex bg-paper border border-ink/40 rounded-full p-0.5 select-none">
+                  <div
+                    className={`absolute top-0.5 bottom-0.5 rounded-full border border-ink bg-or shadow-solid-sm transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+                      wpm === 180 ? 'w-[calc(33.333%-2px)] translate-x-0' :
+                      wpm === 240 ? 'w-[calc(33.333%-2px)] translate-x-[100%]' :
+                      'w-[calc(33.333%-2px)] translate-x-[200%]'
+                    }`}
+                  />
                   {[
-                    { label: '180 WPM (3/s)', val: 180 },
-                    { label: '240 WPM (4/s)', val: 240 },
-                    { label: '300 WPM (5/s)', val: 300 },
+                    { label: '180 (3/s)', val: 180 },
+                    { label: '240 (4/s)', val: 240 },
+                    { label: '300 (5/s)', val: 300 },
                   ].map((spd) => (
                     <button
                       key={spd.val}
-                      onClick={() => setWpm(spd.val)}
-                      className={`px-2 py-0.5 rounded-full border text-[10px] font-bold transition ${
-                        wpm === spd.val
-                          ? 'bg-or text-white border-ink shadow-solid-sm'
-                          : 'bg-paper text-suave border-ink/30 hover:bg-[#e4ddce]'
+                      onClick={() => {
+                        playClickSound();
+                        setWpm(spd.val);
+                      }}
+                      className={`relative z-10 px-2.5 py-0.5 text-[10px] font-bold transition-colors ${
+                        wpm === spd.val ? 'text-white' : 'text-suave hover:text-ink'
                       }`}
                     >
                       {spd.label}
@@ -937,14 +981,14 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
           )}
 
           {/* =================================================================== */}
-          {/* OS CONTROLES (BUZZER COM 10s, BARRINHA SUAVE, INICIAR, GABARITO)    */}
+          {/* OS CONTROLES COM TESOURA ANIMADA E RESPOSTA                        */}
           {/* =================================================================== */}
           <div className="shrink-0 space-y-2.5 pb-2.5 border-b-2 border-ink/15">
             {status === 'buzzed' ? (
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5 text-rd font-black text-xs uppercase tracking-wider animate-pulse">
-                    <Scissors className="w-4 h-4 text-rd" />
+                    <Scissors className="w-4 h-4 text-rd animate-snip" />
                     CORTADO AOS {measuredCutPercent}% ({measuredCutTimeMs} ms)!
                   </div>
                   <div className="flex items-center gap-1 font-mono text-sm font-black text-ink bg-mu border-2 border-ink px-2.5 py-0.5 rounded-full shadow-solid-sm">
@@ -961,7 +1005,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 </div>
 
                 {promptMessage && (
-                  <div className="bg-creme border-2 border-ink text-ink p-2 rounded-xl text-xs font-bold flex items-center gap-2 shadow-solid-sm">
+                  <div className="bg-creme border-2 border-ink text-ink p-2 rounded-xl text-xs font-bold flex items-center gap-2 shadow-solid-sm animate-cartoon-shake">
                     <AlertTriangle className="w-4 h-4 text-or shrink-0" />
                     <span>{promptMessage}</span>
                   </div>
@@ -970,6 +1014,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
+                    playClickSound();
                     submitAnswer();
                   }}
                   className="flex gap-2"
@@ -980,7 +1025,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                     value={userAnswer}
                     onChange={(e) => setUserAnswer(e.target.value)}
                     placeholder="Digite sua resposta..."
-                    className="flex-1 bg-paper border-2 border-ink rounded-xl px-3 py-2 text-ink text-base font-bold placeholder-ink/40 focus:outline-none shadow-solid-sm"
+                    className="flex-1 bg-paper border-2 border-ink rounded-xl px-3 py-2 text-ink text-base font-bold placeholder-ink/40 focus:outline-none shadow-solid-sm transition-shadow focus:shadow-solid"
                     autoFocus
                   />
                   <button
@@ -993,11 +1038,11 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
               </div>
             ) : (
               <div className="space-y-2.5">
-                {/* Botão de CORTAR Principal */}
+                {/* Botão de CORTAR com Animação de Tesoura */}
                 <button
                   onClick={handleBuzz}
                   disabled={status === 'judged' || status === 'revealed' || hasBuzzedThisQuestion}
-                  className={`btn-salinha w-full py-3.5 text-xl tracking-wide uppercase transition ${
+                  className={`btn-salinha group w-full py-3.5 text-xl tracking-wide uppercase transition ${
                     hasBuzzedThisQuestion
                       ? 'bg-paper text-ink/30 border-ink/30 shadow-none cursor-not-allowed'
                       : status === 'judged' || status === 'revealed'
@@ -1005,7 +1050,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                         : 'bg-or hover:bg-or-dark text-white shadow-solid cursor-pointer'
                   }`}
                 >
-                  <Scissors className="w-5 h-5 mr-1.5" />
+                  <Scissors className="w-5 h-5 mr-1.5 transition-transform duration-200 group-hover:rotate-[-20deg] group-active:scale-125" />
                   {hasBuzzedThisQuestion ? 'VOCÊ JÁ CORTOU NESTA QUESTÃO' : 'CORTAR!'}
                   {!hasBuzzedThisQuestion && (
                     <span className="text-[11px] bg-ink text-white px-2 py-0.5 rounded-full ml-2 font-mono">Espaço</span>
@@ -1051,19 +1096,19 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
           </div>
 
           {/* =================================================================== */}
-          {/* SEÇÃO DO GABARITO / RESPOSTA CERTA                                  */}
+          {/* SEÇÃO DO GABARITO / RESPOSTA CERTA COM STAMP E SHAKE                */}
           {/* =================================================================== */}
-          <div className="flex-1 min-h-0 overflow-y-auto pr-1 flex flex-col justify-center">
+          <div className={`flex-1 min-h-0 overflow-y-auto pr-1 flex flex-col ${gameMode === 'daily' ? 'justify-end pb-1' : 'justify-center'}`}>
             
-            {/* Flash do Juiz (Acerto ou Erro com Retomada Automática) */}
+            {/* Flash do Juiz (Acerto com Stamp ou Erro com Cartoon Shake) */}
             {judgment && (
               <div
-                className={`p-3 rounded-2xl border-2 border-ink shadow-solid-sm flex items-start gap-2.5 mb-2.5 animate-bounce ${
+                className={`p-3 rounded-2xl border-2 border-ink shadow-solid-sm flex items-start gap-2.5 mb-2.5 ${
                   judgment.status === 'correct'
                     ? judgment.points === 15
-                      ? 'bg-mu'
-                      : 'bg-[#d8f3dc]'
-                    : 'bg-[#ffccd5]'
+                      ? 'bg-mu animate-stamp'
+                      : 'bg-[#d8f3dc] animate-stamp'
+                    : 'bg-[#ffccd5] animate-cartoon-shake'
                 }`}
               >
                 {judgment.status === 'correct' ? (
@@ -1089,7 +1134,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
             {/* Caso 1: Pergunta foi finalizada ou gabarito revelado */}
             {status === 'judged' || status === 'revealed' ? (
-              <div className="space-y-2.5">
+              <div className="space-y-2.5 animate-stamp">
                 {/* Resposta Correta Oficial */}
                 <div className="bg-paper border-2 border-ink rounded-2xl p-3 shadow-solid-sm">
                   <div className="text-[10px] uppercase font-black text-suave">
@@ -1143,6 +1188,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                     <div className="flex gap-2">
                       <button
                         onClick={() => {
+                          playClickSound();
                           setGameMode('unlimited');
                           resetQuestionState();
                         }}
@@ -1168,7 +1214,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
               </div>
             ) : gameMode === 'daily' && dailyResult ? (
               /* Caso 2: Modo Diário já jogado hoje, aguardando clique explícito do usuário */
-              <div className="bg-creme border-2 border-ink rounded-2xl p-4 shadow-solid-sm space-y-3 text-center">
+              <div className="bg-creme border-2 border-ink rounded-2xl p-4 shadow-solid-sm space-y-3 text-center animate-stamp">
                 <div className="inline-flex items-center gap-1.5 text-xs font-black text-gr-dark uppercase">
                   <CheckCircle2 className="w-4 h-4 text-gr" /> Você já concluiu o corte de hoje!
                 </div>
@@ -1190,6 +1236,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
                   </button>
                   <button
                     onClick={() => {
+                      playClickSound();
                       setGameMode('unlimited');
                       resetQuestionState();
                     }}

@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { hostName, hostColor, hostId } = body;
+    const { hostName, hostColor, hostId, avatar } = body;
 
     if (!hostId) {
       return NextResponse.json({ error: 'hostId é obrigatório' }, { status: 400 });
@@ -15,7 +15,8 @@ export async function POST(req: Request) {
     const room = createRoom(
       hostName || 'Host',
       hostColor || '#e8673a',
-      hostId
+      hostId,
+      avatar
     );
 
     return NextResponse.json({ success: true, room });
