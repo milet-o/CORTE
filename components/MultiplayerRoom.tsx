@@ -6,6 +6,7 @@ import { Tossup } from '@/types/quizbowl';
 import { CreatureConfig, DEFAULT_CREATURE, getRandomCreature } from '@/components/CreatureAvatar';
 import DopamineCelebration from '@/components/DopamineCelebration';
 import BugReportModal from '@/components/BugReportModal';
+import { markQuestionSeen } from '@/lib/storage';
 import MultiplayerLobby from '@/components/multiplayer/MultiplayerLobby';
 import MultiplayerHeader from '@/components/multiplayer/MultiplayerHeader';
 import MultiplayerQuestionBox from '@/components/multiplayer/MultiplayerQuestionBox';
@@ -243,8 +244,13 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
         playPlayerJoinSound();
       }
       prevPlayerCountRef.current = room.players.length;
+
+      // Marca a questão atual como vista no perfil local do jogador
+      if (room.currentQuestion?.id) {
+        markQuestionSeen(room.currentQuestion.id);
+      }
     }
-  }, [room?.players.length]);
+  }, [room?.players.length, room?.currentQuestion?.id]);
 
   // Alerta sonoro de início de partida e piscar título da aba
   const prevRoundStateRef = useRef<string>('idle');

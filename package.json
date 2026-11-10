@@ -9,7 +9,8 @@
     "pipeline:seed": "tsx scripts/seed-database.ts",
     "pipeline:crawler": "tsx scripts/infinite-crawler.ts",
     "pipeline:wiki": "tsx scripts/wikipedia-brasil.ts",
-    "pipeline:qbreader": "tsx scripts/fetch-qbreader.ts"
+    "pipeline:qbreader": "tsx scripts/fetch-qbreader.ts",
+    "sanitize:questions": "node scripts/sanitize_questions.js"
   },
   "engines": {
     "node": ">=20.9.0"

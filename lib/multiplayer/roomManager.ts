@@ -64,7 +64,7 @@ function broadcastRoom(room: RoomState) {
   }
 }
 
-function pickRandomQuestion(categories: string[], difficulties: string[]): Tossup | null {
+function pickRandomQuestion(categories: string[], difficulties: string[], excludeIds: string[] = []): Tossup | null {
   const pool = getQuestionsPool();
   if (pool.length === 0) return null;
 
@@ -88,8 +88,13 @@ function pickRandomQuestion(categories: string[], difficulties: string[]): Tossu
   }
 
   if (filtered.length === 0) filtered = pool;
-  const randomIndex = Math.floor(Math.random() * filtered.length);
-  return filtered[randomIndex];
+
+  // Evita questões já jogadas na sala
+  const unplayed = filtered.filter(q => !excludeIds.includes(q.id));
+  const available = unplayed.length > 0 ? unplayed : filtered;
+
+  const randomIndex = Math.floor(Math.random() * available.length);
+  return available[randomIndex];
 }
 
 function computePowerWordIndex(question: Tossup | null): number {
@@ -120,6 +125,7 @@ export function createRoom(
 
   const initialQuestion = pickRandomQuestion(['Todas'], ['Qualquer']);
   const powerIndex = computePowerWordIndex(initialQuestion);
+  const usedIds = initialQuestion ? [initialQuestion.id] : [];
 
   const hostPlayer: RoomPlayer = {
     id: hostId,
@@ -155,6 +161,7 @@ export function createRoom(
     endCountdownStartTime: null,
     endCountdownDurationSeconds: 10,
     roundJudgments: [],
+    usedQuestionIds: usedIds,
     lastJudgment: null,
   };
 
@@ -308,7 +315,14 @@ export function nextQuestion(code: string, hostId: string): RoomState | null {
   const room = getRoom(code);
   if (!room || room.hostId !== hostId) return null;
 
-  const nextQ = pickRandomQuestion(room.selectedCategories, room.selectedDifficulties);
+  if (!room.usedQuestionIds) {
+    room.usedQuestionIds = room.currentQuestion ? [room.currentQuestion.id] : [];
+  }
+
+  const nextQ = pickRandomQuestion(room.selectedCategories, room.selectedDifficulties, room.usedQuestionIds);
+  if (nextQ) {
+    room.usedQuestionIds.push(nextQ.id);
+  }
   room.currentQuestion = nextQ;
   room.powerWordIndex = computePowerWordIndex(nextQ);
   room.currentWordIndex = 0;

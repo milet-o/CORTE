@@ -8,6 +8,7 @@ import {
   saveStoredDailyResult,
   clearDailyResult,
   markQuestionSeen,
+  getSeenQuestionIds,
   getCookie,
 } from '@/lib/storage';
 import MultiplayerRoom from '@/components/MultiplayerRoom';
@@ -113,7 +114,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     }
   }, []);
 
-  // Aplica filtros e randomiza para o Modo Ilimitado
+  // Aplica filtros e randomiza para o Modo Ilimitado (priorizando inéditas)
   const applyFiltersAndRandomize = useCallback(
     (cats: string[], diffs: string[], resetIndex = true) => {
       let pool = [...initialQuestions];
@@ -131,8 +132,16 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
         });
       }
 
-      const shuffled = shuffleArray(pool);
-      setUnlimitedQuestions(shuffled);
+      // Prioriza questões ainda não vistas pelo jogador
+      const seenIds = new Set(getSeenQuestionIds());
+      const unseen = pool.filter((q) => !seenIds.has(q.id));
+      const seen = pool.filter((q) => seenIds.has(q.id));
+
+      const shuffledUnseen = shuffleArray(unseen);
+      const shuffledSeen = shuffleArray(seen);
+      const combined = [...shuffledUnseen, ...shuffledSeen];
+
+      setUnlimitedQuestions(combined);
       if (resetIndex) {
         setUnlimitedIndex(0);
       }
@@ -243,6 +252,11 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
     words.current = cleanWords;
     powerWordIndex.current = starIdx !== -1 ? starIdx : Math.floor(cleanWords.length * 0.45);
     resetQuestionState();
+
+    // Marca questão como vista
+    if (gameMode === 'unlimited') {
+      markQuestionSeen(currentQuestion.id);
+    }
   }, [currentQuestion, gameMode]);
 
   const resetQuestionState = () => {

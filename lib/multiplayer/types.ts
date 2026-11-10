@@ -68,6 +68,9 @@ export interface RoomState {
   // Histórico de tentativas da rodada (Log acumulativo)
   roundJudgments: RoundJudgmentLog[];
 
+  // Histórico de IDs de perguntas já sorteadas na sala para nunca repetir
+  usedQuestionIds?: string[];
+
   // Último veredito para flash de acerto/erro
   lastJudgment: RoundJudgmentLog | null;
 }

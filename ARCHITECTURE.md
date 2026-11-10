@@ -48,6 +48,9 @@
 - `lib/daily.ts` — Seleção determinística da pergunta do Corte Diário.
 - `lib/storage.ts` — Persistência local (`localStorage`) de estatísticas, histórico e progresso diário.
 
+### `scripts/` (Scripts de Manutenção e Pipelines)
+- `scripts/sanitize_questions.js` — Script de sanitização que remove parênteses de pronúncia da Wikipédia e censura vazamentos de respostas/gentílicos em `data/questions.json`. Pode ser executado a qualquer momento com `npm run sanitize:questions`.
+
 ---
 
 ## Regras de Leitura e Edição
