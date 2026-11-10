@@ -183,3 +183,21 @@ mark.destaque {
   opacity: 0;
   pointer-events: none;
 }
+
+/* 7. Pulso Escuro Chamativo (Nunca fica transparente/apagado) */
+@keyframes pulse-dark {
+  0%, 100% {
+    background-color: #e8673a;
+    transform: scale(1);
+    box-shadow: 3px 3px 0 #1d1714;
+  }
+  50% {
+    background-color: #be4318;
+    transform: scale(1.025);
+    box-shadow: 4px 4px 0 #1d1714, 0 0 14px rgba(190, 67, 24, 0.7);
+  }
+}
+
+.animate-pulse-dark {
+  animation: pulse-dark 1.25s ease-in-out infinite;
+}

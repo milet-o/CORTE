@@ -4,6 +4,8 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { RoomState, RoomPlayer, MULTIPLAYER_COLORS } from '@/lib/multiplayer/types';
 import { Tossup } from '@/types/quizbowl';
 import CreatureAvatar, { CreatureConfig, DEFAULT_CREATURE, getRandomCreature, HAT_NAMES } from '@/components/CreatureAvatar';
+import DopamineCelebration from '@/components/DopamineCelebration';
+import BugReportModal from '@/components/BugReportModal';
 import { 
   playClickSound, 
   playCutSound, 
@@ -11,7 +13,9 @@ import {
   playWrongSound, 
   playTickSound,
   playPlayerJoinSound,
-  playGameStartSound
+  playGameStartSound,
+  playPageFlipSound,
+  playStampSound
 } from '@/lib/sfx';
 import { 
   Users, 
@@ -32,7 +36,8 @@ import {
   Zap,
   AlertTriangle,
   RotateCcw,
-  Dices
+  Dices,
+  Bug
 } from 'lucide-react';
 
 interface MultiplayerRoomProps {
@@ -59,6 +64,10 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
   const [copiedLink, setCopiedLink] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  const [hasSubmittedBuzz, setHasSubmittedBuzz] = useState<boolean>(false);
+  const [showCelebration, setShowCelebration] = useState<boolean>(false);
+  const [bugModalOpen, setBugModalOpen] = useState<boolean>(false);
 
   // Contagens regressivas suaves e dinâmicas (10s do Buzzer e 10s Finais)
   const [buzzTimeRemaining, setBuzzTimeRemaining] = useState<number>(10);
@@ -106,6 +115,14 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
     }
   }, [initialCode]);
 
+  // Reseta ticks e status de envio quando muda a rodada
+  useEffect(() => {
+    lastTickTimeRef.current = 0;
+    if (room?.roundState !== 'buzzed') {
+      setHasSubmittedBuzz(false);
+    }
+  }, [room?.roundState]);
+
   // Timer de 10s para responder ao Cortar (Atualização a 50ms)
   useEffect(() => {
     if (!room) return;
@@ -113,6 +130,7 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
     if (room.roundState === 'buzzed' && room.buzzStartTime) {
       const startTime = room.buzzStartTime;
       const totalMs = (room.buzzDurationSeconds || 10) * 1000;
+      const amIBuzzed = room.buzzedPlayerId === playerId;
 
       const update = () => {
         const now = Date.now();
@@ -124,7 +142,8 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
         setBuzzTimeRemaining(remainingSec);
         setBuzzPercentRemaining(percent);
 
-        if (remainingSec <= 3 && remainingSec > 0) {
+        // SILÊNCIO: Só toca o tick urgente para quem cortou E ainda não enviou resposta!
+        if (amIBuzzed && !hasSubmittedBuzz && remainingSec <= 3 && remainingSec > 0) {
           const nowSec = Math.floor(now / 1000);
           if (nowSec !== lastTickTimeRef.current) {
             lastTickTimeRef.current = nowSec;
@@ -140,7 +159,7 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
       setBuzzTimeRemaining(10);
       setBuzzPercentRemaining(100);
     }
-  }, [room?.roundState, room?.buzzStartTime, room?.buzzDurationSeconds]);
+  }, [room?.roundState, room?.buzzStartTime, room?.buzzDurationSeconds, room?.buzzedPlayerId, playerId, hasSubmittedBuzz]);
 
   // Timer de 10s finais após leitura completa (Atualização a 50ms)
   useEffect(() => {
@@ -149,6 +168,8 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
     if (room.roundState === 'ending_countdown' && room.endCountdownStartTime) {
       const startTime = room.endCountdownStartTime;
       const totalMs = (room.endCountdownDurationSeconds || 10) * 1000;
+      const myPlayer = room.players.find(p => p.id === playerId);
+      const canIBuzz = myPlayer && !myPlayer.hasBuzzed;
 
       const update = () => {
         const now = Date.now();
@@ -160,7 +181,8 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
         setEndCountdownRemaining(remainingSec);
         setEndCountdownPercentRemaining(percent);
 
-        if (remainingSec <= 3 && remainingSec > 0) {
+        // Só toca o tick se o jogador ainda tiver direito a cortar
+        if (canIBuzz && remainingSec <= 3 && remainingSec > 0) {
           const nowSec = Math.floor(now / 1000);
           if (nowSec !== lastTickTimeRef.current) {
             lastTickTimeRef.current = nowSec;
@@ -176,7 +198,7 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
       setEndCountdownRemaining(10);
       setEndCountdownPercentRemaining(100);
     }
-  }, [room?.roundState, room?.endCountdownStartTime, room?.endCountdownDurationSeconds]);
+  }, [room?.roundState, room?.endCountdownStartTime, room?.endCountdownDurationSeconds, room?.players, playerId]);
 
   // Conecta ao stream SSE e polling de sincronização
   const connectToRoom = useCallback((code: string) => {
@@ -225,7 +247,9 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
 
     if (room.lastJudgment) {
       if (room.lastJudgment.status === 'correct') {
+        playStampSound();
         playCorrectSound();
+        setShowCelebration(true);
       } else {
         playWrongSound();
       }
@@ -377,6 +401,8 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
   // Cortar (Buzzer)
   const handleBuzz = () => {
     if (!room) return;
+    setHasSubmittedBuzz(false);
+    lastTickTimeRef.current = 0;
     playCutSound();
     sendRoomAction('buzz');
   };
@@ -385,6 +411,8 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
   const handleSubmitAnswer = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     if (!room) return;
+    setHasSubmittedBuzz(true);
+    lastTickTimeRef.current = 0;
     playClickSound();
     sendRoomAction('submit_answer', { answer: userAnswer.trim() });
     setUserAnswer('');
@@ -581,15 +609,27 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
                 <p className="text-xs font-bold text-suave">Multiplayer sincronizado (até 6 pessoas)</p>
               </div>
             </div>
-            <button
-              onClick={() => {
-                playClickSound();
-                onExit();
-              }}
-              className="text-xs font-bold text-suave hover:text-ink underline transition-transform active:scale-95"
-            >
-              Voltar
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setBugModalOpen(true)}
+                className="text-xs font-bold text-suave hover:text-rd flex items-center gap-1 transition-transform active:scale-95 cursor-pointer"
+                title="Relatar bug para o desenvolvedor"
+              >
+                <Bug className="w-3.5 h-3.5" />
+                <span>Bug</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  playClickSound();
+                  onExit();
+                }}
+                className="text-xs font-bold text-suave hover:text-ink underline transition-transform active:scale-95 cursor-pointer"
+              >
+                Voltar
+              </button>
+            </div>
           </div>
 
           {/* Abas Criar vs Entrar com SLIDER DESLIZANTE DE MOLA */}
@@ -816,6 +856,13 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
             </button>
           </form>
         </div>
+
+        {/* Modal de Relato de Bug */}
+        <BugReportModal
+          isOpen={bugModalOpen}
+          onClose={() => setBugModalOpen(false)}
+          context="Multiplayer Lobby"
+        />
       </div>
     );
   }
@@ -853,55 +900,84 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
 
         {/* Jogadores Conectados (Até 6 sem barra de rolagem e sem truncar) */}
         <div className="flex flex-wrap items-center gap-1.5 overflow-visible">
-          {room.players.map((p) => (
-            <div
-              key={p.id}
-              className={`flex items-center gap-1.5 pl-1.5 pr-3 py-1 rounded-full border-2 border-ink text-xs font-black shadow-solid-sm transition-transform duration-200 shrink-0 ${
-                p.id === playerId ? 'ring-2 ring-ink ring-offset-1 scale-105' : ''
-              }`}
-              style={{
-                backgroundColor: p.color,
-                color: '#ffffff',
-                textShadow: '0 1px 2px rgba(0,0,0,0.5)',
-              }}
-            >
-              <CreatureAvatar config={p.avatar} color={p.color} size={22} className="shrink-0 -my-1" />
-              {p.isHost && <Crown className="w-3.5 h-3.5 text-mu fill-mu shrink-0 animate-bounce" />}
-              <span>{p.name}</span>
-              <span className="bg-ink/75 text-white px-2 py-0.5 rounded-full font-mono text-[10px] ml-0.5">
-                {p.score} pts
-              </span>
-              {isHost && p.id !== playerId && (
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    playWrongSound();
-                    sendRoomAction('kick_player', { targetPlayerId: p.id });
-                  }}
-                  title={`Expulsar ${p.name} da sala`}
-                  className="w-4 h-4 rounded-full bg-ink/40 hover:bg-rd text-white flex items-center justify-center text-[11px] ml-0.5 transition-colors leading-none font-bold cursor-pointer"
-                >
-                  &times;
-                </button>
-              )}
-            </div>
-          ))}
+          {room.players.map((p) => {
+            const badge = (() => {
+              if (room.players.length < 2) return null;
+              const maxScore = Math.max(...room.players.map(x => x.score));
+              if (p.score > 0 && p.score === maxScore) return { emoji: '✂️', label: 'Tesoura de Ouro (Líder)' };
+              const maxPowers = Math.max(...room.players.map(x => x.powers));
+              if (p.powers > 0 && p.powers === maxPowers) return { emoji: '⚡', label: 'Sniper do Power' };
+              const maxNegs = Math.max(...room.players.map(x => x.negs));
+              if (p.negs > 0 && p.negs === maxNegs) return { emoji: '💣', label: 'Inimigo do Gabarito' };
+              return null;
+            })();
+
+            return (
+              <div
+                key={p.id}
+                className={`flex items-center gap-1.5 pl-1.5 pr-2.5 py-1 rounded-full border-2 border-ink text-xs font-black shadow-solid-sm transition-transform duration-200 shrink-0 ${
+                  p.id === playerId ? 'ring-2 ring-ink ring-offset-1 scale-105' : ''
+                }`}
+                style={{
+                  backgroundColor: p.color,
+                  color: '#ffffff',
+                  textShadow: '0 1px 2px rgba(0,0,0,0.5)',
+                }}
+              >
+                <CreatureAvatar config={p.avatar} color={p.color} size={22} className="shrink-0 -my-1" />
+                {p.isHost && <Crown className="w-3.5 h-3.5 text-mu fill-mu shrink-0 animate-bounce" />}
+                <span>{p.name}</span>
+                {badge && (
+                  <span className="text-[11px] px-1 py-0.2 bg-black/40 rounded border border-white/20 cursor-help" title={badge.label}>
+                    {badge.emoji}
+                  </span>
+                )}
+                <span className="bg-ink/75 text-white px-2 py-0.5 rounded-full font-mono text-[10px] ml-0.5">
+                  {p.score} pts
+                </span>
+                {isHost && p.id !== playerId && (
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      playWrongSound();
+                      sendRoomAction('kick_player', { targetPlayerId: p.id });
+                    }}
+                    title={`Expulsar ${p.name} da sala`}
+                    className="w-4 h-4 rounded-full bg-ink/40 hover:bg-rd text-white flex items-center justify-center text-[11px] ml-0.5 transition-colors leading-none font-bold cursor-pointer"
+                  >
+                    &times;
+                  </button>
+                )}
+              </div>
+            );
+          })}
         </div>
 
-        {/* Botão Sair */}
-        <button
-          onClick={() => {
-            playClickSound();
-            sendRoomAction('leave');
-            setIsInRoom(false);
-            setRoom(null);
-            onExit();
-          }}
-          className="btn-salinha bg-card hover:bg-[#ffccd5] text-ink px-3 py-1 text-xs font-black shadow-solid-sm cursor-pointer"
-        >
-          <LogOut className="w-3 h-3 mr-1" /> Sair
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setBugModalOpen(true)}
+            className="btn-salinha bg-card hover:bg-[#ffccd5] text-ink px-2.5 py-1 text-xs font-bold shadow-solid-sm flex items-center gap-1 cursor-pointer"
+            title="Relatar bug para o desenvolvedor"
+          >
+            <Bug className="w-3.5 h-3.5 text-rd" />
+            <span className="hidden sm:inline">Bug</span>
+          </button>
+
+          {/* Botão Sair */}
+          <button
+            onClick={() => {
+              playClickSound();
+              sendRoomAction('leave');
+              setIsInRoom(false);
+              setRoom(null);
+              onExit();
+            }}
+            className="btn-salinha bg-card hover:bg-[#ffccd5] text-ink px-3 py-1 text-xs font-black shadow-solid-sm cursor-pointer"
+          >
+            <LogOut className="w-3 h-3 mr-1" /> Sair
+          </button>
+        </div>
       </header>
 
       {/* 2. ÁREA PRINCIPAL: GRID DE 2 COLUNAS (NO SCROLL) */}
@@ -1261,7 +1337,7 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
                       disabled={room.roundState === 'revealed'}
                       className={`btn-salinha flex-1 py-2 text-xs cursor-pointer shadow-solid-sm transition-all duration-200 ${
                         room.roundState === 'idle'
-                          ? 'bg-or hover:bg-or-dark text-white ring-2 ring-or ring-offset-2 animate-pulse font-black shadow-solid'
+                          ? 'animate-pulse-dark text-white font-black ring-2 ring-[#be4318] ring-offset-2'
                           : 'bg-card hover:bg-paper text-ink'
                       }`}
                     >
@@ -1279,7 +1355,7 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
                     <button
                       type="button"
                       onClick={() => {
-                        playClickSound();
+                        playPageFlipSound();
                         sendRoomAction('next_question');
                       }}
                       className="btn-salinha flex-1 bg-mu hover:bg-mu-dark text-ink py-2 text-xs cursor-pointer shadow-solid-sm"
@@ -1292,22 +1368,43 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
             )}
           </div>
 
-          {/* 3. GABARITO / FEEDBACK DE ACERTO E ERRO (Com Stamp & Shake) */}
+          {/* 3. GABARITO / LOG DE TENTATIVAS DA RODADA (Com Stamp & Shake) */}
           <div className="flex-1 min-h-0 overflow-y-auto pr-1 flex flex-col justify-center">
             
-            {/* Flash do Último Julgamento (Erro com Shake ou Acerto com Stamp) */}
-            {room.lastJudgment && (
-              <div
-                className={`p-3 rounded-2xl border-2 border-ink shadow-solid-sm mb-2 flex items-center justify-between text-xs font-black ${
-                  room.lastJudgment.status === 'correct'
-                    ? 'bg-[#d8f3dc] text-[#1b4332] animate-stamp'
-                    : 'bg-[#ffccd5] text-[#9f1239] animate-cartoon-shake'
-                }`}
-              >
-                <span>{room.lastJudgment.message}</span>
-                <span className="font-mono bg-card px-2 py-0.5 rounded-full border border-ink text-ink">
-                  {room.lastJudgment.points > 0 ? `+${room.lastJudgment.points}` : room.lastJudgment.points} pts
-                </span>
+            {/* Histórico acumulado de tentativas da rodada (Log de Cortes e Respostas) */}
+            {room.roundJudgments && room.roundJudgments.length > 0 && (
+              <div className="space-y-1.5 mb-2.5 max-h-40 overflow-y-auto scrollbar-thin pr-1">
+                <div className="text-[10px] font-black uppercase text-suave flex items-center justify-between px-0.5">
+                  <span className="flex items-center gap-1">
+                    <Clock className="w-3 h-3 text-or" /> Tentativas da Rodada:
+                  </span>
+                  <span>{room.roundJudgments.length} {room.roundJudgments.length === 1 ? 'corte' : 'cortes'}</span>
+                </div>
+                {room.roundJudgments.map((j) => (
+                  <div
+                    key={j.id}
+                    className={`p-2 rounded-xl border-2 border-ink shadow-solid-sm flex items-center justify-between text-xs font-black ${
+                      j.status === 'correct'
+                        ? 'bg-[#d8f3dc] text-[#1b4332] animate-stamp'
+                        : 'bg-[#ffccd5] text-[#9f1239] animate-cartoon-shake'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2 truncate">
+                      <CreatureAvatar config={j.avatar} color={j.playerColor} size={22} className="shrink-0" />
+                      <div className="truncate">
+                        <span>{j.message}</span>
+                        {j.answerGiven && j.answerGiven !== 'Sem resposta' && (
+                          <span className="text-[10px] opacity-80 ml-1 font-mono italic">
+                            (&quot;{j.answerGiven}&quot;)
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <span className="font-mono bg-card px-2 py-0.5 rounded-full border border-ink text-ink text-[11px] shrink-0 ml-1.5">
+                      {j.points > 0 ? `+${j.points}` : j.points} pts
+                    </span>
+                  </div>
+                ))}
               </div>
             )}
 
@@ -1346,7 +1443,7 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
                 {isHost && (
                   <button
                     onClick={() => {
-                      playClickSound();
+                      playPageFlipSound();
                       sendRoomAction('next_question');
                     }}
                     className="btn-salinha w-full bg-mu hover:bg-mu-dark text-ink py-2 text-xs uppercase shadow-solid-sm cursor-pointer"
@@ -1366,6 +1463,25 @@ export default function MultiplayerRoom({ initialCode, initialQuestions, onExit 
 
         </div>
       </div>
+
+      {/* Pop-up de Dopamina com Confetes e Monstrinho ao Acertar */}
+      <DopamineCelebration
+        show={showCelebration}
+        playerName={room?.lastJudgment?.playerName}
+        isMe={room?.lastJudgment?.playerId === playerId}
+        isPower={room?.lastJudgment?.points === 15}
+        points={room?.lastJudgment?.points || 10}
+        avatarConfig={room?.lastJudgment?.avatar}
+        playerColor={room?.lastJudgment?.playerColor}
+        onDone={() => setShowCelebration(false)}
+      />
+
+      {/* Modal para Relatar Bug ao Desenvolvedor */}
+      <BugReportModal
+        isOpen={bugModalOpen}
+        onClose={() => setBugModalOpen(false)}
+        context={room ? `Sala ${room.code} (${playerName || playerId})` : 'Multiplayer Sala'}
+      />
     </div>
   );
 }

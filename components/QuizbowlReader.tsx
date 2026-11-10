@@ -15,12 +15,16 @@ import {
   getCookie
 } from '@/lib/storage';
 import MultiplayerRoom from '@/components/MultiplayerRoom';
+import DopamineCelebration from '@/components/DopamineCelebration';
+import BugReportModal from '@/components/BugReportModal';
 import { 
   playClickSound, 
   playCutSound, 
   playCorrectSound, 
   playWrongSound, 
-  playTickSound 
+  playTickSound,
+  playPageFlipSound,
+  playStampSound
 } from '@/lib/sfx';
 import { 
   Zap, 
@@ -40,6 +44,7 @@ import {
   Calendar, 
   Infinity as InfinityIcon,
   Timer,
+  Bug,
   Check,
   Layers,
   Gauge,
@@ -138,6 +143,8 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
   // Resposta e julgamento
   const [userAnswer, setUserAnswer] = useState('');
   const [judgment, setJudgment] = useState<JudgmentResult | null>(null);
+  const [showCelebration, setShowCelebration] = useState(false);
+  const [bugModalOpen, setBugModalOpen] = useState(false);
   const [promptMessage, setPromptMessage] = useState<string | null>(null);
   const [buzzTimeRemaining, setBuzzTimeRemaining] = useState(10); // 10 segundos
   const [endCountdownRemaining, setEndCountdownRemaining] = useState(10); // 10s finais
@@ -495,8 +502,10 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
       const isCorrect = res.status === 'correct';
 
       if (isCorrect) {
-        // ACERTOU: toca som alegre, pontua e encerra a pergunta
+        // ACERTOU: toca carimbo e fanfarra, pontua e abre popup de dopamina
+        playStampSound();
         playCorrectSound();
+        setShowCelebration(true);
         setStatus('judged');
 
         if (gameMode === 'daily' && dailyQuestionData) {
@@ -573,7 +582,7 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
   };
 
   const nextUnlimitedQuestion = () => {
-    playClickSound();
+    playPageFlipSound();
     if (unlimitedIndex < unlimitedQuestions.length - 1) {
       setUnlimitedIndex((prev) => prev + 1);
     } else {
@@ -634,6 +643,15 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
             <Flame className="w-3.5 h-3.5 text-or fill-or animate-pulse" />
             {isMounted ? streakCount : 0} {streakCount === 1 ? 'dia' : 'dias'}
           </span>
+          <button
+            type="button"
+            onClick={() => setBugModalOpen(true)}
+            className="btn-salinha bg-card hover:bg-[#ffccd5] text-ink px-2 py-0.5 rounded-full text-[10px] font-bold shadow-solid-sm flex items-center gap-1 cursor-pointer"
+            title="Relatar um bug para o desenvolvedor"
+          >
+            <Bug className="w-3 h-3 text-rd" />
+            <span className="hidden sm:inline">Relatar Bug</span>
+          </button>
         </div>
 
         {/* Chave Seletora de Modo (Diário vs Ilimitado vs Amigos) com SLIDER DESLIZANTE */}
@@ -1262,6 +1280,22 @@ export default function QuizbowlReader({ initialQuestions }: QuizbowlReaderProps
 
         </div>
       </div>
+
+      {/* Pop-up de Dopamina com Confetes ao Acertar */}
+      <DopamineCelebration
+        show={showCelebration}
+        isMe={true}
+        isPower={judgment?.points === 15}
+        points={judgment?.points || 10}
+        onDone={() => setShowCelebration(false)}
+      />
+
+      {/* Modal para Relatar Bug ao Desenvolvedor */}
+      <BugReportModal
+        isOpen={bugModalOpen}
+        onClose={() => setBugModalOpen(false)}
+        context={gameMode === 'daily' ? 'Modo Diário' : 'Modo Ilimitado'}
+      />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { Tossup } from '@/types/quizbowl';
-import { RoomPlayer, RoomState, MULTIPLAYER_COLORS } from './types';
+import { RoomPlayer, RoomState, RoundJudgmentLog, MULTIPLAYER_COLORS } from './types';
 import { judgeAnswer } from '@/lib/judge';
 import fs from 'fs';
 import path from 'path';
@@ -154,6 +154,7 @@ export function createRoom(
     buzzDurationSeconds: 10,
     endCountdownStartTime: null,
     endCountdownDurationSeconds: 10,
+    roundJudgments: [],
     lastJudgment: null,
   };
 
@@ -316,6 +317,7 @@ export function nextQuestion(code: string, hostId: string): RoomState | null {
   room.buzzedPlayerId = null;
   room.buzzStartTime = null;
   room.endCountdownStartTime = null;
+  room.roundJudgments = [];
   room.lastJudgment = null;
 
   // Libera todos os jogadores para cortar na nova pergunta
@@ -372,44 +374,55 @@ export function submitAnswer(code: string, playerId: string, answer: string, tim
 
   const isCorrect = result.status === 'correct';
 
+  const judgment: RoundJudgmentLog = {
+    id: 'j_' + Math.random().toString(36).substring(2, 8),
+    playerId: player.id,
+    playerName: player.name,
+    playerColor: player.color,
+    avatar: player.avatar,
+    status: isCorrect ? 'correct' : 'incorrect',
+    message: isCorrect
+      ? `${player.name} acertou! (+${result.points} pts)`
+      : `${player.name} errou! (${result.points} pts)`,
+    points: result.points,
+    answerGiven: answerToEval || 'Sem resposta',
+    timestamp: Date.now(),
+  };
+
+  if (!room.roundJudgments) {
+    room.roundJudgments = [];
+  }
+  room.roundJudgments.push(judgment);
+  room.lastJudgment = judgment;
+
   if (isCorrect) {
     // Acertou: ganha os pontos (+15 ou +10) e a rodada se encerra com o gabarito
     player.score += result.points;
     if (result.points === 15) player.powers += 1;
     else player.tens += 1;
 
-    room.lastJudgment = {
-      playerId: player.id,
-      playerName: player.name,
-      status: 'correct',
-      message: `${player.name} acertou! (+${result.points} pts)`,
-      points: result.points,
-      answerGiven: answerToEval,
-      timestamp: Date.now(),
-    };
-
     room.roundState = 'revealed';
     room.buzzedPlayerId = null;
     room.buzzStartTime = null;
+    room.endCountdownStartTime = null;
   } else {
     // Errou: perde -5 pts (se interrompeu) ou 0 pts (se no fim)
     player.score += result.points;
     if (result.points < 0) player.negs += 1;
 
-    room.lastJudgment = {
-      playerId: player.id,
-      playerName: player.name,
-      status: 'incorrect',
-      message: `${player.name} errou! (${result.points} pts)`,
-      points: result.points,
-      answerGiven: answerToEval || 'Sem resposta',
-      timestamp: Date.now(),
-    };
-
     room.buzzedPlayerId = null;
     room.buzzStartTime = null;
 
-    // Retoma a leitura da pergunta para os outros jogadores que ainda não cortaram
+    // Se todos os jogadores na sala já cortaram e erraram -> Revela o gabarito IMEDIATAMENTE!
+    const allBuzzed = room.players.length > 0 && room.players.every(p => p.hasBuzzed);
+    if (allBuzzed) {
+      room.roundState = 'revealed';
+      room.endCountdownStartTime = null;
+      broadcastRoom(room);
+      return room;
+    }
+
+    // Se ainda restam amigos que podem tentar, retoma a leitura
     const words = room.currentQuestion.question_pt.split(/\s+/).filter(Boolean);
     if (room.currentWordIndex < words.length) {
       room.roundState = 'reading';

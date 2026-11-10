@@ -21,6 +21,19 @@ export type RoundState =
   | 'ending_countdown' 
   | 'revealed';
 
+export interface RoundJudgmentLog {
+  id: string;
+  playerId: string;
+  playerName: string;
+  playerColor: string;
+  avatar?: { body: number; eyes: number; mouth: number; hat?: number };
+  status: 'correct' | 'incorrect';
+  message: string;
+  points: number;
+  answerGiven: string;
+  timestamp: number;
+}
+
 export interface RoomState {
   code: string;
   createdAt: number;
@@ -52,16 +65,11 @@ export interface RoomState {
   endCountdownStartTime: number | null; // ms
   endCountdownDurationSeconds: number; // 10s
   
+  // Histórico de tentativas da rodada (Log acumulativo)
+  roundJudgments: RoundJudgmentLog[];
+
   // Último veredito para flash de acerto/erro
-  lastJudgment: {
-    playerId: string;
-    playerName: string;
-    status: 'correct' | 'incorrect';
-    message: string;
-    points: number;
-    answerGiven: string;
-    timestamp: number;
-  } | null;
+  lastJudgment: RoundJudgmentLog | null;
 }
 
 export const MULTIPLAYER_COLORS = [
